@@ -1,0 +1,92 @@
+body{
+  background-image: url("../img/login_bg.png");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+#formulario{
+  position: absolute;
+  transform:translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding: 10px;
+  border-radius: 15px;
+
+}
+
+#form{
+  background-color: #1177d1;
+  border-radius: 0px 10px 10px 0px;
+  color: white;
+}
+
+form input{
+  width: 90%;
+  margin-right: 20px;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  background-color: transparent;
+  margin: 15px 15px;
+}
+
+form input::placeholder{
+  color: white;
+}
+
+form input[type=submit]{
+  border: none;
+  background-color: gray;
+  
+}
+
+a{
+  text-decoration: transparent;
+}
+a:hover{
+  text-decoration: transparent;
+}
+
+.reg{
+  color: white;
+  background-color: turquoise;
+  text-decoration: transparent;
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 2px;
+  margin-bottom: 10px;
+}
+.reg:hover{
+  text-decoration: transparent;
+  background-color: darkblue;
+  color: lightblue;
+  transition: 0.25s;
+
+}
+
+#logo{
+  background-color: #00a6ff;;
+  border-radius: 10px 0px 0px 10px;
+  padding: 20px;
+}
+
+#logo img{
+  width: 70%;
+  margin-left: 15%;
+}
+
+.formulario{
+  background-color: white;
+  padding: 50px;
+}
+
+.forg{
+  float: right;
+  padding-top: 15px;
+  color: white;
+}
+.forg:hover{
+  color: gray;
+}

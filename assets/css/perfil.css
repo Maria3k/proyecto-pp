@@ -1,0 +1,25 @@
+li
+{
+	list-style: none;
+}
+
+aside{
+	background-color: #1177d1;
+	height: 500px;
+	width:60%;
+	left: 18%;
+	line-height: 550%;
+	display: inline-block;
+}
+
+article{
+	background-color: black;
+	width: 60%;
+	display: inline-block;
+}
+
+section {
+	padding-right: 100px;
+	padding-left: 450px;
+	margin-top: -450px;
+}
