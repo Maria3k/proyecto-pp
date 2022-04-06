@@ -13,6 +13,10 @@ li
 	list-style: none;
 }
 
+.col-3 li{
+	padding-top: 25%;
+}
+
 aside{
 	
 	background-color: #1177d1;
@@ -31,6 +35,10 @@ article{
 	display: inline-block;
 }
 */
+span{
+	list-style:disc;
+}
+
 section {
 	padding-right: 200px;
 	padding-left: 450px;
