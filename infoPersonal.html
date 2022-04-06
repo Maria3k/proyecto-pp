@@ -47,13 +47,7 @@
                     </ul>
                  </div>
                 <div id="boton1">
-                    <button type="button" class="btn btn-outline-primary">
-                        <a href="">Contraseña</a>
-                    </button>
-        
-                    <button type="button" class="btn btn-outline-primary">
-                        <a href="">Preferencia</a>
-                    </button>
+                    <input id="pass" type="password" name="pwd" value="holamundo" readonly><i id="si" class="fas fa-eye" onclick="myFunction()" ></i>
                 </div>
                 <div id="boton3">
                     <button type="button" class="btn btn-outline-danger">
@@ -108,6 +102,18 @@
 		</div>
 	</footer>
     <script src="https://kit.fontawesome.com/b3b892b65b.js" crossorigin="anonymous"></script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("pass");
+            if (x.type === "password") {
+                x.type = "text";
+                document.getElementById("si").setAttribute("fas fa-eye-slash");
+            } else {
+                x.type = "password";
+                document.getElementById("si").setAttribute("fas fa-eye");
+            }
+        }
+    </script>
 
 </body>
 </html>
