@@ -11,17 +11,12 @@ html{
   box-sizing: inherit;
 }
 
-.clip {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+a{
+  color: black;
+  text-decoration: none;
 }
 
+/*
 .svg--source {
   display: none;
 }
@@ -35,7 +30,7 @@ html{
   margin: 0 auto;
   fill: currentColor;
 }
-
+*/
 .wrapper {
   width: 100%;
   display: flex;
@@ -45,7 +40,7 @@ html{
   padding: 1rem;
   padding-top: 5%;
 }
-
+/*
 .share {
   width: 5rem;
   height: 5rem;
@@ -57,3 +52,4 @@ html{
   border-radius: 50%;
   transition: 250ms;
 }
+*/

@@ -1,11 +1,22 @@
+.letra a{
+	color: black;
+	text-decoration: none;
+}
+
+.letra a:hover{
+	color: white;
+	text-decoration: none;
+}
+
 li
 {
 	list-style: none;
 }
 
 aside{
+	
 	background-color: #1177d1;
-	height: 500px;
+	height: 700px;
 	width:60%;
 	left: 18%;
 	line-height: 550%;
@@ -19,7 +30,22 @@ article{
 }
 
 section {
-	padding-right: 100px;
+	padding-right: 200px;
 	padding-left: 450px;
-	margin-top: -450px;
+	margin-top: -570px;
+}
+footer{
+	background-color: ;
+}
+
+#boton1{
+	background-color: white;
+	width: 10%;
+	display: inline-block;
+}
+
+#boton2{
+	background-color: white;
+	width: 10%;
+	display: inline-block;
 }
