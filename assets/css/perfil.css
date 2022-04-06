@@ -23,20 +23,25 @@ aside{
 	display: inline-block;
 }
 
+
+/*
 article{
 	background-color: black;
 	width: 60%;
 	display: inline-block;
 }
-
+*/
 section {
 	padding-right: 200px;
 	padding-left: 450px;
 	margin-top: -570px;
 }
-footer{
-	background-color: ;
+
+#row{
+	margin-top: 20%;
+	margin-bottom: 20%;
 }
+
 
 #boton1{
 	background-color: white;
