@@ -47,7 +47,7 @@
                     </ul>
                  </div>
                 <div id="boton1">
-                    <input id="pass" type="password" name="pwd" value="holamundo" readonly><i id="si" class="fas fa-eye" onclick="myFunction()" ></i>
+                    <input id="pass" type="password" name="pwd" value="holamundo" readonly><i id="mostrar" class="fas fa-eye" onclick="myFunction()" ></i>
                 </div>
                 <div id="boton3">
                     <button type="button" class="btn btn-outline-danger">
@@ -107,10 +107,10 @@
             var x = document.getElementById("pass");
             if (x.type === "password") {
                 x.type = "text";
-                document.getElementById("si").setAttribute("fas fa-eye-slash");
+                document.getElementById("mostrar").setAttribute("class","fas fa-eye-slash");
             } else {
                 x.type = "password";
-                document.getElementById("si").setAttribute("fas fa-eye");
+                document.getElementById("mostrar").setAttribute("class","fas fa-eye");
             }
         }
     </script>
