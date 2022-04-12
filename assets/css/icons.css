@@ -16,6 +16,18 @@ a{
   color: black;
 }
 
+footer a:hover{
+  color: black;
+}
+
+a i{
+  transition: 250ms;
+}
+
+a.facebook i:hover{
+  color: blue;
+}
+
 a.github i:hover{
   filter: invert(50%);
 }
