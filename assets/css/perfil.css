@@ -17,6 +17,20 @@ li
 	padding-top: 25%;
 }
 
+.principal{
+	position: relative;
+	left: 35%;
+}
+
+.boton a{
+	
+	color: black;
+}
+
+.boton a:hover{
+	color: white;
+}
+
 aside{
 	
 	background-color: #1177d1;
