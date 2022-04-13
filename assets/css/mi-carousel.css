@@ -1,4 +1,3 @@
-
 header{
     background-color: #1177d1;
 }
@@ -10,7 +9,6 @@ header a{
     float: right;
     padding-left: 10px;
 }
-
 
 .botonlogo{
     display: inline-block;
@@ -27,21 +25,8 @@ header a{
     right: 0%;
 }
 
-
 .carousel-item{
 
     height: 30rem;
     background: rgb(49, 111, 192) ;
-}
-.faq{
-    background-color: yellowgreen;
-    width: 800px;
-    height: 400px;
-    text-align: center;
-}
-.pregunta{
-    background-color:rgb(49, 111, 192);
-    width: 700px;
-    height: 400px;
-    text-align: center;
 }

@@ -1,3 +1,21 @@
+.faq{
+    background-color: yellowgreen;
+    border-radius: 5px;
+    width: 800px;
+    height: 400px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 35px;
+}
+.pregunta{
+    background-color:rgb(49, 111, 192);
+    border-radius: 5px;
+    width: 700px;
+    height: 400px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
 footer{
     background-color: aliceblue;
     bottom: 0;
