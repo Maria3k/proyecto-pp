@@ -9,30 +9,31 @@
         <link rel="stylesheet" href="assets/css/bootstrap.css">
         <link rel="stylesheet" href="assets/css/icons.css">
         <link rel="stylesheet" href="assets/css/especialidades.css">
+        <link rel="stylesheet" href="assets/css/infoPersonal.css">
         <title>Informacion Personal - Perfil</title>
     </head>
     <body>
     <div class="container">
         <div class="row">
-            <div class="col-3" style="background-color: #484e56d1;">
+            <div id="menu" class="col-3">
                 <ul class="letra">
                     <li>
                         <a href="perfil.html">Inicio</a>
                     </li>
-                    <li style="list-style: disc;"><!--PUNTO DE REFERENCIA-->
+                    <li id="selec"><!--PUNTO DE REFERENCIA-->
                         <span>Información personal</span>
                     </li>
                     <li>
                         <a href="seguridad.html">Seguridad</a>
                     </li>
-                    <li style="padding-bottom: 25%;">
+                    <li class="ult">
                         <a href="infoGeneral.html">Información general</a>
                     </li>
                 </ul>
             </div>
-            <div class="col-9" style="background-color: #0083ff">
-                <div class="col-9" style="background-color:cornflowerblue">
-                    <img src="assets/img/iconosUsu/logo1.png" width="100px" height="100px">
+            <div id="section" class="col-9">
+                <div id="datos1" class="col-9">
+                    <img src="assets/img/iconosUsu/logo1.png" width="100px" height="100px" alt="usuario.png">
                     <ul>
                         <li>Nombre: Jose Bastardo</li>
                         <li>Fecha de nacimiento: 12/05/2003</li>
@@ -40,19 +41,18 @@
                     </ul>
                 </div>
                 <br>
-                <div class="col-9" style="background-color: #484e56d1">
+                <div id="datos2" class="col-9">
                     <ul>
                         <li>Correo electronico: JoseBastardo011@gmail.com </li>
                         <li>Telefono: +54 9 1134938</li>
                     </ul>
                 </div>
                 <div id="boton1">
-                    <input id="pass" type="password" name="pwd" value="holamundo" readonly><i id="mostrar" class="fas fa-eye" onclick="myFunction()" ></i>
+                    <input id="pass" type="password" name="pwd" value="holamundo" placeholder="contraseña" readonly>
+                    <i id="mostrar" class="fas fa-eye" onclick="myFunction()"></i>
                 </div>
                 <div id="boton3">
-                    <button type="button" class="btn btn-outline-danger">
-                        <a href="">Eliminar cuenta</a>
-                    </button>
+                    <a href="" class="btn btn-outline-danger">Eliminar cuenta</a>
                 </div>
             </div>
         </div>

@@ -64,3 +64,18 @@ section {
 	margin-bottom: 20%;
 }
 
+#menu {
+	background-color: rgba(72, 78, 86, 0.82);
+}
+
+.ult{
+	padding-bottom: 25%;
+}
+
+#selec{
+	list-style: disc;
+}
+
+#section{
+	background-color: #0083ff;
+}
