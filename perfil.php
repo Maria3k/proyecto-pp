@@ -2,9 +2,13 @@
 include("conexion.php");
 session_start();
 
-if ($_SESSION) {
-  print_r($_SESSION);
-}
+
+$nAvatar = $_SESSION["nAvatar"];
+
+$query = "SELECT * FROM avatar WHERE id_avatar = $nAvatar";
+$send = $con->query($query);
+$col = $send->fetch_assoc();
+
 
 ?>
 
@@ -45,8 +49,8 @@ if ($_SESSION) {
       </div>
       <div id="section" class="col-9">
         <div class="principal">
-          <img src="assets/img/iconosUsu/logo1.png" width="100px" height="100px">
-          <h2>¡Bienvenido <i>USUARIO</i>!</h2>
+          <img src=<?= $col["rutaArchivo"]; ?> width="100px" height="100px" alt=<?= $col["nombreArchivo"]; ?>>
+          <h2>¡Bienvenido <?= $_SESSION["nickname"] ?>!</h2>
         </div>
         <br>
         <div class="boton">
