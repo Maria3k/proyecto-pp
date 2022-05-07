@@ -5,7 +5,7 @@ session_start();
 $menu = '';
 
 if ($_SESSION) {
-  $menu = '<a class="btn-nav" href="Perfil.php">Perfil';
+  $menu = '<a class="btn-nav" href="Perfil.php">Perfil</a>';
 } else {
   $menu = '<a class="btn-nav" href="register.php">Register</a><a class="btn-nav" href="login.php">Iniciar Sesion</a>';
 }
