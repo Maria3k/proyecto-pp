@@ -1,11 +1,6 @@
 <?php
 include("conexion.php");
 session_start();
-
-if ($_SESSION) {
-    print_r($_SESSION);
-}
-
 ?>
 
 <!DOCTYPE html>
