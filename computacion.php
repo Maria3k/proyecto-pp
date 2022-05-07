@@ -31,7 +31,6 @@ if ($_SESSION) {
 <body>
   <nav>
     <a href="index.php" title="Pagina Principal"><img class="img1" src="assets/img/escuela/loguito.png" alt="minilogo.png"></a>
-    <a class="btn-nav" href="register.php">Register</a><a class="btn-nav" href="login.php">Iniciar Sesion</a>
     <?= $menu ?>
   </nav>
   <div class="container">
@@ -62,19 +61,19 @@ if ($_SESSION) {
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="assets/img/computacion/IC1.jpg" class="d-block w-100" alt="...">
+              <img class="img-fluid" src="assets/img/computacion/IC1.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="assets/img/computacion/IC2.jpg" class="d-block w-100" alt="...">
+              <img class="img-fluid" src="assets/img/computacion/IC2.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="assets/img/computacion/IC3.jpg" class="d-block w-100" alt="...">
+              <img class="img-fluid" src="assets/img/computacion/IC3.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="assets/img/computacion/IC4.jpg" class="d-block w-100" alt="...">
+              <img class="img-fluid" src="assets/img/computacion/IC4.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-              <img src="assets/img/computacion/IC5.jpg" class="d-block w-100" alt="...">
+              <img class="img-fluid" src="assets/img/computacion/IC5.jpg" class="d-block w-100" alt="...">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">

@@ -35,7 +35,7 @@ if ($_SESSION) {
   <div class="container">
     <div class="row align-item-center">
       <div class="col-4">
-        <img src="assets/img/escuela/escuela.jpg" alt="escuela.jpg">
+        <img class="img-fluid" src="assets/img/escuela/escuela.jpg" alt="escuela.jpg">
       </div>
       <div class="col-6">
         <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus mollitia similique non atque nesciunt velit recusandae a reprehenderit cum enim quasi perferendis aperiam dolorum magnam, aliquam laudantium quidem, animi qui. </p>
