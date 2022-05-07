@@ -2,9 +2,14 @@
 include("conexion.php");
 session_start();
 
-if ($_SESSION) {
-    print_r($_SESSION);
-}
+
+$nAvatar = $_SESSION["nAvatar"];
+
+$query = "SELECT * FROM avatar WHERE id_avatar = $nAvatar";
+$send = $con->query($query);
+$col = $send->fetch_assoc();
+
+
 
 ?>
 
@@ -46,22 +51,21 @@ if ($_SESSION) {
             </div>
             <div id="section" class="col-9">
                 <div id="datos1" class="col-9">
-                    <img src="assets/img/iconosUsu/logo1.png" width="100px" height="100px" alt="usuario.png">
+                    <img src=<?= $col["rutaArchivo"]; ?> width="100px" height="100px" alt=<?= $col["nombreArchivo"]; ?>>
                     <ul>
-                        <li>Nombre: Jose Bastardo</li>
-                        <li>Fecha de nacimiento: 12/05/2003</li>
-                        <li>Genero: Hombre</li>
+                        <li>Nombre: <?= $_SESSION["nombre"], " ", $_SESSION["apellido"]; ?></li>
+                        <li>Fecha de nacimiento: <?= $_SESSION["fechaNacimiento"] ?></li>
                     </ul>
                 </div>
                 <br>
                 <div id="datos2" class="col-9">
                     <ul>
-                        <li>Correo electronico: JoseBastardo011@gmail.com </li>
-                        <li>Telefono: +54 9 1134938</li>
+                        <li>Correo electronico: <?= $_SESSION["email"];  ?></li>
+                        <li>Telefono: <?= $_SESSION["telefono"];  ?></li>
                     </ul>
                 </div>
                 <div id="boton1">
-                    <input id="pass" type="password" name="pwd" value="holamundo" placeholder="contraseña" readonly>
+                    <input id="pass" class="form-control" type="password" name="pwd" value="<?= $_SESSION["contraseña"];  ?>" placeholder="contraseña" readonly>
                     <i id="mostrar" class="fas fa-eye" onclick="myFunction()"></i>
                 </div>
                 <div id="boton3">
