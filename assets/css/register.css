@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+}
+li{
+    display: inline-block;
+    list-style: none;
+}
+li img{
+    transition: 250ms;
+}
+
+.seleccionado{
+    border: solid white 4px;
+    border-radius: 15px;
+}

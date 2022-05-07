@@ -8,6 +8,7 @@
   <link rel="icon" href="assets/img/favicon/favicon.png">
   <link rel="stylesheet" href="assets/css/login.css">
   <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/register.css">
   <title>Registrarse</title>
 </head>
 
@@ -15,7 +16,7 @@
   <div id="formulario" class="container">
     <div class="row">
       <div id="logo" class="col-4">
-        <img src="assets/img/iconos/logoblanco.png" alt="logo">
+        <img src="assets/img/iconos/logoblanco.png" alt="logo.png">
       </div>
       <div class="col-8">
         <div id="form" class="row">
@@ -25,7 +26,14 @@
           <div class="col-12">
             <form action="register.php" method="post">
               <div class="form-group">
-                <input style="width: 45%;" type="text" name="nombre" placeholder="Nombre" required><input style="width: 45%;" type="text" name="apellido" placeholder="Apellido" required>
+                <div class="row">
+                  <div class="col-6">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                  </div>
+                  <div class="col-6">
+                    <input type="text" name="apellido" placeholder="Apellido" required>
+                  </div>
+                </div>
                 <input type="text" name="username" placeholder="Nombre de usuario" required>
               </div>
               <div class="form-group">
@@ -33,8 +41,46 @@
                 <input type="text" name="cemail" placeholder="Correo electronico nuevamente" required>
               </div>
               <div class="form-group">
+                <input type="tel" name="telefono" placeholder="Ingrese su numero de telefono" required>
+              </div>
+              <div class="form-group">
                 <input type="password" name="contraseña" placeholder="Ingrese su contraseña" required>
-                <input type="password" name="contraseña" placeholder="Ingrese su contraseña nuevamente" required>
+                <input type="password" name="ccontraseña" placeholder="Ingrese su contraseña nuevamente" required>
+              </div>
+              <div class="form-group">
+                <p> Seleccione una imagen de perfil</p>
+
+                <select name="imagen" hidden>
+                  <option id="option"></option>
+                </select>
+
+
+                <ul id="lista">
+
+
+
+                  <?php
+                  $envio = $con->query("SELECT * FROM avatar");
+                  while ($row = $envio->fetch_assoc()) {
+
+                  ?>
+
+                    <li>
+                      <img id=<?php echo $row["id_avatar"]; ?> src=<?php echo $row["rutaArchivo"]; ?> alt=<?php echo $row["nombreArchivo"]; ?> onclick="<?php echo "select(", $row["id_avatar"], ")"; ?>" width="75px" height="75px">
+                    </li>
+
+                  <?php
+
+                  }
+
+                  ?>
+                  <!--
+                    <input type="radio" name="" value="">
+                    <img src=alt="<?php echo $row["nombreArchivo"]; ?>" width="75px" height="75px">
+                  -->
+
+
+                </ul>
               </div>
               <div class="form-group">
                 <input id="submit" type="submit" name="submit" style="width: auto;">
@@ -46,6 +92,22 @@
     </div>
   </div>
   <script src="assets/js/bootstrap.js"></script>
+  <script>
+    function select(n) {
+      if (document.getElementById(n).hasAttribute("class")) {
+        document.getElementById(n).removeAttribute("class");
+        document.getElementById("option").removeAttribute("value");
+      } else {
+        for (var i = 1; i <= document.getElementById("lista").childElementCount; i++) {
+          if (document.getElementById(i).hasAttribute("class")) {
+            document.getElementById(i).removeAttribute("class");
+          }
+        }
+        document.getElementById("option").setAttribute("value", n);
+        document.getElementById(n).setAttribute("class", "seleccionado");
+      }
+    }
+  </script>
 </body>
 
 </html>
