@@ -13,9 +13,23 @@ if (isset($_POST["submit"])) {
           $send = $con->query($query);
           $col = $send->fetch_assoc();
 
-          if (($send->num_rows) > 0) {
+          print_r($col);
+
+
+          //echo "<br>CONTRASEÑA INGRESADA ---> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;", $p;
+          //echo "<br>CONTRASEÑA DE LA BASE DE DATOS --->", $col["contraseña"], "<br>"; 
+
+
+          /*if(password_verify($p, $col["contraseña"])){
+            echo "SI";
+          }else{
+            echo "NO";
+          }*/
+
+          if (($send->num_rows) > 0 /*&& password_verify($p,$col["contraseña"])*/) {
             session_start();
             $_SESSION = $col;
+            //$_SESSION["contraseña"] = $p;
             header("Location:index.php");
           } else {
 
@@ -57,7 +71,7 @@ if (isset($_POST["submit"])) {
             <form action="login.php" method="post">
               <div class="form-group">
                 <input type="email" name="email" placeholder="Ingrese su correo electronico" required>
-                <?php echo $errEm; ?>
+                <?= $errEm; ?>
               </div>
               <div class="form-group">
                 <input type="password" name="contraseña" placeholder="Ingrese su contraseña" required>
@@ -67,8 +81,8 @@ if (isset($_POST["submit"])) {
                 <input id="submit" type="submit" name="submit" value="Ingresar">
               </div>
             </form>
-            <a class="reg" href="register.html">Crear Cuenta</a>
-            <a class="forg" href="forgot-password.html">¿Olvidaste tu contraseña?</a>
+            <a class="reg" href="register.php">Crear Cuenta</a>
+            <a class="forg" href="forgot-password.php">¿Olvidaste tu contraseña?</a>
           </div>
         </div>
       </div>
