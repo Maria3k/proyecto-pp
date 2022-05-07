@@ -2,8 +2,12 @@
 include("conexion.php");
 session_start();
 
+$menu = '';
+
 if ($_SESSION) {
-  print_r($_SESSION);
+  $menu = '<a class="btn-nav" href="Perfil.php">Perfil';
+} else {
+  $menu = '<a class="btn-nav" href="register.php">Register</a><a class="btn-nav" href="login.php">Iniciar Sesion</a>';
 }
 
 ?>
@@ -28,6 +32,7 @@ if ($_SESSION) {
   <nav>
     <a href="index.php" title="Pagina Principal"><img class="img1" src="assets/img/escuela/loguito.png" alt="minilogo.png"></a>
     <a class="btn-nav" href="register.php">Register</a><a class="btn-nav" href="login.php">Iniciar Sesion</a>
+    <?= $menu ?>
   </nav>
   <div class="container">
     <div class="row">
