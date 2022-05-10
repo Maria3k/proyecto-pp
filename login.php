@@ -5,7 +5,7 @@ if (isset($_POST["submit"])) {
   if (isset($_POST["email"])) {
     if (isset($_POST["contraseña"])) {
       $e = trim($_POST["email"]);
-      $p = trim($_POST["contraseña"]);
+      $p = trim(md5($_POST["contraseña"]));
 
       if (!empty($e)) {
         if (!empty($p)) {
@@ -17,7 +17,7 @@ if (isset($_POST["submit"])) {
 
 
           //echo "<br>CONTRASEÑA INGRESADA ---> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;", $p;
-          //echo "<br>CONTRASEÑA DE LA BASE DE DATOS --->", $col["contraseña"], "<br>"; 
+          //echo "<br>CONTRASEÑA DE LA BASE DE DATOS --->", $col["contraseña"], "<br>";
 
 
           /*if(password_verify($p, $col["contraseña"])){
@@ -26,7 +26,7 @@ if (isset($_POST["submit"])) {
             echo "NO";
           }*/
 
-          if (($send->num_rows) > 0 /*&& password_verify($p,$col["contraseña"])*/) {
+          if (($send->num_rows) > 0) {
             session_start();
             $_SESSION = $col;
             //$_SESSION["contraseña"] = $p;

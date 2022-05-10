@@ -8,12 +8,12 @@ if (isset($_POST["submit"])) {
   $user = $_POST["username"];
   $email = $_POST["email"];
   $telefono = $_POST["telefono"];
-  $contraseña = /*password_hash(*/$_POST['contraseña']/*, PASSWORD_BCRYPT)*/;
+  $contraseña = md5($_POST['contraseña']);
   $imagen = $_POST["imagen"];
 
   $envio = $con->query("SELECT * FROM usuario WHERE nickname = '$user' or email = '$email'");
   $datos = $envio->fetch_assoc();
-  
+
   if(($envio->num_rows) == 0){
     if($imagen){
       $query = $con->query("INSERT INTO usuario(nombre, apellido, nickname, email, telefono, contraseña, nAvatar,rol) VALUES ('$nombre','$apellido','$user','$email','$telefono','$contraseña','$imagen',1)") or die("Error en el insert --->".$query.mysqli_error($con));
