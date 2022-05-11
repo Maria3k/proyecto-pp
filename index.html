@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/icons.css">
     <link rel="stylesheet" href="assets/css/especialidades.css">
+    <script src="https://kit.fontawesome.com/b3b892b65b.js" crossorigin="anonymous"></script>
     <title>E.T.32 Respuestas</title>
   </head>
   <body>
@@ -16,6 +17,18 @@
         <img class="img1" src="assets/img/escuela/loguito.png" alt="loguito.png">
         <a class="btn-nav" href="register.html">Register</a>
         <a class="btn-nav" href="login.html">Iniciar Sesion</a>
+        <div class="action" >
+          <div class="profile" onclick="menuToggle()">
+            <img src="assets/img/iconosUsu/logo1.png" width="30px" height="30px" alt="usuario">
+          </div>
+          <div class="menu">
+            <ul>
+              <li id="primero"><a href="perfil.html"><i class="fa-solid fa-user"></i>Perfil</a></li>
+              <li><a href="perfil.html"><i class="fa-solid fa-gear"></i>Configuracion</a></li>
+              <li><a href="perfil.html"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar Sesion</a></li>
+            </ul>
+          </div>
+        </div>
     </nav>
     <div class="container">
       <div class="row align-item-center">
@@ -89,6 +102,11 @@
       </div>
     </footer>
     <script src="assets/js/bootstrap.js"></script>
-    <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
+    <script>
+      function menuToggle(){
+        const toggleMenu = document.querySelector('.menu');
+        toggleMenu.classList.toggle('active')    
+      }
+    </script>
   </body>
 </html>
