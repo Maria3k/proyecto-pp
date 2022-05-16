@@ -15,11 +15,11 @@
 <body>
   <div id="formulario" class="container">
     <div class="row">
-      <div class="col" >
+      <div class="col">
         <div id="form" class="row" style="padding: 20px;">
-          <div class="col-12">
-              <img src="assets/img/iconos/logoblanco.png" alt="logoblanco.png" class="imagen">
-              <h3 style="text-align: center;">Restablecer contraseña</h3>
+          <div class="col-12 align-self-center">
+            <img src="assets/img/iconos/logoblanco.png" alt="logoblanco.png" class="imagen">
+            <h3>Restablecer contraseña</h3>
           </div>
           <div class="col-12">
             <form action="login.html" method="post">
