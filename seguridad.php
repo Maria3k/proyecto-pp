@@ -25,43 +25,48 @@ if ($_SESSION) {
   <link rel="stylesheet" href="assets/css/bootstrap.css">
   <link rel="stylesheet" href="assets/css/icons.css">
   <link rel="stylesheet" href="assets/css/especialidades.css">
+  <link rel="stylesheet" href="assets/css/seguridad.css">
   <title>Seguridad - Perfil</title>
 </head>
 
 <body>
   <div class="container">
-    <div class="row">
-      <div id="menu" class="col-3">
-        <ul class="letra">
-          <li>
-            <a href="perfil.php">Inicio</a>
-          </li>
-          <li>
-            <a href="infoPersonal.php">Información personal</a>
-          </li>
-          <li id="selec">
-            <!--PUNTO DE REFERENCIA-->
-            <span>Seguridad</span>
-          </li>
-          <li class="ult">
-            <a href="infoGeneral.php">Información general</a>
-          </li>
-        </ul>
+            <div class="row">
+              <div id="menu" class="col-3">
+                  <ul class="letra">
+                      <li>
+                          <a href="perfil.php">Inicio</a>
+                      </li>
+                      <li>
+                          <a href="infoPersonal.php">Información personal</a>
+                      </li>
+                      <li id="selec"><!--PUNTO DE REFERENCIA-->
+                          <span>Seguridad</span>
+                      </li>
+                      <li class="ult">
+                          <a href="infoGeneral.php">Información general</a>
+                      </li>
+                  </ul>
+              </div>
+              <div id="section" class="col-9">
+                  <h6>Actividad reciente:</h6>
+                  <div class="cuadro">
+                    <P>Se inicio sesión: </P>
+                    <p>En el dispositivo: </p>
+                    <p>A la hora: </p>
+                  </div>
+                  <h6>Iniciar sesión:</h6>
+                  <div class="cuadro">
+                    <p>Contraseña: </p>
+                    <p>Verificar contraseña: </p>
+                    <p>Telefono de recuperacion: </p>
+                  </div>
+                  <div class="volver">
+                    <a class="btn btn-outline-light" href="index.php">Volver al inicio</a>
+                  </div>
+              </div>
+            </div>
       </div>
-      <div id="section" class="col-9">
-        <img src=<?= $col["rutaArchivo"]; ?> width="100px" height="100px" alt=<?= $col["nombreArchivo"]; ?>>
-        <h2>¡Bienvenido <?= $_SESSION["nickname"] ?>!</h2>
-        <br>
-        <div id="boton1">
-          <a href="">Consultas</a>
-        </div>
-        <br><br>
-        <div id="boton2">
-          <a href="">Enviar Comentarios</a>
-        </div>
-      </div>
-    </div>
-  </div>
   <footer>
     <div class="row">
       <div class="col l6">
