@@ -5,7 +5,32 @@ session_start();
 $menu = '';
 
 if ($_SESSION) {
-  $menu = '<a class="btn-nav" href="Perfil.php">Perfil</a>';
+
+  $nAvatar = $_SESSION["nAvatar"];
+
+  $send = $con->query("SELECT * FROM avatar WHERE id_avatar = $nAvatar");
+  $col = $send->fetch_assoc();
+  $ad = '';
+
+  if($_SESSION["rol"] == 2){
+    $ad = '<li><a href="backend.php"><i class="fa-solid fa-gear"></i>Editar</a></li>';
+  }
+
+
+  $menu = '        
+  <div class="action" >
+    <div class="profile" onclick="menuToggle()">
+      <img src="'.$col["rutaArchivo"].'" width="30px" height="30px" alt="'.$col["nombreArchivo"].'">
+    </div>
+    <div class="menu">
+      <ul>
+        <li id="primero"><a href="perfil.php"><i class="fa-solid fa-user"></i>Perfil</a></li>
+        '.$ad.'
+        <li><a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar Sesion</a></li>
+      </ul>
+    </div>
+  </div>
+        ';
 } else {
   $menu = '<a class="btn-nav" href="register.php">Register</a><a class="btn-nav" href="login.php">Iniciar Sesion</a>';
 }
@@ -19,6 +44,11 @@ if ($_SESSION) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Facundo se la come" />
+  <meta property="og:image" content="http://186.23.120.80:800/pagina/Proyecto-PP/assets/img/iconos/logoblanco.png" />
+  <meta property="og:description" content="E.T.N°32 D.E.N°14 Preguntas y Respuestas es E.T.N°32 D.E.N°14 Preguntas y Respuestas..... XD">
+  <meta property="og:image:width" content="300px" />
+  <meta property="og:image:height" content="300px" />
   <link rel="icon" href="assets/img/favicon/favicon.png">
   <link rel="stylesheet" href="assets/css/index.css">
   <link rel="stylesheet" href="assets/css/bootstrap.css">
@@ -112,6 +142,12 @@ if ($_SESSION) {
   </footer>
   <script src="assets/js/bootstrap.js"></script>
   <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
+  <script>
+    function menuToggle() {
+      const toggleMenu = document.querySelector('.menu');
+      toggleMenu.classList.toggle('active')
+    }
+  </script>
 </body>
 
 </html>

@@ -14,7 +14,12 @@ nav{
     color: white;
     text-decoration: none;
     float: right;
+    transition: 250ms;
     padding-left: 10px;
+}
+
+.btn-nav:hover{
+    color: black;
 }
 
 .botonlogo{
@@ -34,7 +39,7 @@ nav{
 
 .botonlogin img{
     height: 70px;
-    width: 75px;   
+    width: 75px;
 }
 
 .div1{
@@ -57,54 +62,55 @@ nav{
 }
 
 .Contenedor{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
 }
 
 .Contenedor .card{
-	border-radius: 8px;
+    border-radius: 8px;
     border: none;
-	overflow: hidden;
-	margin: 20px;
-	text-align: center;
-	transition: all 0.25s;
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
 }
 
 .Contenedor .card:hover{
-	transform: translateY(-15px);
-	box-shadow: 0 12px 16px rgba(0, 0, 0, 0.5);
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.5);
 }
 
 .Contenedor .card img{
 
-	width: 230px;
-	height: 230px;
+    width: 230px;
+    height: 230px;
 }
 
 .Contenedor .card h4{
 
-	font-weight: 600;
+    font-weight: 600;
 }
 
 .Contenedor .card p{
 
-	padding: 0 1rem;
-	font-size: 16px;
-	font-weight: 300;
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
 }
 
 .Contenedor .card a{
 
-	font-weight: 500;
-	text-decoration: none;
-	color: #3498db;
+    font-weight: 500;
+    text-decoration: none;
+    color: #3498db;
 
 }
 
 .contenedorVideo{
     width: 50%;
+    height: 50%;
     left: 25%;
     position: relative;
     display: flex;
@@ -116,4 +122,122 @@ nav{
 video{
     width: 85%;
     height: 35%;
+}
+
+/*==================Menu desplegable======================*/
+
+.action{
+    display: inline-block;
+    float: right;
+    top: 20px;
+    right: 30px;
+
+}
+
+.action .profile{
+    position: relative;
+    right: 25px;
+    margin-top: 8px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    transition: 250ms;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.action .profile:hover{
+    border: solid 3px white;
+}
+
+.action .profile img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.action .menu{
+    position: absolute;
+    top: 85px;
+    right: 10px;
+    background: #2853a1;
+    width: 200px;
+    border-radius: 15px;
+    transition: 0.5s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.action .menu.active{
+    visibility: visible;
+    opacity: 1;
+
+}
+
+.action .menu::before{
+    content: '▲';
+    font-size: 30px;
+    position: absolute;
+    top: -30px;
+    right: 30px;
+    width: 20px;
+    height: 20px;
+    color: #2853a1;
+
+
+}
+
+#primero{
+    border-top: none;
+}
+
+.action .menu h3{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 0;
+    font-weight: 500;
+    font-size: 18px;
+    color: #555;
+    line-height: 1.2em;
+}
+
+.action .menu .ul{
+    margin-bottom: 0;
+
+}
+
+.action .menu ul li{
+    margin-bottom: 0;
+    list-style: none;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+.action .menu ul li img{
+    max-width: 20px;
+    margin-right: 10px;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.action .menu ul li:hover img{
+    opacity: 1;
+}
+
+.action .menu ul li a{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 250ms;
+}
+
+.action .menu ul li:hover a{
+    color: black;
 }
