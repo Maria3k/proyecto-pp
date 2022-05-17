@@ -15,26 +15,12 @@ if (isset($_POST["submit"])) {
 
           print_r($col);
 
-
-          //echo "<br>CONTRASEÑA INGRESADA ---> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;", $p;
-          //echo "<br>CONTRASEÑA DE LA BASE DE DATOS --->", $col["contraseña"], "<br>";
-
-
-          /*if(password_verify($p, $col["contraseña"])){
-            echo "SI";
-          }else{
-            echo "NO";
-          }*/
-
           if (($send->num_rows) > 0) {
             session_start();
             $_SESSION = $col;
-            //$_SESSION["contraseña"] = $p;
+            $_SESSION["contraseña"] = $_POST["contraseña"];
             header("Location:index.php");
           } else {
-
-            //$_SESSION[""] = $col[""];
-
             $errEm = '<div style="color: #c30000;">Nombre de usuario o contraseña incorrectos</div>';
           }
         }
