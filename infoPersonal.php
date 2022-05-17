@@ -2,14 +2,17 @@
 include("conexion.php");
 session_start();
 
-
 $nAvatar = $_SESSION["nAvatar"];
 
 $query = "SELECT * FROM avatar WHERE id_avatar = $nAvatar";
 $send = $con->query($query);
 $col = $send->fetch_assoc();
 
-
+if (isset($_GET['name'])){
+    $con->query("DELETE FROM usuario WHERE email = '" . $_SESSION["email"]."'") or die("ERROR SQL ->".$con->error);
+    session_destroy();
+    header("Location:index.php");
+}
 
 ?>
 
@@ -68,8 +71,28 @@ $col = $send->fetch_assoc();
                     <input id="pass" class="form-control" type="password" name="pwd" value="<?= $_SESSION["contraseña"];  ?>" placeholder="contraseña" readonly>
                     <i id="mostrar" class="fas fa-eye" onclick="myFunction()"></i>
                 </div>
-                <div id="boton3">
-                    <a href="" class="btn btn-outline-danger">Eliminar cuenta</a>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Eliminar Cuenta
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Eliminar cuenta</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Estas seguro de eliminar tu cuenta?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <a href='infoPersonal.php?name=true' class="btn btn-danger">Confirmar</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
