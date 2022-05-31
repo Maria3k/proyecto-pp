@@ -1,4 +1,5 @@
 <?php
+
     include 'conexion.php';
 
     if(isset($_POST['submit'])){
@@ -7,10 +8,22 @@
       $contraseña = $_POST['contraseña'];
       $contraseña = md5($contraseña);
 
-      $query="SELECT * FROM usuario WHERE correo ='$email' and contraseña='$contraseña'";
+      $query="SELECT * FROM usuario WHERE email ='$email' and contraseña='$contraseña'";
 
-      $con->query($query)or die("error de sintaxtis");
-      header("Location:index.html");
+      $enviar = $con->query($query)or die("error de sintaxtis");
+
+      $datos = $enviar->fetch_assoc();
+
+      if(($enviar->num_rows) > 0){
+
+        session_start();
+        $_SESSION = $datos;
+        header("Location:indexPrueba.php");
+
+      }else{
+        echo "no existe ese usuario o contraseña incorrecta ";
+      }
+
     }
  ?>
 <!DOCTYPE html>
