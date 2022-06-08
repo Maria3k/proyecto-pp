@@ -37,16 +37,37 @@
                   <input type="text" name="cemail" placeholder="Correo electronico nuevamente" required>
                 </div>
                 <div class="row form-group">
-                  <div class="col-sm-4">
-                      <div class="input-group date" id="datepicker">
-                          <input type="text" class="form-control" placeholder="Fecha de Nacimiento">
-                          <span class="input-group-append">
-                              <span class="input-group-text bg-white">
-                                  <i class="fa fa-calendar"></i>
-                              </span>
-                          </span>
-                      </div>
+                  <div class="fechaDeNacimiento">
+                        <label for="fdia">Fecha de nacimiento:</label> <br/>
+                    </div>
+                        <span>
+                            <label for="dia">Día</label>
+                        <input type="text" size="3" maxlength="2" id="dia" name="dia" />
+                        </span>
+                    </div>
+                    <span>
+                        <label for="mes">Mes</label>
+                        <select id="Mes" name="Mes">
+                            <option value="1">Enero</option>
+                            <option value="2">Febrero</option>
+                            <option value="3">Marzo</option>
+                            <option value="4">Abril</option>
+                            <option value="5">Mayo</option>
+                            <option value="6">Junio</option>
+                            <option value="7">Julio</option>
+                            <option value="8">Agosto</option>
+                            <option value="9">Septiembre</option>
+                            <option value="10">Octubre</option>
+                            <option value="11">Noviembre</option>
+                            <option value="12">Diciembre</option>
+                          </select>
+                    </span>
+                    <span>
+                        <label for="año">Año</label>
+                        <input type="text" size="5" maxlength="4" id="fecha_año" name="fecha_año" />
+                    </span>
                   </div>
+              </div>
               </div>
                 <div class="form-group">
                   <input type="password" name="contraseña" placeholder="Ingrese su contraseña" required>
@@ -61,11 +82,6 @@
         </div>
       </div>
     </div>
-     <script type="text/javascript">
-      $(function() {
-          $('#datepicker').datepicker();
-      });
-  </script>
     <script src="assets/js/bootstrap.js"></script>
   </body>
 </html>
