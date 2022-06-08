@@ -241,3 +241,60 @@ video{
 .action .menu ul li:hover a{
     color: black;
 }
+
+/*==================Campana de notificacion======================*/
+
+.icon-wrapper{
+    width: 43px;
+    height: 43px;
+    position: relative;
+    display: inline-block;
+    float: right;
+    top: 10px;
+}
+
+.icon-wrapper::after{
+    content: '4';
+    width: 20px;
+    height: 20px;
+    background-color: #d32b2b;
+    color: white;
+    display: grid;
+    place-content: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    opacity: 0;
+    transform: rotateY(3px);
+}
+
+.icon-wrapper:hover::after{
+    opacity: 1;
+    transform: rotateY(0);
+    transition: opacity .25s;
+    transform: .25s;
+}
+
+.bell-icon{
+    max-width: 100%;
+}
+
+.icon-wrapper:hover .bell-icon{
+    animation: shake 1s forwards;
+}
+
+@keyframes shake{
+    10%{
+        transform: rotate(15deg);
+    }
+    20%{
+        transform: rotate(-15deg);
+    }
+    30%{
+        transform: rotate(15deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+}
