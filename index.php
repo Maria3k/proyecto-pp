@@ -13,7 +13,24 @@
     <title>E.T.32 Respuestas</title>
   </head>
   <body>
-     <h1>HISTORIA DE LA <span>ET32</span></h1>     
+    <nav>
+      <img class="img1" src="assets/img/escuela/loguito.png" alt="loguito.png">
+      <a class="btn-nav" href="register.html">Register</a>
+      <a class="btn-nav" href="login.html">Iniciar Sesion</a>
+      <div class="action" >
+        <div class="profile" onclick="menuToggle()">
+          <img src="assets/img/iconosUsu/logo1.png" width="30px" height="30px" alt="usuario">
+        </div>
+        <div class="menu">
+          <ul>
+            <li id="primero"><a href="perfil.html"><i class="fa-solid fa-user"></i>Perfil</a></li>
+            <li><a href="perfil.html"><i class="fa-solid fa-gear"></i>Configuracion</a></li>
+            <li><a href="perfil.html"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar Sesion</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <h1>HISTORIA DE LA <span>ET32</span></h1>     
     <br>
     <div class="process-wrapper">
       <div id="progress-bar-container">
@@ -71,17 +88,7 @@
           </p>
         </div>
       </div>
-    </div>
-    <div class="container">
-      <div class="row align-item-center">
-        <div class="col-4">
-          <img src="assets/img/escuela/escuela.jpg" alt="escuela.jpg">
-        </div>
-        <div class="col-6">
-          <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus mollitia similique non atque nesciunt velit recusandae a reprehenderit cum enim quasi perferendis aperiam dolorum magnam, aliquam laudantium quidem, animi qui. </p> 
-        </div>
-      </div>
-    </div>      
+    </div>    
     <div class="Contenedor">
       <div class="card">
         <a href="computacion.html" title="Sección de Computacion"><img src="assets/img/escuela/computacion.png" alt="computacion.png"></a>
