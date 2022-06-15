@@ -18,13 +18,13 @@
                 <div id="menu" class="col-3">
                     <ul class="letra">
                         <li>
-                            <a href="perfil.html">Inicio</a>
+                            <a href="perfil.php">Inicio</a>
                         </li>
                         <li>
-                            <a href="infoPersonal.html">Información personal</a>
+                            <a href="infoPersonal.php">Información personal</a>
                         </li>
                         <li>
-                            <a href="seguridad.html">Seguridad</a>
+                            <a href="seguridad.php">Seguridad</a>
                         </li>
                         <li id="selec" class="ult"><!--PUNTO DE REFERENCIA-->
                             <span>Información general</span>

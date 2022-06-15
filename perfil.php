@@ -20,13 +20,13 @@
                             <span>Inicio</span>
                         </li>
                         <li>
-                            <a href="infoPersonal.html">Información personal</a>
+                            <a href="infoPersonal.php">Información personal</a>
                         </li>
                         <li>
-                            <a href="seguridad.html">Seguridad</a>
+                            <a href="seguridad.php">Seguridad</a>
                         </li>
                         <li class="ult">
-                            <a href="infoGeneral.html">Información general</a>
+                            <a href="infoGeneral.php">Información general</a>
                         </li>
                     </ul>
                 </div>
