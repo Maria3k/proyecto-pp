@@ -18,24 +18,29 @@ session_start();
     <link rel="stylesheet" href="assets/css/infoGeneral.css">
     <title>Informacion General - Perfil</title>
 </head>
-
 <body>
     <div class="container">
         <div class="row">
             <div id="menu" class="col-3">
                 <ul class="letra">
-                    <li>
-                        <a href="perfil.php">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="infoPersonal.php">Información personal</a>
-                    </li>
-                    <li>
-                        <a href="seguridad.php">Seguridad</a>
-                    </li>
-                    <li id="selec" class="ult">
+                    <a href="perfil.php">
+                        <li>
+                            <i class="fa-solid fa-circle-user"></i>   Inicio
+                        </li>
+                    </a>
+                    <a href="infoPersonal.php">
+                        <li>
+                            <i class="fa-solid fa-id-card"></i>   Información personal
+                        </li>
+                    </a>
+                    <a href="seguridad.php">
+                        <li>
+                            <i class="fa-solid fa-screwdriver-wrench"></i>    Seguridad
+                        </li>
+                    </a>
+                    <li id="selec">
                         <!--PUNTO DE REFERENCIA-->
-                        <span>Información general</span>
+                        <span><i class="fa-solid fa-circle-exclamation"></i>  Información general</span>
                     </li>
                 </ul>
             </div>

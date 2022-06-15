@@ -37,19 +37,25 @@ if (isset($_GET['name'])){
         <div class="row">
             <div id="menu" class="col-3">
                 <ul class="letra">
-                    <li>
-                        <a href="perfil.php">Inicio</a>
-                    </li>
+                    <a href="perfil.php">
+                        <li>
+                            <i class="fa-solid fa-circle-user"></i>   Inicio
+                        </li>
+                    </a>
                     <li id="selec">
                         <!--PUNTO DE REFERENCIA-->
-                        <span>Información personal</span>
+                        <span><i class="fa-solid fa-id-card"></i>   Información personal</span>
                     </li>
-                    <li>
-                        <a href="seguridad.php">Seguridad</a>
-                    </li>
-                    <li class="ult">
-                        <a href="infoGeneral.php">Información general</a>
-                    </li>
+                    <a href="seguridad.php">
+                        <li>
+                            <i class="fa-solid fa-screwdriver-wrench"></i>   Seguridad
+                        </li>
+                    </a>
+                    <a href="infoGeneral.php">
+                        <li class="ult">
+                            <i class="fa-solid fa-circle-exclamation"></i>   Información general
+                        </li>
+                    </a>
                 </ul>
             </div>
             <div id="section" class="col-9">

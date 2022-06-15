@@ -34,17 +34,23 @@ $col = $send->fetch_assoc();
         <ul class="letra">
           <li id="selec">
             <!--PUNTO DE REFERENCIA-->
-            <span>Inicio</span>
+            <span><i class="fa-solid fa-circle-user"></i>   Inicio</span>
           </li>
-          <li>
-            <a href="infoPersonal.php">Información personal</a>
-          </li>
-          <li>
-            <a href="seguridad.php">Seguridad</a>
-          </li>
-          <li class="ult">
-            <a href="infoGeneral.php">Información general</a>
-          </li>
+          <a href="infoPersonal.php">
+            <li>
+              <i class="fa-solid fa-id-card"></i>   Información personal
+            </li>
+          </a>
+          <a href="seguridad.php">
+            <li>
+              <i class="fa-solid fa-screwdriver-wrench"></i>   Seguridad
+            </li>
+          </a>
+          <a href="infoGeneral.php">
+            <li class="ult">
+              <i class="fa-solid fa-circle-exclamation"></i>   Información general
+            </li>
+          </a>
         </ul>
       </div>
       <div id="section" class="col-9">

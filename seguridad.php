@@ -31,42 +31,48 @@ if ($_SESSION) {
 
 <body>
   <div class="container">
-            <div class="row">
-              <div id="menu" class="col-3">
-                  <ul class="letra">
-                      <li>
-                          <a href="perfil.php">Inicio</a>
-                      </li>
-                      <li>
-                          <a href="infoPersonal.php">Información personal</a>
-                      </li>
-                      <li id="selec"><!--PUNTO DE REFERENCIA-->
-                          <span>Seguridad</span>
-                      </li>
-                      <li class="ult">
-                          <a href="infoGeneral.php">Información general</a>
-                      </li>
-                  </ul>
-              </div>
-              <div id="section" class="col-9">
-                  <h6>Actividad reciente:</h6>
-                  <div class="cuadro">
-                    <P>Se inicio sesión: </P>
-                    <p>En el dispositivo: </p>
-                    <p>A la hora: </p>
-                  </div>
-                  <h6>Iniciar sesión:</h6>
-                  <div class="cuadro">
-                    <p>Contraseña: </p>
-                    <p>Verificar contraseña: </p>
-                    <p>Telefono de recuperacion: </p>
-                  </div>
-                  <div class="volver">
-                    <a class="btn btn-outline-light" href="index.php">Volver al inicio</a>
-                  </div>
-              </div>
-            </div>
+    <div class="row">
+      <div id="menu" class="col-3">
+        <ul class="letra">
+          <a href="perfil.php">
+            <li>
+              <i class="fa-solid fa-circle-user"></i>   Inicio
+            </li>
+          </a>
+          <a href="infoPersonal.php">
+            <li>
+              <i class="fa-solid fa-id-card"></i>   Información personal
+            </li>
+          </a>
+            <li id="selec"><!--PUNTO DE REFERENCIA-->
+                <span><i class="fa-solid fa-screwdriver-wrench"></i>   Seguridad</span>
+            </li>
+          <a href="infoGeneral.php">
+            <li class="ult">
+              <i class="fa-solid fa-circle-exclamation"></i>   Información general
+            </li>
+          </a>
+        </ul>
       </div>
+      <div id="section" class="col-9">
+        <h6>Actividad reciente:</h6>
+        <div class="cuadro">
+          <P>Se inicio sesión: </P>
+          <p>En el dispositivo: </p>
+          <p>A la hora: </p>
+        </div>
+        <h6>Iniciar sesión:</h6>
+        <div class="cuadro">
+          <p>Contraseña: </p>
+          <p>Verificar contraseña: </p>
+          <p>Telefono de recuperacion: </p>
+        </div>
+        <div class="volver">
+          <a class="btn btn-outline-light" href="index.php">Volver al inicio</a>
+        </div>
+      </div>
+    </div>
+  </div>
   <footer>
     <div class="row">
       <div class="col l6">
@@ -119,5 +125,4 @@ if ($_SESSION) {
   <script src="assets/js/bootstrap.js"></script>
   <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
 </body>
-
 </html>

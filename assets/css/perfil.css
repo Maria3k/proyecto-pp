@@ -1,20 +1,30 @@
 .letra a{
 	color: black;
 	text-decoration: none;
-}
-
-.letra a:hover{
-	color: white;
-	text-decoration: none;
-}
-
-li
-{
-	list-style: none;
+	
+	
 }
 
 .col-3 li{
-	padding-top: 25%;
+	margin-left: -43px;
+	margin-right: -10px;
+	min-width: 50px;
+	list-style: none;
+	padding: 20px;
+	padding-right: 15px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+}
+
+.col-3 li:hover{
+	color: white;
+	background-color: rgb(54 58 64 / 82%);
+	text-decoration: none;
+}
+
+.col-3 li:hover a{
+	color: white;
+	text-decoration: none;
 }
 
 .principal{
@@ -42,13 +52,6 @@ aside{
 }
 
 
-/*
-article{
-	background-color: black;
-	width: 60%;
-	display: inline-block;
-}
-*/
 span{
 	list-style:disc;
 }
@@ -66,14 +69,20 @@ section {
 
 #menu {
 	background-color: rgba(72, 78, 86, 0.82);
+	display: flex;
+	align-items: center;
 }
 
 .ult{
-	padding-bottom: 25%;
+	/*padding-bottom: 25%;*/
 }
 
 #selec{
-	list-style: disc;
+	background-color: rgba(0, 132, 255, 0.596);
+}
+
+#selec span{
+	color: white;
 }
 
 #section{
