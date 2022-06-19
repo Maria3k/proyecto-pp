@@ -2,6 +2,8 @@
 
     include 'conexion.php';
 
+    $error = "";
+
     if(isset($_POST['submit'])){
 
       $email = $_POST['email'];
@@ -21,7 +23,7 @@
         header("Location:indexPrueba.php");
 
       }else{
-        echo "no existe ese usuario o contraseña incorrecta ";
+        $error ="Correo electrónico o Contraseña incorrectos";
       }
 
     }
@@ -57,7 +59,10 @@
               </div>
               <div class="form-group">
                 <input type="password" name="contraseña" placeholder="Ingrese su contraseña" required>
-                <input type="checkbox" name="recordar" style="width:auto;">Recordar nombre de usuario
+              </div>
+              <?= $error?>
+              <div>
+              <input type="checkbox" name="recordar" style="width:auto;">Recordar usuario
               </div>
               <div class="form-group">
                 <input id="submit" type="submit" name="submit" value="Ingresar">

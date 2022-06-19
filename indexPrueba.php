@@ -29,7 +29,7 @@
         <img class="img1" src="assets/img/escuela/loguito.png" alt="loguito.png">
         <a class="btn-nav" href="register.html">Register</a>
         <a class="btn-nav" href="login.html">Iniciar Sesion</a>
-        <a  href="php/cerrar_sesion.php">Cerrar sesion</a>
+        <a  href="/cerrar_sesion.php">Cerrar sesion</a>
 
     </nav>
     <div class="container">
