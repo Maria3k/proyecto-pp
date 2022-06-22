@@ -21,7 +21,7 @@
         <div class="menu">
           <ul>
             <li id="primero"><a href="perfil.php"><i class="fa-solid fa-user"></i>Perfil</a></li>
-            <li><a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar Sesion</a></li>
+            <li><a href="cerrar_sesion.php"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar Sesion</a></li>
           </ul>
         </div>
       </div>

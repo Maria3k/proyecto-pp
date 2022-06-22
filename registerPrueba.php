@@ -1,6 +1,9 @@
 <?php
     include 'conexion.php';
 
+    $errMail = "";
+    $errNick = "";
+
     if(isset($_POST['submit'])){
       $nombre = $_POST['nombre'];
       $apellido = $_POST['apellido'];
@@ -11,8 +14,20 @@
       $query = "INSERT INTO usuario(nombre,apellido,nickname,email,contraseña,nAvatar,rol)
       VALUES('$nombre','$apellido','$nickname','$email','$contraseña',7,1)";
 
-      $con->query($query)or die("error de sintaxtis");
-      header("Location:index.html");
+      $verificar_email = "SELECT * FROM usuario WHERE email = '$email' ";
+      $vemail = $con -> query($verificar_email);
+      if(($vemail->num_rows) > 0){
+        $errMail = '<i class="fa-solid fa-circle-exclamation"></i> Este email ya esta registrado';
+      }
+      $verificar_nickname = "SELECT * FROM usuario WHERE nickname = '$nickname' ";
+      $venickame = $con -> query($verificar_nickname);
+      if(($venickame->num_rows) > 0){
+          $errNick = '<i class="fa-solid fa-circle-exclamation"></i> Este nombre de usuario ya esta registrado';
+      }
+
+
+      //$con->query($query)or die("error de sintaxtis");
+      //header("Location:index.html");
 
     }
  ?>
@@ -44,10 +59,12 @@
                   <input style="width: 45%;" type="text" name="nombre" placeholder="Nombre" required><input style="width: 45%;" type="text" name="apellido" placeholder="Apellido" required>
                   <input type="text" name="nickname" placeholder="Nombre de usuario" required>
                 </div>
+                <?= $errNick; ?>
                 <div class="form-group">
                   <input type="email" name="email" placeholder="Correo electronico" required>
                   <input type="text" name="cemail" placeholder="Correo electronico nuevamente" required>
                 </div>
+                <?= $errMail; ?>
                 <div class="form-group">
                   <input type="password" name="contraseña" placeholder="Ingrese su contraseña" required>
                   <input type="password" name="contraseña" placeholder="Ingrese su contraseña nuevamente" required>
@@ -62,5 +79,7 @@
       </div>
     </div>
     <script src="assets/js/bootstrap.js"></script>
+    <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
+
   </body>
 </html>
