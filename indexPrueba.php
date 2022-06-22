@@ -2,12 +2,16 @@
 
     session_start();
 
-    print_r($_SESSION);
+    $nav = '<a class="btn-nav" href="register.html">Register</a>
+          <a class="btn-nav" href="login.html">Iniciar Sesion</a>';
 
-    $usuario = '';
+
+
 
     if($_SESSION){
-
+      $avatar = $_SESSION["nAvatar"];
+      $query = "SELECT * FROM avatar WHERE id_avatar = $avatar";
+      echo $query;
     }
 
 ?>
@@ -27,10 +31,7 @@
   <body>
     <nav>
         <img class="img1" src="assets/img/escuela/loguito.png" alt="loguito.png">
-        <a class="btn-nav" href="register.html">Register</a>
-        <a class="btn-nav" href="login.html">Iniciar Sesion</a>
-        <a  href="/cerrar_sesion.php">Cerrar sesion</a>
-
+        <?=$nav?>
     </nav>
     <div class="container">
       <div class="row align-item-center">
