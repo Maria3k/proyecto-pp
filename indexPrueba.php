@@ -1,17 +1,31 @@
 <?php
+    include "conexion.php";
 
     session_start();
 
     $nav = '<a class="btn-nav" href="register.html">Register</a>
           <a class="btn-nav" href="login.html">Iniciar Sesion</a>';
 
-
-
-
     if($_SESSION){
       $avatar = $_SESSION["nAvatar"];
       $query = "SELECT * FROM avatar WHERE id_avatar = $avatar";
-      echo $query;
+      $datos = $con->query($query);
+      $col = $datos->fetch_assoc();
+
+
+      $nav = '
+      <div class="action" >
+        <div class="profile" onclick="menuToggle()">
+          <img src="'.$col["rutaArchivo"].'" width="30px" height="30px" alt="'.$col["nombreArchivo"].'">
+        </div>
+        <div class="menu">
+          <ul>
+            <li id="primero"><a href="perfil.php"><i class="fa-solid fa-user"></i>Perfil</a></li>
+            <li><a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar Sesion</a></li>
+          </ul>
+        </div>
+      </div>
+            ';
     }
 
 ?>
@@ -105,5 +119,11 @@
     </footer>
     <script src="assets/js/bootstrap.js"></script>
     <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
+    <script>
+      function menuToggle() {
+        const toggleMenu = document.querySelector('.menu');
+        toggleMenu.classList.toggle('active')
+      }
+    </script>
   </body>
 </html>
