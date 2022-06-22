@@ -17,12 +17,12 @@
       $verificar_email = "SELECT * FROM usuario WHERE email = '$email' ";
       $vemail = $con -> query($verificar_email);
       if(($vemail->num_rows) > 0){
-        $errMail = '<i class="fa-solid fa-circle-exclamation"></i> Este email ya esta registrado';
+        $errMail = '<div class="error"><i class="fa-solid fa-circle-exclamation"></i> Este email ya esta registrado</div>';
       }
       $verificar_nickname = "SELECT * FROM usuario WHERE nickname = '$nickname' ";
       $venickame = $con -> query($verificar_nickname);
       if(($venickame->num_rows) > 0){
-          $errNick = '<i class="fa-solid fa-circle-exclamation"></i> Este nombre de usuario ya esta registrado';
+          $errNick = '<div class="error"><i class="fa-solid fa-circle-exclamation"></i> Este nombre de usuario ya esta registrado</div>';
       }
 
 
@@ -40,6 +40,7 @@
     <link rel="icon" href="assets/img/favicon/favicon.png">
     <link rel="stylesheet" href="assets/css/login.css">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/register.css">
     <title>Registrarse</title>
   </head>
   <body>
