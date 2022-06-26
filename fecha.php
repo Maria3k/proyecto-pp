@@ -9,10 +9,16 @@
       $apellido = $_POST['apellido'];
       $nickname = $_POST['nickname'];
       $email = $_POST['email'];
+      $fechaNacimiento = $POST['fechaNacimiento'];
       $contraseña = md5($_POST['contraseña']);
+      $f = explode('/', $fechaNacimiento);
 
-      $query = "INSERT INTO usuario(nombre,apellido,nickname,email,contraseña,nAvatar,rol)
-      VALUES('$nombre','$apellido','$nickname','$email','$contraseña',7,1)";
+      $fechaNacimiento_sql = $_POST['a']."-".$_POST['m']."-".$_POST['d'];
+
+      $query = "INSERT INTO usuario(nombre,apellido,nickname,email,fechaNacimiento,contraseña,nAvatar,rol)
+      VALUES('$nombre','$apellido','$nickname','$email','$fechaNacimiento_sql',$contraseña',7,1)";
+
+      print_r($fechaNacimiento_sql);
 
       $verificar_email = "SELECT * FROM usuario WHERE email = '$email' ";
       $vemail = $con -> query($verificar_email);
@@ -40,6 +46,7 @@
     <link rel="stylesheet" href="assets/css/login.css">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/register.css">
+    <link rel="stylesheet" href="assets/css/fecha.css">
     <title>Registrarse</title>
   </head>
   <body>
@@ -65,6 +72,14 @@
                   <input type="text" name="cemail" placeholder="Correo electronico nuevamente" required>
                 </div>
                 <?= $errMail; ?>
+                <div class="description">
+                    <div class="date">
+                      <input type="hidden" id="fechaNacimiento" name="fechaNacimiento" value="02/13/2015" placeholder="mm/dd/yyyy"/>
+                      <input type="text" class="input-content one" id="m" value="" placeholder="mes"/>
+                      <input type="text" class="input-content two" id="d" value="" placeholder="dia"/>
+                      <input type="text" class="input-content theree" id="a" value="" placeholder="año"/>
+                    </div>
+                </div>
                 <div class="form-group">
                   <input type="password" name="contraseña" placeholder="Ingrese su contraseña" required>
                   <input type="password" name="contraseña" placeholder="Ingrese su contraseña nuevamente" required>
