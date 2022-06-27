@@ -44,18 +44,6 @@
     margin: 20px 5px;
 }
 
-.date .one{
-    width: 200px;
-}
-
-.date .two{
-    width: 100px;
-}
-
-.date .theree{
-    width: 150px;
-}
-
 .date .input-content select{
     background: #1177d1;
     border: none;
