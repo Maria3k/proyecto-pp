@@ -56,7 +56,9 @@ if (isset($_POST["submit"])) {
   <div id="formulario" class="container">
     <div class="row">
       <div id="logo" class="col-4">
-        <img src="assets/img/iconos/logoblanco.png" alt="logo.png">
+        <a href="index.php">
+          <img src="assets/img/iconos/logoblanco.png" alt="logo.png">
+        </a>
       </div>
       <div class="col-8">
         <div id="form" class="row">
