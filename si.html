@@ -14,17 +14,17 @@
     <div id="accordian">
         <ul class="show-dropdown main-navbar">
         <div class="selector-active"><div class="top"></div><div class="bottom"></div></div>
-        <li>
-        <a href="#" onclick="perfil()"><i class="fa fa-tachometer"></i>Inicio</a>
+        <li class="active">
+        <a href="si.html"><i class="fa fa-tachometer"></i>Inicio</a>
         </li>
         <li>
-        <a href="#" onclick="infoPersonal()"><i class="fa fa-address-book"></i>Información Personal</a>
+        <a href="infoPersonal.php"><i class="fa fa-address-book"></i>Información Personal</a>
         </li>
         <li>
         <a href="#" onclick="seguridad()"><i class="fa fa-clone"></i>Seguridad</a>
         </li>
-        <li class="active">
-        <a href="#"><i class="fa fa-calendar"></i>Información General</a>
+        <li>
+        <a href="infoGeneral.php"><i class="fa fa-calendar"></i>Información General</a>
         </li>
         </ul>
        </div>
@@ -58,14 +58,6 @@
         });
         });
 
-        function infoPersonal(){
-          setTimeout("location.href = 'infoPersonal.php';",200);
-        }
-
-        function perfil(){
-          setTimeout("location.href = 'perfil.php';",200);
-        }
-        
         function seguridad(){
           setTimeout("location.href = 'seguridad.php';",200);
         }
