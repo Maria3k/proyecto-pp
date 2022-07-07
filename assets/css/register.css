@@ -8,7 +8,6 @@ li{
 li img{
     transition: 250ms;
 }
-
 .seleccionado{
     border: solid white 4px;
     border-radius: 15px;
