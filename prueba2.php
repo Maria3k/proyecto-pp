@@ -9,237 +9,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="assets/css/register.css">
     <title>Document</title>
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-            overflow: hidden;
-        }
-        body{
-            width: 100vw;
-            height: 100vh;
-            background-image: url(https://img.freepik.com/vector-gratis/fondo-abstracto-blanco_23-2148810113.jpg?w=1060&t=st=1657044544~exp=1657045144~hmac=27c7261f2ac60c64c398832a90e0a8e56683c4636458b39a871c729ec855b942);
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
 
-        #row{
-            width: 850px;
-            height: 685px;
-        }
-        #izq{     
-            background: rgb(40,83,161);
-            background: linear-gradient(180deg, rgba(40,83,161,1) 35%, rgba(87,147,255,1) 100%);
-            border-top-left-radius: 15px;
-            border-bottom-left-radius: 15px;
-            z-index: 1;
-        }
-        #izq #img{
-            position: relative;
-            padding: 30px;
-        }
-        #derecha{
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
-            background: white;
-            position: relative;
-            /*background: linear-gradient(45deg, rgba(53,117,242,1) 18%, rgba(74,128,233,1) 57%, rgba(134,173,247,1) 76%, rgba(255,255,255,1) 100%);*/
-        }
-        #derecha a{
-            transition: 250ms;
-            text-decoration: none;
-            border-bottom: solid .5px;
-        }
-
-        .form-group{
-            margin: 40px;
-        }
-
-        input{
-            border: none;
-            border-bottom: solid .5px gray;
-            background-color: transparent;
-        }
-
-        .form-group p{
-            font-size: 12px;
-        }
-        .terms input{
-            display: inline-block;
-        }
-        .terms p{
-            display: inline-block;
-            padding: 0px 10px;
-        }
-
-        input:focus{
-            border: black;
-        }
-
-        .fijo{
-            right: 0;
-            width: 155px;
-            margin: 35px auto;
-            position: relative;
-            box-shadow: 0 0 20px 9px black;
-            border-radius: 30px;
-        }
-
-        .fijo a{
-            padding: 10px 15px;
-            cursor: pointer;
-            background: transparent;
-            border: 0;
-            outline: none;
-            position: relative;
-        }
-        .form-box{
-            width: 380px;
-            height: 480px;
-            position: relative;
-            margin: 6% auto;
-            background: #fff;
-            padding: 5px;
-        }
-        #button-box{
-            width: 240px;
-            margin: 35px auto;
-            position: relative;
-            border: solid 1px black;
-            border-radius: 30px;
-        }
-        .toggle-btn{
-            padding: 10px;
-            cursor: pointer;
-            background: transparent;
-            border: 0;
-            outline: none;
-            position: relative;
-        }
-        #btn{
-            position: absolute;
-            background: linear-gradient(to right, rgba(40,83,161,1) 35%, rgba(87,147,255,1) 100%);
-            top: 0;
-            left: -1px;
-            width: 110px;
-            height: 100%;
-            border-radius: 30px;
-            transition: .5s;
-        }
-
-        .input-group{
-            position: absolute;
-            width: 280px;
-            transition: .5s;
-        }
-        .input-field{
-            width: 100%;
-            padding: 10px 0;
-            margin: 5px 0;
-            border: 0;
-            border-bottom: solid 1px #999;
-            outline: none;
-            background: transparent;
-        }
-        .submit-btn{
-            width: 85%;
-            padding: 10px 30px;
-            cursor: pointer;
-            display: block;
-            margin: auto;
-            background: linear-gradient(to right, #2853a1 35%, rgba(87,147,255,1) 100%);
-            border: 0;
-            outline: none;
-            border-radius: 30px;
-        }
-        .check-box{
-            margin: 22px 10px 30px 0;
-        }
-        span{
-            position: relative;
-            color: #777;
-            font-size: 12px;
-            bottom: -20px;
-        }
-        #login{
-            padding-left: 10px;
-        }
-        #register{
-            padding-left: 10px;
-            right: -380px;
-        }
-
-        #login-btn{
-            padding-left: 20px;
-        }
-
-        #register-btn{
-            margin-left: 15px;
-        }
-
-        #imgSeleccionada{
-            border-radius: 50%;
-            position: relative;
-            left: 10%;
-            pointer-events: none;
-            transition: .5s;
-            z-index: 3;
-        }
-
-        #lapiz{
-            position: absolute;
-            left: 47%;
-            width: 75px;
-            height: 75px;
-            line-height: 75px;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            z-index: 2;
-        }
-
-        #lapiz:hover{
-            background-color: #343333bf;
-            border: solid 1px black;
-            z-index: 3;
-        }
-
-        ul{
-            margin-top: 1rem;
-            padding-left: 0;
-        }
-        
-        li{
-            display: inline-block;
-        }
-
-        #imagenes{
-            position: fixed;
-            top: 45%;
-            width: 18%;
-            background-color: white;
-            border: solid 2px;
-            border-radius: 15px;
-        }
-
-        .avatar{
-            width: 50px;
-            height: 50px;
-            transition: 250ms;
-        }
-
-        .avatar:hover{
-            border: solid black 2px;
-            border-radius: 15px;
-        }
-    </style>
     <link rel="stylesheet" href="assets/css/fecha.css">
 </head>
 <body class="row align-items-center justify-content-center vh-100">
     <div class="col-sm-6 text-center">
-        <div id="row" class="row">           
+        <div id="row" class="row">
             <div id="izq" class="col-6">
                 <img id="img" class="img-fluid" src="assets/img/iconos/logoblanco.png" alt="imagen.png" width="400px" height="400px">
             </div>
@@ -278,39 +55,31 @@
                                             <a id="lapiz" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
                                                 <i class="fa-solid fa-pencil"></i>
                                             </a>
-                                            
                                         </div>
                                         <div class="collapse" id="imagenes">
                                             <div class="col" id="lista">
-                                                <ul>
-                                                    <li><img id="1" class="avatar" src="assets/img/iconosUsu/logo1.png" alt="logo1.png" onclick="select(1)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
-                                                    </li>
-                                                    <li><img id="2" class="avatar" src="assets/img/iconosUsu/logo2.png" alt="logo2.png" onclick="select(2)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
-                                                    </li>
-                                                    <li><img id="3" class="avatar" src="assets/img/iconosUsu/logo3.png" alt="logo3.png" onclick="select(3)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
-                                                    </li>
-                                                    <li><img id="4" class="avatar" src="assets/img/iconosUsu/logo4.png" alt="logo4.png" onclick="select(4)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
-                                                    </li>
-                                                    <li><img id="5" class="avatar" src="assets/img/iconosUsu/logo5.png" alt="logo5.png" onclick="select(5)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
-                                                    </li>
-                                                    <li><img id="6" class="avatar" src="assets/img/iconosUsu/logo6.png" alt="logo6.png" onclick="select(6)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
-                                                    </li>
-                                                    <li><img id="7" class="avatar" src="assets/img/iconosUsu/logo7.png" alt="logo7.png" onclick="select(7)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
-                                                    </li>
-                                                    <li><img id="8" class="avatar" src="assets/img/iconosUsu/logo8.png" alt="logo8.png" onclick="select(8)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
-                                                    </li>
-                                                </ul>
+                                              <img id="1" class="avatar" src="assets/img/iconosUsu/logo1.png" alt="logo1.png" onclick="select(1)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
+                                              <img id="2" class="avatar" src="assets/img/iconosUsu/logo2.png" alt="logo2.png" onclick="select(2)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
+                                              <img id="3" class="avatar" src="assets/img/iconosUsu/logo3.png" alt="logo3.png" onclick="select(3)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
+                                              <img id="4" class="avatar" src="assets/img/iconosUsu/logo4.png" alt="logo4.png" onclick="select(4)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
+                                              <img id="5" class="avatar" src="assets/img/iconosUsu/logo5.png" alt="logo5.png" onclick="select(5)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
+                                              <img id="6" class="avatar" src="assets/img/iconosUsu/logo6.png" alt="logo6.png" onclick="select(6)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
+                                              <img id="7" class="avatar" src="assets/img/iconosUsu/logo7.png" alt="logo7.png" onclick="select(7)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
+                                              <img id="8" class="avatar" src="assets/img/iconosUsu/logo8.png" alt="logo8.png" onclick="select(8)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                      <input class="input-field" type="text" name="nombre" placeholder="Ingrese su nombre" required>
+                                      <input class="input-field" type="text" name="nickname" placeholder="Ingrese su nombre de usuario" required>
+                                      <input class="input-field" type="email" name="email" placeholder="Ingrese su correo electronico" required>
+                                      <input class="input-field" type="email" name="cemail" placeholder="Confirme su correo electronico" required>
+                                      <input class="input-field" type="password" name="contraseña" placeholder="Ingrese su contraseña" required>
+                                      <input class="input-field" type="password" name="contraseña" placeholder="Confirme su contraseña" required>
+
+                                    </div>
                                 </div>
-                                <input class="input-field" type="text" name="nombre" placeholder="Ingrese su nombre" required>
-                                <input class="input-field" type="text" name="nickname" placeholder="Ingrese su nombre de usuario" required> 
-                                <input class="input-field" type="email" name="email" placeholder="Ingrese su correo electronico" required>
-                                <input class="input-field" type="email" name="cemail" placeholder="Confirme su correo electronico" required>
-                                <input class="input-field" type="password" name="contraseña" placeholder="Ingrese su contraseña" required>
-                                <input class="input-field" type="password" name="contraseña" placeholder="Confirme su contraseña" required>
-                            
+
                                 <div class="description">
                                     <div class="date">
                                         <div class="input-content one">
@@ -332,7 +101,7 @@
                                               foreach ($meses as $i=>$mes) {
                                                 echo "<option value=$i>$mes</option>";
                                               }
-                  
+
                                               ?>
                                             </select>
                                         </div>
@@ -354,7 +123,7 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
 </body>
 <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
 <script>

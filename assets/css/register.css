@@ -1,3 +1,207 @@
+*{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://img.freepik.com/vector-gratis/fondo-abstracto-blanco_23-2148810113.jpg?w=1060&t=st=1657044544~exp=1657045144~hmac=27c7261f2ac60c64c398832a90e0a8e56683c4636458b39a871c729ec855b942);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#row{
+    width: 850px;
+    height: 685px;
+}
+#izq{
+    background: rgb(40,83,161);
+    background: linear-gradient(180deg, rgba(40,83,161,1) 35%, rgba(87,147,255,1) 100%);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    z-index: 1;
+}
+#izq #img{
+    position: relative;
+    padding: 30px;
+}
+#derecha{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: white;
+    position: relative;
+    /*background: linear-gradient(45deg, rgba(53,117,242,1) 18%, rgba(74,128,233,1) 57%, rgba(134,173,247,1) 76%, rgba(255,255,255,1) 100%);*/
+}
+#derecha a{
+    transition: 250ms;
+    text-decoration: none;
+    border-bottom: solid .5px;
+}
+.form-group{
+    margin: 40px;
+}
+input{
+    border: none;
+    border-bottom: solid .5px gray;
+    background-color: transparent;
+}
+.form-group p{
+    font-size: 12px;
+}
+.terms input{
+    display: inline-block;
+}
+.terms p{
+    display: inline-block;
+    padding: 0px 10px;
+}
+input:focus{
+    border: black;
+}
+.fijo{
+    right: 0;
+    width: 155px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px black;
+    border-radius: 30px;
+}
+.fijo a{
+    padding: 10px 15px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+.form-box{
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    background: #fff;
+    padding: 5px;
+}
+#button-box{
+    width: 240px;
+    margin: 35px auto;
+    position: relative;
+    border: solid 1px black;
+    border-radius: 30px;
+}
+.toggle-btn{
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn{
+    position: absolute;
+    background: linear-gradient(to right, rgba(40,83,161,1) 35%, rgba(87,147,255,1) 100%);
+    top: 0;
+    left: -1px;
+    width: 110px;
+    height: 100%;
+    border-radius: 30px;
+    transition: .5s;
+}
+.input-group{
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border: 0;
+    border-bottom: solid 1px #999;
+    outline: none;
+    background: transparent;
+}
+.submit-btn{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #2853a1 35%, rgba(87,147,255,1) 100%);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.check-box{
+    margin: 22px 10px 30px 0;
+}
+span{
+    position: relative;
+    color: #777;
+    font-size: 12px;
+    bottom: -20px;
+}
+#login{
+    padding-left: 10px;
+}
+#register{
+    padding-left: 10px;
+    right: -380px;
+}
+#login-btn{
+    padding-left: 20px;
+}
+#register-btn{
+    margin-left: 15px;
+}
+#imgSeleccionada{
+    border-radius: 50%;
+    position: relative;
+    left: 10%;
+    pointer-events: none;
+    transition: .5s;
+    z-index: 3;
+}
+#lapiz{
+    position: absolute;
+    left: 47%;
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    z-index: 2;
+}
+#lapiz:hover{
+    background-color: #343333bf;
+    border: solid 1px black;
+    z-index: 3;
+}
+ul{
+    margin-top: 1rem;
+    padding-left: 0;
+}
+li{
+    display: inline-block;
+}
+#imagenes{
+    position: absolute;
+    top: 15%;
+    width: 90%;
+    background-color: white;
+    border: solid 2px;
+    border-radius: 15px;
+}
+.avatar{
+    width: 50px;
+    height: 50px;
+    transition: 250ms;
+}
+.avatar:hover{
+    border: solid black 2px;
+    border-radius: 15px;
+}
 .error{
   font-size: 13px;
   margin-left: 15px;
