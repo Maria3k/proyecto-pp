@@ -39,7 +39,7 @@ nav{
 
 .botonlogin img{
     height: 70px;
-    width: 75px;   
+    width: 75px;
 }
 
 .div1{
@@ -62,49 +62,49 @@ nav{
 }
 
 .Contenedor{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
 }
 
 .Contenedor .card{
-	border-radius: 8px;
+    border-radius: 8px;
     border: none;
-	overflow: hidden;
-	margin: 20px;
-	text-align: center;
-	transition: all 0.25s;
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
 }
 
 .Contenedor .card:hover{
-	transform: translateY(-15px);
-	box-shadow: 0 12px 16px rgba(0, 0, 0, 0.5);
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.5);
 }
 
 .Contenedor .card img{
 
-	width: 230px;
-	height: 230px;
+    width: 230px;
+    height: 230px;
 }
 
 .Contenedor .card h4{
 
-	font-weight: 600;
+    font-weight: 600;
 }
 
 .Contenedor .card p{
 
-	padding: 0 1rem;
-	font-size: 16px;
-	font-weight: 300;
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
 }
 
 .Contenedor .card a{
 
-	font-weight: 500;
-	text-decoration: none;
-	color: #3498db;
+    font-weight: 500;
+    text-decoration: none;
+    color: #3498db;
 
 }
 
@@ -186,7 +186,7 @@ video{
     width: 20px;
     height: 20px;
     color: #2853a1;
-    
+
 
 }
 
@@ -229,6 +229,7 @@ video{
 .action .menu ul li:hover img{
     opacity: 1;
 }
+
 .action .menu ul li a{
     display: inline-block;
     text-decoration: none;
@@ -241,143 +242,59 @@ video{
     color: black;
 }
 
-/*===============Linea de Tiempo===============*/
-h1{
-    color: black;
-    font-weight: 700;
-    margin-top: 125px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    line-height: 23px;
-}
+/*==================Campana de notificacion======================*/
 
-h1 span{
-    color: #2853a1;
-}
-
-.process-wrapper{
-    margin: auto;
-    max-width: 1080px;
-}
-
-#progress-bar-container{
+.icon-wrapper{
+    width: 43px;
+    height: 43px;
     position: relative;
-    width: 90%;
-    margin: auto;
-    height: 100px;
-    margin-top: 59px;
+    display: inline-block;
+    float: right;
+    top: 10px;
 }
 
-#progress-bar-container ul{
-    padding: 0;
-    margin: 0;
-    padding-top: 15px;
-    z-index: 9999;
-    position: absolute;
-    width: 100%;
-    margin-top: -40px;
-}
-
-#progress-bar-container li::before{
-    content: "";
-    display: block;
-    margin: auto;
-    width: 30px;
-    height: 30px;
+.icon-wrapper::after{
+    content: '4';
+    width: 20px;
+    height: 20px;
+    background-color: #d32b2b;
+    color: white;
+    display: grid;
+    place-content: center;
     border-radius: 50%;
-    border: solid 2px #aaa;
-    transition: all ease 0.3s;
-}
-
-#progress-bar-container li.active::before,
-#progress-bar-container li:hover::before{
-    background: #2853a1;
-}
-
-#progress-bar-container li{
-    list-style: none;
-    float: left;
-    width: 20%;
-    text-align: center;
-    color: #aaa;
-    text-transform: uppercase;
-    font-size: 11px;
-    cursor: pointer;
-    font-weight: 700;
-    transition: all ease 0.2s;
-    vertical-align: bottom;
-    height: 59px;
-    position: relative;
-}
-
-#progress-bar-container li .step-inner{
     position: absolute;
-    width: 100%;
-    bottom: 0;
-    font-size: 14px;
+    top: 5px;
+    right: 0;
+    opacity: 0;
+    transform: rotateY(3px);
 }
 
-#progress-bar-container li.active,
-#progress-bar-container li:hover{
-    color: #2853a1;
+.icon-wrapper:hover::after{
+    opacity: 1;
+    transform: rotateY(0);
+    transition: opacity .25s;
+    transform: .25s;
 }
 
-#progress-bar-container li::after{
-    content: "";
-    display: block;
-    width: 5px;
-    height: 5px;
-    background: #777;
-    margin: auto;
-    border: solid 7px #2853a1;
-    border-radius: 50%;
-    margin-top: 40px;
-    box-shadow: 0 2px 13px -1px rgba(0, 0, 0, 0.3);
-    transition: all ease 0.2s;
+.bell-icon{
+    max-width: 100%;
 }
 
-#progress-bar-container li:hover::after{
-    background: #777;
+.icon-wrapper:hover .bell-icon{
+    animation: shake 1s forwards;
 }
 
-#progress-bar-container li.active::after{
-    background: #777;
-}
-
-#progress-bar-container #line{
-    width: 80%;
-    margin: auto;
-    background: #eee;
-    height: 5px;
-    position: absolute;
-    left: 10%;
-    top: 50px;
-    z-index: 1;
-    border-radius: 50px;
-    transition: all ease 0.9s;
-}
-
-#progress-bar-container #line-process{
-    content: "";
-    width: 3%;
-    height: 100%;
-    background: #2853a1;
-    background: linear-gradient(to right, #2853a1 0%, #2853a1 100%);
-    position: absolute;
-    z-index: 2;
-    border-radius: 50px;
-    transition: all ease 0.9s;
-}
-
-#progress-content-section{
-    width: 90%;
-    margin: auto;
-    background: #f3f3f3;
-    border-radius: 4px;
-}
-
-#progress-content-section .section-content{
-    padding: 30px 40px;
-    text-align: center;
+@keyframes shake{
+    10%{
+        transform: rotate(15deg);
+    }
+    20%{
+        transform: rotate(-15deg);
+    }
+    30%{
+        transform: rotate(15deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
 }
