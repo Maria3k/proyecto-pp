@@ -70,12 +70,19 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                      <input class="input-field" type="text" name="nombre" placeholder="Ingrese su nombre" required>
-                                      <input class="input-field" type="text" name="nickname" placeholder="Ingrese su nombre de usuario" required>
-                                      <input class="input-field" type="email" name="email" placeholder="Ingrese su correo electronico" required>
-                                      <input class="input-field" type="email" name="cemail" placeholder="Confirme su correo electronico" required>
-                                      <input class="input-field" type="password" name="contraseña" placeholder="Ingrese su contraseña" required>
-                                      <input class="input-field" type="password" name="contraseña" placeholder="Confirme su contraseña" required>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <input class="input-field" id="nom" type="text" name="nombre" placeholder="Ingrese su nombre" required> 
+                                            </div>
+                                            <div class="col-6">
+                                                <input class="input-field" id="ape" type="text" name="apellido" placeholder="Ingrese su apellido" required>
+                                            </div>
+                                        </div>
+                                        <input class="input-field" type="text" name="nickname" placeholder="Ingrese su nombre de usuario" required>
+                                        <input class="input-field" type="email" name="email" placeholder="Ingrese su correo electronico" required>
+                                        <input class="input-field" type="email" name="cemail" placeholder="Confirme su correo electronico" required>
+                                        <input class="input-field" type="password" name="contraseña" placeholder="Ingrese su contraseña" required>
+                                        <input class="input-field" type="password" name="contraseña" placeholder="Confirme su contraseña" required>
 
                                     </div>
                                 </div>
