@@ -9,6 +9,16 @@ if ($_SESSION) {
   $query = "SELECT * FROM avatar WHERE id_avatar = $nAvatar";
   $send = $con->query($query);
   $col = $send->fetch_assoc();
+
+  if($_POST){
+    $pwd = md5($_POST["contraseña"]);
+    $id = $_SESSION["id_usuario"];
+
+    $sql = "UPDATE usuario SET contraseña = '$pwd' WHERE id_usuario = $id";
+
+    $query = $con->query($sql);
+  }
+
 }
 
 ?>
@@ -52,13 +62,11 @@ if ($_SESSION) {
         <img src=<?= $col["rutaArchivo"]; ?> width="100px" height="100px" alt=<?= $col["nombreArchivo"]; ?>>
         <h2>¡Bienvenido <?= $_SESSION["nickname"] ?>!</h2>
         <br>
-        <div id="boton1">
-          <a href="">Consultas</a>
-        </div>
-        <br><br>
-        <div id="boton2">
-          <a href="">Enviar Comentarios</a>
-        </div>
+        <h2>Cambiar contraseña</h2>
+        <form action="seguridad.php" method="post">
+          <input type="password" name="contraseña" placeholder="Ingrese su nueva contraseña"> <br>
+          <input type="submit">
+        </form>
       </div>
     </div>
   </div>
