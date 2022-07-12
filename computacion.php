@@ -3,12 +3,45 @@ include("conexion.php");
 session_start();
 
 $menu = '';
-
 if ($_SESSION) {
-  $menu = '<a class="btn-nav" href="Perfil.php">Perfil</a>';
+
+  $nAvatar = $_SESSION["nAvatar"];
+
+  $send = $con->query("SELECT * FROM avatar WHERE id_avatar = $nAvatar");
+  $col = $send->fetch_assoc();
+  $ad = '';
+
+  if($_SESSION["rol"] == 2){
+    $ad = '<a href="backend.php"><li><i class="fa-solid fa-gear"></i>Editar</li></a>';
+  }
+
+
+  $menu = '
+  <div class="action" >
+    <div class="profile" onclick="menuToggle()">
+      <img src="'.$col["rutaArchivo"].'" width="30px" height="30px" alt="'.$col["nombreArchivo"].'">
+    </div>
+    <div class="menu">
+      <ul>
+        <a href="perfil.php"><li id="primero"><i class="fa-solid fa-user"></i>Perfil</li></a>
+        '.$ad.'
+        <a href="logout.php"><li><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar Sesion</li></a>
+      </ul>
+    </div>
+  </div>
+        ';
+
+  if ($_POST) {
+   $query = $con->query("INSERT INTO `pregunta`(`usuario`, `contenido`, `fechaPreguntada`, `respondida`, `especialidad`) VALUES (".$_SESSION["id_usuario"].",'".$_POST["pregunta"]."','".date('Y-m-d')."',0,1)") or die("Error en el insert --->".$query.mysqli_error($con));
+  }
 } else {
   $menu = '<a class="btn-nav" href="register.php">Register</a><a class="btn-nav" href="login.php">Iniciar Sesion</a>';
+
+  if ($_POST) {
+    header("Location:login.php");
+  }
 }
+
 
 ?>
 
@@ -25,6 +58,14 @@ if ($_SESSION) {
   <link rel="stylesheet" href="assets/css/icons.css">
   <link rel="stylesheet" href="assets/css/mi-carousel.css">
   <link rel="stylesheet" href="assets/css/especialidades.css">
+  <style media="screen">
+    #pregunta{
+      margin: 10px;
+    }
+    .row{
+      width: 800px;
+    }
+  </style>
   <title>Especialidad Computación</title>
 </head>
 
@@ -35,26 +76,24 @@ if ($_SESSION) {
   </nav>
   <div class="container">
     <div class="row">
-      <div class="col"></div>
       <div class="col">
         <div class="faq">
           <h1>PREGUNTAS FRECUENTES</h1>
         </div>
       </div>
-      <div class="col"></div>
     </div>
     <div class="row">
       <div class="col"></div>
-      <div class="col">
         <div class="pregunta">
           <h1>DEJE SUS PREGUNTAS</h1>
-          <form action="">
-            <textarea name="" id="" cols="80" rows="10" placeholder="Ingrese su pregunta"></textarea>
-            <input type="submit" value="enviar">
+          <form action="computacion.php" method="post">
+            <div class="mb-3">
+              <textarea id="pregunta" name="pregunta" class="form-control" rows="3" placeholder="Ingrese su prengunta" required></textarea>
+            </div>
+            <input class="btn btn-success" type="submit" value="enviar">
           </form>
         </div>
       </div>
-      <div class="col"></div>
     </div>
     <div class="card">
       <div class="car-body">
@@ -126,7 +165,7 @@ if ($_SESSION) {
               <i class="fab fa-youtube"></i>
               <!--ICONO DE YOUTUBE -->
             </a>
-            <a href="https://www.instagram.com/la_gloriosa_32_escuela_tecnica/?hl=es-la" rel="noopener noreferrer" class="instagram" target="_blank" title="Instagram">
+            <a href="https://www.instagram.com/la.gloriosa.32/?hl=es-la" rel="noopener noreferrer" class="instagram" target="_blank" title="Instagram">
               <!--LINK DE INSTAGRAM -->
               <i class="fab fa-instagram"></i>
               <!--ICONO DE INSTAGRAM -->
@@ -138,6 +177,11 @@ if ($_SESSION) {
   </footer>
   <script src="assets/js/bootstrap.js"></script>
   <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
+  <script>
+    function menuToggle() {
+      const toggleMenu = document.querySelector('.menu');
+      toggleMenu.classList.toggle('active')
+    }
+  </script>
 </body>
-
 </html>

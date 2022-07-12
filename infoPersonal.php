@@ -137,7 +137,7 @@ if (isset($_GET['name'])){
                             <!--ICONO DE YOUTUBE -->
                         </a>
 
-                        <a href="https://www.instagram.com/la_gloriosa_32_escuela_tecnica/?hl=es-la" rel="noopener noreferrer" class="instagram" target="_blank" title="Instagram">
+                        <a href="https://www.instagram.com/la.gloriosa.32/?hl=es-la" rel="noopener noreferrer" class="instagram" target="_blank" title="Instagram">
                             <!--LINK DE INSTAGRAM -->
                             <i class="fab fa-instagram"></i>
                             <!--ICONO DE INSTAGRAM -->
