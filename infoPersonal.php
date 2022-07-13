@@ -2,6 +2,11 @@
 include("conexion.php");
 session_start();
 
+if ($_SESSION) {
+}else{
+  header("Location:login.php");
+}
+
 $nAvatar = $_SESSION["nAvatar"];
 
 $query = "SELECT * FROM avatar WHERE id_avatar = $nAvatar";

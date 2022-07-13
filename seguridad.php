@@ -19,6 +19,8 @@ if ($_SESSION) {
     $query = $con->query($sql);
   }
 
+}else{
+  header("Location:login.php");
 }
 
 ?>
