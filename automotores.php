@@ -34,52 +34,32 @@ if ($_SESSION) {
     <a href="index.php" title="Pagina Principal"><img class="img1" src="assets/img/escuela/loguito.png" alt="minilogo.png"></a>
     <?= $menu ?>
   </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col"></div>
-      <div class="col">
-        <div class="faq">
-          <h1>PREGUNTAS FRECUENTES</h1>
-        </div>
-      </div>
-      <div class="col"></div>
+  <div class="question">
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Realize su pregunta
+    </button>
+    <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      <form action="">
+        <input type="text" placeholder="Asunto"> <br><br>
+        <textarea cols="40" rows="10" placeholder="Haga su pregunta"></textarea>
+        <input type="submit" class="btn btn-primary">
+      </form>
     </div>
-    <div class="row">
-      <div class="col"></div>
-      <div class="col">
-        <div class="pregunta">
-          <h1>DEJE SUS PREGUNTAS</h1>
-          <form action="">
-            <textarea name="" id="" cols="80" rows="10" placeholder="Ingrese su pregunta"></textarea>
-            <input type="submit" value="enviar">
-          </form>
-        </div>
+  </div>
+  <div class="question2">
+    
+    <img src="assets/img/iconosUsu/logo1.png" width="50px" height="50px"> Nombre usuario || Fecha de la pregunta
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde ratione... </p>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">+</button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="col"></div>
-    </div>
-    <div class="card">
-      <div class="car-body">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="..." class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="..." class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="..." class="d-block w-100" alt="...">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
+      <div class="offcanvas-body">
+        <h6>Pregunta:</h6> 
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque provident, culpa ducimus magni, libero repellat suscipit quo dolores eveniet doloribus mollitia ea quae labore neque ab laboriosam soluta, corporis sit. <br>
+        <textarea cols="40" rows="5" placeholder="Dejar un comentario"> </textarea>
       </div>
     </div>
   </div>

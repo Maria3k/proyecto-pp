@@ -16,6 +16,11 @@
     margin-bottom: 35px;
 }
 
+.question2{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
 footer{
     background-color: aliceblue;
     bottom: 0;
