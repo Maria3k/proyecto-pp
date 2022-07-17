@@ -109,6 +109,7 @@ input:focus{
 }
 .input-field{
     width: 69%;
+    margin-right: -7px !important;
     padding: 10px 0;
     margin: 5px 0;
     border: 0;
@@ -126,6 +127,9 @@ input:focus{
     border: 0;
     outline: none;
     border-radius: 30px;
+    position: relative;
+    bottom: 35px;
+    right: 17px;
 }
 .check-box{
     margin: 22px 10px 30px 0;
@@ -142,6 +146,7 @@ span{
 }
 #register{
     top: 0;
+    bottom: 10px;
     padding-left: 10px;
     right: -380px;
 }
@@ -165,7 +170,7 @@ span{
 }
 #lapiz{
     position: absolute;
-    left: 47%;
+    left: 13%;
     width: 75px;
     height: 75px;
     line-height: 75px;
@@ -218,4 +223,23 @@ li{
     font-size: 80%;
     font-weight: 400;
     color: gray;
+    position: relative;
+}
+.input-group > .form-control, .input-group > .form-select {
+    position: relative;
+    right: 10px;
+    border-bottom: solid 1px #999 !important;
+    padding: 10px;
+}
+.form-control {
+  border:none !important;
+}
+.col {
+    position: relative;
+    left: 16px;
+}
+.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    margin-left: 14px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }

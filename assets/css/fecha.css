@@ -35,11 +35,12 @@
 .date{
     display: flex;
     position: relative;
-    right: 30px;
+    right: 15px;
+    bottom: 26px;
 }
 
 .date .input-content{
-    margin: 20px 5px;
+    margin: 15px 5px;
 }
 
 .date .input-content select{
