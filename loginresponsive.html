@@ -1,134 +1,159 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/register.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
     <style>
-        *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
         body {
-        background: #fbf3ff;
+            background: #fbf3ff;
         }
+
         .container {
-        position: absolute;
-        max-width: 800px;
-        margin: auto;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+            position: absolute;
+            max-width: 800px;
+            margin: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
+
         .myRightCtn {
-        position: relative;
-        background-image: linear-gradient(180deg, rgba(40,83,161,1) 35%, rgba(87,147,255,1) 100%);
-        border-radius: 25px;
-        height: 100%;
-        padding: 25px;
-        color: rgb(192, 192, 192);
-        font-size: 12px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+            position: relative;
+            background-image: linear-gradient(180deg, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
+            border-radius: 25px;
+            height: 100%;
+            padding: 25px;
+            color: rgb(192, 192, 192);
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
         .myLeftCtn {
-        position: relative;
-        background: #fff;
-        border-radius: 25px;
-        height: 100%;
-        padding: 25px;
-        padding-left: 50px;
+            position: relative;
+            background: #fff;
+            border-radius: 25px;
+            height: 100%;
+            padding: 25px;
+            padding-left: 50px;
         }
+
         .myLeftCtn header {
-        color: rgb(40,83,161);
-        font-size: 24px;
-        font-weight: 700;
-        margin-bottom: 20px;
+            color: rgb(40, 83, 161);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
         }
-        .row{
-        height: 100%;
+
+        .row {
+            height: 100%;
         }
+
         .myCard {
-        position: relative;
-        background: #fff;
-        border-radius: 25px;
-        -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
-        -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
-        box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+            position: relative;
+            background: #fff;
+            border-radius: 25px;
+            -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+            -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
         }
+
         .myRightCtn header {
-        color: #fff;
-        font-size: 44px;
+            color: #fff;
+            font-size: 44px;
         }
+
         .box {
-        position: relative;
-        margin: 20px;
-        margin-bottom: 100px;
+            position: relative;
+            margin: 20px;
+            margin-bottom: 100px;
         }
+
         .myLeftCtn .myInput {
-        width: 230px;
-        border-radius: 25px;
-        padding: 10px;
-        padding-left: 50px;
-        border: none;
-        -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
-        -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
-        box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+            width: 230px;
+            border-radius: 25px;
+            padding: 10px;
+            padding-left: 50px;
+            border: none;
+            -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+            -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
         }
+
         .myLeftCtn .myInput:focus {
-        outline: none;
+            outline: none;
         }
+
         .myForm {
-        position: relative;
-        margin-top: 50px;
+            position: relative;
+            margin-top: 50px;
         }
+
         .myLeftCtn .butt {
-        background: linear-gradient(90deg, rgba(40,83,161,1) 35%, rgba(87,147,255,1) 100%);
-        color: #fff;
-        width: 230px;
-        border: none;
-        border-radius: 25px;
-        padding: 10px;
-        -webkit-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
-        -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
-        box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+            background: linear-gradient(90deg, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
+            color: #fff;
+            width: 230px;
+            border: none;
+            border-radius: 25px;
+            padding: 10px;
+            -webkit-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+            -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
         }
+
         .myLeftCtn .butt:hover {
-        background: linear-gradient(180deg, rgba(40,83,161,1) 35%, rgba(87,147,255,1) 100%);
+            background: linear-gradient(180deg, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
         }
+
         .myLeftCtn .butt:focus {
-        outline: none;
+            outline: none;
         }
+
         .myLeftCtn .fas {
-        color: rgb(40,83,161);
+            color: rgb(40, 83, 161);
         }
+
         .butt_out {
-        background: transparent;
-        color: #fff;
-        width: 120px;
-        border: 2px solid#fff;
-        border-radius: 25px;
-        padding: 10px;
-        -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
-        -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
-        box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+            background: transparent;
+            color: #fff;
+            width: 120px;
+            border: 2px solid#fff;
+            border-radius: 25px;
+            padding: 10px;
+            -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+            -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
         }
+
         .butt_out:hover {
-        border: 2px solid#eecbff;
+            border: 2px solid#eecbff;
         }
+
         .butt_out:focus {
-        outline: none;
+            outline: none;
         }
+
         .toggle-btn:focus {
-        outline: none;
+            outline: none;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="myCard">
@@ -137,87 +162,171 @@
                     <div class="myLeftCtn">
                         <form class="myForm text-center">
 
-                          <div class="form-group">
-                              <div class="form-box">
-                                <div class="button-box">
-                                  <div id="btn" class="btn"></div>
-                                  <button id="login-btn" type="button" class="toggle-btn" onclick="login()">Iniciar sesion</button>
-                                  <button id="register-btn" type="button" class="toggle-btn" onclick="register()">Registrar</button>
+                            <div class="form-group">
+                                <div class="form-box">
+                                    <div class="button-box">
+                                        <div id="btn" class="btn"></div>
+                                        <button id="login-btn" type="button" class="toggle-btn"
+                                            onclick="login()">Iniciar sesion</button>
+                                        <button id="register-btn" type="button" class="toggle-btn"
+                                            onclick="register()">Registrar</button>
+                                    </div>
                                 </div>
-                              </div>
 
-                          </div>
-                          <form id="login" class="input-group">
-                              <i class="fas fa-envelope icono"></i>
-                              <input class="input-field" type="email" name="correo" placeholder="Correo" required>
-                              <i class="fas fa-lock icono"></i>
-                              <input class="input-field" type="password" name="contraseña" placeholder="Contraseña" required>
-                              <div class="form-group">
-                                  <label>
-                                      <input id="check_1" name="check_1"  type="checkbox" required><small> Recordar usuario</small></input>
-                                  </label>
-                              </div>
-                              <input type="submit" class="butt" value="Iniciar sesion">
-                          </form>
+                            </div>
+                            <i class="fas fa-envelope icono"></i>
+                            <input class="input-field" type="email" name="correo" placeholder="Correo" required>
+                            <i class="fas fa-lock icono"></i>
+                            <input class="input-field" type="password" name="contraseña" placeholder="Contraseña"
+                                required>
+                            <div class="form-group">
+                                <label>
+                                    <input id="check_1" name="check_1" type="checkbox" required><small> Recordar
+                                        usuario</small></input>
+                                </label>
+                            </div>
+                            <input type="submit" class="butt" value="Iniciar sesion">
+                        </form>
+                        <form id="register" class="input-group">
+                            <div class="container">
+                                <div class="row">
+                                    <div id="colImg" class="col">
+                                        <img id="imgSeleccionada" class="img-fluid"
+                                            src="assets/img/iconosUsu/logo1.png" width="75px" height="75px"
+                                            alt="imagen.png">
+                                        <a id="lapiz" data-bs-toggle="collapse" href="#imagenes" role="button"
+                                            aria-expanded="false" aria-controls="imagenes">
+                                            <i class="fa-solid fa-pencil"></i>
+                                        </a>
+                                    </div>
+                                    <div class="collapse" id="imagenes">
+                                        <div class="col" id="lista">
+                                            <img id="1" class="avatar" src="assets/img/iconosUsu/logo1.png"
+                                                alt="logo1.png" onclick="select(1)" data-bs-toggle="collapse"
+                                                href="#imagenes" role="button" aria-expanded="false"
+                                                aria-controls="imagenes">
+                                            <img id="2" class="avatar" src="assets/img/iconosUsu/logo2.png"
+                                                alt="logo2.png" onclick="select(2)" data-bs-toggle="collapse"
+                                                href="#imagenes" role="button" aria-expanded="false"
+                                                aria-controls="imagenes">
+                                            <img id="3" class="avatar" src="assets/img/iconosUsu/logo3.png"
+                                                alt="logo3.png" onclick="select(3)" data-bs-toggle="collapse"
+                                                href="#imagenes" role="button" aria-expanded="false"
+                                                aria-controls="imagenes">
+                                            <img id="4" class="avatar" src="assets/img/iconosUsu/logo4.png"
+                                                alt="logo4.png" onclick="select(4)" data-bs-toggle="collapse"
+                                                href="#imagenes" role="button" aria-expanded="false"
+                                                aria-controls="imagenes">
+                                            <img id="5" class="avatar" src="assets/img/iconosUsu/logo5.png"
+                                                alt="logo5.png" onclick="select(5)" data-bs-toggle="collapse"
+                                                href="#imagenes" role="button" aria-expanded="false"
+                                                aria-controls="imagenes">
+                                            <img id="6" class="avatar" src="assets/img/iconosUsu/logo6.png"
+                                                alt="logo6.png" onclick="select(6)" data-bs-toggle="collapse"
+                                                href="#imagenes" role="button" aria-expanded="false"
+                                                aria-controls="imagenes">
+                                            <img id="7" class="avatar" src="assets/img/iconosUsu/logo7.png"
+                                                alt="logo7.png" onclick="select(7)" data-bs-toggle="collapse"
+                                                href="#imagenes" role="button" aria-expanded="false"
+                                                aria-controls="imagenes">
+                                            <img id="8" class="avatar" src="assets/img/iconosUsu/logo8.png"
+                                                alt="logo8.png" onclick="select(8)" data-bs-toggle="collapse"
+                                                href="#imagenes" role="button" aria-expanded="false"
+                                                aria-controls="imagenes">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <input class="input-field" id="nom" type="text" name="nombre"
+                                                placeholder="Ingrese su nombre" required>
+                                        </div>
+                                        <div class="col-6">
+                                            <input class="input-field" id="ape" type="text" name="apellido"
+                                                placeholder="Ingrese su apellido" required>
+                                        </div>
+                                    </div>
+                                    <input class="input-field" type="text" name="nickname"
+                                        placeholder="Ingrese su nombre de usuario" required>
+                                    <input class="input-field" type="email" name="email"
+                                        placeholder="Ingrese su correo electronico" required>
+                                    <input class="input-field" type="email" name="cemail"
+                                        placeholder="Confirme su correo electronico" required>
+                                    <input class="input-field" type="password" name="contraseña"
+                                        placeholder="Ingrese su contraseña" required>
+                                    <input class="input-field" type="password" name="contraseña"
+                                        placeholder="Confirme su contraseña" required>
+
+                                </div>
+                            </div>
+
+                            <div class="description">
+                                <div class="date">
+                                    <div class="input-content one">
+                                        <select class="form-select" name="d" id="">
+                                            <option value="0" selected disabled>Dia</option>
+                                            <?php
+                                                                    for ($i=1; $i < 32 ; $i++) {
+                                                                    echo "<option value=$i>$i</option>";
+                                                                    }
+                                                                ?>
+                                        </select>
+                                        </select>
+                                    </div>
+                                    <div class="input-content two">
+                                        <select class="form-select" name="m" id="">
+                                            <option value="0" selected disabled>Mes</option>
+                                            <?php
+                                                                $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                                                                foreach ($meses as $i=>$mes) {
+                                                                echo "<option value=$i>$mes</option>";
+                                                                }
+                
+                                                                ?>
+                                        </select>
+                                    </div>
+                                    <div class="input-content theree">
+                                        <select class="form-select" name="a" id="">
+                                            <option value="0" selected disabled>Año</option>
+                                            <?php
+                                                                for ($i=1930; $i < date("Y") ; $i++) {
+                                                                    echo "<option value=$i>$i</option>";
+                                                                }
+                                                                ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <input class="submit-btn" type="submit" value="Registrarse">
+                        </form>
                     </div>
 
-                    <div class="row">
-                        <div class="col">
-                            <form id="register" class="input-group">
-                                <div class="container">
-                                    <div class="row">
-                                        <div id="colImg" class="col">
-                                            <img id="imgSeleccionada" class="img-fluid" src="assets/img/iconosUsu/logo1.png" width="75px" height="75px" alt="imagen.png">
-                                            <a id="lapiz" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
-                                                <i class="fa-solid fa-pencil"></i>
-                                            </a>
-                                        </div>
-                                        <div class="collapse" id="imagenes">
-                                            <div class="col" id="lista">
-                                              <img id="1" class="avatar" src="assets/img/iconosUsu/logo1.png" alt="logo1.png" onclick="select(1)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
-                                              <img id="2" class="avatar" src="assets/img/iconosUsu/logo2.png" alt="logo2.png" onclick="select(2)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
-                                              <img id="3" class="avatar" src="assets/img/iconosUsu/logo3.png" alt="logo3.png" onclick="select(3)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
-                                              <img id="4" class="avatar" src="assets/img/iconosUsu/logo4.png" alt="logo4.png" onclick="select(4)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
-                                              <img id="5" class="avatar" src="assets/img/iconosUsu/logo5.png" alt="logo5.png" onclick="select(5)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
-                                              <img id="6" class="avatar" src="assets/img/iconosUsu/logo6.png" alt="logo6.png" onclick="select(6)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
-                                              <img id="7" class="avatar" src="assets/img/iconosUsu/logo7.png" alt="logo7.png" onclick="select(7)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
-                                              <img id="8" class="avatar" src="assets/img/iconosUsu/logo8.png" alt="logo8.png" onclick="select(8)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <input class="input-field" id="nom" type="text" name="nombre" placeholder="Nombre" required>
-                                            </div>
-                                            <div class="col-6">
-                                                <input class="input-field" id="ape" type="text" name="apellido" placeholder="Apellido" required>
-                                            </div>
-                                        </div>
-                                        <input class="input-field" type="text" name="nickname" placeholder="Nombre de usuario" required>
-                                        <input class="input-field" type="email" name="email" placeholder="Correo" required>
-                                        <input class="input-field" type="password" name="contraseña" placeholder="Contraseña" required>
-                                        <input class="input-field" type="password" name="contraseña" placeholder="Confirme su contraseña" required>
 
-                                    </div>
-                                </div>
+
 
 
                 </div>
-                <div class="col-md-6">
-                    <div class="myRightCtn">
-                            <div class="box">
-                                <img id="img" class="img-fluid" src="assets/img/iconos/logoblanco.png" alt="imagen.png" width="400px" height="400px">
-                            </div>
+            </div>
+            <div class="col-md-6">
+                <div class="myRightCtn">
+                    <div class="box">
+                        <img id="img" class="img-fluid" src="assets/img/iconos/logoblanco.png" alt="imagen.png"
+                            width="400px" height="400px">
                     </div>
                 </div>
             </div>
         </div>
-</div>
+    </div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
 </body>
 <script>
@@ -240,7 +349,8 @@
         //document.getElementById("imagenes").style.display = "none";
     }
     function select(n) {
-        document.getElementById("imgSeleccionada").setAttribute("src",document.getElementById(n).getAttribute("src"));
+        document.getElementById("imgSeleccionada").setAttribute("src", document.getElementById(n).getAttribute("src"));
     }
 </script>
+
 </html>
