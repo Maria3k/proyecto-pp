@@ -72,7 +72,7 @@
                                     <div class="row">
                                         <div class="row">
                                             <div class="col-6">
-                                                <input class="input-field" id="nom" type="text" name="nombre" placeholder="Ingrese su nombre" required> 
+                                                <input class="input-field" id="nom" type="text" name="nombre" placeholder="Ingrese su nombre" required>
                                             </div>
                                             <div class="col-6">
                                                 <input class="input-field" id="ape" type="text" name="apellido" placeholder="Ingrese su apellido" required>

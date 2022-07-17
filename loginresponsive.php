@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/register.css">
+    <link rel="stylesheet" href="assets/css/fecha.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
@@ -102,6 +103,7 @@
         .myForm {
             position: relative;
             margin-top: 50px;
+            transition: .5s;
         }
 
         .myLeftCtn .butt {
@@ -160,20 +162,19 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="myLeftCtn">
-                        <form class="myForm text-center">
+                      <div class="form-group">
+                        <div class="form-box">
+                          <div class="button-box">
+                            <div id="btn" class="btn"></div>
+                            <button id="login-btn" type="button" class="toggle-btn"
+                            onclick="login()">Iniciar sesion</button>
+                            <button id="register-btn" type="button" class="toggle-btn"
+                            onclick="register()">Registrar</button>
+                          </div>
+                        </div>
+                      </div>
+                        <form id="login" class="myForm text-center">
 
-                            <div class="form-group">
-                                <div class="form-box">
-                                    <div class="button-box">
-                                        <div id="btn" class="btn"></div>
-                                        <button id="login-btn" type="button" class="toggle-btn"
-                                            onclick="login()">Iniciar sesion</button>
-                                        <button id="register-btn" type="button" class="toggle-btn"
-                                            onclick="register()">Registrar</button>
-                                    </div>
-                                </div>
-
-                            </div>
                             <i class="fas fa-envelope icono"></i>
                             <input class="input-field" type="email" name="correo" placeholder="Correo" required>
                             <i class="fas fa-lock icono"></i>
@@ -238,26 +239,14 @@
                                 </div>
                                 <div class="row">
                                     <div class="row">
-                                        <div class="col-6">
-                                            <input class="input-field" id="nom" type="text" name="nombre"
-                                                placeholder="Ingrese su nombre" required>
-                                        </div>
-                                        <div class="col-6">
-                                            <input class="input-field" id="ape" type="text" name="apellido"
-                                                placeholder="Ingrese su apellido" required>
-                                        </div>
+                                      <div class="input-group">
+                                        <input class="form-control input-field"  id="nombre" name="nombre" placeholder="Nombre">
+                                        <input type="text" class="form-control input-field" id="apellido" name="apellido" placeholder="Apellido">
                                     </div>
-                                    <input class="input-field" type="text" name="nickname"
-                                        placeholder="Ingrese su nombre de usuario" required>
-                                    <input class="input-field" type="email" name="email"
-                                        placeholder="Ingrese su correo electronico" required>
-                                    <input class="input-field" type="email" name="cemail"
-                                        placeholder="Confirme su correo electronico" required>
-                                    <input class="input-field" type="password" name="contraseña"
-                                        placeholder="Ingrese su contraseña" required>
-                                    <input class="input-field" type="password" name="contraseña"
-                                        placeholder="Confirme su contraseña" required>
-
+                                    <input class="input-field" type="text" name="nickname" placeholder="Nombre de usuario" required>
+                                    <input class="input-field" type="email" name="email" placeholder="Correo" required>
+                                    <input class="input-field" type="password" name="contraseña" placeholder="Contraseña" required>
+                                    <input class="input-field" type="password" name="contraseña" placeholder="Confirme su contraseña" required>
                                 </div>
                             </div>
 
@@ -267,10 +256,10 @@
                                         <select class="form-select" name="d" id="">
                                             <option value="0" selected disabled>Dia</option>
                                             <?php
-                                                                    for ($i=1; $i < 32 ; $i++) {
-                                                                    echo "<option value=$i>$i</option>";
-                                                                    }
-                                                                ?>
+                                              for ($i=1; $i < 32 ; $i++) {
+                                              echo "<option value=$i>$i</option>";
+                                              }
+                                           ?>
                                         </select>
                                         </select>
                                     </div>
@@ -278,32 +267,27 @@
                                         <select class="form-select" name="m" id="">
                                             <option value="0" selected disabled>Mes</option>
                                             <?php
-                                                                $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-                                                                foreach ($meses as $i=>$mes) {
-                                                                echo "<option value=$i>$mes</option>";
-                                                                }
-                
-                                                                ?>
+                                              $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                                              foreach ($meses as $i=>$mes) {
+                                              echo "<option value=$i>$mes</option>";
+                                              }
+                                              ?>
                                         </select>
                                     </div>
                                     <div class="input-content theree">
                                         <select class="form-select" name="a" id="">
                                             <option value="0" selected disabled>Año</option>
                                             <?php
-                                                                for ($i=1930; $i < date("Y") ; $i++) {
-                                                                    echo "<option value=$i>$i</option>";
-                                                                }
-                                                                ?>
+                                              for ($i=1930; $i < date("Y") ; $i++) {
+                                              echo "<option value=$i>$i</option>";
+                                              }
+                                           ?>
                                         </select>
                                     </div>
                                 </div>
                                 <input class="submit-btn" type="submit" value="Registrarse">
                         </form>
                     </div>
-
-
-
-
 
                 </div>
             </div>
@@ -331,9 +315,9 @@
 </body>
 <script>
     function register() {
-        //document.getElementById("login").style.marginLeft = "-360px";
-        //document.getElementById("register").style.right = "100px";
-        document.getElementById("btn").style.left = "157px";
+        document.getElementById("login").style.right = "360px";
+        document.getElementById("register").style.right = "-30px";
+        document.getElementById("btn").style.left = "132px";
         document.getElementById("btn").style.background = "linear-gradient(to left, rgba(53,117,242,1) 18%, rgba(74,128,233,1) 57%, rgba(134,173,247,1) 76%)";
         document.getElementById("login-btn").style.color = "gray";
         document.getElementById("register-btn").style.color = "white";
@@ -341,8 +325,8 @@
         //document.getElementById("imagenes").className = "collapsed collapse";
     }
     function login() {
-        //document.getElementById("login").style.marginLeft = "0px";
-        //document.getElementById("register").style.right = "-380px";
+        document.getElementById("login").style.right= "0px";
+        document.getElementById("register").style.right = "-380px";
         document.getElementById("btn").removeAttribute("style");
         document.getElementById("login-btn").style.color = "white";
         document.getElementById("register-btn").style.color = "gray";
