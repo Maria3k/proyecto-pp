@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login Form Design</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/register.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -104,9 +105,7 @@
         outline: none;
         }
         .myLeftCtn .fas {
-        position: relative;
         color: rgb(40,83,161);
-        left: 36px;
         }
         .butt_out {
         background: transparent;
@@ -125,6 +124,9 @@
         .butt_out:focus {
         outline: none;
         }
+        .toggle-btn:focus {
+        outline: none;
+        }
     </style>
 </head>
 <body>
@@ -135,32 +137,72 @@
                     <div class="myLeftCtn">
                         <form class="myForm text-center">
 
-                            <div class="col-md-6 border border-1 rounded-pill rounded-5 d-flex justify-content-center">
-                                <button id="login-btn" type="button" class="toggle-btn" onclick="login()">Login</button>                           
-                                <button id="register-btn" type="button" class="toggle-btn" onclick="register()">Register</button>
-                              
-                            </div>
+                          <div class="form-group">
+                              <div class="form-box">
+                                <div class="button-box">
+                                  <div id="btn" class="btn"></div>
+                                  <button id="login-btn" type="button" class="toggle-btn" onclick="login()">Iniciar sesion</button>
+                                  <button id="register-btn" type="button" class="toggle-btn" onclick="register()">Registrar</button>
+                                </div>
+                              </div>
 
-                            <div class="form-group">
-                                <i class="fas fa-envelope"></i>
-                                <input class="myInput" placeholder="Gmail" type="text" id="email" required>
-                            </div>
-
-                            <div class="form-group">
-                                <i class="fas fa-lock"></i>
-                                <input class="myInput" type="Contraseña" id="password" placeholder="Password" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label>
-                                    <input id="check_1" name="check_1"  type="checkbox" required><small> Recordar usuario</small></input>
-                                </label>
-                            </div>
-
-                            <input type="submit" class="butt" value="Iniciar sesion">
-
-                        </form>
+                          </div>
+                          <form id="login" class="input-group">
+                              <i class="fas fa-envelope icono"></i>
+                              <input class="input-field" type="email" name="correo" placeholder="Correo" required>
+                              <i class="fas fa-lock icono"></i>
+                              <input class="input-field" type="password" name="contraseña" placeholder="Contraseña" required>
+                              <div class="form-group">
+                                  <label>
+                                      <input id="check_1" name="check_1"  type="checkbox" required><small> Recordar usuario</small></input>
+                                  </label>
+                              </div>
+                              <input type="submit" class="butt" value="Iniciar sesion">
+                          </form>
                     </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <form id="register" class="input-group">
+                                <div class="container">
+                                    <div class="row">
+                                        <div id="colImg" class="col">
+                                            <img id="imgSeleccionada" class="img-fluid" src="assets/img/iconosUsu/logo1.png" width="75px" height="75px" alt="imagen.png">
+                                            <a id="lapiz" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
+                                                <i class="fa-solid fa-pencil"></i>
+                                            </a>
+                                        </div>
+                                        <div class="collapse" id="imagenes">
+                                            <div class="col" id="lista">
+                                              <img id="1" class="avatar" src="assets/img/iconosUsu/logo1.png" alt="logo1.png" onclick="select(1)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
+                                              <img id="2" class="avatar" src="assets/img/iconosUsu/logo2.png" alt="logo2.png" onclick="select(2)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
+                                              <img id="3" class="avatar" src="assets/img/iconosUsu/logo3.png" alt="logo3.png" onclick="select(3)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
+                                              <img id="4" class="avatar" src="assets/img/iconosUsu/logo4.png" alt="logo4.png" onclick="select(4)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
+                                              <img id="5" class="avatar" src="assets/img/iconosUsu/logo5.png" alt="logo5.png" onclick="select(5)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
+                                              <img id="6" class="avatar" src="assets/img/iconosUsu/logo6.png" alt="logo6.png" onclick="select(6)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
+                                              <img id="7" class="avatar" src="assets/img/iconosUsu/logo7.png" alt="logo7.png" onclick="select(7)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
+                                              <img id="8" class="avatar" src="assets/img/iconosUsu/logo8.png" alt="logo8.png" onclick="select(8)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <input class="input-field" id="nom" type="text" name="nombre" placeholder="Nombre" required>
+                                            </div>
+                                            <div class="col-6">
+                                                <input class="input-field" id="ape" type="text" name="apellido" placeholder="Apellido" required>
+                                            </div>
+                                        </div>
+                                        <input class="input-field" type="text" name="nickname" placeholder="Nombre de usuario" required>
+                                        <input class="input-field" type="email" name="email" placeholder="Correo" required>
+                                        <input class="input-field" type="password" name="contraseña" placeholder="Contraseña" required>
+                                        <input class="input-field" type="password" name="contraseña" placeholder="Confirme su contraseña" required>
+
+                                    </div>
+                                </div>
+
+
                 </div>
                 <div class="col-md-6">
                     <div class="myRightCtn">
@@ -178,4 +220,27 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
+<script>
+    function register() {
+        //document.getElementById("login").style.marginLeft = "-360px";
+        //document.getElementById("register").style.right = "100px";
+        document.getElementById("btn").style.left = "157px";
+        document.getElementById("btn").style.background = "linear-gradient(to left, rgba(53,117,242,1) 18%, rgba(74,128,233,1) 57%, rgba(134,173,247,1) 76%)";
+        document.getElementById("login-btn").style.color = "gray";
+        document.getElementById("register-btn").style.color = "white";
+        //document.getElementById("imagenes").removeAttribute("style");
+        //document.getElementById("imagenes").className = "collapsed collapse";
+    }
+    function login() {
+        //document.getElementById("login").style.marginLeft = "0px";
+        //document.getElementById("register").style.right = "-380px";
+        document.getElementById("btn").removeAttribute("style");
+        document.getElementById("login-btn").style.color = "white";
+        document.getElementById("register-btn").style.color = "gray";
+        //document.getElementById("imagenes").style.display = "none";
+    }
+    function select(n) {
+        document.getElementById("imgSeleccionada").setAttribute("src",document.getElementById(n).getAttribute("src"));
+    }
+</script>
 </html>
