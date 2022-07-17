@@ -207,8 +207,8 @@
                                 <div class="row">
                                     <div class="row">
                                         <div class="input-group">
-                                            <input class="form-control input-field" id="nombre" name="nombre" placeholder="Nombre">
-                                            <input type="text" class="form-control input-field" id="apellido" name="apellido" placeholder="Apellido">
+                                            <input class="input-field" id="nombre" name="nombre" placeholder="Nombre">
+                                            <input type="text" class="input-field" id="apellido" name="apellido" placeholder="Apellido">
                                         </div>
                                         <input class="input-field" type="text" name="nickname" placeholder="Nombre de usuario" required>
                                         <input class="input-field" type="email" name="email" placeholder="Correo" required>

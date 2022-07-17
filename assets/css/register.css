@@ -92,14 +92,13 @@ input:focus{
     position: relative;
     border-radius: 5px;
 }
-#btn{
+#btn {
     position: absolute;
-    background: linear-gradient(to right, rgba(40,83,161,1) 35%, rgba(87,147,255,1) 100%);
-    top: 0;
+    background: linear-gradient(to right, rgba(40,83,161,1) 35%, rgba(87,147,255,1) 100%); */
     left: 17px;
-    width: 110px;
-    height: 100%;
-    border-radius: 30px;
+    width: 156px;
+    height: 93%;
+    border-radius: 27px;
     transition: .5s;
 }
 .input-group{
@@ -150,15 +149,19 @@ span{
     padding-left: 10px;
     right: -380px;
 }
-#login-btn{
-    padding-left: 20px;
+#login-btn {
+    padding-left: 31px;
     color: white;
-    transition: 250ms;
+    transition: .5s;
+    position: relative;
+    top: 5px;
 }
 #register-btn{
-    margin-left: 15px;
+    margin-left: 30px;
     color: gray;
-    transition: 250ms;
+    transition: .5s;
+    position: relative;
+    top: 6px;
 }
 #imgSeleccionada{
     border-radius: 50%;
@@ -170,7 +173,7 @@ span{
 }
 #lapiz{
     position: absolute;
-    left: 13%;
+    left: 14%;
     width: 75px;
     height: 75px;
     line-height: 75px;
@@ -231,15 +234,26 @@ li{
     border-bottom: solid 1px #999 !important;
     padding: 10px;
 }
-.form-control {
-  border:none !important;
-}
 .col {
     position: relative;
-    left: 16px;
+    left: 47px;
+    bottom: -10px;
 }
-.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
-    margin-left: 14px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+#nombre {
+    padding: 15px;
+    margin-left: -12px;
+    width: 110px;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+}
+#apellido {
+    margin-left: 33px;
+    padding: 16px;
+    width: 112px;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+}
+element.style {
+    left: 158px;
+    background: linear-gradient(to left, rgb(53, 117, 242) 18%, rgb(74, 128, 233) 57%, rgb(134, 173, 247) 76%);
 }
