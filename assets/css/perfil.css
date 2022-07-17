@@ -60,3 +60,7 @@ section{
 #section{
 	background-color: #0083ff;
 }
+
+footer{
+	position: fixed;
+}

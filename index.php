@@ -3,8 +3,30 @@ include("conexion.php");
 session_start();
 
 $menu = '';
+$ajax = '';
+
 
 if ($_SESSION) {
+  $_SESSION = $con->query("SELECT * FROM usuario WHERE id_usuario = " . $_SESSION["id_usuario"])->fetch_assoc();
+
+  $id = $_SESSION["id_usuario"];
+  $ajax = '
+  $(document).ready(() => {
+    $("#number").hide();
+    let id = '.$id.';
+    $.ajax({
+         url: "notification.php",
+         type: "POST",
+         data: { id },
+         success: function (n) {
+           if (n != 0) {
+             $("#number").html(n);
+             $("#number").show();
+           }
+         }
+    });
+  });
+  ';
 
   $nAvatar = $_SESSION["nAvatar"];
 
@@ -12,25 +34,28 @@ if ($_SESSION) {
   $col = $send->fetch_assoc();
   $ad = '';
 
-  if($_SESSION["rol"] == 2){
+  if ($_SESSION["rol"] == 2) {
     $ad = '<li><a href="backend.php"><i class="fa-solid fa-gear"></i>Editar</a></li>';
   }
 
-
-  $menu = '        
+  $menu = '
   <div class="action" >
     <div class="profile" onclick="menuToggle()">
-      <img src="'.$col["rutaArchivo"].'" width="30px" height="30px" alt="'.$col["nombreArchivo"].'">
+      <img src="' . $col["rutaArchivo"] . '" width="30px" height="30px" alt="' . $col["nombreArchivo"] . '">
     </div>
     <div class="menu">
       <ul>
         <li id="primero"><a href="perfil.php"><i class="fa-solid fa-user"></i>Perfil</a></li>
-        '.$ad.'
+        ' . $ad . '
         <li><a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar Sesion</a></li>
       </ul>
     </div>
   </div>
-        ';
+  <div class="icon-wrapper" data-numbrer="1">
+    <img src="assets/img/iconos/bell-solid.svg" id="bell-icon">
+    <div id="number"></div>
+  </div>';
+
 } else {
   $menu = '<a class="btn-nav" href="register.php">Register</a><a class="btn-nav" href="login.php">Iniciar Sesion</a>';
 }
@@ -142,11 +167,13 @@ if ($_SESSION) {
   </footer>
   <script src="assets/js/bootstrap.js"></script>
   <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
+  <script src="assets/js/jquery-3.6.0.js"></script>
   <script>
     function menuToggle() {
       const toggleMenu = document.querySelector('.menu');
-      toggleMenu.classList.toggle('active')
+      toggleMenu.classList.toggle('active');
     }
+    <?= $ajax; ?>
   </script>
 </body>
 

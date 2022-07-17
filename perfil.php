@@ -3,6 +3,8 @@ include("conexion.php");
 session_start();
 
 if ($_SESSION) {
+  $_SESSION = $con->query("SELECT * FROM usuario WHERE id_usuario = " . $_SESSION["id_usuario"])->fetch_assoc();
+
 }else{
   header("Location:login.php");
 }

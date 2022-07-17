@@ -186,8 +186,6 @@ video{
     width: 20px;
     height: 20px;
     color: #2853a1;
-
-
 }
 
 #primero{
@@ -230,14 +228,62 @@ video{
     opacity: 1;
 }
 
-.action .menu ul li a{
+.action .menu a{
     display: inline-block;
+    width: 85%;
     text-decoration: none;
     color: white;
     font-weight: 500;
     transition: 250ms;
 }
 
-.action .menu ul li:hover a{
+.action .menu a:hover{
     color: black;
+}
+.icon-wrapper {
+    position: relative;
+    display: inline-block;
+    float: right;
+    right: 35px;
+    top: 5px;
+}
+
+#number {
+    width: 20px;
+    height: 20px;
+    background-color: #d32b2b;
+    color: white;
+    display: grid;
+    place-content: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    transition: 250ms;
+}
+
+i#bell-icon{
+  font-size: 34px;
+}
+
+i#bell-icon:focus{
+    animation: shake 1s forwards;
+}
+
+@keyframes shake {
+    10% {
+        transform: rotate(15deg);
+    }
+
+    20% {
+        transform: rotate(-15deg);
+    }
+
+    30% {
+        transform: rotate(15deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
 }

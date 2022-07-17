@@ -1,7 +1,7 @@
 .faq{
-    background-color: yellowgreen;
     border-radius: 5px;
     text-align: center;
+    border: solid 1px black;
     margin-top: 50px;
     margin-bottom: 35px;
 }
@@ -15,7 +15,6 @@
 footer{
   background-color: #0083f5;
   bottom: 0;
-  position: fixed;
   width: 100%;
 }
 
