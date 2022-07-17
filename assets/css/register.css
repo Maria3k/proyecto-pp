@@ -1,7 +1,6 @@
 *{
     padding: 0;
     margin: 0;
-    overflow: hidden;
 }
 body{
     width: 100vw;
@@ -36,9 +35,6 @@ body{
     transition: 250ms;
     text-decoration: none;
     border-bottom: solid .5px;
-}
-.form-group{
-    margin: 40px;
 }
 input{
     border: none;

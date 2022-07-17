@@ -3,6 +3,7 @@
 <head>
     <title>Login Form Design</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/register.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <style>
@@ -17,7 +18,6 @@
         .container {
         position: absolute;
         max-width: 800px;
-        height: 500px;
         margin: auto;
         top: 50%;
         left: 50%;
@@ -25,7 +25,7 @@
         }
         .myRightCtn {
         position: relative;
-        background-image: linear-gradient(45deg, #f046ff, #9b00e8);
+        background-image: linear-gradient(180deg, rgba(40,83,161,1) 35%, rgba(87,147,255,1) 100%);
         border-radius: 25px;
         height: 100%;
         padding: 25px;
@@ -44,7 +44,7 @@
         padding-left: 50px;
         }
         .myLeftCtn header {
-        color: blueviolet;
+        color: rgb(40,83,161);
         font-size: 24px;
         font-weight: 700;
         margin-bottom: 20px;
@@ -55,7 +55,6 @@
         .myCard {
         position: relative;
         background: #fff;
-        height: 100%;
         border-radius: 25px;
         -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
         -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
@@ -88,7 +87,7 @@
         margin-top: 50px;
         }
         .myLeftCtn .butt {
-        background: linear-gradient(45deg, #bb36fd, #9b00e8);
+        background: linear-gradient(90deg, rgba(40,83,161,1) 35%, rgba(87,147,255,1) 100%);
         color: #fff;
         width: 230px;
         border: none;
@@ -99,14 +98,14 @@
         box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
         }
         .myLeftCtn .butt:hover {
-        background: linear-gradient(45deg, #c85bff, #b726ff);
+        background: linear-gradient(180deg, rgba(40,83,161,1) 35%, rgba(87,147,255,1) 100%);
         }
         .myLeftCtn .butt:focus {
         outline: none;
         }
         .myLeftCtn .fas {
         position: relative;
-        color: #bb36fd;
+        color: rgb(40,83,161);
         left: 36px;
         }
         .butt_out {
@@ -136,7 +135,11 @@
                     <div class="myLeftCtn">
                         <form class="myForm text-center">
 
-
+                            <div class="col-md-6 border border-1 rounded-pill rounded-5 d-flex justify-content-center">
+                                <button id="login-btn" type="button" class="toggle-btn" onclick="login()">Login</button>                           
+                                <button id="register-btn" type="button" class="toggle-btn" onclick="register()">Register</button>
+                              
+                            </div>
 
                             <div class="form-group">
                                 <i class="fas fa-envelope"></i>
