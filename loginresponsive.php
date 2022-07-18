@@ -14,6 +14,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            color: white;
         }
 
         body {
@@ -22,7 +23,7 @@
 
         .container {
             position: absolute;
-            max-width: 800px;
+            max-width: 824px;
             margin: auto;
             top: 50%;
             left: 50%;
@@ -374,7 +375,6 @@
                                     <input class="submit-btn" type="submit" value="Registrarse">
                         </form>
                     </div>
-
                 </div>
             </div>
         </div>
