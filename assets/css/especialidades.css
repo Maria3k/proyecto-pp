@@ -22,6 +22,8 @@
 }
 
 footer{
+    position: absolute;
+    width: 100%;
     background-color: aliceblue;
     bottom: 0;
     margin: 0;
