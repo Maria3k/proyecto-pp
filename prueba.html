@@ -1,39 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/bootstrap.css">
 </head>
-<body>
-    <div class="container" >
-        <div class="row">
-            <div class="col align-self-center">
-                <h3>Asunto</h3>
-                <img src="assets/img/iconosUsu/logo1.png" width="50px" height="50px" class="rounded-3 rounded-start list-inline-item"> <p class="fs-5">Nombre usuario</p><p class="fs-6 text-primary text-opacity-50 text-black-50 list-inline-item">Fecha de la pregunta</p>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum esse nostrum laboriosam aut reiciendis nesciunt laudantium, itaque suscipit unde expedita beatae labore officia accusamus velit hic. Cum ea repudiandae ducimus.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate alias, maxime repellat voluptatem praesentium sunt eos repellendus dignissimos, id aspernatur iusto! Fuga distinctio asperiores voluptatem nobis sit atque aspernatur aut! 
-                </p>
-                <div class="col align-content-end ml-auto">
-                    <button class="btn btn-primary " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Añadir respuesta</button>
-                </div>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                    <div class="offcanvas-header">
-                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                      <h6>Pregunta:</h6>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque provident, culpa ducimus magni, libero repellat suscipit quo dolores eveniet doloribus mollitia ea quae labore neque ab laboriosam soluta, corporis sit. <br>
-                      <textarea cols="40" rows="5" placeholder="Dejar un comentario"> </textarea>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        </div>
+
+<body class="vh-100" style="background-color: gainsboro;">
+    <div id="ask" class="container">
     </div>
+
     <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/jquery-3.6.0.js"></script>
+    <script>
+
+        $(document).ready(() => {
+            $.ajax({
+                url: "asks.php",
+                type: "POST",
+                data: {
+                    e: 1
+                },
+                success: function (response) {
+                    let plantilla = '';
+                    JSON.parse(response).forEach(ask => {
+                        plantilla += `
+                        <div class="row my-3">
+                            <div class="col align-self-center bg-white" style="border-radius: 2rem">
+                                <h3>${ask.asunto}</h3>
+                                <img src="${ask.avatar}" width="50px" height="50px"
+                                    class="rounded-3 rounded-start list-inline-item">
+                                <p class="fs-5">${ask.nickname}</p>
+                                <p class="fs-6 text-primary text-opacity-50 text-black-50 list-inline-item">${ask.fecha}</p>
+                                <p>${ask.contenido}</p>
+                                <div class="col align-content-end ml-auto">
+                                    <button class="btn btn-primary my-3" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Añadir respuesta</button>
+                                </div>
+                                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                                    aria-labelledby="offcanvasRightLabel" aria-hidden="true" style="visibility: hidden;">
+                                    <div class="offcanvas-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <h6>Pregunta:</h6>
+                                        ${ask.contenido} <br>
+                                        <textarea class="form-control" cols="40" rows="5" placeholder="Dejar un comentario"> </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        `;
+                       
+                    });
+                    $("#ask").html(plantilla);
+                }
+            })
+
+
+        });
+
+
+    </script>
 </body>
+
 </html>
