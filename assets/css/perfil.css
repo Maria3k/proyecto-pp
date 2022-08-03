@@ -20,13 +20,12 @@ h6{
 
 #accordian{
   display: inline-block;
-  background: #5161ce;
+  background: #2853a1;
   width: 250px;
   padding: 10px 0px 10px 10px;
   height: 100vh;
   overflow-x: hidden;
   position: relative;
-  *border-bottom-right-radius: 40px;
 }
 #cuadrado{
   display: inline-block;
@@ -46,11 +45,12 @@ h6{
 }
 
 #cuadrado .Bienvenido{
-  background-color: rgb(146, 14, 146);
+  background-color: #2853a1;
   width: 150px;
   height: 50px;
   font-size: large;
-
+  margin-left: 38%;
+  margin-top: 10px;
 }
 
 .main-navbar{

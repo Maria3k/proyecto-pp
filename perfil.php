@@ -38,7 +38,7 @@
           </div>
        </div>
 
-       <footer>
+  <footer>
     <div class="row">
       <div class="col l6">
         <h5>Contacto</h5>
