@@ -26,10 +26,10 @@
                                 </div>
                             </div>
                         </div>
-                        <form id="login" class="myForm text-center">
+                        <form id="login" class="myForm text-center" action="login.php" method="post">
 
                             <i class="fas fa-envelope icono"></i>
-                            <input class="input-field" type="email" name="correo" placeholder="Correo" required>
+                            <input class="input-field" type="email" name="email" placeholder="Correo" required>
                             <i class="fas fa-lock icono"></i>
                             <input class="input-field" type="password" name="contraseña" placeholder="Contraseña" required>
                             <div class="form-group">
@@ -38,12 +38,13 @@
                                         usuario</small></input>
                                 </label>
                             </div>
-                            <input type="submit" class="butt" value="Iniciar sesion">
+                            <input type="submit" class="butt my-3" value="Iniciar sesion">
                         </form>
-                        <form id="register" class="input-group">
+                        <form id="register" class="input-group" action="register.php" method="post">
                             <div class="container">
                                 <div class="row">
                                     <div id="colImg" class="col">
+                                        <input id="imgInput" name="imgInput" type="hidden" value="1">
                                         <img id="imgSeleccionada" class="img-fluid" src="assets/img/iconosUsu/logo1.png" width="75px" height="75px" alt="imagen.png">
                                         <a id="lapiz" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
                                             <i class="fa-solid fa-pencil"></i>
@@ -152,6 +153,8 @@
 
     function select(n) {
         document.getElementById("imgSeleccionada").setAttribute("src", document.getElementById(n).getAttribute("src"));
+        document.getElementById("imgInput").value = n;
+
     }
 </script>
 

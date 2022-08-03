@@ -54,4 +54,5 @@
 .date .input-content select:focus{
     border: none;
     outline: none;
+    box-shadow: none;
 }

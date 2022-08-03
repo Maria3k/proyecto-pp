@@ -52,7 +52,6 @@ body {
 }
 .myForm {
     position: relative;
-    margin-top: 50px;
     transition: .5s;
 }
 
