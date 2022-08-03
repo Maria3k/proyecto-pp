@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        img {
+            width: 150px !important;
+            height: 150px;
+        }
+        .participante{
+            width: 100px !important;
+            height: 100px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="input-group">
+        <input type="text" class="form-control" id="search" placeholder="Busqueda de preguntas" aria-describedby="searchBtn">
+        <button id="searchBtn" class="btn btn-primary input-group-text"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    
+    <div id="rta"></div>
+</body>
+<script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
+<script>
+    $(document).ready(() => {
+        $(document).on("click", "#searchBtn", function () {
+            const apiKey = "RGAPI-4e1bafa7-8875-409c-8b29-c85f567e5a54";
+            plantilla = '';
+            $.ajax({
+                url: `https://la2.api.riotgames.com/lol/summoner/v4/summoners/by-name/${$("#search").val()}`,
+                type: "GET",
+                data: {
+                    'api_key': apiKey
+                },
+                success: function (player) {
+
+                    
+                    plantilla += `
+                        <h1>${player.name}</h1>
+                        <img src="http://ddragon.leagueoflegends.com/cdn/12.13.1/img/profileicon/${player.profileIconId}.png" alt="">
+                        <h4>NIVEL: ${player.summonerLevel}</h4>
+                    `;
+                    $.ajax({
+                        url: `https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/${player.puuid}/ids`,
+                        type: "GET",
+                        data: {
+                            'api_key': apiKey,
+                            'count': 1
+                        },
+                        success: function (partidas) {
+                            players = ``;
+                            partidas.forEach(i => {
+                                $.ajax({
+                                    url: `https://americas.api.riotgames.com/lol/match/v5/matches/${i}`,
+                                    type: "GET",
+                                    data: {
+                                        'api_key': apiKey
+                                    },
+                                    success: function (partida) {
+                                        let id = 0;
+                                        partida.metadata.participants.forEach(idParticipante => {
+                                            $.ajax({
+                                                url: `https://la2.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/${idParticipante}`,
+                                                type: "GET",
+                                                data: {
+                                                    'api_key': apiKey
+                                                },
+                                                success: function (participante) {
+                                                    console.log(participante.name);
+                                                    plantilla += `
+                                                        <div class="col-1">
+                                                            <h4>${participante.name}</h4>
+                                                            <img class="participante" src="http://ddragon.leagueoflegends.com/cdn/12.13.1/img/profileicon/${participante.profileIconId}.png">
+                                                            <h5>NIVEL: ${participante.summonerLevel}</h5>
+                                                            <h1>--------</h1>
+                                                        </div>
+                                                    `;
+                                                    console.log(players);
+                                                }
+                                            });
+                                            if(id == partida.metadata.participants.length){
+                                                plantilla += '</div>';
+                                                $("#rta").html(plantilla);
+                                            }
+                                            console.log(id);
+                                            id++;
+                                        });
+                                        plantilla += `</div>`;
+                                    }
+                                });
+                            });
+                        }
+                    });
+
+                }
+            });
+        })
+    });
+</script>
+
+</html>

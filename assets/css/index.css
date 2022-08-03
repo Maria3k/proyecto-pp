@@ -114,15 +114,12 @@ nav{
     left: 25%;
     position: relative;
     display: flex;
+    margin-bottom: 20px;
     justify-content: center;
     align-items: center;
     padding-top: 20px;
 }
 
-video{
-    width: 85%;
-    height: 35%;
-}
 
 /*==================Menu desplegable======================*/
 

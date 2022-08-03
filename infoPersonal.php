@@ -71,7 +71,6 @@ if (isset($_GET['name'])){
                 <div id="datos2" class="col-9">
                     <ul>
                         <li>Correo electronico: <?= $_SESSION["email"];  ?></li>
-                        <li>Telefono: <?= $_SESSION["telefono"];  ?></li>
                     </ul>
                 </div>
                 <div id="boton1">

@@ -2,60 +2,41 @@
 include("conexion.php");
 session_start();
 
-$menu = '';
-$ajax = '';
+$sbt = $menu = $ad = '';
+$ajax = '-1';
 
 
 if ($_SESSION) {
   $_SESSION = $con->query("SELECT * FROM usuario WHERE id_usuario = " . $_SESSION["id_usuario"])->fetch_assoc();
 
-  $id = $_SESSION["id_usuario"];
-  $ajax = '
-  $(document).ready(() => {
-    $("#number").hide();
-    let id = '.$id.';
-    $.ajax({
-         url: "notification.php",
-         type: "POST",
-         data: { id },
-         success: function (n) {
-           if (n != 0) {
-             $("#number").html(n);
-             $("#number").show();
-           }
-         }
-    });
-  });
-  ';
-
   $nAvatar = $_SESSION["nAvatar"];
+  $ajax = $_SESSION["id_usuario"];
 
   $send = $con->query("SELECT * FROM avatar WHERE id_avatar = $nAvatar");
   $col = $send->fetch_assoc();
-  $ad = '';
 
   if ($_SESSION["rol"] == 2) {
-    $ad = '<li><a href="backend.php"><i class="fa-solid fa-gear"></i>Editar</a></li>';
+    $ad = '<button class="deleteAsk btn btn-danger" value="${ask.id}">Eliminar</button>';
   }
 
-  $menu = '
-  <div class="action" >
-    <div class="profile" onclick="menuToggle()">
-      <img src="' . $col["rutaArchivo"] . '" width="30px" height="30px" alt="' . $col["nombreArchivo"] . '">
-    </div>
-    <div class="menu">
-      <ul>
-        <li id="primero"><a href="perfil.php"><i class="fa-solid fa-user"></i>Perfil</a></li>
-        ' . $ad . '
-        <li><a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar Sesion</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="icon-wrapper" data-numbrer="1">
-    <img src="assets/img/iconos/bell-solid.svg" id="bell-icon">
-    <div id="number"></div>
-  </div>';
 
+  $menu = '
+    <div class="action" >
+      <div class="profile" onclick="menuToggle()">
+        <img src="' . $col["rutaArchivo"] . '" width="30px" height="30px" alt="' . $col["nombreArchivo"] . '">
+      </div>
+      <div class="menu">
+        <ul>
+          <a href="perfil.php"><li id="primero"><i class="fa-solid fa-user"></i>Perfil</li></a>
+          <a href="logout.php"><li><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar Sesion</li></a>
+        </ul>
+      </div>
+    </div>
+    <div class="icon-wrapper" data-numbrer="1">
+      <i class="bi bi-bell-fill" id="bell-icon"></i>
+      <div id="number"></div>
+    </div>
+  ';
 } else {
   $menu = '<a class="btn-nav" href="register.php">Register</a><a class="btn-nav" href="login.php">Iniciar Sesion</a>';
 }
@@ -79,6 +60,7 @@ if ($_SESSION) {
   <link rel="stylesheet" href="assets/css/bootstrap.css">
   <link rel="stylesheet" href="assets/css/icons.css">
   <link rel="stylesheet" href="assets/css/especialidades.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
   <title>E.T.32 Preguntas</title>
 </head>
 
@@ -114,7 +96,7 @@ if ($_SESSION) {
     </div>
   </div>
   <div class="contenedorVideo">
-    <video src="assets/video/3 Ejercicios Para Saltar Mas En Casa(Prueba).mp4" class="slider" loop muted controls></video>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/i_84BafqQ4I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   <footer>
     <div class="row">
@@ -173,7 +155,32 @@ if ($_SESSION) {
       const toggleMenu = document.querySelector('.menu');
       toggleMenu.classList.toggle('active');
     }
-    <?= $ajax; ?>
+    $(document).ready(() => {
+      var id_usr = <?= $ajax; ?>;
+      if (id_usr != -1) {
+        notification();
+      }
+
+      function notification() {
+        $("#number").hide();
+        $.ajax({
+          url: "notification.php",
+          type: "POST",
+          data: {
+            id: <?= $ajax; ?>
+          },
+          success: function(n) {
+            if (n != 0) {
+              console.log("Funca3");
+              $("#number").html(n);
+              $("#number").show();
+            }
+          }
+        });
+      }
+
+
+    });
   </script>
 </body>
 
