@@ -1,82 +1,9 @@
-*{
-    padding: 0;
-    margin: 0;
-}
-body{
-    width: 100vw;
-    height: 100vh;
-    background-image: url(https://img.freepik.com/vector-gratis/fondo-abstracto-blanco_23-2148810113.jpg?w=1060&t=st=1657044544~exp=1657045144~hmac=27c7261f2ac60c64c398832a90e0a8e56683c4636458b39a871c729ec855b942);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-#row{
-    width: 850px;
-    height: 685px;
-}
-#izq{
-    background: rgb(40,83,161);
-    background: linear-gradient(180deg, rgba(40,83,161,1) 35%, rgba(87,147,255,1) 100%);
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    z-index: 1;
-}
-#izq #img{
-    position: relative;
-    padding: 30px;
-}
-#derecha{
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background: white;
-    position: relative;
-    /*background: linear-gradient(45deg, rgba(53,117,242,1) 18%, rgba(74,128,233,1) 57%, rgba(134,173,247,1) 76%, rgba(255,255,255,1) 100%);*/
-}
-#derecha a{
-    transition: 250ms;
-    text-decoration: none;
-    border-bottom: solid .5px;
-}
-.form-group p{
-    font-size: 12px;
-}
-.terms input{
-    display: inline-block;
-}
-.terms p{
-    display: inline-block;
-    padding: 0px 10px;
-}
-input:focus{
-    border: black;
-}
-.fijo{
-    right: 0;
-    width: 155px;
-    margin: 35px auto;
-    position: relative;
-    box-shadow: 0 0 20px 9px black;
-    border-radius: 30px;
-}
-.fijo a{
-    padding: 10px 15px;
-    cursor: pointer;
-    background: transparent;
-    border: 0;
-    outline: none;
-    position: relative;
-}
+
 .form-box{
     position: relative;
     margin: 6% auto;
     background: #fff;
     padding: 5px;
-}
-#button-box{
-    width: 240px;
-    margin: 35px auto;
-    position: relative;
-    border: solid 1px black;
-    border-radius: 30px;
 }
 .toggle-btn{
     padding: 10px;
@@ -125,25 +52,6 @@ input:focus{
     bottom: 29px;
     right: 26px;
 }
-.check-box{
-    margin: 22px 10px 30px 0;
-}
-span{
-    position: relative;
-    color: #777;
-    font-size: 12px;
-    bottom: -20px;
-}
-#login{
-    padding-left: 10px;
-    right: 0;
-}
-#register{
-    top: 0;
-    bottom: 10px;
-    padding-left: 10px;
-    right: -380px;
-}
 #login-btn {
     padding-left: 31px;
     color: white;
@@ -182,20 +90,15 @@ span{
     border: solid 1px black;
     z-index: 3;
 }
-ul{
-    margin-top: 1rem;
-    padding-left: 0;
-}
-li{
-    display: inline-block;
-}
 #imagenes{
     position: absolute;
-    top: 15%;
-    width: 90%;
+    top: 20%;
     background-color: white;
     border: solid 2px;
     border-radius: 15px;
+}
+#lista{
+    left: 0;
 }
 .avatar{
     width: 50px;
@@ -217,17 +120,9 @@ li{
   top: 5px;
   padding: 20px;
 }
-.small, small {
-    font-size: 80%;
-    font-weight: 400;
-    color: gray;
-    position: relative;
-}
-.input-group > .form-control, .input-group > .form-select {
-    position: relative;
-    right: 10px;
-    border-bottom: solid 1px #999 !important;
-    padding: 10px;
+
+#register{
+  right: -380px;
 }
 .col {
     position: relative;
@@ -245,12 +140,4 @@ li{
     width: 124px;
     padding-right: calc(var(--bs-gutter-x) * 0.5);
     padding-left: calc(var(--bs-gutter-x) * 0.5);
-}
-element.style {
-    left: 158px;
-    background: linear-gradient(to left, rgb(53, 117, 242) 18%, rgb(74, 128, 233) 57%, rgb(134, 173, 247) 76%);
-}
-img#img.img-fluid{
-  position: relative;
-  top: 53px;
 }
