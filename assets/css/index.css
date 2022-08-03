@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,100;1,200&display=swap');
+
 *{
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
+/*NAV*/
 
 nav{
     background-color: #2853a1;
@@ -14,12 +18,7 @@ nav{
     color: white;
     text-decoration: none;
     float: right;
-    transition: 250ms;
     padding-left: 10px;
-}
-
-.btn-nav:hover{
-    color: black;
 }
 
 .botonlogo{
@@ -42,206 +41,8 @@ nav{
     width: 75px;   
 }
 
-.div1{
-    margin: auto;
-    padding: 20px;
-    width: 640px;
-    height: 300px;
-    background-color: aliceblue;
-    text-align: center;
-}
+/*LINEA DE TIEMPO*/
 
-.div1 img{
-    float: left;
-    margin-right: 10px;
-}
-
-.especialidades{
-    padding-top: 20px;
-    background-color: darkgray;
-}
-
-.Contenedor{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin: auto;
-}
-
-.Contenedor .card{
-	border-radius: 8px;
-    border: none;
-	overflow: hidden;
-	margin: 20px;
-	text-align: center;
-	transition: all 0.25s;
-}
-
-.Contenedor .card:hover{
-	transform: translateY(-15px);
-	box-shadow: 0 12px 16px rgba(0, 0, 0, 0.5);
-}
-
-.Contenedor .card img{
-
-	width: 230px;
-	height: 230px;
-}
-
-.Contenedor .card h4{
-
-	font-weight: 600;
-}
-
-.Contenedor .card p{
-
-	padding: 0 1rem;
-	font-size: 16px;
-	font-weight: 300;
-}
-
-.Contenedor .card a{
-
-	font-weight: 500;
-	text-decoration: none;
-	color: #3498db;
-
-}
-
-.contenedorVideo{
-    width: 50%;
-    height: 50%;
-    left: 25%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
-}
-
-video{
-    width: 85%;
-    height: 35%;
-}
-
-/*==================Menu desplegable======================*/
-
-.action{
-    display: inline-block;
-    float: right;
-    top: 20px;
-    right: 30px;
-
-}
-
-.action .profile{
-    position: relative;
-    right: 25px;
-    margin-top: 8px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    transition: 250ms;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.action .profile:hover{
-    border: solid 3px white;
-}
-
-.action .profile img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.action .menu{
-    position: absolute;
-    top: 85px;
-    right: 10px;
-    background: #2853a1;
-    width: 200px;
-    border-radius: 15px;
-    transition: 0.5s;
-    visibility: hidden;
-    opacity: 0;
-}
-
-.action .menu.active{
-    visibility: visible;
-    opacity: 1;
-
-}
-
-.action .menu::before{
-    content: '▲';
-    font-size: 30px;
-    position: absolute;
-    top: -30px;
-    right: 30px;
-    width: 20px;
-    height: 20px;
-    color: #2853a1;
-    
-
-}
-
-#primero{
-    border-top: none;
-}
-
-.action .menu h3{
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
-    padding: 20px 0;
-    font-weight: 500;
-    font-size: 18px;
-    color: #555;
-    line-height: 1.2em;
-}
-
-.action .menu .ul{
-    margin-bottom: 0;
-
-}
-
-.action .menu ul li{
-    margin-bottom: 0;
-    list-style: none;
-    padding: 10px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    display: flex;
-    align-items: center;
-}
-
-.action .menu ul li img{
-    max-width: 20px;
-    margin-right: 10px;
-    opacity: 0.5;
-    transition: 0.5s;
-}
-
-.action .menu ul li:hover img{
-    opacity: 1;
-}
-.action .menu ul li a{
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    transition: 250ms;
-}
-
-.action .menu ul li:hover a{
-    color: black;
-}
-
-/*===============Linea de Tiempo===============*/
 h1{
     color: black;
     font-weight: 700;
@@ -253,7 +54,7 @@ h1{
 }
 
 h1 span{
-    color: #2853a1;
+    color: #2852a1;
 }
 
 .process-wrapper{
@@ -358,26 +159,180 @@ h1 span{
     transition: all ease 0.9s;
 }
 
-#progress-bar-container #line-process{
-    content: "";
-    width: 3%;
-    height: 100%;
-    background: #2853a1;
-    background: linear-gradient(to right, #2853a1 0%, #2853a1 100%);
+#progress-bar-container #line-progress {
+	content:" ";
+	width:3%;
+	height:100%;
+	background: #2853a1;	 
+	background: linear-gradient(to right, #2853a1 0%,#2853a1 100%); 
+	position:absolute;
+	z-index:2;
+	border-radius:50px;
+	transition:all ease 0.9s;
+}
+
+#progress-content-section {
+	width:90%;
+	margin: auto;
+	background: #f3f3f3;
+	border-radius: 4px;
+}
+
+#progress-content-section .section-content {
+	padding:30px 40px;
+	text-align:center;
+}
+
+#progress-content-section .section-content h2 {
+	font-size:17px;
+	text-transform:uppercase;
+	color:#333;
+	letter-spacing:1px;
+}
+
+#progress-content-section .section-content p {
+	font-size:16px;
+	line-height:1.8em;
+	color:#777;
+}
+
+#progress-content-section .section-content {
+	display:none;
+	animation: FadeInUp 700ms ease 1;
+	animation-fill-mode:forwards;
+	transform:translateY(15px);
+	opacity:0;
+}
+
+#progress-content-section .section-content.active {
+	display:block;
+}
+
+@keyframes FadeInUp {
+	0% {
+		transform:translateY(15px);
+		opacity:0;
+	}
+	
+	100% {
+		transform:translateY(0px);
+		opacity:1;
+	}
+}
+
+/*TARJETAS*/
+
+.cont-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #fff;
+}
+
+.card{
+    position: relative;
+    width: 230px;
+    height: 230px;
+    margin: 20px;
+}
+ 
+.card .face{
     position: absolute;
-    z-index: 2;
-    border-radius: 50px;
-    transition: all ease 0.9s;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+    background:#2853a1
 }
-
-#progress-content-section{
-    width: 90%;
-    margin: auto;
-    background: #f3f3f3;
-    border-radius: 4px;
+ 
+.card .front{
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
 }
-
-#progress-content-section .section-content{
-    padding: 30px 40px;
+ 
+.card .front img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+ 
+.card .front h3{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: rgba(0,0,0,.4);
     text-align: center;
 }
+ 
+.card .back{
+    transform: perspective(600px) rotateY(180deg);
+    background: #2853a1;
+    padding: 10%;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000
+}
+ 
+.card .back .link{
+    border-top: solid 1px #f3f3f3;
+    height: 30px;
+    line-height: 25px;
+}
+ 
+.card .back .link a{
+    color: #f3f3f3;
+    text-decoration: none;
+}
+ 
+.card .back h3{
+    font-size: 20px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+ 
+.card .back p{
+    letter-spacing: 1px;
+}
+ 
+.card:hover .front{
+    transform: perspective(600px) rotateY(180deg);
+}
+ 
+.card:hover .back{
+    transform: perspective(600px) rotateY(360deg);
+}
+
+
+
+
+
+
+
+
+
+.contenedorVideo{
+    width: 50%;
+    height: 50%;
+    left: 25%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+video{
+    width: 85%;
+    height: 35%;
+}
+

@@ -92,3 +92,21 @@ a:hover{
 .forg:hover{
   color: gray;
 }
+
+.form-control{
+  width: 300px;
+}
+
+i{
+  width: 10px;
+  height: 10px;
+}
+
+
+#datepicker{
+  background-color: #1177d1;
+  color: white;
+}
+
+
+
