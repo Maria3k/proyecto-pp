@@ -20,7 +20,7 @@
                         <div class="form-group">
                             <div class="form-box">
                                 <div class="button-box">
-                                    <div id="btn" class="btn"></div>
+                                    <div id="btn"></div>
                                     <button id="login-btn" type="button" class="toggle-btn" onclick="login()">Iniciar sesion</button>
                                     <button id="register-btn" type="button" class="toggle-btn" onclick="register()">Registrar</button>
                                 </div>
@@ -34,12 +34,12 @@
                             <input class="input-field" type="password" name="contraseña" placeholder="Contraseña" required>
                             <div class="form-group">
                                 <label>
-                                    <input id="check_1" name="check_1" type="checkbox" required><small> Recordar
-                                        usuario</small></input>
+                                    <input id="check_1" name="check_1" type="checkbox" required><small> Recordar usuario</small></input>
                                 </label>
                             </div>
                             <input type="submit" class="butt my-3" value="Iniciar sesion">
                         </form>
+
                         <form id="register" class="input-group" action="register.php" method="post">
                             <div class="container">
                                 <div class="row">
@@ -112,7 +112,7 @@
                                           </select>
                                       </div>
                                 </div>
-                                <input class="submit-btn" type="submit" value="Registrarse">
+                                <input class="submit-btn butt" type="submit" value="Registrarse">
                         </form>
                     </div>
                 </div>
@@ -134,8 +134,8 @@
     function register() {
         document.getElementById("login").style.right = "360px";
         document.getElementById("register").style.right = "-30px";
-        document.getElementById("btn").style.left = "132px";
-        document.getElementById("btn").style.background = "linear-gradient(to left, rgba(53,117,242,1) 18%, rgba(74,128,233,1) 57%, rgba(134,173,247,1) 76%)";
+        document.getElementById("btn").style.left = "140px";
+        document.getElementById("btn").style.background = "linear-gradient(to left, rgba(40,83,161,1) 35%, rgba(87,147,255,1) 100%)";
         document.getElementById("login-btn").style.color = "gray";
         document.getElementById("register-btn").style.color = "white";
         //document.getElementById("imagenes").removeAttribute("style");

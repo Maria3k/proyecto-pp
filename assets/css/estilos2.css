@@ -23,6 +23,7 @@ body {
     align-items: center;
 }
 .myLeftCtn {
+    overflow: hidden;
     position: relative;
     background: #fff;
     border-radius: 25px;
@@ -52,6 +53,7 @@ body {
 }
 .myForm {
     position: relative;
+    right: 0;
     transition: .5s;
 }
 
