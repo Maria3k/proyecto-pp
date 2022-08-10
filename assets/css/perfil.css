@@ -60,15 +60,16 @@ h6 {
 #Consultas{
   width: auto;
   height: auto;
-  font-size: 30px;
-  margin-left: 35%;
+  font-size: 25px;
+  margin-left: 25%;
   margin-top: 30px;
 }
 
-#Consultas>a {
-  color: rgb(255, 17, 0);
-  background-color: transparent;
-  transition: all .7s;
+.botonConsulta{
+  transition: .2s;
+}
+.botonConsulta:hover, .botonConsulta:active{
+  color: white;
 }
 
 .main-navbar {
@@ -154,7 +155,7 @@ h6 {
   width: 150px;
   height: 50px;
   border-radius: 50%;
-  background-color: #5161ce;
+  background-color: #51ce81;
 }
 
 .selector-active .top:before {

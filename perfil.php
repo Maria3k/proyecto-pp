@@ -37,13 +37,12 @@
               <label for=""> Bienvenido Usuario </label>
           </div>
        <div id="Consultas">
-          <a href="#">
+          <a href="#" class="botonConsulta">
             <p>
               Realizar Consulta
             </p> 
           </a>
        </div>
-
        </div>
 
   <footer>
