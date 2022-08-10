@@ -221,10 +221,10 @@ if ($_SESSION) {
                     <h5>${ask.asunto}</h5>
                     <p>${ask.contenido}</p>
                     <form id="rta-form${ask.id}">
-                    <input id="preguntaId${ask.id}" type="hidden" value="${ask.id}">
-                    <textarea id="content${ask.id}" class="form-control my-2" placeholder="Dejar un comentario" required></textarea>
+                      <input id="preguntaId${ask.id}" type="hidden" value="${ask.id}">
+                      <textarea id="content${ask.id}" class="form-control my-2" placeholder="Dejar un comentario" required></textarea>
                     </form>
-                    <button id="submitRta" class="btn btn-primary submitRta" value="${ask.id}">Enviar</button>
+                    <button class="btn btn-primary submitRta" value="${ask.id}">Enviar</button>
                     <div id="rtasDiv${ask.id}"></div>
                   </div>
                 </div>
@@ -319,11 +319,15 @@ if ($_SESSION) {
         if ($("#content" + $(this).val()).val() == '') {
           alert("ESTA VACIO");
         } else {
-          $.post("respuesta.php", rtaData, function(response) {
-            notification();
-            fecthAsks();
-            $("#rta-form").trigger("reset");
-          });
+          if (<?= $_SESSION ? 1 : 0 ?> == 1) {
+            $.post("respuesta.php", rtaData, function(response) {
+              notification();
+              fecthAsks();
+              $("#rta-form").trigger("reset");
+            });
+          } else {
+            window.location.href = "login.php";
+          }
         }
       })
 
