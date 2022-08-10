@@ -36,6 +36,14 @@
           <div class="Bienvenido">
               <label for=""> Bienvenido Usuario </label>
           </div>
+       <div id="Consultas">
+          <a href="#">
+            <p>
+              Realizar Consulta
+            </p> 
+          </a>
+       </div>
+
        </div>
 
   <footer>
