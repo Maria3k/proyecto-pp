@@ -1,33 +1,38 @@
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
   overflow: hidden;
 }
-body{
+
+body {
   width: 100vw;
   height: 100vh;
 }
-i{
-  margin-right:10px;
-}
-h2{
-  margin:0;
-}
-h6{
-  margin:0;
-  color:#777;
+
+i {
+  margin-right: 10px;
 }
 
-#accordian{
+h2 {
+  margin: 0;
+}
+
+h6 {
+  margin: 0;
+  color: #777;
+}
+
+#accordian {
   display: inline-block;
-  background: #2853a1;
+  background-image: linear-gradient(180deg, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
   width: 250px;
   padding: 10px 0px 10px 10px;
-  height: 100vh;
+  height: 64vh;
   overflow-x: hidden;
   position: relative;
 }
-#cuadrado{
+
+#cuadrado {
   display: inline-block;
   position: absolute;
   top: 0;
@@ -37,14 +42,14 @@ h6{
   border: 1px solid black;
 }
 
-#cuadrado img{
+#cuadrado img {
   vertical-align: middle;
   margin-left: 40%;
   width: 6%;
   height: 6%;
 }
 
-#cuadrado .Bienvenido{
+#cuadrado .Bienvenido {
   background-color: #2853a1;
   width: 150px;
   height: 50px;
@@ -53,89 +58,103 @@ h6{
   margin-top: 10px;
 }
 
-.main-navbar{
-  position:relative;
+.main-navbar {
+  position: relative;
   padding-left: 0;
 }
-#accordian li{
-  list-style-type:none;
-}
-#accordian ul li a{
-  color:rgba(255,255,255,.5);
-  text-decoration:none;
-  font-size:15px;
-  line-height:45px;
-  display:block;
-  padding:0 20px;
-  transition-duration:.6s;
-  transition-timing-function:cubic-bezier(0.68,-.55,.265,1.55);
-  position:relative;
-}
-#accordian>ul>li.active>a{
-  color:#5161ce;
-  background-color:transparent;
-  transition:all .7s;
+
+#accordian li {
+  list-style-type: none;
 }
 
-#accordian a:not(:only-child):after{
-  content:"\f105";
-  position:absolute;
-  right:20px;
-  top:10%;
-  font-size:14px;
-  font-family:"Font Awesome 5 Free";
-  display:inline-block;
-  padding-right:3px;
-  vertical-align:middle;
-  font-weight:900;
-  transition:.5s;
-}
-#accordian .active>a:not(:only-child):after{
-  transform:rotate(90deg);
-}
-.selector-active{
-  width:100%;
-  display:inline-block;
-  position:absolute;
-  height:37px;top:0;
-  left:0;transition-duration:.6s;
-  transition-timing-function:cubic-bezier(0.68,-.55,.265,1.55);
-  background-color:#fff;
-  border-top-left-radius:50px;
-  border-bottom-left-radius:50px;
-}
-.selector-active .bottom, .selector-active .top{
-  position:absolute;
-  width:25px;
-  height:25px;
-  background-color:#fff;
-  right:0;
+#accordian ul li a {
+  color: rgba(255, 255, 255, .5);
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 45px;
+  display: block;
+  padding: 0 20px;
+  transition-duration: .6s;
+  transition-timing-function: cubic-bezier(0.68, -.55, .265, 1.55);
+  position: relative;
 }
 
-.selector-active .top{
-  top:-25px;
-}
-.selector-active .bottom{
-  bottom:-25px;
-}
-.selector-active .bottom:before,.selector-active .top:before{
-  content:'';
-  position:absolute;
-  width:150px;
-  height:50px;
-  border-radius:50%;
-  background-color:#5161ce;
-}
-.selector-active .top:before{
-  left:-25px;
-  top:-25px;
-}
-.selector-active .bottom:before{
-  bottom:-25px;
-  left:-25px;
+#accordian>ul>li.active>a {
+  color: #5161ce;
+  background-color: transparent;
+  transition: all .7s;
 }
 
-footer{
+#accordian a:not(:only-child):after {
+  content: "\f105";
+  position: absolute;
+  right: 20px;
+  top: 10%;
+  font-size: 14px;
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  padding-right: 3px;
+  vertical-align: middle;
+  font-weight: 900;
+  transition: .5s;
+}
+
+#accordian .active>a:not(:only-child):after {
+  transform: rotate(90deg);
+}
+
+.selector-active {
+  width: 100%;
+  display: inline-block;
+  position: absolute;
+  height: 37px;
+  top: 0;
+  left: 0;
+  transition-duration: .6s;
+  transition-timing-function: cubic-bezier(0.68, -.55, .265, 1.55);
+  background-color: #fff;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.selector-active .bottom,
+.selector-active .top {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  right: 0;
+}
+
+.selector-active .top {
+  top: -25px;
+}
+
+.selector-active .bottom {
+  bottom: -25px;
+}
+
+.selector-active .bottom:before,
+.selector-active .top:before {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #5161ce;
+}
+
+.selector-active .top:before {
+  left: -25px;
+  top: -25px;
+}
+
+.selector-active .bottom:before {
+  bottom: -25px;
+  left: -25px;
+}
+
+footer {
   position: fixed;
   background-color: aliceblue;
   bottom: 0;
