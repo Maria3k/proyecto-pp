@@ -32,16 +32,33 @@
           </li>
         </ul>
        </div>
-  
-       <div id="cuadrado">
-          <div class="pansito">
-              <img src="assets/img/iconosUsu/logo1.png" alt="">
+<!--
+  <div id="Seguridad">
+      <h6>Actividad reciente:</h6>
+        <div class="cuadro">
+          <P>Se inicio sesión: </P>
+          <p>En el dispositivo: </p>
+          <p>A la hora: </p>
           </div>
-          <div class="Bienvenido">
-              <label for=""> Bienvenido Usuario </label>
+          <h6>Iniciar sesión:</h6>
+          <div class="cuadro">
+            <p>Contraseña: </p>
+            <p>Verificar contraseña: </p>
+            <p>Telefono de recuperacion: </p>
           </div>
-       </div>
+          <div class="volver">
+            <a class="btn btn-outline-light" href="index.php">Volver al inicio</a>
+  </div>
+  -->
 
+  <h6>Actividad reciente:</h6>
+    <div>
+      <p>Se inicio sesion: </p>
+      <p>En el dispositivo: </p>
+      <p>A la hora: </p>
+    </div>
+    <h6>Iniciar sesion:</h6>
+    
   <footer>
     <div class="row">
       <div class="col l6">
