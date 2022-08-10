@@ -118,3 +118,45 @@ height: 100%;
 .butt_out:focus {
   outline: none;
 }
+.form-box{
+    position: relative;
+    margin: 6% auto;
+    background: #fff;
+    padding: 5px;
+}
+.toggle-btn{
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    border-radius: 5px;
+}
+.toggle-btn:focus{
+  outline: none;
+}
+#btn {
+    background: linear-gradient(to right, rgba(40,83,161,1) 35%, rgba(87,147,255,1) 100%);
+    left: 10px;
+    padding: 10px;
+    padding-bottom: 1px;
+    border-radius: 27px;
+    transition: .5s;
+}
+#login-btn {
+    padding-left: 31px;
+    color: white;
+    width: 195px;
+    transition: .5s;
+    position: relative;
+    top: 5px;
+}
+#register-btn{
+    margin-left: 30px;
+    color: gray;
+    width: 140px;
+    transition: .5s;
+    position: relative;
+    top: 4px;
+}
