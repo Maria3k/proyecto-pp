@@ -232,9 +232,9 @@ h1 span{
 
 .card{
     position: relative;
-    width: 230px;
-    height: 230px;
-    margin: 20px;
+    width: 250px;
+    height: 250px;
+    margin: 50px;
 }
  
 .card .face{
@@ -264,17 +264,17 @@ h1 span{
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 45px;
-    line-height: 45px;
+    height: 50px;
+    line-height: 50px;
     color: #fff;
-    background: rgba(0,0,0,.4);
+  /* background: rgba(0,0,0,.4);*/
     text-align: center;
 }
  
 .card .back{
     transform: perspective(600px) rotateY(180deg);
     background: #2853a1;
-    padding: 10%;
+    padding: 5%;
     color: #f3f3f3;
     display: flex;
     flex-direction: column;
@@ -283,19 +283,27 @@ h1 span{
     box-shadow: 0 5px 10px #000
 }
  
+.card .back img{
+    width: 80%;
+    position: relative;
+    border-radius: 5%;
+    display: block;
+    margin: auto;
+}
 .card .back .link{
     border-top: solid 1px #f3f3f3;
     height: 30px;
-    line-height: 25px;
+    line-height: 35px;
 }
  
 .card .back .link a{
+    font-size: 17px;
     color: #f3f3f3;
     text-decoration: none;
 }
  
 .card .back h3{
-    font-size: 20px;
+    font-size: 23px;
     margin-top: 10px;
     letter-spacing: 1px;
 }
@@ -312,13 +320,7 @@ h1 span{
     transform: perspective(600px) rotateY(360deg);
 }
 
-
-
-
-
-
-
-
+/*CARRUSEL*/
 
 .contenedorVideo{
     width: 50%;
