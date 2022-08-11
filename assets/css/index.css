@@ -232,8 +232,8 @@ h1 span{
 
 .card{
     position: relative;
-    width: 250px;
-    height: 250px;
+    width: 260px;
+    height: 260px;
     margin: 50px;
 }
  
@@ -283,13 +283,7 @@ h1 span{
     box-shadow: 0 5px 10px #000
 }
  
-.card .back img{
-    width: 80%;
-    position: relative;
-    border-radius: 5%;
-    display: block;
-    margin: auto;
-}
+
 .card .back .link{
     border-top: solid 1px #f3f3f3;
     height: 30px;
