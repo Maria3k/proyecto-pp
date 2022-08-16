@@ -70,6 +70,18 @@ h6 {
   box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
 }
 
+.segu{
+  width: 200px;
+  height: 120px;
+  background-color: aqua;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.seguridad{
+  margin-left: 500px;
+}
+
 .botonConsulta{
   transition: .2s;
 }

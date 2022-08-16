@@ -12,53 +12,41 @@
     <link rel="stylesheet" href="assets/css/icons.css">
 </head>
 <body>
-    <div id="accordian">
-        <ul class="show-dropdown main-navbar">
-          <div class="selector-active" style="top:90px;">
-            <div class="top"></div>
-            <div class="bottom"></div>
+  <div id="accordian">
+    <ul class="show-dropdown main-navbar">
+      <div class="selector-active" style="top:90px;">
+        <div class="top"></div>
+        <div class="bottom"></div>
+      </div>
+      <li>
+        <a href="#" onclick="perfil()"><i class="fa fa-tachometer"></i>Inicio</a>
+      </li>
+      <li>
+        <a href="#" onclick="infoPersonal()"><i class="fa fa-address-book"></i>Información Personal</a>
+      </li>
+      <li class="active">
+        <a href="#"><i class="fa fa-clone"></i>Seguridad</a>
+      </li>
+      <li>
+        <a href="#" onclick="infoGeneral()"><i class="fa fa-calendar"></i>Información General</a>
+      </li>
+    </ul>
+  </div>
+  <div id="cuadrado">
+    <div class="seguridad">
+          <h4>Actividad reciente: </h4>
+          <div class="segu">
+            <p>Se inicio sesion: </p>
+            <p>En el dispositivo: </p>
+            <p>A la hora: </p>
           </div>
-          <li>
-            <a href="#" onclick="perfil()"><i class="fa fa-tachometer"></i>Inicio</a>
-          </li>
-          <li>
-            <a href="#" onclick="infoPersonal()"><i class="fa fa-address-book"></i>Información Personal</a>
-          </li>
-          <li class="active">
-            <a href="#"><i class="fa fa-clone"></i>Seguridad</a>
-          </li>
-          <li>
-            <a href="#" onclick="infoGeneral()"><i class="fa fa-calendar"></i>Información General</a>
-          </li>
-        </ul>
-       </div>
-<!--
-  <div id="Seguridad">
-      <h6>Actividad reciente:</h6>
-        <div class="cuadro">
-          <P>Se inicio sesión: </P>
-          <p>En el dispositivo: </p>
-          <p>A la hora: </p>
-          </div>
-          <h6>Iniciar sesión:</h6>
-          <div class="cuadro">
+          <h4>Iniciar Sesion: </h4>
+          <div class="segu">
             <p>Contraseña: </p>
             <p>Verificar contraseña: </p>
-            <p>Telefono de recuperacion: </p>
           </div>
-          <div class="volver">
-            <a class="btn btn-outline-light" href="index.php">Volver al inicio</a>
-  </div>
-  -->
-
-  <h6>Actividad reciente:</h6>
-    <div>
-      <p>Se inicio sesion: </p>
-      <p>En el dispositivo: </p>
-      <p>A la hora: </p>
+      </div>
     </div>
-    <h6>Iniciar sesion:</h6>
-    
   <footer>
     <div class="row">
       <div class="col l6">
