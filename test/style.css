@@ -105,7 +105,7 @@ height: 100%;
   background: transparent;
   color: #fff;
   width: 120px;
-  border: 2px solid#fff;
+  border: 2px solid #fff;
   border-radius: 25px;
   padding: 10px;
   -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
@@ -113,16 +113,10 @@ height: 100%;
   box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
 }
 .butt_out:hover {
-  border: 2px solid#eecbff;
+  border: 2px solid #eecbff;
 }
 .butt_out:focus {
   outline: none;
-}
-.form-box{
-    position: relative;
-    margin: 6% auto;
-    background: #fff;
-    padding: 5px;
 }
 .toggle-btn{
     padding: 10px;
@@ -137,26 +131,37 @@ height: 100%;
   outline: none;
 }
 #btn {
-    background: linear-gradient(to right, rgba(40,83,161,1) 35%, rgba(87,147,255,1) 100%);
-    left: 10px;
-    padding: 10px;
-    padding-bottom: 1px;
-    border-radius: 27px;
-    transition: .5s;
+  position: absolute;
+  background: linear-gradient(to right, rgba(40,83,161,1) 35%, rgba(87,147,255,1) 100%);
+  left: 10px;
+  padding: 10px;
+  border-radius: 27px;
+  transition: .5s;
 }
 #login-btn {
-    padding-left: 31px;
-    color: white;
-    width: 195px;
-    transition: .5s;
-    position: relative;
-    top: 5px;
+  color: black;
+  transition: .5s;
+  position: relative;
 }
 #register-btn{
-    margin-left: 30px;
-    color: gray;
+  color: black;
+  transition: .5s;
+  position: relative;
+}
+
+.txt{
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .toggle-btn{
+    max-width: 140px;
+  }
+  #btn{
+    height: 35px;
     width: 140px;
-    transition: .5s;
-    position: relative;
-    top: 4px;
+    z-index: 0;
+    top: 5px;
+  }
+
 }
