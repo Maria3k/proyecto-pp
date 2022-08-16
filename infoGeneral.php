@@ -32,14 +32,18 @@
           </li>
         </ul>
        </div>
+
        <div id="cuadrado">
-      <div class="pansito">
-          <img src="assets/img/iconosUsu/logo1.png" alt="">
-      </div>
-      <div class="Bienvenido">
-          <label for=""> Bienvenido Usuario </label>
-      </div>
-    </div>
+          <h4>¿Que ofrece la web?</h4>
+          <p>ET 32 Respuestas esta optimizada para la resolucion de incertidumbres de los estudiantes con respecto a su especialidad donde los directivos, profesores y/o estudiantes <br> que poseen el conocimiento para responder la interrogante, a fin de que la duda sea resuelta</p>
+          <h5>informacion sobre los directivos: </h5>
+
+          <img src="assets/img/iconosUsu/logo1.png" class="icon">
+          <img src="assets/img/iconosUsu/logo2.png" class="icon">
+          <img src="assets/img/iconosUsu/logo3.png" class="icon">
+
+        </div>
+
     <footer>
     <div class="row">
       <div class="col l6">

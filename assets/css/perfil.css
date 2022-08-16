@@ -41,6 +41,11 @@ h6 {
   height: 100%;
 }
 
+.icon{
+  width: 30px;
+  height: 30px;
+}
+
 #cuadrado img {
   vertical-align: middle;
   margin-left: 41.5%;
