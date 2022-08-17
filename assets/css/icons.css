@@ -14,6 +14,11 @@ a{
   color: black;
 }
 
+.connect{
+  font-size: xxx-large;
+  
+}
+
 footer a:hover{
   color: black;
 }
@@ -39,11 +44,10 @@ a.instagram i:hover{
 }
 
 .wrapper {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 1rem;
   padding-top: 5%;
 }
