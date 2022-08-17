@@ -42,14 +42,14 @@
           </ul>
          </div>
 
-         <div id="cuadrado">
-            <div class="pansito">
-                <img src="<?= $usr["rutaArchivo"] ?>" alt="<?= $usr["nombreArchivo"] ?>">
-                <br><b>Nombre</b> <?= $usr["nombre"] ?>
-                <br><b>Apellido</b> <?= $usr["apellido"] ?>
-                <br><b>Username</b> <?= $usr["nickname"] ?>
-                <br><b>Fecha de Nacimiento</b> <?= $usr["fechaNacimiento"] ?>
-            </div>
+         <div id="infoPersonal">
+            <div class="Pansito">
+            <img src="<?= $usr["rutaArchivo"] ?>" alt="<?= $usr["nombreArchivo"] ?>">
+                <div class="name"><br><b>Nombre</b> <?= $usr["nombre"] ?></div>
+                <div class="surname"><br><b>Apellido</b> <?= $usr["apellido"] ?></div>
+                <div class="username"><br><b>Username</b> <?= $usr["nickname"] ?></div>
+                <div class="FDN"><br><b>Fecha de Nacimiento</b> <?= $usr["fechaNacimiento"] ?></div>
+                </div>
          </div>
 
     <footer>
