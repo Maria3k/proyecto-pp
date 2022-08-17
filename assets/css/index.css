@@ -264,7 +264,7 @@ i#bell-icon{
   font-size: 34px;
 }
 
-i#bell-icon:focus{
+i#bell-icon:hover{
     animation: shake 1s forwards;
 }
 

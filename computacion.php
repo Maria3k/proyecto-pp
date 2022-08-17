@@ -163,7 +163,10 @@ if ($_SESSION) {
   </footer>
   <script src="assets/js/bootstrap.js"></script>
   <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
-  <script src="assets/js/jquery-3.6.0.js"></script>
+  <script src="assets/js/jquery-3.6.0.min.js"></script> 
+  <!--CAMBIAR A 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>  
+  -->
   <script>
     function menuToggle() {
       const toggleMenu = document.querySelector('.menu');
@@ -171,8 +174,7 @@ if ($_SESSION) {
     }
 
     $(document).ready(() => {
-      var id_usr = <?= $ajax; ?>;
-      if (id_usr != -1) {
+      if (<?= $ajax; ?> != -1) {
         notification();
       }
 
@@ -181,14 +183,10 @@ if ($_SESSION) {
         $.ajax({
           url: "notification.php",
           type: "POST",
-          data: {
-            id: <?= $ajax; ?>
-          },
-          success: function(n) {
-            if (n != 0) {
-              $("#number").html(n);
-              $("#number").show();
-            }
+          data: {id: <?= $ajax; ?>},
+          success: (n) => {
+            cant = JSON.parse(n).length;
+            if (cant != 0) $("#number").html(cant).show();
           }
         });
       }
@@ -199,19 +197,17 @@ if ($_SESSION) {
         $.ajax({
           url: "asks.php",
           type: "POST",
-          data: {
-            e: 1
-          },
-          success: function(response) {
+          data: { e: 1 },
+          success: response => {
             let plantilla = '';
             JSON.parse(response).forEach(ask => {
               plantilla += `
               <img src="${ask.avatar}" alt="${ask.avatarName}" title="${ask.nombre} ${ask.apellido}" width="50px" height="50px">${ask.nickname} || ${ask.fecha}
                 <h5>${ask.asunto}</h5>
                 <p>${ask.contenido}</p>
-                
+
                 <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight${ask.id}" aria-controls="offcanvasRight${ask.id}"><i class="fa-solid fa-plus"></i></button><?= $ad; ?><br>
-                
+
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight${ask.id}" aria-labelledby="offcanvasRightLabel">
                   <div class="offcanvas-header">
                   <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -244,17 +240,18 @@ if ($_SESSION) {
             e: 1,
             clave: n
           },
-          success: function(response) {
+          success: response => {
             let plantilla = '';
             if (JSON.parse(response).length != 0) {
+
               JSON.parse(response).forEach(ask => {
                 plantilla += `
-                <img src="${ask.avatar}" alt="${ask.avatarName}" title="${ask.nombre} ${ask.apellido}" width="50px" height="50px">${ask.nickname} || ${ask.fecha}
+                  <img src="${ask.avatar}" alt="${ask.avatarName}" title="${ask.nombre} ${ask.apellido}" width="50px" height="50px">${ask.nickname} || ${ask.fecha}
                   <h5>${ask.asunto}</h5>
                   <p>${ask.contenido}</p>
-                  
+
                   <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight${ask.id}" aria-controls="offcanvasRight${ask.id}">+</button><?= $ad; ?><br>
-                  
+
                   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight${ask.id}" aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -275,18 +272,14 @@ if ($_SESSION) {
                 fecthRtas(ask.id);
               });
             } else {
-              plantilla += `
-                <h1>Ninguna coincidencia encontrada para: ${n}</h1>
-              `;
+              plantilla += `<h1>Ninguna coincidencia encontrada para: ${n}</h1>`;
             }
             $("#ask").html(plantilla);
           }
         })
       }
 
-      $(document).on("click", "#searchBtn", function() {
-        searchAsks($("#search").val());
-      })
+      $(document).on("click", "#searchBtn", () => searchAsks($("#search").val()));
 
       function fecthRtas(id) {
         $.ajax({
@@ -296,21 +289,21 @@ if ($_SESSION) {
             e: 1,
             "id": id
           },
-          success: function(response) {
+          success: response => {
             let plantilla = '';
             JSON.parse(response).forEach(rta => {
               plantilla += `
-              <img src="${rta.avatar}" alt="${rta.avatarName}" title="${rta.nombre} ${rta.apellido}" width="50px" height="50px">
-              ${rta.nickname} || ${rta.fecha}
-              <p>${rta.contenido}</p>
-            `
+                <img src="${rta.avatar}" alt="${rta.avatarName}" title="${rta.nombre} ${rta.apellido}" width="50px" height="50px">
+                ${rta.nickname} || ${rta.fecha}
+                <p>${rta.contenido}</p>
+              `;
             });
             $("#rtasDiv" + id).html(plantilla);
           }
         })
       }
 
-      $(document).on("click", ".submitRta", function() {
+      $(document).on("click", ".submitRta", () => {
         let rtaData = {
           e: 1,
           pregunta: $(this).siblings("#rta-form" + $(this).val()).children("#preguntaId" + $(this).val()).val(),
@@ -320,43 +313,37 @@ if ($_SESSION) {
           alert("ESTA VACIO");
         } else {
           if (<?= $_SESSION ? 1 : 0 ?> == 1) {
-            $.post("respuesta.php", rtaData, function(response) {
+            $.post("respuesta.php", rtaData, response => {
               notification();
               fecthAsks();
               $("#rta-form").trigger("reset");
             });
+
           } else {
             window.location.href = "login.php";
           }
         }
       })
 
-      /*$('#rta-form').submit(function(formR) {
-        window.location.href = "http://stackoverflow.com";
-        /*let postData = {
-          pregunta: $("#preguntaId").val(),
-          respuesta: $('#content').val()
-        };
-        console.log(postData);
-        formR.preventDefault();
-      });*/
-
-      $("#ask-form").submit(function(fromA) {
+      $("#ask-form").submit( fromA => {
         let postData = {
           asunto: $("#asunto").val().trim(),
           pregunta: $("#contenido").val().trim()
         };
-        $.post("computacion.php", postData, function(response) {
+
+        $.post("computacion.php", postData, response => {
           fecthAsks();
           $("#ask-form").trigger('reset');
         });
+
         fromA.preventDefault();
       });
 
-      $(document).on("click", ".deleteAsk", function() {
-        $.post('deleteAsk.php', {
+      $(document).on("click", ".deleteAsk", () => {
+        postData = {
           id: $(this).val()
-        }, function(response) {
+        };
+        $.post('deleteAsk.php', postData , response => {
           notification();
           fecthAsks();
         });

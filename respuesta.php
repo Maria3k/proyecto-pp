@@ -6,24 +6,6 @@ if ($_SESSION) {
   if ($_POST) {
     $query = $con->query("INSERT INTO respuesta(usuario_respuesta, pregunta, contenido, fechaRespondida, especialidad) VALUES (" . $_SESSION["id_usuario"] . "," . $_POST["pregunta"] . ",'" . $_POST["respuesta"] . "','" . date('Y-m-d') . "'," . $_POST["e"] . ")") or die("Error en el INSERT ---> " . $query . mysqli_error($con));
     $update = $con->query("UPDATE pregunta SET respondida = 1 WHERE id_pregunta = " . $_POST["pregunta"]) or die("Error en el UPDATE ---> " . $update . mysqli_error($con));
-
-    switch ($_GET) {
-      case 1:
-        // code...
-        break;
-
-      case 2:
-        // code...
-        break;
-
-      case 3:
-        // code...
-        break;
-
-      default:
-        // code...
-        break;
-    }
   } else {
     header("Location:index.php");
   }
