@@ -45,11 +45,13 @@
          <div id="infoPersonal">
             <div class="Pansito">
             <img src="<?= $usr["rutaArchivo"] ?>" alt="<?= $usr["nombreArchivo"] ?>">
+            <div class="Datos">
                 <div class="name"><br><b>Nombre</b> <?= $usr["nombre"] ?></div>
                 <div class="surname"><br><b>Apellido</b> <?= $usr["apellido"] ?></div>
                 <div class="username"><br><b>Username</b> <?= $usr["nickname"] ?></div>
                 <div class="FDN"><br><b>Fecha de Nacimiento</b> <?= $usr["fechaNacimiento"] ?></div>
-                </div>
+            </div>
+              </div>
          </div>
 
     <footer>
