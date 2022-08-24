@@ -33,7 +33,12 @@ if ($_SESSION) {
     <a href="index.php" title="Pagina Principal"><img class="img1" src="assets/img/escuela/loguito.png" alt="minilogo.png"></a>
     <?= $menu ?>
   </nav>
-
+  <div class="barraPregunta">
+    <div class="input-group">
+      <input type="text" class="form-control" id="search" placeholder="Busqueda de preguntas" aria-describedby="searchBtn">
+      <button id="searchBtn" class="btn btn-primary input-group-text"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+  </div>
   <div id="ask" class="container">
   </div>
 
@@ -107,7 +112,7 @@ if ($_SESSION) {
                             <div class="col align-self-center bg-white" style="border-radius: 2rem">
                                 <h3>${ask.asunto}</h3>
                                 <img src="${ask.avatar}" width="50px" height="50px" class="rounded-3 rounded-start list-inline-item">
-                                    ${ask.nickname} <div id="info"> ${ask.fecha} </div>
+                                    ${ask.nickname} <div id="info"> ${ask.fecha} </div> 
                                 <p>${ask.contenido}</p>
                                 <div class="col text-end">
                                     <button class="btn btn-primary my-3" type="button" data-bs-toggle="offcanvas"
