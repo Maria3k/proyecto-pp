@@ -44,7 +44,7 @@
             <img src="<?= $usr["rutaArchivo"] ?>" alt="<?= $usr["nombreArchivo"] ?>">
           </div>
           <div class="Bienvenido">
-              <label for=""> Bienvenido Usuario </label>
+              <label for=""> Bienvenido&nbsp<?= $usr["nombre"] ?> </label>
           </div>
        <div id="Consultas">
           <a href="#" class="botonConsulta">

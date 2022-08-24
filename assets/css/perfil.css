@@ -142,7 +142,7 @@ h6 {
 
 #cuadrado img {
   vertical-align: middle;
-  margin-left: 38%;
+  margin-left: 35%;
   width: 200px;
   height: 200px;
   margin-top: 45px;
@@ -153,13 +153,13 @@ h6 {
   width: auto;
   height: auto;
   font-size: 30px;
-  margin-left: 36%;
+  margin-left: 35%;
   margin-top: 30px;
 }
 
 #Consultas{
   margin-top: 10px;
-  margin-left: 38%;
+  margin-left: 35%;
   background: linear-gradient(90deg, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
   color: #fff;
   width: 205px;
