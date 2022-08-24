@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `e.t32r`
 --
+CREATE DATABASE IF NOT EXISTS `e.t32r` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `e.t32r`;
 
 -- --------------------------------------------------------
 
