@@ -152,16 +152,3 @@ height: 100%;
 .txt{
   z-index: 1;
 }
-
-@media (max-width: 768px) {
-  .toggle-btn{
-    max-width: 140px;
-  }
-  #btn{
-    height: 35px;
-    width: 140px;
-    z-index: 0;
-    top: 5px;
-  }
-
-}

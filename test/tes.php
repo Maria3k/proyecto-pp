@@ -13,18 +13,18 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="myLeftCtn">
-                      <div class="form-group text-center">
-                          <div class="form-box row">
+                      <div class="form-group">
+                          <div class="form-box row justify-content-center">
                                   
                                     
-                            <button id="login-btn" type="button" class="toggle-btn col-6 btn" onclick="login()">
-                                <p class="txt">Iniciar Sesion</p>
-                                <div id="btn"></div>
+                            <button id="login-btn" type="button" class="toggle-btn col-6 pl-3 pr-5 my-auto col-sm-3 border btn mx-1" onclick="login()">
+                                Iniciar Sesion
+                                
                             </button>
-
+                            <div id="btn"></div> 
                             
                                 
-                            <button id="register-btn" type="button" class="toggle-btn col-6 btn" onclick="register()">
+                            <button id="register-btn" type="button" class="toggle-btn col-6 pl-3 pr-5 my-auto col-sm-3 border btn mx-1" onclick="register()">
                                 Registrar
                             </button>
                           </div>
@@ -76,12 +76,10 @@
 </div>
 <script type="text/javascript">
   function register(){
-    document.getElementById("login-btn").innerHTML = "Iniciar sesion";
-    document.getElementById("register-btn").innerHTML = `<div id="btn"><p>Registrar</p></div>`
+
   }  
   function login(){
-    document.getElementById("register-btn").innerHTML = "Registrar";
-    document.getElementById("login-btn").innerHTML = `<div id="btn"><p>Iniciar sesion</p></div>`
+
   }
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
