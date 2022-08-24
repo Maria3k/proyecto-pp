@@ -61,8 +61,14 @@ h6 {
   width: 200px;
   height: 200px;
   margin-left: 400px;
-  margin-top: 10px;
+  margin-top: 30px;
   border-radius: 50%;
+  transition-duration: .3s;
+  cursor: default;
+}
+
+.Pansito img:hover{
+  box-shadow: #1150c4 0px 0px 30px 9px;
 }
 
 .Datos{
@@ -79,37 +85,55 @@ h6 {
   margin-bottom: 2%;
   padding: 10px 15px 10px 15px;
   border-radius: 17px;
-  transition-duration: 0.4s;
+  transition-duration: 0.1s;
   cursor: default;
 }
 
 .name:hover{
-  color: aquamarine;
+  color: #0059ff;
 }
 
 .surname{
   margin-left: -450px;
-  *background-image: linear-gradient(180deg, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
   width: auto;
   display: inline-flex;
   padding: 10px 15px 10px 15px;
-  border-radius: 17px}
+  border-radius: 17px;
+  transition-duration: 0.1s;
+  cursor: default;
+}
+
+.surname:hover{
+  color: #0059ff;
+}
 
 .username{
   margin-left: 125px;
-  margin-top: -120px;  
-  *background-image: linear-gradient(180deg, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
+  margin-top: -125px;  
   display: inline-flex;
   padding: 10px 15px 10px 15px;
-  border-radius: 17px}
+  border-radius: 17px;
+  transition-duration: 0.1s;
+  cursor: default;
+}
+
+.username:hover{
+  color: #0059ff;
+}
 
 .FDN{
   margin-left: 275px;  
   margin-top: 2%;
-  *background-image: linear-gradient(180deg, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
   display: inline-flex;
   padding: 10px 15px 10px 15px;
-  border-radius: 17px}
+  border-radius: 17px;
+  transition-duration: 0.1s;
+  cursor: default;
+}
+
+.FDN:hover{
+  color: #0059ff;
+}
 
 .icon{
   width: 30px;
@@ -118,10 +142,11 @@ h6 {
 
 #cuadrado img {
   vertical-align: middle;
-  margin-left: 41.5%;
-  width: 6%;
-  height: 6%;
+  margin-left: 38%;
+  width: 200px;
+  height: 200px;
   margin-top: 45px;
+  border-radius: 50%;
 }
 
 #cuadrado .Bienvenido {

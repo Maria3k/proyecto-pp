@@ -1,3 +1,13 @@
+<?php
+  include("conexion.php");
+  session_start();
+  if($_SESSION){
+    $usr = $con->query("SELECT usuario.*, avatar.* FROM usuario LEFT JOIN avatar ON usuario.nAvatar = avatar.id_avatar WHERE id_usuario = " . $_SESSION["id_usuario"])->fetch_assoc();
+  }else{
+    header("location:login.php");
+  }
+ ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,7 +41,7 @@
        </div>
        <div id="cuadrado">
           <div class="pansito">
-              <img src="assets/img/iconosUsu/logo1.png" alt="">
+            <img src="<?= $usr["rutaArchivo"] ?>" alt="<?= $usr["nombreArchivo"] ?>">
           </div>
           <div class="Bienvenido">
               <label for=""> Bienvenido Usuario </label>
