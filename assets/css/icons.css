@@ -23,19 +23,19 @@ a i{
 }
 
 a.facebook i:hover{
-  color: #1877f2; /*COLOR ICONO FACEBOOK*/
+  color: #f3f3f3; /*COLOR ICONO FACEBOOK*/
 }
 
 a.github i:hover{
-  filter: invert(50%); /*COLOR ICONO GITHUB*/
+  color: #f3f3f3; /*COLOR ICONO GITHUB*/
 }
 
 a.youtube i:hover{
-  color: red; /*COLOR ICONO YOUTUBE*/
+  color: #f3f3f3; /*COLOR ICONO YOUTUBE*/
 }
 
 a.instagram i:hover{
-  color: purple; /*COLOR ICONO INSTAGRAM*/
+  color: #f3f3f3; /*COLOR ICONO INSTAGRAM*/
 }
 
 .wrapper {
