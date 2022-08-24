@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/especialidades.css">
 </head>
 
 <body class="vh-100" style="background-color: gainsboro;">
@@ -31,10 +32,8 @@
                         <div class="row my-3">
                             <div class="col align-self-center bg-white" style="border-radius: 2rem">
                                 <h3>${ask.asunto}</h3>
-                                <img src="${ask.avatar}" width="50px" height="50px"
-                                    class="rounded-3 rounded-start list-inline-item">
-                                <p class="fs-5">${ask.nickname}</p>
-                                <p class="fs-6 text-primary text-opacity-50 text-black-50 list-inline-item">${ask.fecha}</p>
+                                <img src="${ask.avatar}" width="50px" height="50px" class="rounded-3 rounded-start list-inline-item">
+                                    ${ask.nickname} <div id="info"> ${ask.fecha} </div>
                                 <p>${ask.contenido}</p>
                                 <div class="col align-content-end ml-auto">
                                     <button class="btn btn-primary my-3" type="button" data-bs-toggle="offcanvas"
