@@ -28,51 +28,15 @@ if ($_SESSION) {
   <title>Especialidad Automotores</title>
 </head>
 
-<body>
+<body >
   <nav>
     <a href="index.php" title="Pagina Principal"><img class="img1" src="assets/img/escuela/loguito.png" alt="minilogo.png"></a>
     <?= $menu ?>
   </nav>
-  <div class="container">
-    <div class="row">
-      <div class="question col">
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-          Realize su pregunta
-        </button>
-        <div class="collapse" id="collapseExample">
-          <div class="card card-body">
-            <form action="">
-              <input type="text" class="form-control" placeholder="Asunto"> <br>
-              <textarea class="form-control" cols="40" rows="10" placeholder="Haga su pregunta"></textarea><br>
-              <input type="submit" class="btn btn-primary">
-            </form>
-          </div>
-        </div>
-        <div class="question2">
-          <h3>Asunto...</h3>
-          <img src="assets/img/iconosUsu/logo1.png" width="50px" height="50px"> Nombre usuario || Fecha de la pregunta
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum esse nostrum laboriosam aut reiciendis nesciunt laudantium, itaque suscipit unde expedita beatae labore officia accusamus velit hic. Cum ea repudiandae ducimus.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate alias, maxime repellat voluptatem praesentium sunt eos repellendus dignissimos, id aspernatur iusto! Fuga distinctio asperiores voluptatem nobis sit atque aspernatur aut! </p>
-          <div class="container">
-            <div class="row">
-              <div class="col align-content-end ml-auto">
-                <button class="btn btn-primary " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-comment-dots"></i></button>
-              </div>
-            </div>
-          </div>
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-            <div class="offcanvas-header">
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <h6>Pregunta:</h6>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque provident, culpa ducimus magni, libero repellat suscipit quo dolores eveniet doloribus mollitia ea quae labore neque ab laboriosam soluta, corporis sit. <br>
-              <textarea cols="40" rows="5" placeholder="Dejar un comentario"> </textarea>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+  <div id="ask" class="container">
+  </div>
+
   </div>  
     <footer>
       <div class="row">
@@ -125,6 +89,53 @@ if ($_SESSION) {
     </footer>
     <script src="assets/js/bootstrap.js"></script>
     <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
+    <script src="assets/js/jquery-3.6.0.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            $.ajax({
+                url: "asks.php",
+                type: "POST",
+                data: {
+                    e: 3
+                },
+                success: function (response) {
+                    let plantilla = '';
+                    JSON.parse(response).forEach(ask => {
+                        plantilla += `
+                        <div class="row my-3">
+                            <div class="col align-self-center bg-white" style="border-radius: 2rem">
+                                <h3>${ask.asunto}</h3>
+                                <img src="${ask.avatar}" width="50px" height="50px" class="rounded-3 rounded-start list-inline-item">
+                                    ${ask.nickname} <div id="info"> ${ask.fecha} </div>
+                                <p>${ask.contenido}</p>
+                                <div class="col text-end">
+                                    <button class="btn btn-primary my-3" type="button" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Añadir respuesta</button>
+                                </div>
+                                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                                    aria-labelledby="offcanvasRightLabel" aria-hidden="true" style="visibility: hidden;">
+                                    <div class="offcanvas-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <h6>Pregunta:</h6>
+                                        ${ask.contenido} <br>
+                                        <textarea class="form-control" cols="40" rows="5" placeholder="Dejar un comentario"> </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        `;
+                       
+                    });
+                    $("#ask").html(plantilla);
+                }
+            })
+
+
+        });
+    </script>
 </body>
 
 </html>
