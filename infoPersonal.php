@@ -8,7 +8,7 @@
   }
  ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,10 +46,10 @@
             <div class="Pansito">
             <img src="<?= $usr["rutaArchivo"] ?>" alt="<?= $usr["nombreArchivo"] ?>">
             <div class="Datos">
-                <div class="name"><br><b>Nombre</b> <?= $usr["nombre"] ?></div>
-                <div class="surname"><br><b>Apellido</b> <?= $usr["apellido"] ?></div>
-                <div class="username"><br><b>Username</b> <?= $usr["nickname"] ?></div>
-                <div class="FDN"><br><b>Fecha de Nacimiento</b> <?= $usr["fechaNacimiento"] ?></div>
+                <div class="name"><br><b>Nombre:&nbsp</b> <?= $usr["nombre"] ?></div>
+                <div class="surname"><br><b>Apellido:&nbsp</b> <?= $usr["apellido"] ?></div>
+                <div class="username"><br><b>Username:&nbsp</b> <?= $usr["nickname"] ?></div>
+                <div class="FDN"><br><b>Fecha de Nacimiento:&nbsp</b> <?= $usr["fechaNacimiento"] ?></div>
             </div>
               </div>
          </div>
