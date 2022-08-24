@@ -75,3 +75,10 @@ body {
 .myLeftCtn .fas {
     color: rgb(40, 83, 161);
 }
+
+@media (max-width: 767px) {
+    .cuerpo{
+        margin-top: 10rem !important;
+    }
+  
+}

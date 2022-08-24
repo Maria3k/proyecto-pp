@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 </head>
 <body>
-    <div class="container">
+    <div class="container cuerpo">
         <div class="myCard">
             <div class="row">
                 <div class="col-md-6">
@@ -65,9 +65,9 @@
                                 </div>
                                 <div class="row">
                                     <div class="row">
-                                        <div class="input-group">
-                                            <input class="input-field" id="nombre" name="nombre" placeholder="Nombre">
-                                            <input type="text" class="input-field" id="apellido" name="apellido" placeholder="Apellido">
+                                        <div class="input-group text-center">
+                                            <input class="input-field text-center col-5 mx-auto" id="nombre" type="text" name="nombre" placeholder="Nombre">
+                                            <input class="input-field text-center col-5 mx-auto" id="apellido" type="text" name="apellido" placeholder="Apellido">
                                         </div>
                                         <input class="input-field" type="text" name="nickname" placeholder="Nombre de usuario" required>
                                         <input class="input-field" type="email" name="email" placeholder="Correo" required>
