@@ -118,7 +118,6 @@ if ($_SESSION) {
                 <li>Thristall Guerra - 6°1 Computación</li>
                 <li>Ivan Britez - 6°1 Computación</li>
               </ul>
-
         </div>
         <div class="box">
           <h5>Redes Sociales</h5>
