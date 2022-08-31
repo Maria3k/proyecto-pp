@@ -39,8 +39,26 @@ if ($_SESSION) {
       <button id="searchBtn" class="btn btn-primary input-group-text"><i class="fa-solid fa-magnifying-glass"></i></button>
     </div>
   </div>
-  <div id="ask" class="container">
+
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Realizar pregunta
+  </button>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" placeholder="Asunto"> 
+      <label for="floatingInput">Asunto</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" placeholder="Contenido" style="height: 200px">
+      <label for="floatingInput">Contenido</label>
+    </div>
+    <input class="btn btn-primary" type="submit" value="Enviar">
+    </div>
   </div>
+
+  <div id="ask" class="container"></div>
 
   </div>  
     <footer>
