@@ -28,7 +28,7 @@
       <div class="header">
         <img src="<?= $usr["rutaArchivo"] ?>" alt="<?= $usr["nombreArchivo"] ?>">
         <h2><label for="">Bienvenido</h2></label>
-        <b><?= $usr["nombre"] ?></b>
+          <div class="nombreUser"></div><b><?= $usr["nombre"] ?></b>
     </div>
     </div>
   </div>
