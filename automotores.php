@@ -28,7 +28,7 @@ if ($_SESSION) {
   <title>Especialidad Automotores</title>
 </head>
 
-<body >
+<body style="background-color:red">
   <nav>
     <a href="index.php" title="Pagina Principal"><img class="img1" src="assets/img/escuela/loguito.png" alt="minilogo.png"></a>
     <?= $menu ?>
@@ -54,11 +54,15 @@ if ($_SESSION) {
       <input type="text" class="form-control" id="floatingInput" placeholder="Contenido" style="height: 200px">
       <label for="floatingInput">Contenido</label>
     </div>
+    
     <input class="btn btn-primary" type="submit" value="Enviar">
+    
     </div>
   </div>
 
-  <div id="ask" class="container"></div>
+  <div class="ventanaPregunta">
+    <div id="ask" class="container"></div>
+  </div>
 
   </div>  
     <footer>

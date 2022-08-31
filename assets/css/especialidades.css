@@ -13,9 +13,9 @@
     color: rgb(136, 130, 130);
 }
 
-.barraPregunta{
-    
-}
+/*.ventanaPregunta{
+    border: 1px solid black;
+}*/
 .pregunta{
     background-color:rgb(49, 111, 192);
     border-radius: 5px;
