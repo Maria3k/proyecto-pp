@@ -9,9 +9,11 @@
     
     <style>
         .cuadro{
-            width: 500px;
+            width: 390px;
             height: 50px;
             border: 1px solid black;
+            box-shadow: 1px 2px 2px;
+            text-align: center;
         }
 
     </style>
@@ -20,15 +22,26 @@
 <body>
 
     <div class="cuadro">
-        Para hacer una pregunta haga click al boton 
+        Para hacer una pregunta haga click al boton  &nbsp&nbsp
         <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"
         style="border-radius: 25px;">
             +
         </button>
     </div>
+    <br>
     <div class="collapse" id="collapseExample">
         <div class="card card-body">
-          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                <label for="floatingTextarea">Asunto</label>
+            </div>
+            <br>
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 150px"></textarea>
+                <label for="floatingTextarea2">Contenido</label>
+            </div>
+            <br>
+            <input class="btn btn-primary" type="submit" value="Submit" style="border-radius: 20px;">
         </div>
     </div>
 
