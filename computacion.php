@@ -163,7 +163,7 @@ if ($_SESSION) {
   </footer>
   <script src="assets/js/bootstrap.js"></script>
   <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
-  <script src="assets/js/jquery-3.6.0.min.js"></script> 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <!--CAMBIAR A 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>  
   -->
@@ -183,7 +183,9 @@ if ($_SESSION) {
         $.ajax({
           url: "notification.php",
           type: "POST",
-          data: {id: <?= $ajax; ?>},
+          data: {
+            id: <?= $ajax; ?>
+          },
           success: (n) => {
             cant = JSON.parse(n).length;
             if (cant != 0) $("#number").html(cant).show();
@@ -197,7 +199,9 @@ if ($_SESSION) {
         $.ajax({
           url: "asks.php",
           type: "POST",
-          data: { e: 1 },
+          data: {
+            e: 1
+          },
           success: response => {
             let plantilla = '';
             JSON.parse(response).forEach(ask => {
@@ -264,7 +268,7 @@ if ($_SESSION) {
                       <input id="preguntaId${ask.id}" type="hidden" value="${ask.id}">
                       <textarea id="content${ask.id}" class="form-control my-2" placeholder="Dejar un comentario" required></textarea>
                       </form>
-                      <button id="submitRta" class="btn btn-primary submitRta" value="${ask.id}">Ola</button>
+                      <button class="btn btn-primary submitRta" value="${ask.id}">Ola</button>
                       <div id="rtasDiv${ask.id}"></div>
                     </div>
                   </div>
@@ -304,6 +308,7 @@ if ($_SESSION) {
       }
 
       $(document).on("click", ".submitRta", () => {
+        console.log($(this).val());
         let rtaData = {
           e: 1,
           pregunta: $(this).siblings("#rta-form" + $(this).val()).children("#preguntaId" + $(this).val()).val(),
@@ -325,7 +330,7 @@ if ($_SESSION) {
         }
       })
 
-      $("#ask-form").submit( fromA => {
+      $("#ask-form").submit(fromA => {
         let postData = {
           asunto: $("#asunto").val().trim(),
           pregunta: $("#contenido").val().trim()
@@ -343,7 +348,7 @@ if ($_SESSION) {
         postData = {
           id: $(this).val()
         };
-        $.post('deleteAsk.php', postData , response => {
+        $.post('deleteAsk.php', postData, response => {
           notification();
           fecthAsks();
         });
