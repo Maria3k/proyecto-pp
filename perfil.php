@@ -6,8 +6,41 @@
   }else{
     header("location:login.php");
   }
- ?>
 
+  $menu = '';
+
+if ($_SESSION) {
+
+  $nAvatar = $_SESSION["nAvatar"];
+
+  $send = $con->query("SELECT * FROM avatar WHERE id_avatar = $nAvatar");
+  $col = $send->fetch_assoc();
+  $ad = '';
+
+  if($_SESSION["rol"] == 2){
+    $ad = '<li><a href="backend.php"><i class="fa-solid fa-gear"></i>Editar</a></li>';
+  }
+
+
+  $menu = '        
+  <div class="action" >
+    <div class="profile" onclick="menuToggle()">
+      <img src="'.$col["rutaArchivo"].'" width="30px" height="30px" alt="'.$col["nombreArchivo"].'">
+    </div>
+    <div class="menu">
+      <ul>
+        <li id="primero"><a href="perfil.php"><i class="fa-solid fa-user"></i>Perfil</a></li>
+        '.$ad.'
+        <li><a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar Sesion</a></li>
+      </ul>
+    </div>
+  </div>
+        ';
+} else {
+  $menu = '<a class="btn-nav" href="register.php">Register</a><a class="btn-nav" href="login.php">Iniciar Sesion</a>';
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,14 +54,27 @@
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/icons.css">
 </head>
-<body>
+<body class="body-perfil">
+
+  <nav>
+    <img class="img1" src="assets/img/escuela/loguito.png" alt="loguito.png">
+    <div class="icon-wrapper" data-numbrer="1">
+      <img src="assets/img/iconos/bell.png" class="bell-icon">
+    </div>
+    <?= $menu ?>
+  </nav>
 
   <div class="contenedor">
     <div class="carta-contenedor">
       <div class="header">
-        <img src="<?= $usr["rutaArchivo"] ?>" alt="<?= $usr["nombreArchivo"] ?>">
-        <h2><label for="">Bienvenido</h2></label>
-          <div class="nombreUser"></div><b><?= $usr["nombre"] ?></b>
+          <div class="nombreUser">
+            <h2><label for="" class="label">Bienvenido&nbsp <b><?= $usr["nombre"] ?></b> </h2></label>
+          </div>
+          <div class="lorem">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat sequi esse beatae obcaecati consequuntur autem vel quidem officia quia maxime laboriosam quos neque quo fugit quisquam error, minima corporis ipsum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ullam minus error, vitae nulla voluptatum tenetur ipsa! Aperiam unde debitis modi, totam aliquid beatae aut corrupti soluta hic, quibusdam voluptas!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut quos, odio saepe eveniet sequi maiores eius totam porro laudantium, doloribus illum unde quas nulla. Similique debitis quae tempore vel provident?
+          </div>
     </div>
     </div>
   </div>

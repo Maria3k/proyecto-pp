@@ -22,6 +22,227 @@ h6 {
   color: #777;
 }
 
+/*Body de fondo*/
+.body-perfil{
+  background-color: rgb(255, 255, 255);
+}
+
+/*Navbar*/
+nav{
+  background-color: #2853a1;
+}
+
+.btn-nav{
+  padding-top: 20px;
+  padding-right: 10px;
+  color: white;
+  text-decoration: none;
+  float: right;
+  transition: 250ms;
+  padding-left: 10px;
+}
+
+.btn-nav:hover{
+  color: black;
+}
+
+.botonlogo{
+  display: inline-block;
+}
+
+.botonlogo img{
+  height: 70px;
+  width: 75px;
+}
+
+.botonlogin{
+  position: absolute;
+  display: inline-block;
+  right: 0%;
+}
+
+.botonlogin img{
+  height: 70px;
+  width: 75px;
+}
+
+/*==================Menu desplegable======================*/
+
+.action{
+  display: inline-block;
+  float: right;
+  top: 20px;
+  right: 30px;
+
+}
+
+.action .profile{
+  position: relative;
+  right: 25px;
+  margin-top: 8px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  transition: 250ms;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.action .profile:hover{
+  border: solid 3px white;
+}
+
+.action .profile img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.action .menu{
+  position: absolute;
+  top: 85px;
+  right: 10px;
+  background: #2853a1;
+  width: 200px;
+  border-radius: 15px;
+  transition: 0.5s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.action .menu.active{
+  visibility: visible;
+  opacity: 1;
+
+}
+
+.action .menu::before{
+  content: '▲';
+  font-size: 30px;
+  position: absolute;
+  top: -30px;
+  right: 30px;
+  width: 20px;
+  height: 20px;
+  color: #2853a1;
+
+
+}
+
+#primero{
+  border-top: none;
+}
+
+.action .menu h3{
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px 0;
+  font-weight: 500;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.2em;
+}
+
+.action .menu .ul{
+  margin-bottom: 0;
+
+}
+
+.action .menu ul li{
+  margin-bottom: 0;
+  list-style: none;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+}
+
+.action .menu ul li img{
+  max-width: 20px;
+  margin-right: 10px;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.action .menu ul li:hover img{
+  opacity: 1;
+}
+
+.action .menu ul li a{
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 250ms;
+}
+
+.action .menu ul li:hover a{
+  color: black;
+}
+
+/*==================Campana de notificacion======================*/
+
+.icon-wrapper{
+  width: 43px;
+  height: 43px;
+  position: relative;
+  display: inline-block;
+  float: right;
+  top: 10px;
+}
+
+.icon-wrapper::after{
+  content: '4';
+  width: 20px;
+  height: 20px;
+  background-color: #d32b2b;
+  color: white;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  right: 0;
+  opacity: 0;
+  transform: rotateY(3px);
+}
+
+.icon-wrapper:hover::after{
+  opacity: 1;
+  transform: rotateY(0);
+  transition: opacity .25s;
+  transform: .25s;
+}
+
+.bell-icon{
+  max-width: 100%;
+}
+
+.icon-wrapper:hover .bell-icon{
+  animation: shake 1s forwards;
+}
+
+@keyframes shake{
+  10%{
+      transform: rotate(15deg);
+  }
+  20%{
+      transform: rotate(-15deg);
+  }
+  30%{
+      transform: rotate(15deg);
+  }
+  50%{
+      transform: rotate(0deg);
+  }
+}
+
+/*Contenedor de información*/
+
 .contenedor{
   display: flex;
   align-items: center;
@@ -32,34 +253,34 @@ h6 {
 
 .carta-contenedor{
   display: flex;
-  width: 600px;
-  height: auto;
+  width: 60vw;
+  height: 60vh;
+  margin-top: 5%;
+  margin-left: 4%;
   background: #777;
   border-radius: 10px;
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
 }
 
-.header{
+.label{
+  display: flex;
+  justify-content: center;
+}
+
+.lorem{
   padding: 20px;
-}
-
-.header img{
-  border-radius: 45%;
-  margin: 20px 30px;
-}
-
-.header h2{
-  color: cornflowerblue;
 }
 
 .nombreUser{
   margin-top: 10px;
 }
 
+/*Boton Consulta*/
+
 .botonConsulta{
   position: absolute;
-  margin-top: -320px;
-  margin-left: 50%;
+  margin-top: -100px;
+  margin-left: 46%;
   background: linear-gradient(90deg, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
   color: #fff;
   width: 205px;
@@ -76,53 +297,8 @@ h6 {
   color: rgb(255, 255, 255);
 }
 
-/*
-#accordian {
-  display: inline-block;
-  background-image: linear-gradient(180deg, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
-  width: 250px;
-  padding: 10px 0px 10px 10px;
-  height: 48vh;
-  overflow-x: hidden;
-  position: relative;
-}
-#cuadrado {
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  margin-top: -40px;
-}
-#cuadrado img {
-  vertical-align: middle;
-  margin-left: 35%;
-  width: 200px;
-  height: 200px;
-  margin-top: 45px;
-  border-radius: 50%;
-}
-#cuadrado .Bienvenido {
-  width: auto;
-  height: auto;
-  font-size: 30px;
-  margin-top: 30px;
-  margin-left: 30%;
-}
-#Consultas{
-  margin-top: 10px;
-  margin-left: 35%;
-  background: linear-gradient(90deg, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
-  color: #fff;
-  width: 205px;
-  border: none;
-  border-radius: 20px;
-  padding: 13px 10px 3px 40px;
-  -webkit-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
-  box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
-}
-*/
+/*Vista Informacion Personal*/
+
 #infoPersonal{
   margin-left: 5%;
   display: inline-block;
@@ -240,103 +416,3 @@ h6 {
 }
 
 #section{}
-
-
-/*Antiguo menu*/
-/*
-.main-navbar {
-  position: relative;
-  padding-left: 0;
-}
-
-#accordian li {
-  list-style-type: none;
-}
-
-#accordian ul li a {
-  color: rgba(255, 255, 255, .5);
-  text-decoration: none;
-  font-size: 15px;
-  line-height: 45px;
-  display: block;
-  padding: 0 20px;
-  transition-duration: .6s;
-  transition-timing-function: cubic-bezier(0.68, -.55, .265, 1.55);
-  position: relative;
-}
-
-#accordian>ul>li.active>a {
-  color: #2853a1;
-  background-color: transparent;
-  transition: all .7s;
-}
-
-#accordian a:not(:only-child):after {
-  content: "\f105";
-  position: absolute;
-  right: 20px;
-  top: 10%;
-  font-size: 14px;
-  font-family: "Font Awesome 5 Free";
-  display: inline-block;
-  padding-right: 3px;
-  vertical-align: middle;
-  font-weight: 900;
-  transition: .5s;
-}
-
-#accordian .active>a:not(:only-child):after {
-  transform: rotate(90deg);
-}
-
-.selector-active {
-  width: 100%;
-  display: inline-block;
-  position: absolute;
-  height: 37px;
-  top: 0;
-  left: 0;
-  transition-duration: .6s;
-  transition-timing-function: cubic-bezier(0.68, -.55, .265, 1.55);
-  background-color: #fff;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-}
-
-.selector-active .bottom,
-.selector-active .top {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  background-color: #fff;
-  right: 0;
-}
-
-.selector-active .top {
-  top: -25px;
-}
-
-.selector-active .bottom {
-  bottom: -25px;
-}
-
-.selector-active .bottom:before,
-.selector-active .top:before {
-  content: '';
-  position: absolute;
-  width: 150px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #51ce81;
-}
-
-.selector-active .top:before {
-  left: -25px;
-  top: -25px;
-}
-
-.selector-active .bottom:before {
-  bottom: -25px;
-  left: -25px;
-}
-*/  
