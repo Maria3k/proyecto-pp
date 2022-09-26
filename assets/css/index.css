@@ -1,14 +1,14 @@
-*{
+* {
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
 }
 
-nav{
+nav {
     background-color: #2853a1;
 }
 
-.btn-nav{
+.btn-nav {
     padding-top: 20px;
     padding-right: 10px;
     color: white;
@@ -18,31 +18,31 @@ nav{
     padding-left: 10px;
 }
 
-.btn-nav:hover{
+.btn-nav:hover {
     color: black;
 }
 
-.botonlogo{
+.botonlogo {
     display: inline-block;
 }
 
-.botonlogo img{
+.botonlogo img {
     height: 70px;
     width: 75px;
 }
 
-.botonlogin{
+.botonlogin {
     position: absolute;
     display: inline-block;
     right: 0%;
 }
 
-.botonlogin img{
+.botonlogin img {
     height: 70px;
     width: 75px;
 }
 
-.div1{
+.div1 {
     margin: auto;
     padding: 20px;
     width: 640px;
@@ -51,24 +51,24 @@ nav{
     text-align: center;
 }
 
-.div1 img{
+.div1 img {
     float: left;
     margin-right: 10px;
 }
 
-.especialidades{
+.especialidades {
     padding-top: 20px;
     background-color: darkgray;
 }
 
-.Contenedor{
+.Contenedor {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
 }
 
-.Contenedor .card{
+.Contenedor .card {
     border-radius: 8px;
     border: none;
     overflow: hidden;
@@ -77,30 +77,30 @@ nav{
     transition: all 0.25s;
 }
 
-.Contenedor .card:hover{
+.Contenedor .card:hover {
     transform: translateY(-15px);
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.5);
 }
 
-.Contenedor .card img{
+.Contenedor .card img {
 
     width: 230px;
     height: 230px;
 }
 
-.Contenedor .card h4{
+.Contenedor .card h4 {
 
     font-weight: 600;
 }
 
-.Contenedor .card p{
+.Contenedor .card p {
 
     padding: 0 1rem;
     font-size: 16px;
     font-weight: 300;
 }
 
-.Contenedor .card a{
+.Contenedor .card a {
 
     font-weight: 500;
     text-decoration: none;
@@ -108,7 +108,7 @@ nav{
 
 }
 
-.contenedorVideo{
+.contenedorVideo {
     width: 50%;
     height: 50%;
     left: 25%;
@@ -123,7 +123,7 @@ nav{
 
 /*==================Menu desplegable======================*/
 
-.action{
+.action {
     display: inline-block;
     float: right;
     top: 20px;
@@ -131,7 +131,7 @@ nav{
 
 }
 
-.action .profile{
+.action .profile {
     position: relative;
     right: 25px;
     margin-top: 8px;
@@ -143,11 +143,11 @@ nav{
     cursor: pointer;
 }
 
-.action .profile:hover{
+.action .profile:hover {
     border: solid 3px white;
 }
 
-.action .profile img{
+.action .profile img {
     position: absolute;
     top: 0;
     left: 0;
@@ -156,7 +156,7 @@ nav{
     object-fit: cover;
 }
 
-.action .menu{
+.action .menu {
     position: absolute;
     top: 85px;
     right: 10px;
@@ -169,13 +169,13 @@ nav{
     opacity: 0;
 }
 
-.action .menu.active{
+.action .menu.active {
     visibility: visible;
     opacity: 1;
 
 }
 
-.action .menu::before{
+.action .menu::before {
     content: '▲';
     font-size: 30px;
     position: absolute;
@@ -186,11 +186,11 @@ nav{
     color: #2853a1;
 }
 
-#primero{
+#primero {
     border-top: none;
 }
 
-.action .menu h3{
+.action .menu h3 {
     width: 100%;
     text-align: center;
     font-size: 18px;
@@ -201,12 +201,12 @@ nav{
     line-height: 1.2em;
 }
 
-.action .menu .ul{
+.action .menu .ul {
     margin-bottom: 0;
 
 }
 
-.action .menu ul li{
+.action .menu ul li {
     margin-bottom: 0;
     list-style: none;
     padding: 10px 0;
@@ -215,18 +215,18 @@ nav{
     align-items: center;
 }
 
-.action .menu ul li img{
+.action .menu ul li img {
     max-width: 20px;
     margin-right: 10px;
     opacity: 0.5;
     transition: 0.5s;
 }
 
-.action .menu ul li:hover img{
+.action .menu ul li:hover img {
     opacity: 1;
 }
 
-.action .menu a{
+.action .menu a {
     display: inline-block;
     width: 85%;
     text-decoration: none;
@@ -235,9 +235,10 @@ nav{
     transition: 250ms;
 }
 
-.action .menu a:hover{
+.action .menu a:hover {
     color: black;
 }
+
 .icon-wrapper {
     position: relative;
     display: inline-block;
@@ -260,11 +261,11 @@ nav{
     transition: 250ms;
 }
 
-i#bell-icon{
-  font-size: 34px;
+i#bell-icon {
+    font-size: 34px;
 }
 
-i#bell-icon:hover{
+i#bell-icon:hover {
     animation: shake 1s forwards;
 }
 

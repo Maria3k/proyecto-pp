@@ -11,7 +11,7 @@ if ($_SESSION) {
   $send = $con->query($query);
   $col = $send->fetch_assoc();
 
-  if($_POST){
+  if ($_POST) {
     $pwd = md5($_POST["contraseña"]);
     $id = $_SESSION["id_usuario"];
 
@@ -19,8 +19,7 @@ if ($_SESSION) {
 
     $query = $con->query($sql);
   }
-
-}else{
+} else {
   header("Location:login.php");
 }
 

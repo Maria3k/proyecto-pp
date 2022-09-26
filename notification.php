@@ -24,4 +24,3 @@ if ($_SESSION) {
   }
   echo json_encode($json);
 }
-?>

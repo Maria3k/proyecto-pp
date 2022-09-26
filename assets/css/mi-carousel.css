@@ -1,8 +1,8 @@
-header{
+header {
     background-color: #1177d1;
 }
 
-header a{
+header a {
     padding-top: 20px;
     color: white;
     text-decoration: none;
@@ -10,23 +10,23 @@ header a{
     padding-left: 10px;
 }
 
-.botonlogo{
+.botonlogo {
     display: inline-block;
 }
 
-.botonlogo img{
+.botonlogo img {
     height: 70px;
     width: 75px;
 }
 
-.botonlogin{
+.botonlogin {
     position: absolute;
     display: inline-block;
     right: 0%;
 }
 
-.carousel-item{
+.carousel-item {
 
     height: 30rem;
-    background: rgb(49, 111, 192) ;
+    background: rgb(49, 111, 192);
 }

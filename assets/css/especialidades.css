@@ -1,33 +1,34 @@
-.faq{
+.faq {
     border-radius: 5px;
     text-align: center;
     border: solid 1px black;
 }
-.pregunta{
-    background-color:rgb(49, 111, 192);
+
+.pregunta {
+    background-color: rgb(49, 111, 192);
     border-radius: 5px;
     text-align: center;
 }
 
-footer{
+footer {
     background-color: #0083f5;
     bottom: 0;
     width: 100%;
 }
 
-footer li{
+footer li {
     list-style: none;
 }
 
-footer li ul li{
-    list-style:disc;
+footer li ul li {
+    list-style: disc;
 }
 
-.connect{
+.connect {
     font-size: xxx-large;
 }
 
-div.col.l6{
+div.col.l6 {
     margin-left: 15px;
 
 }

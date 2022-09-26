@@ -14,9 +14,9 @@ if (isset($_POST["submit"])) {
   $envio = $con->query("SELECT * FROM usuario WHERE nickname = '$user' or email = '$email'");
   $datos = $envio->fetch_assoc();
 
-  if(($envio->num_rows) == 0){
-    if($imagen){
-      $query = $con->query("INSERT INTO usuario(nombre, apellido, nickname, email, telefono, contraseña, nAvatar,rol) VALUES ('$nombre','$apellido','$user','$email','$telefono','$contraseña','$imagen',1)") or die("Error en el insert --->".$query.mysqli_error($con));
+  if (($envio->num_rows) == 0) {
+    if ($imagen) {
+      $query = $con->query("INSERT INTO usuario(nombre, apellido, nickname, email, telefono, contraseña, nAvatar,rol) VALUES ('$nombre','$apellido','$user','$email','$telefono','$contraseña','$imagen',1)") or die("Error en el insert --->" . $query . mysqli_error($con));
       $send = $con->query("SELECT * FROM usuario WHERE email = '$email'");
       $col = $send->fetch_assoc();
 
@@ -26,13 +26,10 @@ if (isset($_POST["submit"])) {
       $_SESSION = $col;
       $_SESSION['contraseña'] = $_POST['contraseña'];
       header("Location:index.php");
-
-
-    }else{
+    } else {
       echo "SELECCIONE UNA IMAGEN!!!";
     }
-
-  }else{
+  } else {
     echo "YA EXISTE UN USUARIO CON ESE NOMBRE O CORREO ELECTRONICO, TARADO :)";
   }
 }

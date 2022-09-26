@@ -1,66 +1,66 @@
-.letra a{
+.letra a {
 	color: black;
 	text-decoration: none;
 }
 
-.letra a:hover{
+.letra a:hover {
 	color: white;
 	text-decoration: none;
 }
 
-li{
+li {
 	list-style: none;
 }
 
-.col-3 li{
+.col-3 li {
 	padding-top: 25%;
 }
 
-.boton a{
+.boton a {
 
 	color: black;
 }
 
-.boton a:hover{
+.boton a:hover {
 	color: white;
 }
 
-aside{
+aside {
 
 	background-color: #1177d1;
 	height: 700px;
-	width:60%;
+	width: 60%;
 	left: 18%;
 	line-height: 550%;
 	display: inline-block;
 }
 
-span{
-	list-style:disc;
+span {
+	list-style: disc;
 }
 
-section{
+section {
 	padding-right: 200px;
 	padding-left: 450px;
 	margin-top: -570px;
 }
 
-#menu{
+#menu {
 	background-color: rgba(72, 78, 86, 0.82);
 }
 
-.ult{
+.ult {
 	padding-bottom: 25%;
 }
 
-#selec{
+#selec {
 	list-style: disc;
 }
 
-#section{
+#section {
 	background-color: #0083ff;
 }
 
-footer{
+footer {
 	position: fixed;
 }

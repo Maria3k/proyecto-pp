@@ -4,9 +4,8 @@ session_start();
 
 if ($_SESSION) {
     $_SESSION = $con->query("SELECT * FROM usuario WHERE id_usuario = " . $_SESSION["id_usuario"])->fetch_assoc();
-
-}else{
-  header("Location:login.php");
+} else {
+    header("Location:login.php");
 }
 
 $nAvatar = $_SESSION["nAvatar"];
@@ -15,8 +14,8 @@ $query = "SELECT * FROM avatar WHERE id_avatar = $nAvatar";
 $send = $con->query($query);
 $col = $send->fetch_assoc();
 
-if (isset($_GET['name'])){
-    $con->query("DELETE FROM usuario WHERE email = '" . $_SESSION["email"]."'") or die("ERROR SQL ->".$con->error);
+if (isset($_GET['name'])) {
+    $con->query("DELETE FROM usuario WHERE email = '" . $_SESSION["email"] . "'") or die("ERROR SQL ->" . $con->error);
     session_destroy();
     header("Location:index.php");
 }

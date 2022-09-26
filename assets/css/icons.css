@@ -1,4 +1,4 @@
-html{
+html {
   box-sizing: border-box;
   background: #f3f3f3;
 }
@@ -9,33 +9,37 @@ html{
   box-sizing: inherit;
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
 }
 
-footer a:hover{
+footer a:hover {
   color: black;
 }
 
-a i{
+a i {
   transition: 250ms;
 }
 
-a.facebook i:hover{
-  color: #1877f2; /*COLOR ICONO FACEBOOK*/
+a.facebook i:hover {
+  color: #1877f2;
+  /*COLOR ICONO FACEBOOK*/
 }
 
-a.github i:hover{
-  filter: invert(50%); /*COLOR ICONO GITHUB*/
+a.github i:hover {
+  filter: invert(50%);
+  /*COLOR ICONO GITHUB*/
 }
 
-a.youtube i:hover{
-  color: red; /*COLOR ICONO YOUTUBE*/
+a.youtube i:hover {
+  color: red;
+  /*COLOR ICONO YOUTUBE*/
 }
 
-a.instagram i:hover{
-  color: purple; /*COLOR ICONO INSTAGRAM*/
+a.instagram i:hover {
+  color: purple;
+  /*COLOR ICONO INSTAGRAM*/
 }
 
 .wrapper {
