@@ -26,5 +26,6 @@
         $error ="Correo electrónico o Contraseña incorrectos";
       }
 
+      echo $error;
     }
  ?>

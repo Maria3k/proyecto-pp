@@ -21,17 +21,21 @@
       $vemail = $con -> query($verificar_email);
       if(($vemail->num_rows) > 0){
         $errMail = '<div class="error"><i class="fa-solid fa-circle-exclamation"></i> Este email ya esta registrado</div>';
-      }
-      $verificar_nickname = "SELECT * FROM usuario WHERE nickname = '$nickname' ";
-      $venickame = $con -> query($verificar_nickname);
-      if(($venickame->num_rows) > 0){
-          $errNick = '<div class="error"><i class="fa-solid fa-circle-exclamation"></i> Este nombre de usuario ya esta registrado</div>';
+        $verificar_nickname = "SELECT * FROM usuario WHERE nickname = '$nickname' ";
+        $venickame = $con -> query($verificar_nickname);
+        if(($venickame->num_rows) > 0){
+            $errNick = '<div class="error"><i class="fa-solid fa-circle-exclamation"></i> Este nombre de usuario ya esta registrado</div>';
+        }
+      }else{
+        $con->query($query)or die("error de sintaxtis");
+        header("Location:index.php");
       }
 
-      $con->query($query)or die("error de sintaxtis");
-      header("Location:index.php");
 
     }else{
       echo "ola";
     }
+    echo $errNick;
+    echo "<br>";
+    echo $errMail;
  ?>
