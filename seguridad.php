@@ -1,26 +1,28 @@
 <?php
-  include 'conexion.php';
+include 'conexion.php';
 
-  $query="SELECT * FROM sesion";
+$query = "SELECT * FROM sesion";
 
-  $enviar = $con->query($query)or die("error de sintaxtis");
-  $datos = $enviar->fetch_assoc();
+$enviar = $con->query($query) or die("error de sintaxtis");
+$datos = $enviar->fetch_assoc();
 
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/css/perfil.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/icons.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="assets/css/perfil.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/icons.css">
 </head>
+
 <body>
   <div id="accordian">
     <ul class="show-dropdown main-navbar">
@@ -45,41 +47,52 @@
   <div id="cuadrado">
     <div class="seguridad">
 
-        <?php
-        if(strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE)
-           echo 'Internet explorer';
-         elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Trident') !== FALSE) //For Supporting IE 11
-            echo 'Internet explorer';
-         elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') !== FALSE)
-           echo 'Mozilla Firefox';
-         elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') !== FALSE)
-           echo 'Google Chrome';
-         elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera Mini') !== FALSE)
-           echo "Opera Mini";
-         elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== FALSE)
-           echo "Opera";
-         elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Safari') !== FALSE)
-           echo "Safari";
-         else
-           echo 'Something else';
+      <?php
 
-        ?>
+      echo "<h1>Navegador</h1>";
+
+      if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE)
+        echo 'Internet explorer';
+      elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident') !== FALSE) //For Supporting IE 11
+        echo 'Internet explorer';
+      elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') !== FALSE)
+        echo 'Mozilla Firefox';
+      elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') !== FALSE)
+        echo 'Google Chrome';
+      elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Opera Mini') !== FALSE)
+        echo "Opera Mini";
+      elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== FALSE)
+        echo "Opera";
+      elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Safari') !== FALSE)
+        echo "Safari";
+      else
+        echo 'Something else';
+
+      echo "<h1>Sistema Operativo</h1>";
+
+      echo php_uname("s");
+      echo php_uname("r");
+
+      echo "<h1>Hora</h1>";
+      echo (new \DateTime())->format('Y-m-d H:i:s');
+      
+      ?>
 
 
 
-          <h4>Actividad reciente: </h4>
-          <div class="segu">
-            <p>Se inicio sesion: </p>
-            <p>En el dispositivo: </p>
-            <p>A la hora: </p>
-          </div>
-          <h4>Iniciar Sesion: </h4>
-          <div class="segu">
-            <p>Contraseña: </p>
-            <p>Verificar contraseña: </p>
-          </div>
+      <h4>Actividad reciente: </h4>
+      <div class="segu">
+        <p>Se inicio sesion: </p>
+        <p>En el dispositivo: </p>
+        <p>A la hora: </p>
+      </div>
+      <h4>Iniciar Sesion: </h4>
+      <div class="segu">
+        <p>Contraseña: </p>
+        <p>Verificar contraseña: </p>
       </div>
     </div>
+  </div>
   <footer>
     <div class="row">
       <div class="col l6">
@@ -132,50 +145,50 @@
     </div>
   </footer>
 
-       <script>
-           // ---------vertical-menu with-inner-menu-active-animation-----------.
-        var tabsVerticalInner = $('#accordian');
-        var selectorVerticalInner = $('#accordian').find('li').length;
-        var activeItemVerticalInner = tabsVerticalInner.find('.active');
-        var activeWidthVerticalHeight = activeItemVerticalInner.innerHeight();
-        var activeWidthVerticalWidth = activeItemVerticalInner.innerWidth();
-        var itemPosVerticalTop = activeItemVerticalInner.position();
-        var itemPosVerticalLeft = activeItemVerticalInner.position();
-        $(".selector-active").css({
-        "top":itemPosVerticalTop.top + "px",
-        "left":itemPosVerticalLeft.left + "px",
+  <script>
+    // ---------vertical-menu with-inner-menu-active-animation-----------.
+    var tabsVerticalInner = $('#accordian');
+    var selectorVerticalInner = $('#accordian').find('li').length;
+    var activeItemVerticalInner = tabsVerticalInner.find('.active');
+    var activeWidthVerticalHeight = activeItemVerticalInner.innerHeight();
+    var activeWidthVerticalWidth = activeItemVerticalInner.innerWidth();
+    var itemPosVerticalTop = activeItemVerticalInner.position();
+    var itemPosVerticalLeft = activeItemVerticalInner.position();
+    $(".selector-active").css({
+      "top": itemPosVerticalTop.top + "px",
+      "left": itemPosVerticalLeft.left + "px",
+      "height": activeWidthVerticalHeight + "px",
+      "width": activeWidthVerticalWidth + "px"
+    });
+    $("#accordian").on("click", "li", function(e) {
+      $('#accordian ul li').removeClass("active");
+      $(this).addClass('active');
+      var activeWidthVerticalHeight = $(this).innerHeight();
+      var activeWidthVerticalWidth = $(this).innerWidth();
+      var itemPosVerticalTop = $(this).position();
+      var itemPosVerticalLeft = $(this).position();
+      $(".selector-active").css({
+        "top": itemPosVerticalTop.top + "px",
+        "left": itemPosVerticalLeft.left + "px",
         "height": activeWidthVerticalHeight + "px",
         "width": activeWidthVerticalWidth + "px"
-        });
-        $("#accordian").on("click","li",function(e){
-        $('#accordian ul li').removeClass("active");
-        $(this).addClass('active');
-        var activeWidthVerticalHeight = $(this).innerHeight();
-        var activeWidthVerticalWidth = $(this).innerWidth();
-        var itemPosVerticalTop = $(this).position();
-        var itemPosVerticalLeft = $(this).position();
-        $(".selector-active").css({
-            "top":itemPosVerticalTop.top + "px",
-            "left":itemPosVerticalLeft.left + "px",
-            "height": activeWidthVerticalHeight + "px",
-            "width": activeWidthVerticalWidth + "px"
-        });
-        });
+      });
+    });
 
-        function infoGeneral(){
-          setTimeout("location.href = 'infoGeneral.php';",400);
-        }
+    function infoGeneral() {
+      setTimeout("location.href = 'infoGeneral.php';", 400);
+    }
 
-        function infoPersonal(){
-          setTimeout("location.href = 'infoPersonal.php';",400);
-        }
+    function infoPersonal() {
+      setTimeout("location.href = 'infoPersonal.php';", 400);
+    }
 
-        function perfil(){
-          setTimeout("location.href = 'perfil.php';",400);
-        }
-
-       </script>
-      <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
-      <script src="assets/js/bootstrap.js"></script>
+    function perfil() {
+      setTimeout("location.href = 'perfil.php';", 400);
+    }
+  </script>
+  <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
 </body>
+
 </html>
