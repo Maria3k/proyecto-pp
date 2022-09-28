@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-08-2022 a las 21:55:49
+-- Tiempo de generación: 28-09-2022 a las 22:49:45
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.11
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `e.t32r`
 --
-CREATE DATABASE IF NOT EXISTS `e.t32r` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `e.t32r`;
 
 -- --------------------------------------------------------
 
@@ -128,6 +126,7 @@ INSERT INTO `roles` (`id_rol`, `rol`) VALUES
 CREATE TABLE `sesion` (
   `id` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
+  `navegador` varchar(100) NOT NULL,
   `dispositivo` varchar(1000) NOT NULL,
   `hora` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -219,7 +218,8 @@ INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido`, `nickname`, `email`, 
 (47, 'Ignacio47', 'Morales47', 'Doumeq047', 'ignaciomorales47@gmail.com', '1939-03-30', '202cb962ac59075b964b07152d234b70', 5, 1),
 (48, 'Ignacio48', 'Morales48', 'Doumeq048', 'ignaciomorales48@gmail.com', '1988-11-25', '202cb962ac59075b964b07152d234b70', 5, 1),
 (49, 'Ignacio49', 'Morales49', 'Doumeq049', 'ignaciomorales49@gmail.com', '1984-05-21', '202cb962ac59075b964b07152d234b70', 1, 1),
-(50, 'Ignacio50', 'Morales50', 'Doumeq050', 'ignaciomorales50@gmail.com', '1952-10-09', '202cb962ac59075b964b07152d234b70', 5, 1);
+(50, 'Ignacio50', 'Morales50', 'Doumeq050', 'ignaciomorales50@gmail.com', '1952-10-09', '202cb962ac59075b964b07152d234b70', 5, 1),
+(52, 'popp', 'oio', 'Morales2', 'r6@gmail.com', '1945-09-15', '202cb962ac59075b964b07152d234b70', 7, 1);
 
 --
 -- Índices para tablas volcadas
@@ -334,7 +334,7 @@ ALTER TABLE `subrespuesta`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- Restricciones para tablas volcadas
