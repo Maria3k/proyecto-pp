@@ -4,9 +4,14 @@
   box-sizing: border-box;
 }
 
+body::-webkit-scrollbar{
+  width: 0%;
+}
+
 body {
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 i {
@@ -280,7 +285,7 @@ nav{
 .botonConsulta{
   position: absolute;
   margin-top: -50px;
-  margin-left: 70%;
+  margin-left: 55%;
   background: linear-gradient(90deg, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
   color: #fff;
   width: 205px;
@@ -300,103 +305,39 @@ nav{
 /*Vista Informacion Personal*/
 
 #infoPersonal{
-  margin-left: 5%;
-  display: inline-block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  margin-top: -40px;
+  margin-left: 25%;
+  margin-top: 3%;
 }
 
-.Pansito{
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 20px;
-  margin-left: -171px;
-}
-
-.Pansito img{
-  width: 200px;
-  height: 200px;
-  margin-left: 700px;
-  margin-top: 30px;
+.ImagenUsuario img{
   border-radius: 50%;
-  transition-duration: .3s;
-  cursor: default;
-}
-
-.Pansito img:hover{
-  box-shadow: #1150c4 0px 0px 30px 9px;
-}
-
-.Datos{
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2%;
-  margin-left: 150px;
-}
-
-.name{
-  margin-left: -450px;
-  width: auto;
-  display: inline-flex;
-  margin-bottom: 2%;
-  padding: 10px 15px 10px 15px;
-  border-radius: 17px;
-  transition-duration: 0.1s;
-  cursor: default;
-}
-
-.name:hover{
-  color: #0059ff;
-}
-
-.surname{
-  margin-left: -450px;
-  width: auto;
-  display: inline-flex;
-  padding: 10px 15px 10px 15px;
-  border-radius: 17px;
-  transition-duration: 0.1s;
-  cursor: default;
-}
-
-.surname:hover{
-  color: #0059ff;
+  width: 20%;
+  height: 20%;
 }
 
 .username{
-  margin-left: 125px;
-  margin-top: -125px;  
-  display: inline-flex;
-  padding: 10px 15px 10px 15px;
-  border-radius: 17px;
-  transition-duration: 0.1s;
-  cursor: default;
+  margin-top: -30px;
+  font-size: x-large;
+  margin-left: -3%;
 }
 
-.username:hover{
-  color: #0059ff;
+.name{
+  margin-top: -230px;
+  font-size: x-large;
+  margin-left: 33%;
+}
+
+.surname{
+  margin-left: 33%;
+  font-size: x-large;
 }
 
 .FDN{
-  margin-left: 200px;  
-  margin-top: 1.6%;
-  display: inline-flex;
-  padding: 10px 15px 10px 15px;
-  border-radius: 17px;
-  transition-duration: 0.1s;
-  cursor: default;
+  margin-left: 33%;
+  font-size: x-large;
 }
 
-.FDN:hover{
-  color: #0059ff;
-}
+/* Seguridad */
 
 .icon{
   width: 30px;

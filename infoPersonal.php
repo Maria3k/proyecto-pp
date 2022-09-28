@@ -6,7 +6,41 @@
   }else{
     header("location:login.php");
   }
- ?>
+
+  $menu = '';
+
+if ($_SESSION) {
+
+  $nAvatar = $_SESSION["nAvatar"];
+
+  $send = $con->query("SELECT * FROM avatar WHERE id_avatar = $nAvatar");
+  $col = $send->fetch_assoc();
+  $ad = '';
+
+  if($_SESSION["rol"] == 2){
+    $ad = '<li><a href="backend.php"><i class="fa-solid fa-gear"></i>Editar</a></li>';
+  }
+
+
+  $menu = '        
+  <div class="action" >
+    <div class="profile" onclick="menuToggle()">
+      <img src="'.$col["rutaArchivo"].'" width="30px" height="30px" alt="'.$col["nombreArchivo"].'">
+    </div>
+    <div class="menu">
+      <ul>
+        <li id="primero"><a href="perfil.php"><i class="fa-solid fa-user"></i>Perfil</a></li>
+        '.$ad.'
+        <li><a href="logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar Sesion</a></li>
+      </ul>
+    </div>
+  </div>
+        ';
+} else {
+  $menu = '<a class="btn-nav" href="register.php">Register</a><a class="btn-nav" href="login.php">Iniciar Sesion</a>';
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -15,94 +49,62 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Document</title>
       <link rel="stylesheet" href="assets/css/perfil.css">
+      <link rel="stylesheet" href="accordian.css">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="assets/css/bootstrap.css">
       <link rel="stylesheet" href="assets/css/icons.css">
   </head>
   <body>
-      <div id="accordian">
-          <ul class="show-dropdown main-navbar">
-            <div class="selector-active" style="top:45px;">
-              <div class="top"></div>
-              <div class="bottom"></div>
-            </div>
-            <li>
-              <a href="#" onclick="perfil()"><i class="fa fa-tachometer"></i>Inicio</a>
-            </li>
-            <li class="active">
-              <a href="#"><i class="fa fa-address-book"></i>Información Personal</a>
-            </li>
-            <li>
-              <a href="#" onclick="seguridad()"><i class="fa fa-clone"></i>Seguridad</a>
-            </li>
-            <li>
-              <a href="#" onclick="infoGeneral()"><i class="fa fa-calendar"></i>Información General</a>
-            </li>
-          </ul>
-         </div>
-
-         <div id="infoPersonal">
-            <div class="Pansito">
-            <img src="<?= $usr["rutaArchivo"] ?>" alt="<?= $usr["nombreArchivo"] ?>">
-            <div class="Datos">
-                <div class="name"><br><b>Nombre:&nbsp</b> <?= $usr["nombre"] ?></div>
-                <div class="surname"><br><b>Apellido:&nbsp</b> <?= $usr["apellido"] ?></div>
-                <div class="username"><br><b>Username:&nbsp</b> <?= $usr["nickname"] ?></div>
-                <div class="FDN"><br><b>Fecha de Nacimiento:&nbsp</b> <?= $usr["fechaNacimiento"] ?></div>
-            </div>
-              </div>
-         </div>
-
-  <footer class="foot">
-      <div class="grupo-1">
-        <div class="box">
-          <figure>
-            <a href="#">
-              <img src="./assets/img/iconos/logoblanco.png" alt="">
-            </a>
-          </figure>
-         <!--<h4>Contacto</h4>
-          <ul>
-            <li>Email DOE: ofdealumnos32@gmail.com</li>
-            <li>Teléfonos: 4551-9121 4555-4026/4034</li>
-            <li>Dirección: Teodoro García 3899, C1427ECG CABA</li>
-          </ul> --> 
-        </div>
-        <div class="box">
-         <h5>Autores:</h5> 
-              <ul>
-                <li>Maria Morales - 6°1 Computacion</li>
-                <li>Nicolas Domeq - 6°1 Computacion</li>
-                <li>Ignacio Rios Lahore - 6°1 Computacion</li>
-                <li>Thristall Guerra - 6°1 Computación</li>
-                <li>Ivan Britez - 6°1 Computación</li>
-              </ul>
-        </div>
-        <div class="box">
-          <h5>Redes Sociales</h5>
-          <div class="connect">
-            <a href="https://www.facebook.com/groups/tecnica32/" rel="noopener noreferrer" class="facebook" target="_blank" title="Facebook"><!--LINK DE FACEBOOK -->
-              <i class="fab fa-facebook-f"></i> <!--ICONO DE FACEBOOK -->
-            </a>
-            <a href="https://github.com/Maria3k/Proyecto-PP" rel="noopener noreferrer" class="github" target="_blank" title="Github"><!--LINK DE GITHUB -->
-              <i class="fab fa-github"></i> <!--ICONO DE GITHUB -->
-            </a>
-         
-            <a href="https://www.youtube.com/channel/UCywUijMchnujSg6dVVUKprQ/videos?view_as=subscriber" rel="noopener noreferrer" class="youtube" target="_blank" title="Youtube"><!--LINK DE YOUTUBE -->
-              <i class="fab fa-youtube"></i> <!--ICONO DE YOUTUBE -->
-            </a>
-
-            <a href="https://www.instagram.com/la_gloriosa_32_escuela_tecnica/?hl=es-la" rel="noopener noreferrer" class="instagram" target="_blank" title="Instagram"><!--LINK DE INSTAGRAM -->
-              <i class="fab fa-instagram"></i><!--ICONO DE INSTAGRAM -->
-            </a>
-          </div>
-        </div>
+    <!-- NavBar -->
+    <nav>
+      <img class="img1" src="assets/img/escuela/loguito.png" alt="loguito.png">
+      <div class="icon-wrapper" data-numbrer="1">
+        <img src="assets/img/iconos/bell.png" class="bell-icon">
       </div>
-    <div class="grupo-2">
-      <small>&copy; 2022 <b>ET32 RESPUESTAS</b> - Todos los derechos reservados.</small>
+      <?= $menu ?>
+    </nav>
+    <!--  -->
+
+  <!-- Menu Vertical -->
+  <div id="accordian">
+    <ul class="show-dropdown main-navbar">
+      <div class="selector-active"><div class="top"></div><div class="bottom"></div></div>
+    <li>
+      <a href="perfil.php"><i class="fa fa-tachometer"></i>Inicio</a>
+    </li>
+    <li class="active">
+      <a href="infoPersonal.php"><i class="fa fa-address-book"></i>Informacion Personal</a>
+    </li>
+    <li>
+      <a href="seguridad.php"><i class="fa fa-clone"></i>Ultima Actividad</a>
+    </li>
+    <li>
+      <a href="infoGeneral.php"><i class="fa fa-clone"></i>Informacion</a>
+    </li>
+    </ul>
+  </div>
+  <!--  -->
+
+  <!-- Tabla de Información -->
+
+  <div id="infoPersonal">
+
+    <div class="ImagenUsuario">
+      <img src="<?= $usr["rutaArchivo"] ?>" alt="<?= $usr["nombreArchivo"] ?>">
     </div>
-  </footer>
+    <div class="username"><br><b>Username:&nbsp</b> <?= $usr["nickname"] ?></div>
+  
+    <div class="name"><br><b>Nombre:&nbsp</b> <?= $usr["nombre"] ?></div>
+    
+    <div class="surname"><br><b>Apellido:&nbsp</b> <?= $usr["apellido"] ?></div>
+    
+    <div class="FDN"><br><b>Fecha de Nacimiento:&nbsp</b> <?= $usr["fechaNacimiento"] ?></div>
+  </div>
+
+  <!-- Aca va el footer -->      
+
+  <!-- Script del menu -->
     <script>
      // ---------vertical-menu with-inner-menu-active-animation-----------.
       var tabsVerticalInner = $('#accordian');

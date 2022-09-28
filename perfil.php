@@ -75,10 +75,10 @@ if ($_SESSION) {
       <a href="infoPersonal.php"><i class="fa fa-address-book"></i>Informacion Personal</a>
     </li>
     <li>
-      <a href="javascript:void(0);"><i class="fa fa-clone"></i>Ultima Actividad</a>
+      <a href="seguridad.php"><i class="fa fa-clone"></i>Ultima Actividad</a>
     </li>
     <li>
-      <a href="javascript:void(0);"><i class="fa fa-clone"></i>Informacion</a>
+      <a href="infoGeneral.php"><i class="fa fa-clone"></i>Informacion</a>
     </li>
     </ul>
   </div>
