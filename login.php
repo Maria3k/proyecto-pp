@@ -20,24 +20,33 @@ if (isset($_POST)) {
 
     $navegador = "";
 
+    echo "<h1>Navegador</h1>";
+
     if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE)
-      $navegador = 'Internet explorer';
+      echo 'Internet explorer';
     elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident') !== FALSE) //For Supporting IE 11
-      $navegador = 'Internet explorer';
+      echo 'Internet explorer';
     elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') !== FALSE)
-      $navegador = 'Mozilla Firefox';
+      echo 'Mozilla Firefox';
     elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') !== FALSE)
-      $navegador = 'Google Chrome';
+      echo 'Google Chrome';
     elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Opera Mini') !== FALSE)
-      $navegador = "Opera Mini";
+      echo "Opera Mini";
     elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== FALSE)
-      $navegador = "Opera";
+      echo "Opera";
     elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Safari') !== FALSE)
-      $navegador = "Safari";
+      echo "Safari";
     else
-      $navegador = 'Something else';
-    }
-    new DateTime();
+      echo 'Something else';
+
+    echo "<h1>Sistema Operativo</h1>";
+
+    echo php_uname("s");
+    echo php_uname("r");
+
+    echo "<h1>Hora</h1>";
+    echo (new \DateTime())->format('Y-m-d H:i:s');
+      
 
     session_start();
     $_SESSION = $datos;

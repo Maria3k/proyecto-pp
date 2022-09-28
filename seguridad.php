@@ -47,39 +47,6 @@ $datos = $enviar->fetch_assoc();
   <div id="cuadrado">
     <div class="seguridad">
 
-      <?php
-
-      echo "<h1>Navegador</h1>";
-
-      if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE)
-        echo 'Internet explorer';
-      elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident') !== FALSE) //For Supporting IE 11
-        echo 'Internet explorer';
-      elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') !== FALSE)
-        echo 'Mozilla Firefox';
-      elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') !== FALSE)
-        echo 'Google Chrome';
-      elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Opera Mini') !== FALSE)
-        echo "Opera Mini";
-      elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== FALSE)
-        echo "Opera";
-      elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Safari') !== FALSE)
-        echo "Safari";
-      else
-        echo 'Something else';
-
-      echo "<h1>Sistema Operativo</h1>";
-
-      echo php_uname("s");
-      echo php_uname("r");
-
-      echo "<h1>Hora</h1>";
-      echo (new \DateTime())->format('Y-m-d H:i:s');
-      
-      ?>
-
-
-
       <h4>Actividad reciente: </h4>
       <div class="segu">
         <p>Se inicio sesion: </p>
