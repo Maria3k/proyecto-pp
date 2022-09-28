@@ -46,7 +46,7 @@ nav{
 h1{
     color: black;
     font-weight: 700;
-    margin-top: 125px;
+    margin-top: 20px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -58,6 +58,7 @@ h1 span{
     color:  rgba(40, 83, 161, 1);
 }
 
+/*LINEA DE TIEMPO*/
 .process-wrapper{
     margin: auto;
     max-width: 1080px;
@@ -74,7 +75,7 @@ h1 span{
 #progress-bar-container ul{
     padding: 0;
     margin: 0;
-    padding-top: 15px;
+    padding-top: 9px;
     z-index: 9999;
     position: absolute;
     width: 100%;
@@ -130,7 +131,7 @@ h1 span{
     display: block;
     width: 5px;
     height: 5px;
-    background: #777;
+    background: #2853a1;
     margin: auto;
     border: solid 7px  rgba(40, 83, 161, 1) ;
     border-radius: 50%;
@@ -140,11 +141,11 @@ h1 span{
 }
 
 #progress-bar-container li:hover::after{
-    background: #777;
+    background: #2853a1;
 }
 
 #progress-bar-container li.active::after{
-    background: #777;
+    background: #2853a1;
 }
 
 #progress-bar-container #line{
@@ -227,7 +228,6 @@ h1 span{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #fff;
 }
 
 .card{
@@ -282,7 +282,6 @@ h1 span{
     box-shadow: 0 5px 10px #000
 }
  
-
 .card .back .link{
     border-top: solid 1px #f3f3f3;
     height: 30px;
@@ -312,7 +311,6 @@ h1 span{
 .card:hover .back{
     transform: perspective(600px) rotateY(360deg);
 }
-
 
 /*FOOTER*/
 .foot{
