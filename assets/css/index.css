@@ -312,11 +312,6 @@ h1 span{
     transform: perspective(600px) rotateY(360deg);
 }
 
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes
 /*FOOTER*/
 .foot{
     width: 100%;
@@ -359,9 +354,11 @@ h1 span{
     margin-bottom: 8px;
     font-size: 13px;
     text-align: center;
+     list-style: none;
 }
 
 .foot .grupo-1 .connect a {
+    font-size: 45px;
     text-decoration: none;
     color: black;
     width: 45px;
