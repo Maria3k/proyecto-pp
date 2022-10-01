@@ -79,7 +79,7 @@
                                 <div class="description">
                                   <div class="date">
                                       <div class="input-content one">
-                                            <select class="form-select" name="d" id="d">
+                                            <select class="form-select" name="d" id="dia">
                                               <option value="0" selected disabled>Dia</option>
                                               <?php
                                                 for ($i=1; $i < 32 ; $i++) {
@@ -90,7 +90,7 @@
                                           </select>
                                       </div>
                                       <div class="input-content two">
-                                          <select class="form-select" name="m" id="m">
+                                          <select class="form-select" name="m" id="mes">
                                             <option value="0" selected disabled>Mes</option>
                                             <?php
                                             $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
@@ -102,7 +102,7 @@
                                           </select>
                                       </div>
                                       <div class="input-content theree">
-                                          <select class="form-select" name="a" id="a">
+                                          <select class="form-select" name="a" id="año">
                                             <option value="0" selected disabled>Año</option>
                                             <?php
                                               for ($i=1930; $i < date("Y") ; $i++) {
