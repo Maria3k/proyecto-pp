@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="assets/css/estilos2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 </head>
-
 <body>
     <div class="container cuerpo">
         <div class="myCard">
@@ -41,11 +40,11 @@
                             <input type="submit" class="butt my-3" value="Iniciar sesion">
                         </form>
 
-                        <form id="register" class="input-group" method="post">
+                        <form id="register" class="input-group" action="register.php" method="post">
                             <div class="container">
                                 <div class="row">
                                     <div id="colImg" class="col">
-                                        <input id="imgInput" type="hidden" value="1">
+                                        <input id="imgInput" name="imgInput" type="hidden" value="1">
                                         <img id="imgSeleccionada" class="img-fluid" src="assets/img/iconosUsu/logo1.png" width="75px" height="75px" alt="imagen.png">
                                         <a id="lapiz" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
                                             <i class="fa-solid fa-pencil"></i>
@@ -70,52 +69,50 @@
                                             <input class="input-field text-center col-5 mx-auto" id="nombre" type="text" name="nombre" placeholder="Nombre">
                                             <input class="input-field text-center col-5 mx-auto" id="apellido" type="text" name="apellido" placeholder="Apellido">
                                         </div>
-                                        <input class="input-field" id="nickname" type="text" name="nickname" placeholder="Nombre de usuario" required>
-                                        <input class="input-field" id="email" type="email" name="email" placeholder="Correo" required>
-                                        <input class="input-field" id="contraseña" type="password" name="contraseña" placeholder="Contraseña" required>
-                                        <input class="input-field" id="contraconfi" type="password" name="contra" placeholder="Confirme su contraseña" required>
+                                        <input class="input-field"  id="nickname" type="text" name="nickname" placeholder="Nombre de usuario" required>
+                                        <input class="input-field"  id="email" type="email" name="email" placeholder="Correo" required>
+                                        <input class="input-field"  id="contraseña" type="password" name="contraseña" placeholder="Contraseña" required>
+                                        <input class="input-field"  id="contraconfi" type="password" name="contraconfi" placeholder="Confirme su contraseña" required>
                                     </div>
                                 </div>
 
                                 <div class="description">
-                                    <div class="date">
-                                        <div class="input-content one">
-                                            <select class="form-select" name="d" id="dia">
-                                                <option value="0" selected disabled>Dia</option>
-                                                <?php
-                                                for ($i = 1; $i < 32; $i++) {
-                                                    echo "<option value=$i>$i</option>";
+                                  <div class="date">
+                                      <div class="input-content one">
+                                            <select class="form-select" name="d" id="d">
+                                              <option value="0" selected disabled>Dia</option>
+                                              <?php
+                                                for ($i=1; $i < 32 ; $i++) {
+                                                  echo "<option value=$i>$i</option>";
                                                 }
-                                                ?>
+                                              ?>
                                             </select>
-                                            </select>
-                                        </div>
-                                        <div class="input-content two">
-                                            <select class="form-select" name="m" id="mes">
-                                                <option value="0" selected disabled>Mes</option>
-                                                <?php
-                                                $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-                                                foreach ($meses as $i => $mes) {
-                                                    echo "<option value=$i>$mes</option>";
-                                                }
+                                          </select>
+                                      </div>
+                                      <div class="input-content two">
+                                          <select class="form-select" name="m" id="m">
+                                            <option value="0" selected disabled>Mes</option>
+                                            <?php
+                                            $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                                            foreach ($meses as $i=>$mes) {
+                                              echo "<option value=$i>$mes</option>";
+                                            }
 
-                                                ?>
-                                            </select>
-                                        </div>
-                                        <div class="input-content theree">
-                                            <select class="form-select" name="a" id="año">
-                                                <option value="0" selected disabled>Año</option>
-                                                <?php
-                                                for ($i = 1930; $i < date("Y"); $i++) {
-                                                    echo "<option value=$i>$i</option>";
-                                                }
-                                                ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <input class="submit-btn butt" type="submit" value="Registrarse">
+                                            ?>
+                                          </select>
+                                      </div>
+                                      <div class="input-content theree">
+                                          <select class="form-select" name="a" id="a">
+                                            <option value="0" selected disabled>Año</option>
+                                            <?php
+                                              for ($i=1930; $i < date("Y") ; $i++) {
+                                                echo "<option value=$i>$i</option>";
+                                              }
+                                            ?>
+                                          </select>
+                                      </div>
                                 </div>
-                            </div>
+                                <input class="submit-btn butt" type="submit" value="Registrarse">
                         </form>
                     </div>
                 </div>
@@ -130,7 +127,7 @@
         </div>
     </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="assets/js/bootstrap.js"></script>
 <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
@@ -176,7 +173,7 @@
                 nickname: $("#nickname").val(),
                 email: $("#email").val(),
                 contraseña: $("#contraseña").val(),
-                contra: $("#contraconfi").val(),
+                contraconfi: $("#contraconfi").val(),
                 imgInput: $("#imgInput").val(),
                 a: $("#año").val(),
                 m: $("#mes").val(),
