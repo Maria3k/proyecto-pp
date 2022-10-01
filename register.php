@@ -13,7 +13,7 @@ if ($_POST) {
 
   $json = array();
 
-  if ($_POST['contraseña'] != $_POST['contra']) $json[] = array( "passwordError" => "Las contraseñas no coinciden");
+  if ($_POST['contraseña'] != $_POST['contraconfi']) $json[] = array("passwordError" => "Las contraseñas no coinciden");
 
   $query = "INSERT INTO usuario(nombre,apellido,nickname,email,fechaNacimiento,contraseña,nAvatar,rol)
       VALUES('$nombre','$apellido','$nickname','$email','$fechaNacimiento_sql','$contraseña','$avatar',1)";
@@ -21,16 +21,11 @@ if ($_POST) {
   $verificar_email = "SELECT * FROM usuario WHERE email = '$email' ";
   $vemail = $con->query($verificar_email);
   if (($vemail->num_rows) > 0) {
-    echo '<div class="error"><i class="fa-solid fa-circle-exclamation"></i> Este email ya esta registrado</div>';
-    $verificar_nickname = "SELECT * FROM usuario WHERE nickname = '$nickname' ";
-    $venickame = $con->query($verificar_nickname);
-    if (($venickame->num_rows) > 0) {
-      echo '<div class="error"><i class="fa-solid fa-circle-exclamation"></i> Este nombre de usuario ya esta registrado</div>';
-    }
-  } else {
-    $con->query($query) or die("error de sintaxtis");
-    header("Location:index.php");
+    $json[] = array("errorEmail" => '<div class="error"><i class="fa-solid fa-circle-exclamation"></i> Este email ya esta registrado</div>');
   }
-} else {
-  echo "ola";
+  $verificar_nickname = "SELECT * FROM usuario WHERE nickname = '$nickname' ";
+  $venickame = $con->query($verificar_nickname);
+  if (($venickame->num_rows) > 0) {
+    $json[] = array("errorUsuario" => '<div class="error"><i class="fa-solid fa-circle-exclamation"></i> Este nombre de usuario ya esta registrado</div>');
+  }
 }
