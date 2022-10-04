@@ -1,6 +1,8 @@
 <?php
 include 'conexion.php';
 
+header("Content-Type: application/json");
+
 if ($_POST) {
   $nombre = $_POST['nombre'];
   $apellido = $_POST['apellido'];
@@ -15,9 +17,6 @@ if ($_POST) {
 
   if ($_POST['contraseña'] != $_POST['contraconfi']) $json[] = array("passwordError" => "Las contraseñas no coinciden");
 
-  $query = "INSERT INTO usuario(nombre,apellido,nickname,email,fechaNacimiento,contraseña,nAvatar,rol)
-      VALUES('$nombre','$apellido','$nickname','$email','$fechaNacimiento_sql','$contraseña','$avatar',1)";
-
   $verificar_email = "SELECT * FROM usuario WHERE email = '$email' ";
   $vemail = $con->query($verificar_email);
   if (($vemail->num_rows) > 0) {
@@ -27,5 +26,18 @@ if ($_POST) {
   $venickame = $con->query($verificar_nickname);
   if (($venickame->num_rows) > 0) {
     $json[] = array("errorUsuario" => '<div class="error"><i class="fa-solid fa-circle-exclamation"></i> Este nombre de usuario ya esta registrado</div>');
+  }
+
+  if (count($json) == 0) {
+    $query = "INSERT INTO usuario(nombre,apellido,nickname,email,fechaNacimiento,contraseña,nAvatar,rol)
+    VALUES('$nombre','$apellido','$nickname','$email','$fechaNacimiento_sql','$contraseña','$avatar',1)";
+
+    $insert = $con->query($query) or die("0");
+
+
+    print_r($insert);
+  } else {
+
+    echo json_encode($json);
   }
 }
