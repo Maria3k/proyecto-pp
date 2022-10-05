@@ -37,6 +37,7 @@
     position: relative;
     right: 15px;
     bottom: 26px;
+    justify-content: space-evenly;
 }
 
 .date .input-content{

@@ -68,14 +68,14 @@
 #imgSeleccionada{
     border-radius: 50%;
     position: relative;
-    left: 10%;
+    right: 5%;
     pointer-events: none;
     transition: .5s;
     z-index: 3;
 }
 #lapiz{
     position: absolute;
-    left: 13%;
+    left: 35%;
     width: 75px;
     height: 75px;
     line-height: 75px;
@@ -100,7 +100,7 @@
 }
 #lista{
     left: 8px;
-    padding-bottom: 20px;
+
 }
 .avatar{
     width: 50px;
@@ -113,7 +113,7 @@
 }
 .error{
   font-size: 13px;
-  margin-left: 15px;
+  margin-left: -9px;
   color: #a90000;
 }
 .icono{
@@ -126,10 +126,5 @@
 #register{
   right: -380px;
   margin-top: 35px;
-}
-.col {
-    position: relative;
-    left: 47px;
-    bottom: -8px;
 }
 

@@ -44,15 +44,15 @@
                         <form id="register" class="input-group" method="post">
                             <div class="container">
                                 <div class="row">
-                                    <div id="colImg" class="col">
+                                    <div id="colImg" class="col text-center">
                                         <input id="imgInput" name="imgInput" type="hidden" value="1">
                                         <img id="imgSeleccionada" class="img-fluid" src="assets/img/iconosUsu/logo1.png" width="75px" height="75px" alt="imagen.png">
                                         <a id="lapiz" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
                                             <i class="fa-solid fa-pencil"></i>
                                         </a>
                                     </div>
-                                    <div class="collapse" id="imagenes">
-                                        <div class="col" id="lista">
+                                    <div class="collapse show text-center" id="imagenes">
+                                        <div class="col py-2" id="lista">
                                             <img id="1" class="avatar" src="assets/img/iconosUsu/logo1.png" alt="logo1.png" onclick="select(1)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
                                             <img id="2" class="avatar" src="assets/img/iconosUsu/logo2.png" alt="logo2.png" onclick="select(2)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
                                             <img id="3" class="avatar" src="assets/img/iconosUsu/logo3.png" alt="logo3.png" onclick="select(3)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
@@ -140,7 +140,7 @@
 <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
 <script>
     function register() {
-        document.getElementById("login").style.right = "360px";
+        document.getElementById("login").style.right = "405px";
         document.getElementById("register").style.right = "-30px";
         document.getElementById("btn").style.left = "140px";
         document.getElementById("btn").style.background = "linear-gradient(to left, rgba(40,83,161,1) 35%, rgba(87,147,255,1) 100%)";
