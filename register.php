@@ -15,7 +15,7 @@ if ($_POST) {
 
   $json = array();
 
-  if ($_POST['contraseña'] != $_POST['contraconfi']) $json[] = array("passwordError" => "Las contraseñas no coinciden");
+  if ($_POST['contraseña'] != $_POST['contraconfi']) $json[] = array("passwordError" => '<div class="error"><i class="fa-solid fa-circle-exclamation"></i> La contraseña no coinciden </div>');
 
   $verificar_email = "SELECT * FROM usuario WHERE email = '$email' ";
   $vemail = $con->query($verificar_email);

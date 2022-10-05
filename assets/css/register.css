@@ -125,6 +125,7 @@
 
 #register{
   right: -380px;
+  margin-top: 35px;
 }
 .col {
     position: relative;

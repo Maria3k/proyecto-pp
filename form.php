@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/css/estilos2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 </head>
+
 <body>
     <div class="container cuerpo">
         <div class="myCard">
@@ -66,68 +67,74 @@
                                 <div class="row">
                                     <div class="row">
                                         <div class="input-group text-center">
-                                            <input class="input-field text-center col-5 mx-auto" id="nombre" type="text" name="nombre" placeholder="Nombre">
-                                            <input class="input-field text-center col-5 mx-auto" id="apellido" type="text" name="apellido" placeholder="Apellido">
+                                            <input class="input-field text-center col-5 mx-auto" id="nombre" type="text" name="nombre" placeholder="Nombre" value="tt">
+                                            <input class="input-field text-center col-5 mx-auto" id="apellido" type="text" name="apellido" placeholder="Apellido" value="tt">
                                         </div>
-                                        <input class="input-field"  id="nickname" type="text" name="nickname" placeholder="Nombre de usuario" required>
-                                        <input class="input-field"  id="email" type="email" name="email" placeholder="Correo" required>
-                                        <input class="input-field"  id="contraseña" type="password" name="contraseña" placeholder="Contraseña" required>
-                                        <input class="input-field"  id="contraconfi" type="password" name="contraconfi" placeholder="Confirme su contraseña" required>
+                                        <input class="input-field" id="nickname" type="text" name="nickname" placeholder="Nombre de usuario" required value="tt">
+                                        <div id="errorUsuario"></div>
+                                        <input class="input-field" id="email" type="email" name="email" placeholder="Correo" required value="tt@gmail.com">
+                                        <div id="errorEmail"></div>
+                                        <input class="input-field" id="contraseña" type="password" name="contraseña" placeholder="Contraseña" required value="tt">
+                                        <input class="input-field" id="contraconfi" type="password" name="contraconfi" placeholder="Confirme su contraseña" required value="tt">
+                                        <div id="passwordError"></div>
+
                                     </div>
                                 </div>
 
                                 <div class="description">
-                                  <div class="date">
-                                      <div class="input-content one">
+                                    <div class="date">
+                                        <div class="input-content one">
                                             <select class="form-select" name="d" id="dia">
-                                              <option value="0" selected disabled>Dia</option>
-                                              <?php
-                                                for ($i=1; $i < 32 ; $i++) {
-                                                  echo "<option value=$i>$i</option>";
+                                                <option value="10" selected >Dia</option>
+                                                <?php
+                                                for ($i = 1; $i < 32; $i++) {
+                                                    echo "<option value=$i>$i</option>";
                                                 }
-                                              ?>
+                                                ?>
                                             </select>
-                                          </select>
-                                      </div>
-                                      <div class="input-content two">
-                                          <select class="form-select" name="m" id="mes">
-                                            <option value="0" selected disabled>Mes</option>
-                                            <?php
-                                            $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-                                            foreach ($meses as $i=>$mes) {
-                                              echo "<option value=$i>$mes</option>";
-                                            }
+                                            </select>
+                                        </div>
+                                        <div class="input-content two">
+                                            <select class="form-select" name="m" id="mes">
+                                                <option value="1" selected >Mes</option>
+                                                <?php
+                                                $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+                                                foreach ($meses as $i => $mes) {
+                                                    echo "<option value=$i>$mes</option>";
+                                                }
 
-                                            ?>
-                                          </select>
-                                      </div>
-                                      <div class="input-content theree">
-                                          <select class="form-select" name="a" id="año">
-                                            <option value="0" selected disabled>Año</option>
-                                            <?php
-                                              for ($i=1930; $i < date("Y") ; $i++) {
-                                                echo "<option value=$i>$i</option>";
-                                              }
-                                            ?>
-                                          </select>
-                                      </div>
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="input-content theree">
+                                            <select class="form-select" name="a" id="año">
+                                                <option value="1900" selected >Año</option>
+                                                <?php
+                                                for ($i = 1930; $i < date("Y"); $i++) {
+                                                    echo "<option value=$i>$i</option>";
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <input class="submit-btn butt" type="submit" value="Registrarse">
                                 </div>
-                                <input class="submit-btn butt" type="submit" value="Registrarse">
+                            </div>
                         </form>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="myRightCtn">
-                <div class="box">
-                    <img id="img" class="img-fluid" src="assets/img/iconos/logoblanco.png" alt="imagen.png" width="400px" height="400px">
+                <div class="col-md-6">
+                    <div class="myRightCtn">
+                        <div class="box">
+                            <img id="img" class="img-fluid" src="assets/img/iconos/logoblanco.png" alt="imagen.png" width="400px" height="400px">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="./assets/js/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="assets/js/bootstrap.js"></script>
 <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
@@ -181,6 +188,10 @@
             },
             success: response => {
                 console.log(response);
+                response.forEach(dato => {
+                    document.getElementById(Object.entries(dato)[0][0]).innerHTML = Object.entries(dato)[0][1];
+                    
+                });
             }
         })
     }
