@@ -1,37 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/bootstrap.css">
-    
+
     <style>
-        .cuadro{
-            height: 50px;
-            box-shadow: 1px 2px 2px;
+
+        .cuadro {
+            font-size: 20px;
+            text-align: center;
+            width: 700px;
+            height: 45px;
+            box-shadow: 0px 3px 6px -3px black;
+        } 
+
+        button {
+            float: right;
+            background-color: #2853A1;
+            background-image: linear-gradient(90deg, #2853A1 14.37%, #5793FF 106.88%, #2E5BAD 108.11%, rgba(167, 179, 201, 0.284) 108.12%, #5793FF 108.13%);
+        }
+
+        #texto {
+            float: left;
+        }
+
+        .collapse{
+            width: 700px;
+            margin-left: 141.5px;
         }
 
     </style>
 
 </head>
+
 <body>
     <div class="container-sm text-center">
         <div class="row">
             <div class="cuadro">
-                Para hacer una pregunta haga click al boton  &nbsp&nbsp
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"
-                style="border-radius: 25px;">
+                <div id="texto">
+                    Para hacer una pregunta haga click en el boton
+                </div>
+                <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                    aria-expanded="false" aria-controls="collapseExample" style="border-radius: 25px; color: white;">
                     +
                 </button>
             </div>
         </div>
-        
-            
+
+
     </div>
     <br>
-    <div class="collapse" id="collapseExample">
+    <div class="collapse" id="collapseExample" style="transition:none;">
         <div class="card card-body">
             <div class="form-floating">
                 <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
@@ -39,13 +62,14 @@
             </div>
             <br>
             <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 150px"></textarea>
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                    style="height: 150px"></textarea>
                 <label for="floatingTextarea2">Contenido</label>
             </div>
             <br>
             <div class="col text-end">
 
-                <input class="btn btn-primary mx-auto" type="submit" value="Submit" style="border-radius: 20px;">
+                <input class="btn btn-primary mx-auto" type="submit" value="Enviar" style="border-radius: 20px; background-image: linear-gradient(90deg, #2853A1 14.37%, #5793FF 106.88%, #2E5BAD 108.11%, rgba(167, 179, 201, 0.284) 108.12%, #5793FF 108.13%);">
             </div>
         </div>
     </div>
@@ -57,4 +81,5 @@
 
     <script src="assets/js/bootstrap.js"></script>
 </body>
+
 </html>
