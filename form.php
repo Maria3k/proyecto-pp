@@ -142,7 +142,7 @@
     function register() {
         document.getElementById("login").style.right = "405px";
         document.getElementById("register").style.right = "-30px";
-        document.getElementById("btn").style.left = "140px";
+        document.getElementById("btn").style.left = "190px";
         document.getElementById("btn").style.background = "linear-gradient(to left, rgba(40,83,161,1) 35%, rgba(87,147,255,1) 100%)";
         document.getElementById("login-btn").style.color = "gray";
         document.getElementById("register-btn").style.color = "white";
