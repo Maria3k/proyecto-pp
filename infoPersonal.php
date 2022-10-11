@@ -100,6 +100,8 @@ if ($_SESSION) {
     <div class="surname"><br><b>Apellido:&nbsp</b> <?= $usr["apellido"] ?></div>
     
     <div class="FDN"><br><b>Fecha de Nacimiento:&nbsp</b> <?= $usr["fechaNacimiento"] ?></div>
+
+        <div class="correoelectronico"><br> <b>Correo Electronico:&nbsp</b> <?= $usr["email"] ?></div>
   </div>
 
   <!-- Aca va el footer -->      

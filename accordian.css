@@ -42,33 +42,12 @@
         line-height:45px;
         display:block;
         padding:0 20px;
-        transition-duration:.6s;
-        transition-timing-function:cubic-bezier(0.68,-.55,.265,1.55);
         position:relative;
     }
     
     #accordian>ul>li.active>a{
         color:#2853a1;
         background-color:transparent;
-        transition:all .7s;
-    }
-    
-    #accordian a:not(:only-child):after{
-        content:"\f105";
-        position:absolute;
-        right:20px;
-        top:10%;
-        font-size:14px;
-        font-family:"Font Awesome 5 Free";
-        display:inline-block;
-        padding-right:3px;
-        vertical-align:middle;
-        font-weight:900;
-        transition:.5s;
-    }
-    
-    #accordian .active>a:not(:only-child):after{
-        transform:rotate(90deg);
     }
     
     .selector-active{
@@ -78,8 +57,6 @@
         height:37px;
         top:0;
         left:0;
-        transition-duration:.2s;
-        transition-timing-function:cubic-bezier(0.68,-.55,.265,1.55);
         background-color:#fff;
         border-top-left-radius:50px;
         border-bottom-left-radius:50px;
