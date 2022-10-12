@@ -17,7 +17,7 @@
     }
     
     #accordian{
-        background:#2853a1;
+        background: linear-gradient(180deg, #3260B4 0%, #528CF5 100%);
         width: 20%;
         padding:10px 0 10px 10px;
         float:left;
@@ -49,7 +49,7 @@
         color:#2853a1;
         background-color:transparent;
     }
-    
+
     .selector-active{
         width:100%;
         display:inline-block;
@@ -64,9 +64,9 @@
     
     .selector-active .bottom,.selector-active .top{
         position:absolute;
-        width:25px;
-        height:25px;
-        background-color:#fff;
+        width:0px;
+        height:0px;
+        /*background: linear-gradient(180deg, #3260B4 0%, #528CF5 100%);*/
         right:0;
     }
     
@@ -81,10 +81,10 @@
     .selector-active .bottom:before,.selector-active .top:before{
         content:'';
         position:absolute;
-        width:50px;
-        height:50px;
+        width:0px;
+        height:0px;
         border-radius:50%;
-        background-color:#2853a1;
+        background: linear-gradient(180deg, #3260B4 0%, #528CF5 100%);
     }
     
     .selector-active .top:before{
