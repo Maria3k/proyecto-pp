@@ -76,10 +76,9 @@
                                         <input class="input-field" id="email" type="email" name="email" pattern="[a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?" placeholder="Correo" required value="tt@gmail.com">
                                         <div id="errorEmail"></div>
                                         <input class="input-field" id="contraseña" type="password" name="contraseña" pattern="[A-Za-z-0-9]{8,16}" placeholder="Contraseña" required value="tt">
+                                        <div class="chikitiko">* La contraseña debe ser mayor a 8 caracteres</div>
                                         <input class="input-field" id="contraconfi" type="password" name="contraconfi" pattern="[A-Za-z-0-9]{8,16}" placeholder="Confirme su contraseña" required value="tt">
                                         <div id="passwordError"></div>
-                                        <div id="caracter"></div>
-
                                     </div>
                                 </div>
 
