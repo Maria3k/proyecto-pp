@@ -9,76 +9,79 @@
     <link rel="stylesheet" href="assets/css/bootstrap.css">
 
     <style>
-
         .cuadro {
+            display: flex;
             font-size: 20px;
-            text-align: center;
             width: 700px;
             height: 45px;
             box-shadow: 0px 3px 6px -3px black;
-        } 
+            margin-bottom: 10px;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-        button {
-            float: right;
+        .b {
             background-color: #2853A1;
-            background-image: linear-gradient(90deg, #2853A1 14.37%, #5793FF 106.88%, #2E5BAD 108.11%, rgba(167, 179, 201, 0.284) 108.12%, #5793FF 108.13%);
+            background-image: linear-gradient(to right, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
+            border-radius: 25px;
+            color: white;
+            border: none;
+            outline: none;
+            text-align: center;
         }
 
         #texto {
             float: left;
         }
 
-        .collapse{
-            width: 700px;
-            margin-left: 141.5px;
+        .btn:focus {
+            outline: none;
+            box-shadow: none;
         }
 
+        #botn{
+            border-radius: 20px; 
+            outline: none; 
+            border: none; 
+            width: 90px;
+        }
     </style>
 
 </head>
 
 <body>
     <div class="container-sm text-center">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="cuadro">
                 <div id="texto">
                     Para hacer una pregunta haga click en el boton
                 </div>
-                <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
-                    aria-expanded="false" aria-controls="collapseExample" style="border-radius: 25px; color: white;">
+                <button class="b" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                    aria-expanded="false" aria-controls="collapseExample" style="width: 32px;">
                     +
                 </button>
             </div>
-        </div>
+            <div class="collapse" id="collapseExample" style="width: 726px">
+                <div class="card card-body">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here"
+                            id="floatingTextarea"></textarea>
+                        <label for="floatingTextarea">Asunto</label>
+                    </div>
+                    <br>
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 150px"></textarea>
+                        <label for="floatingTextarea2">Contenido</label>
+                    </div>
+                    <br>
+                    <div class="col text-end">
 
-
-    </div>
-    <br>
-    <div class="collapse" id="collapseExample" style="transition:none;">
-        <div class="card card-body">
-            <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                <label for="floatingTextarea">Asunto</label>
-            </div>
-            <br>
-            <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-                    style="height: 150px"></textarea>
-                <label for="floatingTextarea2">Contenido</label>
-            </div>
-            <br>
-            <div class="col text-end">
-
-                <input class="btn btn-primary mx-auto" type="submit" value="Enviar" style="border-radius: 20px; background-image: linear-gradient(90deg, #2853A1 14.37%, #5793FF 106.88%, #2E5BAD 108.11%, rgba(167, 179, 201, 0.284) 108.12%, #5793FF 108.13%);">
+                        <input class="b mx-auto" type="submit" value="Enviar" id="botn">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-
-
-    <div></div>
-
-
     <script src="assets/js/bootstrap.js"></script>
 </body>
 

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <style>
+
+        h5{
+            position: relative;
+            top: 15px;
+            left: 30px;
+        }
+
+        .tarjeta{
+            width: 600px;
+            height: 300px;
+            border: solid 1px black;
+        }
+
+        button{
+            position: relative;
+            border-radius: 50%;
+            bottom: -210px;
+            left: 465px;
+            background-image: linear-gradient(to right, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);   
+        }
+
+        img{
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="tarjeta">
+        <h5>Tengo una duda de Programacion</h5>
+        <img src="assets/img/iconosUsu/logo1.png" alt="">
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="border-radius: 30px">Responder</button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">...</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                ...
+            </div>
+        </div>
+    </div>  
+
+    <script src="assets/js/bootstrap.js"></script>
+</body>
+</html>
