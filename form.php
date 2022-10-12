@@ -27,12 +27,13 @@
                                 </div>
                             </div>
                         </div>
-                        <form id="login" class="myForm text-center" action="login.php" method="post">
+                        <form id="login" class="myForm text-center" method="post">
 
                             <i class="fas fa-envelope icono"></i>
-                            <input class="input-field" type="email" name="email" placeholder="Correo" required>
+                            <input class="input-field" id="emailogin" type="email" name="email" pattern="[a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?" placeholder="Correo" required>
                             <i class="fas fa-lock icono"></i>
-                            <input class="input-field" type="password" name="contraseña" placeholder="Contraseña" required>
+                            <input class="input-field" id="contralogin" type="password" name="contraseña" pattern="[A-Za-z-0-9]{2,16}" placeholder="Contraseña" required>
+                            <div id="error"></div>
                             <div class="form-group">
                                 <label>
                                     <input id="check_1" name="check_1" type="checkbox" required><small> Recordar usuario</small></input>
@@ -67,16 +68,17 @@
                                 <div class="row">
                                     <div class="row">
                                         <div class="input-group text-center">
-                                            <input class="input-field text-center col-5 mx-auto" id="nombre" type="text" name="nombre" placeholder="Nombre" value="tt">
-                                            <input class="input-field text-center col-5 mx-auto" id="apellido" type="text" name="apellido" placeholder="Apellido" value="tt">
+                                            <input class="input-field text-center col-5 mx-auto" id="nombre" type="text" name="nombre" pattern="[A-Za-z-0-9]{3,16}" placeholder="Nombre" value="tt">
+                                            <input class="input-field text-center col-5 mx-auto" id="apellido" type="text" name="apellido" pattern="[A-Za-z-0-9]{3,16}" placeholder="Apellido" value="tt">
                                         </div>
-                                        <input class="input-field" id="nickname" type="text" name="nickname" placeholder="Nombre de usuario" required value="tt">
+                                        <input class="input-field" id="nickname" type="text" name="nickname" pattern="[A-Za-z-0-9]{3,16}" placeholder="Nombre de usuario" required value="tt">
                                         <div id="errorUsuario"></div>
-                                        <input class="input-field" id="email" type="email" name="email" placeholder="Correo" required value="tt@gmail.com">
+                                        <input class="input-field" id="email" type="email" name="email" pattern="[a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?" placeholder="Correo" required value="tt@gmail.com">
                                         <div id="errorEmail"></div>
-                                        <input class="input-field" id="contraseña" type="password" name="contraseña" placeholder="Contraseña" required value="tt">
-                                        <input class="input-field" id="contraconfi" type="password" name="contraconfi" placeholder="Confirme su contraseña" required value="tt">
+                                        <input class="input-field" id="contraseña" type="password" name="contraseña" pattern="[A-Za-z-0-9]{8,16}" placeholder="Contraseña" required value="tt">
+                                        <input class="input-field" id="contraconfi" type="password" name="contraconfi" pattern="[A-Za-z-0-9]{8,16}" placeholder="Confirme su contraseña" required value="tt">
                                         <div id="passwordError"></div>
+                                        <div id="caracter"></div>
 
                                     </div>
                                 </div>
@@ -85,7 +87,7 @@
                                     <div class="date">
                                         <div class="input-content one">
                                             <select class="form-select" name="d" id="dia">
-                                                <option value="10" selected >Dia</option>
+                                                <option value="10" selected>Dia</option>
                                                 <?php
                                                 for ($i = 1; $i < 32; $i++) {
                                                     echo "<option value=$i>$i</option>";
@@ -96,7 +98,7 @@
                                         </div>
                                         <div class="input-content two">
                                             <select class="form-select" name="m" id="mes">
-                                                <option value="1" selected >Mes</option>
+                                                <option value="1" selected>Mes</option>
                                                 <?php
                                                 $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
                                                 foreach ($meses as $i => $mes) {
@@ -108,7 +110,7 @@
                                         </div>
                                         <div class="input-content theree">
                                             <select class="form-select" name="a" id="año">
-                                                <option value="1900" selected >Año</option>
+                                                <option value="1900" selected>Año</option>
                                                 <?php
                                                 for ($i = 1930; $i < date("Y"); $i++) {
                                                     echo "<option value=$i>$i</option>";
@@ -170,6 +172,30 @@
         registerSend();
     });
 
+    $("#login").submit(form => {
+        form.preventDefault();
+        loginSend();
+    });
+
+    function loginSend() {
+        $.ajax({
+            url: "login.php",
+            type: "POST",
+            data: {
+                email: $("#emailogin").val(),
+                contraseña: $("#contralogin").val()
+            },
+            success: response => {
+
+                if (response != true) {
+                    $("#error").html(JSON.parse(response)[0].error);
+                } else {
+                    window.location.href = "index.php"
+                }
+            }
+        })
+    }
+
     function registerSend() {
         $.ajax({
             url: "register.php",
@@ -190,7 +216,7 @@
                 console.log(response);
                 response.forEach(dato => {
                     document.getElementById(Object.entries(dato)[0][0]).innerHTML = Object.entries(dato)[0][1];
-                    
+
                 });
             }
         })

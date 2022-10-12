@@ -2,13 +2,13 @@
 
 include 'conexion.php';
 
-$error = "";
-
 if (isset($_POST)) {
 
   $email = $_POST['email'];
   $contraseña = $_POST['contraseña'];
   $contraseña = md5($contraseña);
+
+  $json = array();
 
   $query = "SELECT * FROM usuario WHERE email ='$email' and contraseña='$contraseña'";
 
@@ -17,10 +17,9 @@ if (isset($_POST)) {
   $datos = $enviar->fetch_assoc();
 
   if (($enviar->num_rows) > 0) {
-
     $navegador = "";
 
-    echo "<h1>Navegador</h1>";
+    /*echo "<h1>Navegador</h1>";
 
     if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE)
       echo 'Internet explorer';
@@ -46,14 +45,16 @@ if (isset($_POST)) {
 
     echo "<h1>Hora</h1>";
     echo (new \DateTime())->format('Y-m-d H:i:s');
-      
+    */
+
 
     session_start();
     $_SESSION = $datos;
-    header("Location:index.php");
+    echo true;
   } else {
-    $error = "Correo electrónico o Contraseña incorrectos";
+    $json[] = array("error" => '<div class="error"><i class="fa-solid fa-circle-exclamation"></i> Correo electrónico o Contraseña incorrectos');
+    echo json_encode($json);
   }
-
-  echo $error;
 }
+
+

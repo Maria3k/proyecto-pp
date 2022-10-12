@@ -2,5 +2,5 @@
     include 'conexion.php';
     session_start();
     session_destroy();
-    header("location:loginPrueba.php");
+    header("location:index.php");
  ?>

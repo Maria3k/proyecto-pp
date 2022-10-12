@@ -28,6 +28,7 @@ if ($_POST) {
     $json[] = array("errorUsuario" => '<div class="error"><i class="fa-solid fa-circle-exclamation"></i> Este nombre de usuario ya esta registrado</div>');
   }
 
+
   if (count($json) == 0) {
     $query = "INSERT INTO usuario(nombre,apellido,nickname,email,fechaNacimiento,contraseña,nAvatar,rol)
     VALUES('$nombre','$apellido','$nickname','$email','$fechaNacimiento_sql','$contraseña','$avatar',1)";
