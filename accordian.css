@@ -18,10 +18,10 @@
     
     #accordian{
         background:#2853a1;
-        width:250px;
+        width: 20%;
         padding:10px 0 10px 10px;
         float:left;
-        height:65vh;
+        height:76.5vh;
         overflow-x:hidden;
         position:relative;
         border-bottom-right-radius: 25px;

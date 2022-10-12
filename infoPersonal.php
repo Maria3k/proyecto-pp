@@ -67,6 +67,7 @@ if ($_SESSION) {
     <!--  -->
 
   <!-- Menu Vertical -->
+  
   <div id="accordian">
     <ul class="show-dropdown main-navbar">
       <div class="selector-active"><div class="top"></div><div class="bottom"></div></div>
@@ -84,16 +85,17 @@ if ($_SESSION) {
     </li>
     </ul>
   </div>
+  
   <!--  -->
 
   <!-- Tabla de Información -->
-
+<div class="fondo" >
   <div id="infoPersonal">
 
     <div class="ImagenUsuario">
       <img src="<?= $usr["rutaArchivo"] ?>" alt="<?= $usr["nombreArchivo"] ?>">
     </div>
-    <div class="username"><br><b>Username:&nbsp</b> <?= $usr["nickname"] ?></div>
+    <div class="username"><br><?= $usr["nickname"] ?></div>
   
     <div class="name"><br><b>Nombre:&nbsp</b> <?= $usr["nombre"] ?></div>
     
@@ -101,9 +103,13 @@ if ($_SESSION) {
     
     <div class="FDN"><br><b>Fecha de Nacimiento:&nbsp</b> <?= $usr["fechaNacimiento"] ?></div>
 
-        <div class="correoelectronico"><br> <b>Correo Electronico:&nbsp</b> <?= $usr["email"] ?></div>
   </div>
 
+  <div class="correo">
+    <label class="info"> Información de Contacto </label>
+    <div class="correoelectronico"><br> <b>Correo Electronico:&nbsp</b> <?= $usr["email"] ?></div>
+  </div>
+</div>
   <!-- Aca va el footer -->      
 
   <!-- Script del menu -->
