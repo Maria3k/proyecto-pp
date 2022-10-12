@@ -34,7 +34,7 @@ h6 {
 
 /*Navbar*/
 nav{
-  background-color: #2853a1;
+  background: linear-gradient(90deg, #2853A1 49.64%, #5793FF 142.14%, #2E5BAD 143.37%, rgba(167, 179, 201, 0.284) 143.38%, #5793FF 143.39%);
 }
 
 .btn-nav{

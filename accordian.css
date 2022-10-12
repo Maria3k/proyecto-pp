@@ -17,9 +17,7 @@
     }
     
     #accordian{
-        background: linear-gradient(180deg, #3260B4 0%, #528CF5 100%);
-        width: 20%;
-        padding:10px 0 10px 10px;
+        background: linear-gradient(180deg, #2853A1 49.64%, #5793FF 142.14%, #2E5BAD 143.37%, rgba(167, 179, 201, 0.284) 143.38%, #5793FF 143.39%);
         float:left;
         height:76.5vh;
         overflow-x:hidden;
@@ -66,7 +64,6 @@
         position:absolute;
         width:0px;
         height:0px;
-        /*background: linear-gradient(180deg, #3260B4 0%, #528CF5 100%);*/
         right:0;
     }
     
