@@ -52,7 +52,7 @@
                                             <i class="fa-solid fa-pencil"></i>
                                         </a>
                                     </div>
-                                    <div class="collapse show text-center" id="imagenes">
+                                    <div class="collapse text-center" id="imagenes">
                                         <div class="col py-2" id="lista">
                                             <img id="1" class="avatar" src="assets/img/iconosUsu/logo1.png" alt="logo1.png" onclick="select(1)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
                                             <img id="2" class="avatar" src="assets/img/iconosUsu/logo2.png" alt="logo2.png" onclick="select(2)" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes">
@@ -68,16 +68,16 @@
                                 <div class="row">
                                     <div class="row">
                                         <div class="input-group text-center">
-                                            <input class="input-field text-center col-5 mx-auto" id="nombre" type="text" name="nombre" pattern="[A-Za-z-0-9]{3,16}" placeholder="Nombre" value="tt">
-                                            <input class="input-field text-center col-5 mx-auto" id="apellido" type="text" name="apellido" pattern="[A-Za-z-0-9]{3,16}" placeholder="Apellido" value="tt">
+                                            <input class="input-field text-center col-5 mx-auto" id="nombre" type="text" name="nombre" pattern="[A-Za-z-0-9]{3,16}" placeholder="Nombre">
+                                            <input class="input-field text-center col-5 mx-auto" id="apellido" type="text" name="apellido" pattern="[A-Za-z-0-9]{3,16}" placeholder="Apellido">
                                         </div>
-                                        <input class="input-field" id="nickname" type="text" name="nickname" pattern="[A-Za-z-0-9]{3,16}" placeholder="Nombre de usuario" required value="tt">
+                                        <input class="input-field" id="nickname" type="text" name="nickname" pattern="[A-Za-z-0-9]{3,16}" placeholder="Nombre de usuario" required>
                                         <div id="errorUsuario"></div>
-                                        <input class="input-field" id="email" type="email" name="email" pattern="[a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?" placeholder="Correo" required value="tt@gmail.com">
+                                        <input class="input-field" id="email" type="email" name="email" pattern="[a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?" placeholder="Correo" required>
                                         <div id="errorEmail"></div>
-                                        <input class="input-field" id="contraseña" type="password" name="contraseña" pattern="[A-Za-z-0-9]{8,16}" placeholder="Contraseña" required value="tt">
+                                        <input class="input-field" id="contraseña" type="password" name="contraseña" pattern="[A-Za-z-0-9]{8,16}" placeholder="Contraseña" required>
                                         <div class="chikitiko">* La contraseña debe ser mayor a 8 caracteres</div>
-                                        <input class="input-field" id="contraconfi" type="password" name="contraconfi" pattern="[A-Za-z-0-9]{8,16}" placeholder="Confirme su contraseña" required value="tt">
+                                        <input class="input-field" id="contraconfi" type="password" name="contraconfi" pattern="[A-Za-z-0-9]{8,16}" placeholder="Confirme su contraseña" required>
                                         <div id="passwordError"></div>
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@
                                     <div class="date">
                                         <div class="input-content one">
                                             <select class="form-select" name="d" id="dia">
-                                                <option value="10" selected>Dia</option>
+                                                <option selected>Dia</option>
                                                 <?php
                                                 for ($i = 1; $i < 32; $i++) {
                                                     echo "<option value=$i>$i</option>";
@@ -97,7 +97,7 @@
                                         </div>
                                         <div class="input-content two">
                                             <select class="form-select" name="m" id="mes">
-                                                <option value="1" selected>Mes</option>
+                                                <option selected>Mes</option>
                                                 <?php
                                                 $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
                                                 foreach ($meses as $i => $mes) {
@@ -109,7 +109,7 @@
                                         </div>
                                         <div class="input-content theree">
                                             <select class="form-select" name="a" id="año">
-                                                <option value="1900" selected>Año</option>
+                                                <option selected>Año</option>
                                                 <?php
                                                 for ($i = 1930; $i < date("Y"); $i++) {
                                                     echo "<option value=$i>$i</option>";
@@ -212,11 +212,15 @@
                 d: $("#dia").val()
             },
             success: response => {
-                console.log(response);
-                response.forEach(dato => {
-                    document.getElementById(Object.entries(dato)[0][0]).innerHTML = Object.entries(dato)[0][1];
+                if (response != true) {
 
-                });
+                    response.forEach(dato => {
+                        document.getElementById(Object.entries(dato)[0][0]).innerHTML = Object.entries(dato)[0][1];
+                    });
+
+                } else {
+                    window.location.href = "index.php"
+                }
             }
         })
     }

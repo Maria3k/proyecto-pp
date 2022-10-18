@@ -35,6 +35,11 @@ if ($_POST) {
 
     $insert = $con->query($query) or die("0");
 
+    session_start();
+
+    $newUser = "SELECT * FROM usuario WHERE email ='$email' and contraseña='$contraseña'";
+
+    $_SESSION = $con->query($newUser)->fetch_assoc();
 
     print_r($insert);
   } else {
