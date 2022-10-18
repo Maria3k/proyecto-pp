@@ -149,7 +149,7 @@ if ($_SESSION) {
   </footer>
   <script src="assets/js/bootstrap.js"></script>
   <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
-  <script src="assets/js/jquery-3.6.0.js"></script>
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script>
     function menuToggle() {
       const toggleMenu = document.querySelector('.menu');
@@ -170,6 +170,9 @@ if ($_SESSION) {
             id: <?= $ajax; ?>
           },
           success: function(n) {
+
+            console.log(n);
+
             if (n != 0) {
               console.log("Funca3");
               $("#number").html(n);
