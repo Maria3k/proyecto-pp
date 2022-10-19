@@ -9,47 +9,117 @@
 
     <style>
 
+        *{
+            box-sizing: border-box;
+        }
+
         h5{
-            position: relative;
-            top: 15px;
-            left: 30px;
+            padding-left: 25px;
+            padding-top: 15px;
         }
 
         .tarjeta{
+            position: relative;
+            margin: 30px;
             width: 600px;
             height: 300px;
             border: solid 1px black;
         }
 
         button{
-            position: relative;
-            border-radius: 50%;
-            bottom: -210px;
-            left: 465px;
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
             background-image: linear-gradient(to right, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);   
         }
 
-        img{
+        .icon{
+            margin-left: 20px;
             border-radius: 50%;
             width: 60px;
             height: 60px;
         }
+        .text{
+            display: inline-block;
+            margin-left: 15px;
+        }
 
+        .text2{
+            display: block;
+            margin-left: 100px;
+            margin-top: -25px ; 
+            color: rgb(151, 148, 148);
+            font-size: 14px;
+        }
+
+        .content{
+            margin: 25px;
+        }
+
+        #offcanvasRightLabel{
+            background-color: #2E5BAD;
+            width: 100%;
+            color: white;
+            font-size: 15px;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .offcanvas-header{
+            padding: 0;
+        }
+
+        .offcanvas-body{
+            padding:0;
+        }
+
+        .newRta{
+            width: 100%;
+            padding: 0;
+            height: 80px;
+            background-color: rgba(46, 91, 173, 0.12);
+        }
+
+        .iconSecun{
+            border-radius: 50%;
+            width: 50px; 
+            height: 50px; 
+            margin-top: 15px;
+            margin-left: 25px;
+        }
     </style>
 </head>
 <body>
     
     <div class="tarjeta">
         <h5>Tengo una duda de Programacion</h5>
-        <img src="assets/img/iconosUsu/logo1.png" alt="">
+        <img src="assets/img/iconosUsu/logo1.png" alt="" class="icon">
+        <div class="text">
+            <h6>Nombre de usuario</h6> 
+        </div>
+        <div class="text2">
+            <p>Fecha de la pregunta</p>
+        </div>
+        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aliquam quis numquam at hic architecto odio dolor laborum corporis sunt. Dignissimos reprehenderit officiis cum sequi eveniet, perferendis quos voluptatum earum?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quidem autem is</p>
         <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="border-radius: 30px">Responder</button>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasRightLabel">...</h5>
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Comentarios</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                ...
+                <h5>Tengo una duda de programacion</h5>
+                <img src="assets/img/iconosUsu/logo1.png" alt="" class="icon">
+                <div class="text">
+                    <h6>Nombre de usuario</h6> 
+                </div>
+                <div class="text2">
+                    <p>Fecha de la pregunta</p>
+                </div>
+                <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aliquam quis numquam at hic architecto odio dolor laborum corporis sunt. Dignissimos reprehenderit officiis cum sequi eveniet, perferendis quos voluptatum earum?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quidem autem is</p>
+                <div class="newRta">
+                    <img src="assets/img/iconosUsu/logo1.png" alt="" class="iconSecun">
+                </div>
             </div>
         </div>
     </div>  
