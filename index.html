@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/img/favicon/favicon.png">
-    <link rel="stylesheet" href="assets/css/index.css">
-    <title>E.T.32 Respuestas</title>
-  </head>
-  <body>
-    <nav>
-        <img class="img1" src="assets/img/escuela/loguito.png" alt="loguito.png">
-        <a class="btn-nav" href="register.html">Register</a>
-        <a class="btn-nav" href="login.html">Iniciar Sesion</a>
-    </nav>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Facundo se la come" />
+  <meta property="og:image" content="http://186.23.120.80:800/pagina/Proyecto-PP/assets/img/iconos/logoblanco.png" />
+  <meta property="og:description" content="E.T.N°32 D.E.N°14 Preguntas y Respuestas es E.T.N°32 D.E.N°14 Preguntas y Respuestas..... XD">
+  <meta property="og:image:width" content="300px" />
+  <meta property="og:image:height" content="300px" />
+  <link rel="icon" href="assets/img/favicon/favicon.png">
+  <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="stylesheet" href="assets/css/tarjetas.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/slider.css">
+  <title>E.T.32 Preguntas</title>
+</head>
+
+<body>
+  <nav>
+    <img class="img1" src="assets/img/escuela/loguito.png" alt="loguito.png">
+    <div class="icon-wrapper" data-numbrer="1">
+      <img src="assets/img/iconos/bell.png" class="bell-icon">
+    </div>
+    <?= $menu ?>
+  </nav>
+  <div class="container">
     <h1>HISTORIA DE LA <span>ET32</span></h1>     
     <br>
     <div class="process-wrapper">
@@ -73,6 +86,7 @@
         </div>
       </div>
     </div>
+    
 
     <!--TARJETAS-->
     <div class="cont-card">
@@ -117,6 +131,46 @@
   </div>
 </div>
 
+<div class="body">
+  <div class="slider">
+    <div class="slides">
+      <input type="radio" name="radio-btn" id="radio1">
+      <input type="radio" name="radio-btn" id="radio2">
+      <input type="radio" name="radio-btn" id="radio3">
+      <input type="radio" name="radio-btn" id="radio4">
+      <input type="radio" name="radio-btn" id="radio5">
+      <input type="radio" name="radio-btn" id="radio6">
+  
+      <div class="slide first">
+        <img src="/assets/img/escuela/aaa.jpg" alt="">
+      </div>
+      <div class="slide">
+        <img src="/assets/img/escuela/entrada.jpg" alt="">
+      </div>
+      <div class="slide">
+        <img src="/assets/img/escuela/escuela.jpg" alt="">
+      </div>
+      <div class="slide">
+        <img src="/assets/img/escuela/frente.jpg" alt="">
+      </div>
+      <div class="slide">
+        <img src="/assets/img/escuela/imagenE.jpg" alt="">
+      </div>
+      <div class="slide">
+        <img src="/assets/img/escuela/imgE.jpg" alt="">
+      </div>
+  
+      <div class="navigation-manual1">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+        <label for="radio5" class="manual-btn"></label>
+        <label for="radio6" class="manual-btn"></label>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!--FOOTER-->
     <footer class="foot">
@@ -170,7 +224,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 <script>
-    
     $(".step").click( function() {
 	$(this).addClass("active").prevAll().addClass("active");
 	$(this).nextAll().removeClass("active");
@@ -201,5 +254,7 @@ $(".step05").click( function() {
 	$(".analysis").addClass("active").siblings().removeClass("active");
 });
 </script>
-  </body>
+
+</body>
 </html>
+
