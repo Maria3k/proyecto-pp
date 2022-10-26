@@ -88,7 +88,7 @@ if ($_SESSION) {
 <!-- Información de conectividad -->
   <div class="fondo">
     <div id="Caja">
-      <div class="act"> <label for="">Activida</label> </div>
+      <div class="act"> <label for="">Actividad</label> </div>
       <div class="UltSesion"> <label for="">Ultimo Inicio de Sesión:&nbsp</label><?=$usr["fechaNacimiento"]?></div>
       <div class="navegador"><label for="">Desde el navegador:&nbsp</label><b>Chrome</b></div>
       <div class="UltConex"><label for="">Ultima Conexion:&nbsp</label><b>17:45-PM</b></div>
