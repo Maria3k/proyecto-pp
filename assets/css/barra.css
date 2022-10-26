@@ -1,0 +1,30 @@
+.input-icons i {
+    position: absolute;
+    color: white;
+}
+
+input{
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: 2px solid gray;
+    color: white;
+    background-image: linear-gradient(90deg, #2853A1 14.37%, #5793FF 106.88%, #2E5BAD 108.11%, rgba(167, 179, 201, 0.284) 108.12%, #5793FF 108.13%);
+
+}
+
+
+
+.icon {
+    padding: 10px;
+    min-width: 40px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+}
+
+::placeholder{
+    color:white;
+}

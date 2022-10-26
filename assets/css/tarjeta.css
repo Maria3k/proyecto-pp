@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+}
+
+h5{
+    padding-left: 25px;
+    padding-top: 15px;
+}
+
+.tarjeta{
+    position: relative;
+    margin: 30px;
+    width: 600px;
+    height: 300px;
+    box-shadow: 0px 3px 6px -3px rgb(105, 105, 105);
+}
+
+button{
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    background-image: linear-gradient(to right, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);   
+}
+
+.icon{
+    margin-left: 20px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+.text{
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.text2{
+    display: block;
+    margin-left: 100px;
+    margin-top: -25px ; 
+    color: rgb(151, 148, 148);
+    font-size: 14px;
+}
+
+.content{
+    margin: 25px;
+}
+
+#offcanvasRightLabel{
+    background-color: #2E5BAD;
+    width: 100%;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.offcanvas-header{
+    padding: 0;
+}
+
+.offcanvas-body{
+    padding:0;
+}
+
+.newRta{
+    width: 100%;
+    padding: 0;
+    height: 135px;
+    background-color: rgba(46, 91, 173, 0.12);
+}
+
+.newRta2{
+    width: 100%;
+    padding: 0;
+    height: 135px;
+    background-color: white
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.iconSecun{
+    border-radius: 50%;
+    width: 50px; 
+    height: 50px; 
+    margin-top: 15px;
+    margin-left: 25px;
+}
+
+textarea{
+    margin-top: -55px;
+    margin-left: 85px;
+    resize: none;
+    overflow: hidden;
+}
+
+#enviarr{
+    float: right;
+    margin-top: 2px;
+    margin-right: 18px;
+    background-image: linear-gradient(to right, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+#enviarrr{
+    float: right;
+    margin-top: 2px;
+    
+    background-image: linear-gradient(to right, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.rta1{
+    margin-top: 10px;
+}
+
+#rtaDerta{
+    margin-left: 100px;
+}
+
+#linea{
+    background-color: #D9D9D9;
+    height: 1px;
+}
+
+.rta3{
+    margin-left: 100px;
+    text-decoration: none;
+}

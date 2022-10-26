@@ -23,7 +23,7 @@
             margin: 30px;
             width: 600px;
             height: 300px;
-            border: solid 1px black;
+            box-shadow: 0px 3px 6px -3px rgb(105, 105, 105);
         }
 
         button{
@@ -76,8 +76,20 @@
         .newRta{
             width: 100%;
             padding: 0;
-            height: 80px;
+            height: 135px;
             background-color: rgba(46, 91, 173, 0.12);
+        }
+
+        .newRta2{
+            width: 100%;
+            padding: 0;
+            height: 135px;
+            background-color: white
+        }
+
+        .btn:focus {
+            outline: none;
+            box-shadow: none;
         }
 
         .iconSecun{
@@ -86,6 +98,51 @@
             height: 50px; 
             margin-top: 15px;
             margin-left: 25px;
+        }
+
+        textarea{
+            margin-top: -55px;
+            margin-left: 85px;
+            resize: none;
+            overflow: hidden;
+        }
+
+        #enviarr{
+            float: right;
+            margin-top: 2px;
+            margin-right: 18px;
+            background-image: linear-gradient(to right, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
+            color: white;
+            border-radius: 10px;
+            border: none;
+        }
+
+        #enviarrr{
+            float: right;
+            margin-top: 2px;
+            
+            background-image: linear-gradient(to right, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
+            color: white;
+            border-radius: 10px;
+            border: none;
+        }
+
+        .rta1{
+            margin-top: 10px;
+        }
+
+        #rtaDerta{
+            margin-left: 100px;
+        }
+
+        #linea{
+            background-color: #D9D9D9;
+            height: 1px;
+        }
+
+        .rta3{
+            margin-left: 100px;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -102,10 +159,10 @@
         </div>
         <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aliquam quis numquam at hic architecto odio dolor laborum corporis sunt. Dignissimos reprehenderit officiis cum sequi eveniet, perferendis quos voluptatum earum?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quidem autem is</p>
         <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="border-radius: 30px">Responder</button>
+        
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasRightLabel">Comentarios</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
                 <h5>Tengo una duda de programacion</h5>
@@ -118,7 +175,36 @@
                 </div>
                 <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aliquam quis numquam at hic architecto odio dolor laborum corporis sunt. Dignissimos reprehenderit officiis cum sequi eveniet, perferendis quos voluptatum earum?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quidem autem is</p>
                 <div class="newRta">
-                    <img src="assets/img/iconosUsu/logo1.png" alt="" class="iconSecun">
+                    <img src="assets/img/iconosUsu/logo2.png" alt="" class="iconSecun">
+                    <form action="">
+                        <textarea name="" id="" cols="37" rows="3"  placeholder="Dejar un comentario..." ></textarea>
+                        <input type="submit" id="enviarr"> 
+                    </form>
+                </div>
+                <div class="rta1">
+                    <img src="assets/img/iconosUsu/logo1.png" alt="" class="icon">
+                    <div class="text">
+                        <h6>Nombre de usuario</h6> 
+                    </div>
+                    <div class="text2">
+                        <p>Fecha de la pregunta</p>
+                    </div>
+                    <p id="rtaDerta">No se jajaj chupala</p>
+                    <a class="rta3" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Contestar...
+                    </a>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            <div class="newRta2">
+                                <img src="assets/img/iconosUsu/logo2.png" alt="" class="iconSecun">
+                                <form action="">
+                                    <textarea name="" id="" cols="34" rows="3"  placeholder="Dejar un comentario..." ></textarea>
+                                    <input type="submit" id="enviarrr"> 
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="linea"></div>
                 </div>
             </div>
         </div>
