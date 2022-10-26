@@ -212,6 +212,7 @@
                 d: $("#dia").val()
             },
             success: response => {
+                console.log("OLAAAAAAAA" +  response);
                 if (response != true) {
 
                     response.forEach(dato => {

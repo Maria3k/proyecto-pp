@@ -18,35 +18,47 @@ if (isset($_POST)) {
 
   if (($enviar->num_rows) > 0) {
     $navegador = "";
+    $os = "";
+    $fecha = "";
 
-    echo "<h1>Navegador</h1>";
 
     if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE)
-      echo 'Internet explorer';
+      $navegador = 'Internet explorer';
     elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident') !== FALSE) //For Supporting IE 11
-      echo 'Internet explorer';
+      $navegador = 'Internet explorer';
     elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') !== FALSE)
-      echo 'Mozilla Firefox';
+      $navegador = 'Mozilla Firefox';
     elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') !== FALSE)
-      echo 'Google Chrome';
+      $navegador = 'Google Chrome';
     elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Opera Mini') !== FALSE)
-      echo "Opera Mini";
+      $navegador = "Opera Mini";
     elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== FALSE)
-      echo "Opera";
+      $navegador = "Opera";
     elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Safari') !== FALSE)
-      echo "Safari";
+      $navegador = "Safari";
     else
-      echo 'Something else';
+      $navegador = 'Something else';
 
-    echo "<h1>Sistema Operativo</h1>";
+    $os = php_uname("s");
+    $os += php_uname("r");
 
-    echo php_uname("s");
-    echo php_uname("r");
+    $fecha = (new \DateTime())->format('Y-m-d H:i:s');
 
-    echo "<h1>Hora</h1>";
-    echo (new \DateTime())->format('Y-m-d H:i:s');
+
 
     session_start();
+
+    $lastSession = "SELECT * FROM sesion WHERE id_usuario = " . $_SESSION["id_usuario"];
+    $filaSession = $con->query($lastSession)->fetch_assoc();
+
+    array_push($_SESSION, $filaSession);
+
+
+    $query = "UPDATE sesion SET navegador='$navegador',dispositivo='$os',hora='$fecha' WHERE id_usuario = " . $_SESSION["id_usuario"];
+    $con->query($query);
+
+
+
     $_SESSION = $datos;
     echo true;
   } else {
@@ -54,5 +66,3 @@ if (isset($_POST)) {
     echo json_encode($json);
   }
 }
-
-
