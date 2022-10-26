@@ -42,7 +42,7 @@ if ($_SESSION) {
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -86,22 +86,19 @@ if ($_SESSION) {
   </div>
 
 <!-- Información de conectividad -->
-  <div id="cuadrado">
-    <div class="seguridad">
-          <h4>Actividad reciente: </h4>
-          <div class="segu">
-            <p>Se inicio sesion: </p>
-            <p>En el dispositivo: </p>
-            <p>A la hora: </p>
-          </div>
-          <h4>Iniciar Sesion: </h4>
-          <div class="segu">
-            <p>Contraseña: </p>
-            <p>Verificar contraseña: </p>
-          </div>
-      </div>
+  <div class="fondo">
+    <div id="Caja">
+      <div class="act"> <label for="">Activida</label> </div>
+      <div class="UltSesion"> <label for="">Ultimo Inicio de Sesión:&nbsp</label><?=$usr["fechaNacimiento"]?></div>
+      <div class="navegador"><label for="">Desde el navegador:&nbsp</label><b>Chrome</b></div>
+      <div class="UltConex"><label for="">Ultima Conexion:&nbsp</label><b>17:45-PM</b></div>
     </div>
 
+    <div class="CajaContra">
+      <div class="tituloContra"><label>Administrador de Contraseña</label></div>
+      <div class="password"><br><b>Contraseña:&nbsp</b><?=$usr["contraseña"]?></div>
+    </div>
+  </div>
 <!-- Footer -->
 <!-- Script del menu -->  
       <script>

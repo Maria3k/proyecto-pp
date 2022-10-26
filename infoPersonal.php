@@ -89,7 +89,7 @@ if ($_SESSION) {
   <!--  -->
 
   <!-- Tabla de Información -->
-<div class="fondo" >
+<div class="fondo">
   <div id="infoPersonal">
 
     <div class="ImagenUsuario">

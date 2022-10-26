@@ -400,21 +400,80 @@ nav{
 }
 /* Seguridad */
 
-.icon{
-  width: 30px;
-  height: 30px;
+#Caja{
+  margin-left: 10%;
+  margin-top: 3%;
+  border: #3260B4 solid;
+  width: 57vw;
+  height: 40vh;
+  background-color: #F4F4F4;
+  border-radius: 10px;
+  color: #3260B4;
 }
 
-.segu{
-  width: 200px;
-  height: 120px;
-  background-color: aqua;
-  margin-top: 20px;
-  margin-bottom: 20px;
+.act{
+  border-bottom: #3260B4 solid;
 }
 
-.seguridad{
-  margin-left: 500px;
+.act label{
+  padding: 10px;
+  margin-left: 45%;
+  font-size: x-large;
 }
 
-#section{}
+.UltSesion{
+  border-bottom: #3260B4 solid;
+  font-size: x-large;
+}
+
+.UltSesion label{
+  padding: 10px 35% 10px 0px;
+  margin-left: 3%;
+}
+
+.navegador{
+  border-bottom: #3260B4 solid;
+  font-size: x-large;
+}
+
+.navegador label{
+  padding: 10px 40% 10px 0px;
+  margin-left: 3%;
+}
+
+.UltConex{
+  font-size: x-large;
+}
+
+.UltConex label{
+  padding: 10px 45% 10px 0px;
+  margin-left: 3%;
+}
+
+.CajaContra{
+  border-radius: 10px;
+  background-color: #F4F4F4;
+  margin-top: 15px;
+  border: #555 solid;
+  width: 57vw;
+  height: 23vh;
+  margin-left: 10%;
+  color: #3260B4;
+  font-size: x-large;
+}
+
+.tituloContra{
+  text-align: center;
+  justify-content: center;
+  padding: 13px;
+  border-bottom: #2853A1 solid;  
+}
+
+.password{
+  margin-top: -3%;
+}
+
+.password b{
+  padding: 0px 15% 0px 0px;
+  margin-left: 3%;
+}
