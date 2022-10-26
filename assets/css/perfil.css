@@ -469,11 +469,28 @@ nav{
   border-bottom: #2853A1 solid;  
 }
 
-.password{
+.Password{
   margin-top: -3%;
 }
 
-.password b{
-  padding: 0px 15% 0px 0px;
+.Password b{
+  padding: 0px 10% 0px 0px;
   margin-left: 3%;
 }
+
+.Password input{
+  box-decoration-break: none;
+  border: #F4F4F4 solid;
+  color: #2853A1;
+}
+
+.eye{
+  position: absolute;
+  margin-left: 70%;
+  margin-top: -30px;
+  display: flex;
+}
+
+#hide1{
+  display: none;
+} 

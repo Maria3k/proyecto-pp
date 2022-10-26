@@ -96,10 +96,36 @@ if ($_SESSION) {
 
     <div class="CajaContra">
       <div class="tituloContra"><label>Administrador de Contraseña</label></div>
-      <div class="password"><br><b>Contraseña:&nbsp</b><?=$usr["contraseña"]?></div>
+      <div class="Password"><br><b>Contraseña:&nbsp</b><input type="password" value="<?=$usr["contraseña"]?>" disabled id="myInput"></div>
+      <span class="eye" onclick="myFunction()">
+        <i id="hide1" class="fa-solid fa-eye"></i>
+        <i id="hide2" class="fa-solid fa-eye-slash"></i>
+      </span>
     </div>
   </div>
 <!-- Footer -->
+
+<!-- Script Eye -->
+
+  <script>
+    function myFunction(){
+      var x = document.getElementById("myInput");
+      var y = document.getElementById("hide1");
+      var z = document.getElementById("hide2");
+
+      if(x.type === 'password'){
+        x.type = "text";
+        y.style.display = "block";
+        z.style.display = "none";
+      }
+      else{
+        x.type = "password";
+        y.style.display = "none";
+        z.style.display = "block";  
+      }
+    }
+  </script>
+
 <!-- Script del menu -->  
       <script>
           // ---------vertical-menu with-inner-menu-active-animation-----------.
