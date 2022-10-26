@@ -19,7 +19,7 @@ if (isset($_POST)) {
   if (($enviar->num_rows) > 0) {
     $navegador = "";
 
-    /*echo "<h1>Navegador</h1>";
+    echo "<h1>Navegador</h1>";
 
     if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE)
       echo 'Internet explorer';
@@ -45,8 +45,6 @@ if (isset($_POST)) {
 
     echo "<h1>Hora</h1>";
     echo (new \DateTime())->format('Y-m-d H:i:s');
-    */
-
 
     session_start();
     $_SESSION = $datos;
