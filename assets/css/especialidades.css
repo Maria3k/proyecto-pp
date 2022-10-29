@@ -30,11 +30,6 @@
     border-radius: 10px;
 }
 
-footer{
-    position: absolute;
-    width: 100%;
-    background-color: aliceblue;
-}
 
 footer li{
     list-style: none;

@@ -13,9 +13,10 @@ h5{
     width: 600px;
     height: 300px;
     box-shadow: 0px 3px 6px -3px rgb(105, 105, 105);
+    margin-left: 34%;
 }
 
-button{
+#botonnn{
     position: absolute;
     bottom: 5%;
     right: 5%;
@@ -28,6 +29,7 @@ button{
     width: 60px;
     height: 60px;
 }
+
 .text{
     display: inline-block;
     margin-left: 15px;
@@ -39,6 +41,12 @@ button{
     margin-top: -25px ; 
     color: rgb(151, 148, 148);
     font-size: 14px;
+}
+
+.text3{
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 60px;
 }
 
 .content{
@@ -89,14 +97,22 @@ button{
     margin-left: 25px;
 }
 
-textarea{
-    margin-top: -55px;
+#areaa{
+    margin-top: -80px;
     margin-left: 85px;
     resize: none;
     overflow: hidden;
 }
 
-#enviarr{
+#areaa1{
+    margin-top: -90px;
+    margin-left: 85px;
+    resize: none;
+    overflow: hidden;
+}
+
+#enviarr1{
+    width: 70px;
     float: right;
     margin-top: 2px;
     margin-right: 18px;
@@ -106,10 +122,11 @@ textarea{
     border: none;
 }
 
-#enviarrr{
+#enviarr2{
+    width: 70px;
     float: right;
     margin-top: 2px;
-    
+    margin-right: 8px;
     background-image: linear-gradient(to right, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
     color: white;
     border-radius: 10px;

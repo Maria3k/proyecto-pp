@@ -25,72 +25,119 @@ if ($_SESSION) {
   <link rel="stylesheet" href="assets/css/icons.css">
   <link rel="stylesheet" href="assets/css/mi-carousel.css">
   <link rel="stylesheet" href="assets/css/especialidades.css">
-  <title>Especialidad Mecanica</title>
+  <link rel="stylesheet" href="assets/css/barra.css">
+  <link rel="stylesheet" href="assets/css/pregunta.css">
+  <link rel="stylesheet" href="assets/css/tarjeta.css">
+  <title>Especialidad Computación</title>
 </head>
 
 <body>
-  <nav>
+  <nav id="barraNav">
     <a href="index.php" title="Pagina Principal"><img class="img1" src="assets/img/escuela/loguito.png" alt="minilogo.png"></a>
-    <?= $menu ?>
+    <div id="Barra" style="width: 400px; margin-top:8px;">
+      <div class="input-icons">
+        <i class="fa-solid fa-magnifying-glass" id="iconoLupa"></i>
+        <input class="input-field" type="text" id="inputo" placeholder="Busqueda de preguntas">
+      </div>
+    </div>
+    <div>
+      <?= $menu ?>
+    </div>
+
   </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col"></div>
-      <div class="col">
-        <div class="faq">
-          <h1>PREGUNTAS FRECUENTES</h1>
+  <br>
+  <div class="container-sm text-center">
+    <div class="row justify-content-center">
+      <div class="cuadro">
+        <div id="texto">
+          Para hacer una pregunta haga click en el boton
         </div>
+        <button class="b" type="button" data-bs-toggle="collapse" data-bs-target="#preguntaCollapse" aria-expanded="false" aria-controls="preguntaCollapse" style="width: 32px;">
+          +
+        </button>
       </div>
-      <div class="col"></div>
-    </div>
-    <div class="row">
-      <div class="col"></div>
-      <div class="col">
-        <div class="pregunta">
-          <h1>DEJE SUS PREGUNTAS</h1>
-          <form action="mecanica.php" method="POST">
-            <textarea name="" id="" cols="80" rows="10" placeholder="Ingrese su pregunta"></textarea>
-            <input type="submit" value="enviar">
-          </form>
-        </div>
-      </div>
-      <div class="col"></div>
-    </div>
-    <div class="card">
-      <div class="car-body">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="assets/img/mecanica/IM1.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/img/mecanica/IM2.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/img/mecanica/IM3.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/img/mecanica/IM4.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/img/mecanica/IM5.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/img/mecanica/IM6.jpg" class="d-block w-100" alt="...">
-            </div>
+      <div class="collapse" id="preguntaCollapse" style="width: 726px">
+        <div class="card card-body">
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Asunto</label>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+          <br>
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 150px"></textarea>
+            <label for="floatingTextarea2">Contenido</label>
+          </div>
+          <br>
+          <div class="col text-end">
+            <input class="b mx-auto" type="submit" value="Enviar" id="botn">
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="tarjeta">
+    <h5>Tengo una duda de Programacion</h5>
+    <img src="assets/img/iconosUsu/logo1.png" alt="" class="icon">
+    <div class="text">
+      <h6>Nombre de usuario</h6>
+    </div>
+    <div class="text2">
+      <p>Fecha de la pregunta</p>
+    </div>
+    <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aliquam quis numquam at hic architecto odio dolor laborum corporis sunt. Dignissimos reprehenderit officiis cum sequi eveniet, perferendis quos voluptatum earum?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quidem autem is</p>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="border-radius: 30px" id="botonnn">Responder</button>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Comentarios</h5>
+      </div>
+      <div class="offcanvas-body">
+        <h5>Tengo una duda de programacion</h5>
+        <img src="assets/img/iconosUsu/logo1.png" alt="" class="icon">
+        <div class="text">
+          <h6>Nombre de usuario</h6>
+        </div>
+        <div class="text2">
+          <p>Fecha de la pregunta</p>
+        </div>
+        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aliquam quis numquam at hic architecto odio dolor laborum corporis sunt. Dignissimos reprehenderit officiis cum sequi eveniet, perferendis quos voluptatum earum?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quidem autem is</p>
+        <div class="newRta">
+          <img src="assets/img/iconosUsu/logo2.png" alt="" class="iconSecun">
+            <textarea name="" id="areaa" cols="37" rows="3" placeholder="Dejar un comentario..."></textarea>
+            <button id="enviarr1">Enviar</button>
+        </div>
+        <div class="rta1">
+          <img src="assets/img/iconosUsu/logo1.png" alt="" class="icon">
+          <div class="text">
+            <h6>Nombre de usuario</h6>
+          </div>
+          <div class="text2">
+            <p>Fecha de la pregunta</p>
+          </div>
+          <p id="rtaDerta">No se jajaj chupala</p>
+          <a class="rta3" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Contestar...
+          </a>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body" style="padding-bottom: 40px;">
+              <div class="newRta2">
+                <img src="assets/img/iconosUsu/logo2.png" alt="" class="iconSecun">
+                <div class="text3">
+                  <h6>Nombre de usuario</h6>
+                </div>
+                  <textarea name="" id="areaa1" cols="34" rows="3" placeholder="Dejar un comentario..."></textarea>
+                  <button id="enviarr2">Enviar</button>
+              </div>
+            </div>
+          </div>
+          <div id="linea"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <footer>
     <div class="row">
       <div class="col l6">
@@ -129,7 +176,6 @@ if ($_SESSION) {
               <i class="fab fa-youtube"></i>
               <!--ICONO DE YOUTUBE -->
             </a>
-
             <a href="https://www.instagram.com/la_gloriosa_32_escuela_tecnica/?hl=es-la" rel="noopener noreferrer" class="instagram" target="_blank" title="Instagram">
               <!--LINK DE INSTAGRAM -->
               <i class="fab fa-instagram"></i>

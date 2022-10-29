@@ -34,7 +34,7 @@ if ($_SESSION) {
 <body>
   <nav id="barraNav">
     <a href="index.php" title="Pagina Principal"><img class="img1" src="assets/img/escuela/loguito.png" alt="minilogo.png"></a>
-    <div id="Barra">
+    <div id="Barra" style="width: 400px; margin-top:8px;">
       <div class="input-icons">
         <i class="fa-solid fa-magnifying-glass" id="iconoLupa"></i>
         <input class="input-field" type="text" id="inputo" placeholder="Busqueda de preguntas">
@@ -45,18 +45,18 @@ if ($_SESSION) {
     </div>
 
   </nav>
-
+  <br>
   <div class="container-sm text-center">
     <div class="row justify-content-center">
       <div class="cuadro">
         <div id="texto">
           Para hacer una pregunta haga click en el boton
         </div>
-        <button class="b" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="width: 32px;">
+        <button class="b" type="button" data-bs-toggle="collapse" data-bs-target="#preguntaCollapse" aria-expanded="false" aria-controls="preguntaCollapse" style="width: 32px;">
           +
         </button>
       </div>
-      <div class="collapse" id="collapseExample" style="width: 726px">
+      <div class="collapse" id="preguntaCollapse" style="width: 726px">
         <div class="card card-body">
           <div class="form-floating">
             <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
@@ -86,7 +86,7 @@ if ($_SESSION) {
       <p>Fecha de la pregunta</p>
     </div>
     <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aliquam quis numquam at hic architecto odio dolor laborum corporis sunt. Dignissimos reprehenderit officiis cum sequi eveniet, perferendis quos voluptatum earum?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quidem autem is</p>
-    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="border-radius: 30px">Responder</button>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="border-radius: 30px" id="botonnn">Responder</button>
 
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
       <div class="offcanvas-header">
@@ -104,10 +104,8 @@ if ($_SESSION) {
         <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aliquam quis numquam at hic architecto odio dolor laborum corporis sunt. Dignissimos reprehenderit officiis cum sequi eveniet, perferendis quos voluptatum earum?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quidem autem is</p>
         <div class="newRta">
           <img src="assets/img/iconosUsu/logo2.png" alt="" class="iconSecun">
-          <form action="">
-            <textarea name="" id="" cols="37" rows="3" placeholder="Dejar un comentario..."></textarea>
-            <input type="submit" id="enviarr">
-          </form>
+            <textarea name="" id="areaa" cols="37" rows="3" placeholder="Dejar un comentario..."></textarea>
+            <button id="enviarr1">Enviar</button>
         </div>
         <div class="rta1">
           <img src="assets/img/iconosUsu/logo1.png" alt="" class="icon">
@@ -122,13 +120,14 @@ if ($_SESSION) {
             Contestar...
           </a>
           <div class="collapse" id="collapseExample">
-            <div class="card card-body">
+            <div class="card card-body" style="padding-bottom: 40px;">
               <div class="newRta2">
                 <img src="assets/img/iconosUsu/logo2.png" alt="" class="iconSecun">
-                <form action="">
-                  <textarea name="" id="" cols="34" rows="3" placeholder="Dejar un comentario..."></textarea>
-                  <input type="submit" id="enviarrr">
-                </form>
+                <div class="text3">
+                  <h6>Nombre de usuario</h6>
+                </div>
+                  <textarea name="" id="areaa1" cols="34" rows="3" placeholder="Dejar un comentario..."></textarea>
+                  <button id="enviarr2">Enviar</button>
               </div>
             </div>
           </div>
