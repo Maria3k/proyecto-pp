@@ -79,12 +79,13 @@ if ($_SESSION) {
   <div class="tarjeta">
     <h5>Tengo una duda de Programacion</h5>
     <img src="assets/img/iconosUsu/logo1.png" alt="" class="icon">
-    <div class="text">
-      <h6>Nombre de usuario</h6>
-    </div>
-    <div class="text2">
-      <p>Fecha de la pregunta</p>
-    </div>
+      <div class="text">
+        <h6>Nombre de usuario</h6>
+      </div>
+      <div class="text2">
+        <p>Fecha de la pregunta</p>
+      </div>
+    
     <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aliquam quis numquam at hic architecto odio dolor laborum corporis sunt. Dignissimos reprehenderit officiis cum sequi eveniet, perferendis quos voluptatum earum?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quidem autem is</p>
     <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="border-radius: 30px" id="botonnn">Responder</button>
 

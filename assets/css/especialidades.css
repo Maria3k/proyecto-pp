@@ -13,9 +13,6 @@
     color: rgb(136, 130, 130);
 }
 
-/*.ventanaPregunta{
-    border: 1px solid black;
-}*/
 .pregunta{
     background-color:rgb(49, 111, 192);
     border-radius: 5px;
@@ -46,5 +43,5 @@ footer li ul li{
 
 div.col.l6{
     margin-left: 15px;
-
 }
+
