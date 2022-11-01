@@ -261,7 +261,7 @@ nav{
   width: 60vw;
   height: 60vh;
   margin-top: 5%;
-  margin-left: 7%;
+  margin-left: -2%;
   background: #777;
   border-radius: 10px;
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
@@ -285,7 +285,7 @@ nav{
 .botonConsulta{
   position: absolute;
   margin-top: -50px;
-  margin-left: 55%;
+  margin-left: 50%;
   background: linear-gradient(90deg, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
   color: #fff;
   width: 205px;
