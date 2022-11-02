@@ -507,7 +507,17 @@ nav {
 #hide1 {
   display: none;
 }
-.botoncito{
+.botoncito {
   width: fit-content;
   align-self: flex-end;
+  padding: 4px 30px;
+  /* background: linear-gradient(to right, #2853a1 35%, rgba(87,147,255,1) 100%); */
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+  color: #3c6dc8;
+  margin-right: 40px;
+  background: white;
+  margin-bottom: 10px;
+  border: solid 1px;
 }
