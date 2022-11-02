@@ -283,7 +283,11 @@ nav {
   padding: 20px;
 }
 
-.nombreUser {
+.lorem ul{
+  list-style: none;
+}
+
+.nombreUser{
   margin-top: 10px;
   margin-left: 0rem;
 }
