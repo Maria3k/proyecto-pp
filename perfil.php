@@ -80,10 +80,10 @@ if ($_SESSION) {
         <a href="infoPersonal.php"><i class="fa fa-address-book"></i>Informacion Personal</a>
       </li>
       <li>
-        <a href="seguridad.php"><i class="fa fa-clone"></i>Ultima Actividad</a>
+        <a href="seguridad.php"><i class="fa fa-hourglass-end"></i>Ultima Actividad</a>
       </li>
       <li>
-        <a href="infoGeneral.php"><i class="fa fa-clone"></i>Informacion</a>
+        <a href="infoGeneral.php"><i class="fa fa-cloud"></i>Informacion</a>
       </li>
     </ul>
   </div>
@@ -95,9 +95,20 @@ if ($_SESSION) {
           <h2><label for="" class="label">Bienvenido&nbsp <b><?= $usr["nombre"] ?></b> </h2></label>
         </div>
         <div class="lorem">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat sequi esse beatae obcaecati consequuntur autem vel quidem officia quia maxime laboriosam quos neque quo fugit quisquam error, minima corporis ipsum.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ullam minus error, vitae nulla voluptatum tenetur ipsa! Aperiam unde debitis modi, totam aliquid beatae aut corrupti soluta hic, quibusdam voluptas!
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut quos, odio saepe eveniet sequi maiores eius totam porro laudantium, doloribus illum unde quas nulla. Similique debitis quae tempore vel provident?
+          Si el usuario dispone de alguna interrogacion o visualiza algun problema en la web dale al boton consulta 
+          <br>
+          Contacto
+          <ul>
+            <li>
+              DOE - Email: ofdealumnos@gmail.com
+            </li>
+            <li>
+              Telefono: 4551-9121 4555-4026/4034
+            </li>
+            <li>
+              Direccion: Teodoro Garcia 3899 - C1427ECG CABA 
+            </li>
+          </ul>
         </div>
       </div>
     </div>
