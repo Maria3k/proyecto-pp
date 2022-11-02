@@ -267,10 +267,6 @@ nav{
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
 }
 
-.curva{
-  margin-top: -60px;
-}
-
 .label{
   display: flex;
   justify-content: center;
@@ -282,7 +278,12 @@ nav{
 
 .nombreUser{
   margin-top: 10px;
+  margin-left: 0rem;
 }
+
+/*Curva*/
+
+
 
 /*Boton Consulta*/
 
