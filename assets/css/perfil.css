@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
   width: 0%;
 }
 
@@ -28,16 +28,16 @@ h6 {
 }
 
 /*Body de fondo*/
-.body-perfil{
+.body-perfil {
   background-color: rgb(255, 255, 255);
 }
 
 /*Navbar*/
-nav{
+nav {
   background: linear-gradient(90deg, #2853A1 49.64%, #5793FF 142.14%, #2E5BAD 143.37%, rgba(167, 179, 201, 0.284) 143.38%, #5793FF 143.39%);
 }
 
-.btn-nav{
+.btn-nav {
   padding-top: 20px;
   padding-right: 10px;
   color: white;
@@ -47,33 +47,33 @@ nav{
   padding-left: 10px;
 }
 
-.btn-nav:hover{
+.btn-nav:hover {
   color: black;
 }
 
-.botonlogo{
+.botonlogo {
   display: inline-block;
 }
 
-.botonlogo img{
+.botonlogo img {
   height: 70px;
   width: 75px;
 }
 
-.botonlogin{
+.botonlogin {
   position: absolute;
   display: inline-block;
   right: 0%;
 }
 
-.botonlogin img{
+.botonlogin img {
   height: 70px;
   width: 75px;
 }
 
 /*==================Menu desplegable======================*/
 
-.action{
+.action {
   display: inline-block;
   float: right;
   top: 20px;
@@ -81,7 +81,7 @@ nav{
 
 }
 
-.action .profile{
+.action .profile {
   position: relative;
   right: 25px;
   margin-top: 8px;
@@ -93,11 +93,11 @@ nav{
   cursor: pointer;
 }
 
-.action .profile:hover{
+.action .profile:hover {
   border: solid 3px white;
 }
 
-.action .profile img{
+.action .profile img {
   position: absolute;
   top: 0;
   left: 0;
@@ -106,7 +106,7 @@ nav{
   object-fit: cover;
 }
 
-.action .menu{
+.action .menu {
   position: absolute;
   top: 85px;
   right: 10px;
@@ -118,13 +118,13 @@ nav{
   opacity: 0;
 }
 
-.action .menu.active{
+.action .menu.active {
   visibility: visible;
   opacity: 1;
 
 }
 
-.action .menu::before{
+.action .menu::before {
   content: '▲';
   font-size: 30px;
   position: absolute;
@@ -137,11 +137,11 @@ nav{
 
 }
 
-#primero{
+#primero {
   border-top: none;
 }
 
-.action .menu h3{
+.action .menu h3 {
   width: 100%;
   text-align: center;
   font-size: 18px;
@@ -152,12 +152,12 @@ nav{
   line-height: 1.2em;
 }
 
-.action .menu .ul{
+.action .menu .ul {
   margin-bottom: 0;
 
 }
 
-.action .menu ul li{
+.action .menu ul li {
   margin-bottom: 0;
   list-style: none;
   padding: 10px 0;
@@ -166,18 +166,18 @@ nav{
   align-items: center;
 }
 
-.action .menu ul li img{
+.action .menu ul li img {
   max-width: 20px;
   margin-right: 10px;
   opacity: 0.5;
   transition: 0.5s;
 }
 
-.action .menu ul li:hover img{
+.action .menu ul li:hover img {
   opacity: 1;
 }
 
-.action .menu ul li a{
+.action .menu ul li a {
   display: inline-block;
   text-decoration: none;
   color: white;
@@ -185,13 +185,13 @@ nav{
   transition: 250ms;
 }
 
-.action .menu ul li:hover a{
+.action .menu ul li:hover a {
   color: black;
 }
 
 /*==================Campana de notificacion======================*/
 
-.icon-wrapper{
+.icon-wrapper {
   width: 43px;
   height: 43px;
   position: relative;
@@ -200,7 +200,7 @@ nav{
   top: 10px;
 }
 
-.icon-wrapper::after{
+.icon-wrapper::after {
   content: '4';
   width: 20px;
   height: 20px;
@@ -216,39 +216,42 @@ nav{
   transform: rotateY(3px);
 }
 
-.icon-wrapper:hover::after{
+.icon-wrapper:hover::after {
   opacity: 1;
   transform: rotateY(0);
   transition: opacity .25s;
   transform: .25s;
 }
 
-.bell-icon{
+.bell-icon {
   max-width: 100%;
 }
 
-.icon-wrapper:hover .bell-icon{
+.icon-wrapper:hover .bell-icon {
   animation: shake 1s forwards;
 }
 
-@keyframes shake{
-  10%{
-      transform: rotate(15deg);
+@keyframes shake {
+  10% {
+    transform: rotate(15deg);
   }
-  20%{
-      transform: rotate(-15deg);
+
+  20% {
+    transform: rotate(-15deg);
   }
-  30%{
-      transform: rotate(15deg);
+
+  30% {
+    transform: rotate(15deg);
   }
-  50%{
-      transform: rotate(0deg);
+
+  50% {
+    transform: rotate(0deg);
   }
 }
 
 /*Contenedor de información*/
 
-.contenedor{
+.contenedor {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -256,7 +259,7 @@ nav{
   padding: 0 20px;
 }
 
-.carta-contenedor{
+.carta-contenedor {
   display: flex;
   width: 60vw;
   height: 60vh;
@@ -267,26 +270,26 @@ nav{
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
 }
 
-.curva{
+.curva {
   margin-top: -60px;
 }
 
-.label{
+.label {
   display: flex;
   justify-content: center;
 }
 
-.lorem{
+.lorem {
   padding: 20px;
 }
 
-.nombreUser{
+.nombreUser {
   margin-top: 10px;
 }
 
 /*Boton Consulta*/
 
-.botonConsulta{
+.botonConsulta {
   position: absolute;
   margin-top: -50px;
   margin-left: 50%;
@@ -302,14 +305,15 @@ nav{
   transition: .2s;
 }
 
-.botonConsulta:hover, .botonConsulta:active{
+.botonConsulta:hover,
+.botonConsulta:active {
   color: rgb(255, 255, 255);
 }
 
 /*Vista Informacion Personal*/
 
 
-.fondo{
+.fondo {
   top: 13%;
   left: 25%;
   width: 70%;
@@ -320,7 +324,7 @@ nav{
 }
 
 
-#infoPersonal{
+#infoPersonal {
   margin-left: 10%;
   margin-top: 3%;
   border: #3260B4 solid;
@@ -331,7 +335,7 @@ nav{
   color: #3260B4;
 }
 
-.ImagenUsuario img{
+.ImagenUsuario img {
   border-radius: 50%;
   width: 15%;
   height: 15%;
@@ -339,13 +343,13 @@ nav{
   margin-top: 40px;
 }
 
-.username{
+.username {
   margin-top: -2%;
   font-size: x-large;
   padding: 0px 0px 0px 5%;
 }
 
-.name{
+.name {
   font-size: x-large;
   margin-left: 28%;
   display: flex;
@@ -356,7 +360,7 @@ nav{
   padding: 20px;
 }
 
-.surname{
+.surname {
   margin-left: 28%;
   font-size: x-large;
   display: flex;
@@ -366,7 +370,7 @@ nav{
   padding: 17px;
 }
 
-.FDN{
+.FDN {
   margin-left: 28%;
   font-size: x-large;
   display: flex;
@@ -375,7 +379,7 @@ nav{
   padding: 20px;
 }
 
-.correo{
+.correo {
   border-radius: 10px;
   background-color: #F4F4F4;
   justify-content: center;
@@ -388,113 +392,108 @@ nav{
   color: #3260B4;
 }
 
-.info{
+.info {
   padding: 5px;
   border-bottom: #3260B4 solid;
   width: 100%;
   margin-top: 1rem;
 }
 
-.correoelectronico{
+.correoelectronico {
   margin-top: -1.5rem;
 }
 
-.info, .correoelectronico{
+.info,
+.correoelectronico {
   font-size: x-large;
 }
+
 /* Seguridad */
 
-#Caja{
+#Caja {
   margin-left: 10%;
   margin-top: 3%;
   border: #3260B4 solid;
   width: 57vw;
-  height: 40vh;
   background-color: #F4F4F4;
   border-radius: 10px;
   color: #3260B4;
 }
 
-.act{
+.act {
   border-bottom: #3260B4 solid;
 }
 
-.act label{
+.act label {
   padding: 10px;
   margin-left: 45%;
   font-size: x-large;
 }
 
-.UltSesion{
+.UltSesion {
   border-bottom: #3260B4 solid;
   font-size: x-large;
 }
 
-.UltSesion label{
+.UltSesion label {
   padding: 10px 35% 10px 0px;
   margin-left: 3%;
 }
 
-.navegador{
+.navegador {
   border-bottom: #3260B4 solid;
   font-size: x-large;
 }
 
-.navegador label{
+.navegador label {
   padding: 10px 40% 10px 0px;
   margin-left: 3%;
 }
 
-.UltConex{
+.UltConex {
   font-size: x-large;
 }
 
-.UltConex label{
+.UltConex label {
   padding: 10px 45% 10px 0px;
   margin-left: 3%;
 }
 
-.CajaContra{
+.CajaContra {
   border-radius: 10px;
   background-color: #F4F4F4;
   margin-top: 15px;
-  border: #555 solid;
   width: 57vw;
-  height: 23vh;
   margin-left: 10%;
   color: #3260B4;
   font-size: x-large;
 }
 
-.tituloContra{
+.tituloContra {
   text-align: center;
   justify-content: center;
   padding: 13px;
-  border-bottom: #2853A1 solid;  
+  border-bottom: #2853A1 solid;
 }
 
-.Password{
-  margin-top: -3%;
+.Password {
+  display: flex;
+  padding: 2% 5%;
+  justify-content: space-between;
 }
 
-.Password b{
+.Password b {
   padding: 0px 10% 0px 0px;
   margin-left: 3%;
 }
 
-.Password input{
+.Password input {
   box-decoration-break: none;
-  border: #F4F4F4 solid;
+  border: none;
+  background-color: transparent;
   color: #2853A1;
 }
 
-.eye{
-  position: absolute;
-  margin-left: 70%;
-  margin-top: -30px;
-  display: flex;
-}
-
-#hide1{
+#hide1 {
   display: none;
-} 
+}
