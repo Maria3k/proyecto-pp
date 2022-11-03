@@ -332,7 +332,7 @@ nav {
   top: 13%;
   left: 25%;
   width: 70%;
-  height: 75vh;
+  height: 83vh;
   background: linear-gradient(180deg, #3260B4 0%, #528CF5 100%);
   position: absolute;
   border-radius: 10px;
@@ -475,6 +475,8 @@ nav {
 }
 
 .CajaContra {
+  display: flex;
+  flex-direction: column;
   border-radius: 10px;
   background-color: #F4F4F4;
   margin-top: 15px;
@@ -504,11 +506,24 @@ nav {
 
 .Password input {
   box-decoration-break: none;
-  border: none;
-  background-color: transparent;
-  color: #2853A1;
+  border-radius: 6px;
+  border: solid 1.5px #2853A1;
 }
 
 #hide1 {
   display: none;
+}
+.botoncito {
+  width: fit-content;
+  align-self: flex-end;
+  padding: 4px 30px;
+  /* background: linear-gradient(to right, #2853a1 35%, rgba(87,147,255,1) 100%); */
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+  color: #3c6dc8;
+  margin-right: 40px;
+  background: white;
+  margin-bottom: 10px;
+  border: solid 1px;
 }

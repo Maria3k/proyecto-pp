@@ -1,15 +1,11 @@
 <?php
 include("conexion.php");
 session_start();
-if ($_SESSION) {
-  $usr = $con->query("SELECT usuario.*, avatar.* FROM usuario LEFT JOIN avatar ON usuario.nAvatar = avatar.id_avatar WHERE id_usuario = " . $_SESSION["id_usuario"])->fetch_assoc();
-} else {
-  header("location:login.php");
-}
 
 $menu = '';
 
 if ($_SESSION) {
+  $usr = $con->query("SELECT usuario.*, avatar.* FROM usuario LEFT JOIN avatar ON usuario.nAvatar = avatar.id_avatar WHERE id_usuario = " . $_SESSION["id_usuario"])->fetch_assoc();
 
   $nAvatar = $_SESSION["nAvatar"];
 
@@ -36,8 +32,24 @@ if ($_SESSION) {
     </div>
   </div>
         ';
+
+  if ($_POST) {
+    $query = "SELECT * FROM usuario WHERE id_usuario = " . $_SESSION["id_usuario"] . " AND contraseña = '" . $_POST["actualPass"] . "'";
+    echo $query;
+    $datos = $con->query($query);
+
+    if ($datos->num_rows > 0) {
+
+      if ($_POST["newPass"] == $_POST["vNewPass"]) {
+
+        $actualizar = "UPDATE usuario SET contraseña= " . $_POST["newPass"] . " WHERE id_usuario = " . $_SESSION["id_usuario"];
+      }
+    }else{
+      
+    }
+  }
 } else {
-  $menu = '<a class="btn-nav" href="register.php">Register</a><a class="btn-nav" href="login.php">Iniciar Sesion</a>';
+  header("location:login.php");
 }
 
 ?>
@@ -99,24 +111,27 @@ if ($_SESSION) {
       <div class="UltConex"><label for="">Ultima Conexion:&nbsp</label><b>17:45-PM</b></div>
     </div>
 
-    <div class="CajaContra">
+
+    <form action="seguridad.php" method="post" class="CajaContra">
       <div class="tituloContra">
         <label>Administrador de Contraseña</label>
       </div>
       <div class="Password">
         <b>Contraseña actual:</b>
-        <input type="password" value="<?= $usr["contraseña"] ?>" id="actualPass">
+        <input type="password" name="actualPass" required>
       </div>
       <div class="Password">
         <b>Nueva contraseña:</b>
-        <input type="password" value="<?= $usr["contraseña"] ?>" id="newPass">
+        <input type="password" name="newPass" required>
       </div>
       <div class="Password">
         <b>Confirmar contraseña:</b>
-        <input type="password" value="<?= $usr["contraseña"] ?>" id="vNewPass">
+        <input type="password" name="vNewPass" required>
       </div>
-    </div>
+      <input type="submit" class="botoncito" value="enviar">
+    </form>
   </div>
+
   <!-- Footer -->
 
   <!-- Script Eye -->
