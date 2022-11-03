@@ -268,10 +268,7 @@ nav {
   background: #3260B4;
   border-radius: 10px;
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
-}
-
-.curva {
-  margin-top: -60px;
+  color: #fff;
 }
 
 .label {
@@ -280,6 +277,7 @@ nav {
 }
 
 .lorem {
+  margin-top: -15px;
   padding: 20px;
 }
 
@@ -294,7 +292,15 @@ nav {
 
 /*Curva*/
 
-
+.wave svg{
+  position: absolute;
+  width: 60vw;
+  margin-top: -9rem;
+  margin-left: 118px;
+  background-size: cover;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
 
 /*Boton Consulta*/
 
