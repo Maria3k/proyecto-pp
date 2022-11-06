@@ -32,3 +32,7 @@ div.col.l6 {
     margin-left: 15px;
 
 }
+.rtasDiv{
+    height: 70%;
+    overflow-y: scroll;
+}

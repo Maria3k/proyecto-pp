@@ -163,9 +163,9 @@ if ($_SESSION) {
   </footer>
   <script src="assets/js/bootstrap.js"></script>
   <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <!--CAMBIAR A 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>  
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   -->
   <script>
     function menuToggle() {
@@ -174,9 +174,7 @@ if ($_SESSION) {
     }
 
     $(document).ready(() => {
-      if (<?= $ajax; ?> != -1) {
-        notification();
-      }
+      if (<?= $ajax; ?> != -1) notification();
 
       function notification() {
         $("#number").hide();
@@ -192,8 +190,6 @@ if ($_SESSION) {
           }
         });
       }
-
-      fecthAsks();
 
       function fecthAsks() {
         $.ajax({
@@ -225,7 +221,7 @@ if ($_SESSION) {
                       <textarea id="content${ask.id}" class="form-control my-2" placeholder="Dejar un comentario" required></textarea>
                     </form>
                     <button class="btn btn-primary submitRta" value="${ask.id}">Enviar</button>
-                    <div id="rtasDiv${ask.id}"></div>
+                      <div id="rtasDiv${ask.id}" class="rtasDiv"></div>
                   </div>
                 </div>
               `
@@ -235,6 +231,8 @@ if ($_SESSION) {
           }
         })
       }
+
+      fecthAsks();
 
       function searchAsks(n) {
         $.ajax({
@@ -268,8 +266,8 @@ if ($_SESSION) {
                       <input id="preguntaId${ask.id}" type="hidden" value="${ask.id}">
                       <textarea id="content${ask.id}" class="form-control my-2" placeholder="Dejar un comentario" required></textarea>
                       </form>
-                      <button class="btn btn-primary submitRta" value="${ask.id}">Ola</button>
-                      <div id="rtasDiv${ask.id}"></div>
+                      <button class="btn btn-primary submitRta" value="${ask.id}">Enviar</button>
+                      <div id="rtasDiv${ask.id}" class="rtasDiv"></div>
                     </div>
                   </div>
                 `
@@ -290,19 +288,51 @@ if ($_SESSION) {
           url: "rtas.php",
           type: "POST",
           data: {
-            e: 1,
             "id": id
           },
           success: response => {
             let plantilla = '';
             JSON.parse(response).forEach(rta => {
               plantilla += `
+              <div id="rta${rta.id}">
                 <img src="${rta.avatar}" alt="${rta.avatarName}" title="${rta.nombre} ${rta.apellido}" width="50px" height="50px">
                 ${rta.nickname} || ${rta.fecha}
                 <p>${rta.contenido}</p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#subrtaCollapse${rta.id}" aria-expanded="false" aria-controls="collapseExample">
+                  +
+                </button>
+                <div class="collapse" id="subrtaCollapse${rta.id}">
+                  <div id="subRtaDiv${rta.id}" class="card card-body">
+                  </div>
+                </div>
+              </div>
               `;
+              fecthsubRtas(rta.id);
             });
             $("#rtasDiv" + id).html(plantilla);
+          }
+        })
+      }
+
+      function fecthsubRtas(id) {
+        $.ajax({
+          url: "subrtas.php",
+          type: "POST",
+          data: {
+            "id": id
+          },
+          success: response => {
+            let plantilla = '';
+            JSON.parse(response).forEach(subrta => {
+              plantilla += `
+              <div id="subrta${subrta.id}">
+                <img src="${subrta.avatar}" alt="${subrta.avatarName}" title="${subrta.nombre} ${subrta.apellido}" width="50px" height="50px">
+                ${subrta.nickname} || ${subrta.fecha}
+                <p>${subrta.contenido}</p>
+              </div>
+              `;
+            });
+            $("#subRtaDiv" + id).html(plantilla);
           }
         })
       }
@@ -342,7 +372,7 @@ if ($_SESSION) {
         });
 
         fromA.preventDefault();
-      });
+      })
 
       $(document).on("click", ".deleteAsk", () => {
         postData = {

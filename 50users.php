@@ -1,4 +1,6 @@
 <?php
+/*Asegurarse de tener la tabla "usuario" vacia*/
+
 include "conexion.php";
 
 for ($i = 1; $i < 51; $i++) {

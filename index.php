@@ -149,7 +149,11 @@ if ($_SESSION) {
   </footer>
   <script src="assets/js/bootstrap.js"></script>
   <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
+<<<<<<< Updated upstream
   <script src="assets/js/jquery-3.6.0.min.js"></script>
+=======
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+>>>>>>> Stashed changes
   <script>
     function menuToggle() {
       const toggleMenu = document.querySelector('.menu');
@@ -169,13 +173,20 @@ if ($_SESSION) {
           data: {
             id: <?= $ajax; ?>
           },
+<<<<<<< Updated upstream
           success: function(n) {
 
             console.log(n);
 
             if (n != 0) {
+=======
+          success: function(num) {
+            var n = JSON.parse(num);
+            console.log(n);
+            if (n.length != 0) {
+>>>>>>> Stashed changes
               console.log("Funca3");
-              $("#number").html(n);
+              $("#number").html(n.length);
               $("#number").show();
             }
           }
