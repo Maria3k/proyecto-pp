@@ -79,10 +79,10 @@ h6 {
 
 .action .profile {
   position: relative;
-  right: 25px;
-  margin-top: 8px;
-  width: 45px;
-  height: 45px;
+  right: 27px;
+  margin-top: 13px;
+  width: 65px;
+  height: 61px;
   border-radius: 50%;
   transition: 250ms;
   overflow: hidden;
@@ -104,9 +104,9 @@ h6 {
 
 .action .menu {
   position: absolute;
-  top: 85px;
-  right: 10px;
-  background: #2853a1;
+  top: 97px;
+  right: 135px;
+  background: #F4F4F4;
   width: 200px;
   border-radius: 15px;
   transition: 0.5s;
@@ -128,7 +128,7 @@ h6 {
   right: 30px;
   width: 20px;
   height: 20px;
-  color: #2853a1;
+  color: #F4F4F4;
 
 
 }
@@ -176,7 +176,7 @@ h6 {
 .action .menu ul li a {
   display: inline-block;
   text-decoration: none;
-  color: white;
+  color: #3260B4;
   font-weight: 500;
   transition: 250ms;
 }
@@ -193,7 +193,8 @@ h6 {
   position: relative;
   display: inline-block;
   float: right;
-  top: 10px;
+  top: 21px;
+  margin-right: 69px;
 }
 
 .icon-wrapper::after {
@@ -518,6 +519,7 @@ h6 {
   width: 67px;
   height: 92px;
   position: relative;
-  left: 168px
+  left: 168px;
+  top:10px;
 
 }
