@@ -75,7 +75,7 @@ if ($_SESSION) {
   <nav>
     <img class="img1" src="assets/img/escuela/loguito.png" alt="loguito.png">
     <div class="icon-wrapper" data-numbrer="1">
-      <img src="assets/img/iconos/bell.png" class="bell-icon">
+      <img src="assets/img/iconos/bell-solid.svg" class="bell-icon">
     </div>
     <?= $menu ?>
   </nav>
