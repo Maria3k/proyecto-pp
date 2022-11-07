@@ -185,6 +185,7 @@ h6 {
   color: black;
 }
 
+
 /*==================Campana de notificacion======================*/
 
 .icon-wrapper {
@@ -279,18 +280,18 @@ h6 {
   padding: 20px;
 }
 
-.lorem ul{
+.lorem ul {
   list-style: none;
 }
 
-.nombreUser{
+.nombreUser {
   margin-top: 10px;
   margin-left: 0rem;
 }
 
 /*Curva*/
 
-.wave svg{
+.wave svg {
   position: absolute;
   width: 60vw;
   margin-top: -9rem;
@@ -413,10 +414,7 @@ h6 {
 /* Seguridad */
 
 #Caja {
-  margin-left: 20%;
-  margin-top: 3%;
   border: #ffffff solid;
-  width: 57vw;
   background-color: #F4F4F4;
   border-radius: 10px;
   color: #3260B4;
@@ -466,9 +464,7 @@ h6 {
   flex-direction: column;
   border-radius: 10px;
   background-color: #F4F4F4;
-  margin-top: 15px;
-  width: 57vw;
-  margin-left: 20%;
+  margin-top: 10px;
   color: #3260B4;
   font-size: x-large;
 }
@@ -500,6 +496,7 @@ h6 {
 #hide1 {
   display: none;
 }
+
 .botoncito {
   width: fit-content;
   align-self: flex-end;
@@ -515,11 +512,22 @@ h6 {
   border: solid 1px;
 }
 
-.img1{
+.img1 {
   width: 67px;
   height: 92px;
   position: relative;
   left: 168px;
-  top:10px;
+  top: 10px;
+}
 
+.fondo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: -webkit-fill-available;
+}
+
+.icon {
+  margin-left: 15px;
 }

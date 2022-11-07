@@ -44,8 +44,7 @@ if ($_SESSION) {
 
         $actualizar = "UPDATE usuario SET contraseña= " . $_POST["newPass"] . " WHERE id_usuario = " . $_SESSION["id_usuario"];
       }
-    }else{
-      
+    } else {
     }
   }
 } else {
@@ -68,9 +67,28 @@ if ($_SESSION) {
   <link rel="stylesheet" href="assets/css/bootstrapcopy.css">
   <link rel="stylesheet" href="assets/css/iconscopy.css">
   <link rel="stylesheet" href="assets/css/fondo.css">
+  <style>
+    .option:hover {
+      color: white !important;
+    }
+
+    .option span {
+      opacity: 0;
+      transition-duration: 250ms;
+    }
+
+    .option:hover>span {
+      opacity: 1;
+    }
+
+    .active a{
+      color: white !important;
+    }
+  </style>
 </head>
 
 <body>
+
   <!-- NavBar -->
   <nav>
     <img class="img1" src="assets/img/escuela/loguito.png" alt="loguito.png">
@@ -84,16 +102,28 @@ if ($_SESSION) {
   <div id="accordian">
     <ul class="show-dropdown">
       <li>
-        <a href="perfil.php"><i class="fa fa-tachometer"></i></a>
+        <a id="option1" class="option" href="perfil.php">
+          <i class="fa fa-tachometer icon"></i>
+          <span>Inicio</span>
+        </a>
       </li>
       <li>
-        <a href="infoPersonal.php"><i class="fa fa-address-book"></i></a>
+        <a class="option" href="infoPersonal.php">
+          <i class="fa fa-address-book icon"></i>
+          <span>Info Personal</span>
+        </a>
       </li>
       <li class="active">
-        <a href="seguridad.php"><i class="fa-solid fa-lock"></i>Seguridad&nbsp</a>
+        <a href="seguridad.php">
+          <i class="fa-solid fa-lock icon"></i>
+          <span>Seguridad</span>
+        </a>
       </li>
       <li>
-        <a href="infoGeneral.php"><i class="fa fa-clone"></i></a>
+        <a class="option" href="infoGeneral.php">
+          <i class="fa fa-clone icon"></i>
+          <span>Info General</span>
+        </a>
       </li>
     </ul>
   </div>
@@ -108,21 +138,20 @@ if ($_SESSION) {
       <div class="UltConex"><label for="">Ultima Conexion:&nbsp</label><b>17:45-PM</b></div>
     </div>
 
-
     <form action="seguridad.php" method="post" class="CajaContra">
       <div class="tituloContra">
         <label>Administrador de Contraseña</label>
       </div>
       <div class="Password">
-        <label>Contraseña actual:</label>  
+        <label>Contraseña actual:</label>
         <input type="password" name="actualPass" required>
       </div>
       <div class="Password">
-        <label>Nueva contraseña:</label>  
+        <label>Nueva contraseña:</label>
         <input type="password" name="newPass" required>
       </div>
       <div class="Password">
-        <label>Confirmar contraseña:</label>  
+        <label>Confirmar contraseña:</label>
         <input type="password" name="vNewPass" required>
       </div>
       <input type="submit" class="botoncito" value="enviar">
