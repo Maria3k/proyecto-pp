@@ -76,7 +76,7 @@ if ($_SESSION) {
     </style>
   </head>
 
-  <body class="body-perfil">
+  <body>
 
     <!-- NavBar -->
     <nav>
@@ -159,21 +159,21 @@ if ($_SESSION) {
 
     <!-- Codigo de abajo, script del menu anterior -->
     <script>
-        function myFunction() {
-          var x = document.getElementById("myInput");
-          var y = document.getElementById("hide1");
-          var z = document.getElementById("hide2");
+      function myFunction() {
+        var x = document.getElementById("myInput");
+        var y = document.getElementById("hide1");
+        var z = document.getElementById("hide2");
 
-          if (x.type === 'password') {
-            x.type = "text";
-            y.style.display = "block";
-            z.style.display = "none";
-          } else {
-            x.type = "password";
-            y.style.display = "none";
-            z.style.display = "block";
-          }
+        if (x.type === 'password') {
+          x.type = "text";
+          y.style.display = "block";
+          z.style.display = "none";
+        } else {
+          x.type = "password";
+          y.style.display = "none";
+          z.style.display = "block";
         }
+      }
     </script>
 
     <script>
@@ -205,6 +205,23 @@ if ($_SESSION) {
           "width": activeWidthVerticalWidth + "px"
         });
       });
+      
+      function infoGeneral() {
+        setTimeout("location.href = 'infoGeneral.php';", 400);
+      }
+
+      function infoPersonal() {
+        setTimeout("location.href = 'infoPersonal.php';", 400);
+      }
+
+      function perfil() {
+        setTimeout("location.href = 'perfil.php';", 400);
+      }
+
+      function menuToggle() {
+        const toggleMenu = document.querySelector('.menu');
+        toggleMenu.classList.toggle('active');
+      }
     </script>
 
     <!----->

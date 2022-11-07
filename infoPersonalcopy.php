@@ -140,6 +140,8 @@ if ($_SESSION) {
         <div class="correoelectronico"><br> <b>Correo Electronico:&nbsp</b> <?= $usr["email"] ?></div>
       </div>
     </div>
+
+
     <!-- Aca va el footer -->      
     <script>
       function myFunction() {
@@ -199,6 +201,10 @@ if ($_SESSION) {
 
       function infoGeneral(){
         setTimeout("location.href = 'infoGeneral.php';",400);
+      }
+      function menuToggle() {
+        const toggleMenu = document.querySelector('.menu');
+        toggleMenu.classList.toggle('active');
       }
     </script>
     <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
