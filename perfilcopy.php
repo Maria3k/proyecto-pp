@@ -1,11 +1,15 @@
 <?php
 include("conexion.php");
 session_start();
+if ($_SESSION) {
+  $usr = $con->query("SELECT usuario.*, avatar.* FROM usuario LEFT JOIN avatar ON usuario.nAvatar = avatar.id_avatar WHERE id_usuario = " . $_SESSION["id_usuario"])->fetch_assoc();
+} else {
+  header("location:login.php");
+}
 
 $menu = '';
 
 if ($_SESSION) {
-  $usr = $con->query("SELECT usuario.*, avatar.* FROM usuario LEFT JOIN avatar ON usuario.nAvatar = avatar.id_avatar WHERE id_usuario = " . $_SESSION["id_usuario"])->fetch_assoc();
 
   $nAvatar = $_SESSION["nAvatar"];
 
@@ -32,23 +36,8 @@ if ($_SESSION) {
     </div>
   </div>
         ';
-
-  if ($_POST) {
-    $query = "SELECT * FROM usuario WHERE id_usuario = " . $_SESSION["id_usuario"] . " AND contraseña = '" . $_POST["actualPass"] . "'";
-    echo $query;
-    $datos = $con->query($query);
-
-    if ($datos->num_rows > 0) {
-
-      if ($_POST["newPass"] == $_POST["vNewPass"]) {
-
-        $actualizar = "UPDATE usuario SET contraseña= " . $_POST["newPass"] . " WHERE id_usuario = " . $_SESSION["id_usuario"];
-      }
-    } else {
-    }
-  }
 } else {
-  header("location:login.php");
+  $menu = '<a class="btn-nav" href="register.php">Register</a><a class="btn-nav" href="login.php">Iniciar Sesion</a>';
 }
 
 ?>
@@ -59,7 +48,7 @@ if ($_SESSION) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inicio</title>
     <link rel="stylesheet" href="assets/css/perfilcopy.css">
     <link rel="stylesheet" href="accordiancopy.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -87,7 +76,7 @@ if ($_SESSION) {
     </style>
   </head>
 
-  <body>
+  <body class="body-perfil">
 
     <!-- NavBar -->
     <nav>
@@ -101,8 +90,8 @@ if ($_SESSION) {
 
     <div id="accordian">
       <ul class="show-dropdown">
-        <li>
-          <a id="option1" class="option" href="perfilcopy.php">
+        <li class="activeO">
+          <a id="option1" >
             <i class="fa fa-tachometer icon"></i>
             <span>Inicio</span>
           </a>
@@ -113,8 +102,8 @@ if ($_SESSION) {
             <span>Info Personal</span>
           </a>
         </li>
-        <li class="activeO">
-          <a>
+        <li>
+          <a class="option" href="seguridadcopy.php">
             <i class="fa-solid fa-lock icon"></i>
             <span>Seguridad</span>
           </a>
@@ -128,61 +117,67 @@ if ($_SESSION) {
       </ul>
     </div>
 
-
-    <!-- Información de conectividad -->
-    <div class="fondo">
-      <div id="Caja">
-        <div class="act"> <label for="">Actividad</label> </div>
-        <div class="UltSesion"> <label for="">Ultimo Inicio de Sesión:&nbsp</label><?= $usr["fechaNacimiento"] ?></div>
-        <div class="navegador"><label for="">Desde el navegador:&nbsp</label><b>Chrome</b></div>
-        <div class="UltConex"><label for="">Ultima Conexion:&nbsp</label><b>17:45-PM</b></div>
+    <div class="contenedor">
+      <div class="carta-contenedor">
+        <div class="header">
+          <div class="nombreUser">
+            <h2><label for="" id="titulob">¡Bienvenido!&nbsp <b><?= $usr["nombre"] ?></b> </h2></label>
+          </div>
+          <div class="lorem">
+            Si el usuario dispone de alguna interrogacion o visualiza algun problema en la web dale al boton consulta 
+            <br>
+            Contacto
+            <ul>
+              <li>
+                DOE - Email: ofdealumnos@gmail.com
+              </li>
+              <li>
+                Telefono: 4551-9121 4555-4026/4034
+              </li>
+              <li>
+                Direccion: Teodoro Garcia 3899 - C1427ECG CABA 
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-
-      <form action="seguridad.php" method="post" class="CajaContra">
-        <div class="tituloContra">
-          <label>Administrador de Contraseña</label>
-        </div>
-        <div class="Password">
-          <label>Contraseña actual:</label>
-          <input type="password" name="actualPass" required>
-        </div>
-        <div class="Password">
-          <label>Nueva contraseña:</label>
-          <input type="password" name="newPass" required>
-        </div>
-        <div class="Password">
-          <label>Confirmar contraseña:</label>
-          <input type="password" name="vNewPass" required>
-        </div>
-        <input type="submit" class="botoncito" value="enviar">
-      </form>
     </div>
 
-    <!-- Footer -->
+    <div class="wave">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#467CDD" fill-opacity="1" d="M0,128L34.3,144C68.6,160,137,192,206,181.3C274.3,171,343,117,411,128C480,139,549,213,617,208C685.7,203,754,117,823,106.7C891.4,96,960,160,1029,181.3C1097.1,203,1166,181,1234,154.7C1302.9,128,1371,96,1406,80L1440,64L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
+    </div>
 
-    <!-- Script Eye -->
+    <div class="consulta">
+      <a href="#" class="botonConsulta">
+        <p>
+          Realizar Consulta
+        </p>
+      </a>
+    </div>
 
+    <!-- Aca va el Footer --->
+
+    <!-- Codigo de abajo, script del menu anterior -->
     <script>
-      function myFunction() {
-        var x = document.getElementById("myInput");
-        var y = document.getElementById("hide1");
-        var z = document.getElementById("hide2");
+        function myFunction() {
+          var x = document.getElementById("myInput");
+          var y = document.getElementById("hide1");
+          var z = document.getElementById("hide2");
 
-        if (x.type === 'password') {
-          x.type = "text";
-          y.style.display = "block";
-          z.style.display = "none";
-        } else {
-          x.type = "password";
-          y.style.display = "none";
-          z.style.display = "block";
+          if (x.type === 'password') {
+            x.type = "text";
+            y.style.display = "block";
+            z.style.display = "none";
+          } else {
+            x.type = "password";
+            y.style.display = "none";
+            z.style.display = "block";
+          }
         }
-      }
     </script>
 
-    <!-- Script del menu -->
     <script>
-      // ---------vertical-menu with-inner-menu-active-animation-----------.
+      // ---------vertical-menu with-inner-menu-active-animation-----------
       var tabsVerticalInner = $('#accordian');
       var selectorVerticalInner = $('#accordian').find('li').length;
       var activeItemVerticalInner = tabsVerticalInner.find('.active');
@@ -210,24 +205,9 @@ if ($_SESSION) {
           "width": activeWidthVerticalWidth + "px"
         });
       });
-
-      function infoGeneral() {
-        setTimeout("location.href = 'infoGeneral.php';", 400);
-      }
-
-      function infoPersonal() {
-        setTimeout("location.href = 'infoPersonal.php';", 400);
-      }
-
-      function perfil() {
-        setTimeout("location.href = 'perfil.php';", 400);
-      }
-
-      function menuToggle() {
-        const toggleMenu = document.querySelector('.menu');
-        toggleMenu.classList.toggle('active');
-      }
     </script>
+
+    <!----->
     <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
     <script src="assets/js/bootstrap.js"></script>
   </body>

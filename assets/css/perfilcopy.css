@@ -260,14 +260,14 @@ h6 {
 
 .carta-contenedor {
   display: flex;
-  width: 60vw;
-  height: 60vh;
+  width: 50vw;
+  height: 50vh;
   margin-top: 5%;
   margin-left: -2%;
-  background: #3260B4;
+  background: #ffffff;
   border-radius: 10px;
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
-  color: #fff;
+  color: #3260B4;
 }
 
 .label {
@@ -276,8 +276,9 @@ h6 {
 }
 
 .lorem {
-  margin-top: -15px;
+  margin-top: 136px;
   padding: 20px;
+  font-size: 20px;
 }
 
 .lorem ul {
@@ -293,9 +294,9 @@ h6 {
 
 .wave svg {
   position: absolute;
-  width: 60vw;
-  margin-top: -9rem;
-  margin-left: 118px;
+  width: 50vw;
+  margin-top: -13rem;
+  margin-left: 490px;
   background-size: cover;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -305,34 +306,35 @@ h6 {
 
 .botonConsulta {
   position: absolute;
-  margin-top: -50px;
-  margin-left: 50%;
-  background: linear-gradient(90deg, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);
-  color: #fff;
+  margin-top: -60px;
+  margin-left: 62%;
+  background: white;
+  color: #467cdd;
   width: 205px;
   border: none;
   border-radius: 20px;
   padding: 13px 10px 3px 40px;
-  -webkit-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0px 10px 41px -11px rgb(0 0 0 / 70%);
   -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
-  box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 10px 41px -11px rgb(0 0 0 / 70%);
   transition: .2s;
+  text-decoration: none;
 }
 
 .botonConsulta:hover,
 .botonConsulta:active {
-  color: rgb(255, 255, 255);
+  color: rgb(13, 0, 255);
+
 }
 
 /*Vista Informacion Personal*/
 
 
 #infoPersonal {
-  margin-left: 10%;
+  margin-left: -10%;
   margin-top: 3%;
-  border: #3260B4 solid;
   width: 55vw;
-  height: 40vh;
+  height: 26vh;
   background-color: #F4F4F4;
   border-radius: 10px;
   color: #3260B4;
@@ -342,24 +344,24 @@ h6 {
   border-radius: 50%;
   width: 15%;
   height: 15%;
-  margin-left: 40px;
-  margin-top: 40px;
+  margin-left: 80px;
+  margin-top: 24px;
 }
 
 .username {
   margin-top: -2%;
   font-size: x-large;
-  padding: 0px 0px 0px 5%;
+  padding: 0px 0px 0px 13%;
 }
 
 .name {
   font-size: x-large;
   margin-left: 28%;
   display: flex;
-  margin-top: -12.7rem;
-  border-left: #3260B4 solid;
-  border-bottom: #3260B4 solid;
-  height: 13.9vh;
+  margin-top: -14.7rem;
+  border-left: #ffffff solid;
+  border-bottom: #ffffff solid;
+  height: 8.9vh;
   padding: 20px;
 }
 
@@ -368,8 +370,8 @@ h6 {
   font-size: x-large;
   display: flex;
   margin-top: 0rem;
-  border-left: #3260B4 solid;
-  border-bottom: #3260B4 solid;
+  border-left: #ffffff solid;
+  border-bottom: #ffffff solid;
   padding: 17px;
 }
 
@@ -378,7 +380,7 @@ h6 {
   font-size: x-large;
   display: flex;
   margin-top: 0rem;
-  border-left: #3260B4 solid;
+  border-left: #ffffff solid;
   padding: 20px;
 }
 
@@ -388,16 +390,15 @@ h6 {
   justify-content: center;
   text-align: center;
   margin-top: 15px;
-  border: #555 solid;
   width: 55vw;
-  height: 23vh;
-  margin-left: 10%;
+  height: 16vh;
+  margin-left: -10%;
   color: #3260B4;
 }
 
 .info {
   padding: 5px;
-  border-bottom: #3260B4 solid;
+  border-bottom: #ffffff solid;
   width: 100%;
   margin-top: 1rem;
 }
@@ -530,4 +531,21 @@ h6 {
 
 .icon {
   margin-left: 15px;
+}
+
+.Password input  {
+  box-decoration-break: none;
+  border-radius: 6px;
+  border: solid 1.5px #2853A1;
+}
+
+#titulob{
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  position: absolute;
+  left: 50%;
+  margin-top: 40px;
+  transform: translateX(-50%);
+  font-size: 38px;
 }
