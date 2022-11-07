@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body::-webkit-scrollbar {
   width: 0%;
 }
@@ -254,20 +248,17 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60vh;
-  padding: 0 20px;
 }
 
 .carta-contenedor {
-  display: flex;
-  width: 50vw;
-  height: 50vh;
-  margin-top: 5%;
-  margin-left: -2%;
   background: #ffffff;
   border-radius: 10px;
-  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
   color: #3260B4;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: -webkit-fill-available;
 }
 
 .label {
@@ -276,54 +267,39 @@ h6 {
 }
 
 .lorem {
-  margin-top: 136px;
-  padding: 20px;
-  font-size: 20px;
+  font-size: large;
+  margin: 0px 30px 130px 30px;
 }
 
 .lorem ul {
   list-style: none;
 }
 
-.nombreUser {
-  margin-top: 10px;
-  margin-left: 0rem;
-}
-
 /*Curva*/
 
 .wave svg {
   position: absolute;
-  width: 50vw;
-  margin-top: -13rem;
-  margin-left: 490px;
   background-size: cover;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  bottom:0;
 }
 
 /*Boton Consulta*/
 
 .botonConsulta {
   position: absolute;
-  margin-top: -60px;
-  margin-left: 62%;
-  background: white;
-  color: #467cdd;
-  width: 205px;
-  border: none;
+  color: #ffffff;
   border-radius: 20px;
-  padding: 13px 10px 3px 40px;
-  -webkit-box-shadow: 0px 10px 41px -11px rgb(0 0 0 / 70%);
-  -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
-  box-shadow: 0px 10px 41px -11px rgb(0 0 0 / 70%);
   transition: .2s;
   text-decoration: none;
+  bottom: 13px;
+  right: 10px;
 }
 
 .botonConsulta:hover,
 .botonConsulta:active {
-  color: rgb(13, 0, 255);
+  color: rgb(66, 115, 207);
 
 }
 
@@ -391,6 +367,7 @@ h6 {
   color: #3260B4;
   top: 50%;
   left: 50%;
+  margin-top: 10px
 }
 
 .info {
@@ -411,8 +388,8 @@ h6 {
 /* Seguridad */
 
 #Caja {
-  border: #ffffff solid;
-  background-color: #F4F4F4;
+  border: #F4F4F4;
+  background-color: #e9e6e6b3;;
   border-radius: 10px;
   color: #3260B4;
 }
@@ -424,12 +401,12 @@ h6 {
 .act label {
   padding: 10px;
   margin-left: 45%;
-  font-size: x-large;
+  font-size: large;
 }
 
 .UltSesion {
   border-bottom: #ffffff solid;
-  font-size: x-large;
+  font-size: large;
 }
 
 .UltSesion label {
@@ -439,7 +416,7 @@ h6 {
 
 .navegador {
   border-bottom: #ffffff solid;
-  font-size: x-large;
+  font-size: large;
 }
 
 .navegador label {
@@ -448,7 +425,7 @@ h6 {
 }
 
 .UltConex {
-  font-size: x-large;
+  font-size: large;
 }
 
 .UltConex label {
@@ -460,10 +437,10 @@ h6 {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  background-color: #F4F4F4;
+  background-color: #e9e6e6b3;
   margin-top: 10px;
   color: #3260B4;
-  font-size: x-large;
+  font-size: large;
 }
 
 .tituloContra {
@@ -536,12 +513,12 @@ h6 {
 }
 
 #titulob {
-  background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+  background: linear-gradient(0deg, rgb(154, 203, 231) 0%, rgb(66, 115, 207) 35%, rgba(0, 212, 255, 1) 100%);
   -webkit-background-clip: text;
   color: transparent;
-  position: absolute;
+  position: relative;
   left: 50%;
-  margin-top: 40px;
+  padding: 20px;
   transform: translateX(-50%);
-  font-size: 38px;
+  font-size: 30px;
 }
