@@ -80,9 +80,9 @@ h6 {
 .action .profile {
   position: relative;
   right: 27px;
-  margin-top: 13px;
-  width: 65px;
-  height: 61px;
+  margin-top: 22px;
+  width: 57px;
+  height: 55px;
   border-radius: 50%;
   transition: 250ms;
   overflow: hidden;
@@ -189,12 +189,12 @@ h6 {
 /*==================Campana de notificacion======================*/
 
 .icon-wrapper {
-  width: 43px;
+  width: 39px;
   height: 43px;
   position: relative;
   display: inline-block;
   float: right;
-  top: 21px;
+  top: 29px;
   margin-right: 69px;
 }
 
@@ -329,87 +329,83 @@ h6 {
 
 /*Vista Informacion Personal*/
 
-
+.datos{
+  width: -webkit-fill-available;
+}
 #infoPersonal {
-  margin-left: -10%;
-  margin-top: 3%;
-  width: 55vw;
-  height: 26vh;
-  background-color: #F4F4F4;
+  background-color: #e9e6e6b3;
   border-radius: 10px;
   color: #3260B4;
+  display: flex;
+  align-items: center;
+}
+
+.ImagenUsuario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ImagenUsuario img {
   border-radius: 50%;
-  width: 15%;
-  height: 15%;
-  margin-left: 80px;
-  margin-top: 24px;
+  width: 45%;
+  height: 45%;
+}
+
+.ImagenUsuario p {
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 .username {
-  margin-top: -2%;
-  font-size: x-large;
-  padding: 0px 0px 0px 13%;
+  font-size: large;
+  padding: 16px;
 }
 
 .name {
-  font-size: x-large;
-  margin-left: 28%;
+  font-size: large;
+  padding: 16px;
   display: flex;
-  margin-top: -14.7rem;
   border-left: #ffffff solid;
   border-bottom: #ffffff solid;
-  height: 8.9vh;
-  padding: 20px;
 }
 
 .surname {
-  margin-left: 28%;
-  font-size: x-large;
+  font-size: large;
+  padding: 16px;
   display: flex;
-  margin-top: 0rem;
   border-left: #ffffff solid;
   border-bottom: #ffffff solid;
-  padding: 17px;
 }
 
 .FDN {
-  margin-left: 28%;
-  font-size: x-large;
+  font-size: large;
+  padding: 16px;
   display: flex;
-  margin-top: 0rem;
   border-left: #ffffff solid;
-  padding: 20px;
 }
 
 .correo {
   border-radius: 10px;
-  background-color: #F4F4F4;
-  justify-content: center;
-  text-align: center;
-  margin-top: 15px;
-  width: 55vw;
-  height: 16vh;
-  margin-left: -10%;
+  background-color: #e9e6e6b3;
   color: #3260B4;
+  top: 50%;
+  left: 50%;
 }
 
 .info {
-  padding: 5px;
+  padding: 16px;
+  display: flex;
   border-bottom: #ffffff solid;
-  width: 100%;
-  margin-top: 1rem;
+  justify-content: center;
 }
 
-.correoelectronico {
-  margin-top: -1.5rem;
-}
 
 .info,
 .correoelectronico {
-  font-size: x-large;
+  font-size: large;
+  padding: 16px;
+  text-align: center;
 }
 
 /* Seguridad */
@@ -514,8 +510,8 @@ h6 {
 }
 
 .img1 {
-  width: 67px;
-  height: 92px;
+  width: 56px;
+  height: 73px;
   position: relative;
   left: 168px;
   top: 10px;
@@ -525,7 +521,7 @@ h6 {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
   width: -webkit-fill-available;
 }
 
@@ -533,14 +529,14 @@ h6 {
   margin-left: 15px;
 }
 
-.Password input  {
+.Password input {
   box-decoration-break: none;
   border-radius: 6px;
   border: solid 1.5px #2853A1;
 }
 
-#titulob{
-  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+#titulob {
+  background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
   -webkit-background-clip: text;
   color: transparent;
   position: absolute;

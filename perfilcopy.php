@@ -121,7 +121,7 @@ if ($_SESSION) {
       <div class="carta-contenedor">
         <div class="header">
           <div class="nombreUser">
-            <h2><label for="" id="titulob">¡Bienvenido!&nbsp <b><?= $usr["nombre"] ?></b> </h2></label>
+            <h2><label for="" id="titulob">¡Bienvenido! <b><?= $usr["nombre"] ?></b> </h2></label>
           </div>
           <div class="lorem">
             Si el usuario dispone de alguna interrogacion o visualiza algun problema en la web dale al boton consulta 
