@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrapcopy.css">
     <title>Document</title>
 </head>
 <style>
     #divPadre {
-        float:left;
+        float: left;
         height: 570px;
         width: 402px;
         background-color: #2853a1;
@@ -16,94 +18,125 @@
         border-bottom-left-radius: 16px;
 
         font-size: 25px;
-        text-align:center;
+        text-align: center;
     }
+
     #divHijo {
-        height:50px;
-        width:402px;
+        height: 50px;
+        width: 402px;
         background-color: rgb(235, 235, 235);
         color: #2853a1;
         border-top-left-radius: 13px;
         border-bottom-left-radius: 13px;
-
-        padding-top: 18px;
-        font-size: 25px;
-        text-align:center;
-
     }
+
     #divPadre2 {
-        float:left;
+        float: left;
         height: 570px;
         width: 402px;
         background-color: rgb(235, 235, 235);
         border-top-right-radius: 13px;
         border-bottom-right-radius: 13px;
-
-        font-size: 25px;
-        text-align:center;
+        
+        position: relative;;
 
     }
+
     #divHijo2 {
-        height:50px;
-        width:402px;
+        height: 50px;
+        width: 402px;
         background-color: #2853a1;
         border-top-right-radius: 13px;
         border-bottom-right-radius: 13px;
 
-        padding-top: 18px;
-        font-size: 25px;
         color:white;
-        text-align:center;
+        text-align: center;
+        font-size: large;
     }
-    .a{
-        margin-top: 10px;
-    }
-    .mover{
-        margin-top: 154px;
+
+    .mover {
         transform: translateX(30%);
     }
-    img{
+
+    img {
         margin-right: 20px;
         padding: 12px 1px 0px 13px;
-        display: flex;
-        width: 110px;
+        height: 149px;
     }
 
-
-
+    .directivo {
+        display: flex;
+        color:#2853a1;
+        font-size: large;
+    }
+    .infop{
+        color:white;
+        font-size: 20px;
+        line-height: 46px;
+        padding: 38px;
+    }
+    .letra{
+        margin-top: 20px;
+    }
+    .directivos{
+        position: absolute;
+        top: 53%;
+        transform: translateY(-50%);
+    }
 </style>
+
 <body>
 
     <div class="mover">
         <div id="divPadre">
             <div id="divHijo">
-                ¿Qué ofrece nuestra web?
+                <p>¿Qué ofrece nuestra web?</p>
             </div>
-            <label>E.T32 Respuestas está optimizada para la resolución 
-            de incertidumbres de los estudiantes con respecto a sus especialidad; 
-            donde los directivos, profesores y/o estudiantes que poseen el conocimiento 
-            para responder la interrogante, a fin de que la duda sea resuelta.</label>
+            <div class="infop"> 
+                <p>
+                    E.T32 Respuestas está optimizada para la resolución
+                    de incertidumbres de los estudiantes con respecto a sus especialidad;
+                    donde los directivos, profesores y/o estudiantes que poseen el conocimiento
+                    para responder la interrogante, a fin de que la duda sea resuelta.
+                </p>
+            </div>
         </div>
-    
-       
+
+
         <div id="divPadre2">
             <div id="divHijo2">
-                <a>Directivos</a>
+                <p>Directivos</p>
             </div>
-            <img src="assets/img/iconosUsu/logo2.png" alt="">
-             <p class="letra">Hola soy tino HHDSUIFDHUVHGERUIGHEUEGUGHRGUIRFHERIGEHRIGUGHIUEGHIU</p>
-            <img src="assets/img/iconosUsu/logo6.png" alt="">
-            <p class="letra">Hola soy tino HHDSUIFDHUVHGERUIGHEUEGUGHRGUIRFHERIGEHRIGUGHIUEGHIU</p>
-            <img src="assets/img/iconosUsu/logo6.png" alt="">
-            <p class="letra">Hola soy tissno HHDSUIFDHUVHGERUIGHEUEGUGHRGUIRFHERIGEHRIGUGHIUEGHIU</p>
-            <img src="assets/img/iconosUsu/logo6.png" alt="">
-            <p class="letra">Hola soy tino HHDSUIFDHUVHGERUIGHEUEGUGHRGUIRFHERIGEHRIGUGHIUEGHIU</p>
+            <div class="directivos">
+                <div class="directivo">
+                    <img src="assets/img/iconosUsu/logo2.png" alt="">
+                    <div class="info">
+                        <h4 class="letra">Hola soy tino</h4>
+                        <h5>Director de la institucion</h5>
+                    </div>
+    
+                </div>
+                <div class="directivo">
+                    <img src="assets/img/iconosUsu/logo3.png" alt="">
+                    <div class="info">
+                        <h4 class="letra">Hola soy tino</h4>
+                        <h5>Director de la institucion</h5>
+                    </div>
+                </div>
+                <div class="directivo">
+                    <img src="assets/img/iconosUsu/logo4.png" alt="">
+                    <div class="info">
+                        <h4 class="letra">Hola soy tino</h4>
+                        <h5>Director de la institucion</h5>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
 
 
-    
-</body>
-</html>
 
+</body>
+
+</html>

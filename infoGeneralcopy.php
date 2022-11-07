@@ -57,6 +57,7 @@ if ($_SESSION) {
   <link rel="stylesheet" href="assets/css/iconscopy.css">
   <link rel="stylesheet" href="assets/css/fondo.css">
   <link rel="stylesheet" href="infoGeneral.css">
+  <link rel="stylesheet" href="assets/css/card.css">
   <style>
     .option:hover {
       color: white !important;
@@ -116,21 +117,52 @@ if ($_SESSION) {
     </ul>
   </div>
   <!-- Que ofrece la web -->
-  <section>
-    <div class="cont-title">
-      <label>¿Qué ofrece la web?</label>
+  <div class="mover">
+    <div id="divPadre">
+      <div id="divHijo">
+        <p>¿Qué ofrece nuestra web?</p>
+      </div>
+      <div class="infop">
+        <p>
+          E.T32 Respuestas está optimizada para la resolución
+          de incertidumbres de los estudiantes con respecto a sus especialidad;
+          donde los directivos, profesores y/o estudiantes que poseen el conocimiento
+          para responder la interrogante, a fin de que la duda sea resuelta.
+        </p>
+      </div>
     </div>
-    <div class="info">
-      <label>E.T32 Respuestas está optimizada para la resolución de incertidumbres de los estudiantes con respecto a sus especialidad; donde los directivos, profesores y/o estudiantes que poseen el conocimiento para responder la interrogante, a fin de que la duda sea resuelta.</label>
-    </div>
-    <div id="cont-title" >
-      <label>Directivos</label>
-    </div>
-    <div id="info">
 
+
+    <div id="divPadre2">
+      <div id="divHijo2">
+        <p>Directivos</p>
+      </div>
+      <div class="dirvos">
+        <div class="directivo1">
+          <img class="imgi" src="assets/img/iconosUsu/logo2.png" alt="">
+          <div class="infop">
+            <h4 class="letraa">Hola soy tino</h4>
+            <h5>Director de la institucion</h5>
+          </div>
+
+        </div>
+        <div class="directivo1">
+          <img class="imgi"src="assets/img/iconosUsu/logo3.png" alt="">
+          <div class="infop">
+            <h4 class="letraa">Hola soy tino</h4>
+            <h5>Director de la institucion</h5>
+          </div>
+        </div>
+        <div class="directivo1">
+          <img class="imgi" src="assets/img/iconosUsu/logo4.png" alt="">
+          <div class="infop">
+            <h4 class="letraa">Hola soy tino</h4>
+            <h5>Director de la institucion</h5>
+          </div>
+        </div>
+      </div>
     </div>
-    
-  </section>
+  </div>
   <!--  -->
 
   <script>

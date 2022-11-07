@@ -1,0 +1,81 @@
+#divPadre {
+    float: left;
+    background-color: #2853a1;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+
+    font-size: 25px;
+    text-align: center;
+}
+
+#divHijo {
+    background-color: rgb(235, 235, 235);
+    color: #2853a1;
+    border-top-left-radius: 13px;
+    border-bottom-left-radius: 13px;
+}
+
+#divPadre2 {
+    background-color: rgb(235, 235, 235);
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+    display: flex;
+    flex-direction: column;
+}
+
+#divHijo2 {
+    background-color: #2853a1;
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+
+    color:white;
+    text-align: center;
+    font-size: large;
+}
+
+.mover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+}
+
+.imgi {
+    margin-right: 20px;
+    padding: 20px 0px 0px 21px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.dirvos{
+    width: max-content;
+    height: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.directivo1 {
+    display: flex;
+    color:#2853a1;
+    font-size: large;
+}
+.infop{
+    color: white;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 15px;
+
+}
+.letraa{
+    margin-top: 14px;
+    color:#2853a1;
+    font-size: 15px;
+}
+h5{
+    color: #2853a1;
+    font-size: 15px;
+}
