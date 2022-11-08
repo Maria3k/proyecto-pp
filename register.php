@@ -1,7 +1,7 @@
 <?php
-include 'conexion.php';
-
 header("Content-Type: application/json");
+
+include 'conexion.php';
 
 if ($_POST) {
   $nombre = $_POST['nombre'];
@@ -33,25 +33,18 @@ if ($_POST) {
     $i = 0;
     $query = "INSERT INTO usuario(nombre,apellido,nickname,email,fechaNacimiento,contraseña,nAvatar,rol)
     VALUES('$nombre','$apellido','$nickname','$email','$fechaNacimiento_sql','$contraseña','$avatar',1)";
-    echo $i++;
     $insert = $con->query($query) or die("0");
-    echo $i++;
 
     session_start();
-    echo $i++;
-
+    
     $newUser = "SELECT * FROM usuario WHERE email ='$email' and contraseña='$contraseña'";
-    echo $i++;
-
-    $newUserData = $con->query($newUser)->fetch_assoc();
-    echo $i++;
+       
+    $newUserData = $con->query($newUser)->fetch_assoc() or die("ERROR" . mysqli_error($con));
+    $_SESSION = $newUserData;
 
     $navegador = "";
-    echo $i++;
     $os = "";
-    echo $i++;
     $fecha = "";
-    echo $i++;
 
 
     if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE)
@@ -71,25 +64,18 @@ if ($_POST) {
     else
       $navegador = 'Something else';
 
-    $os = php_uname("s");
-    $os += php_uname("r");
-    echo $i++;
+    $os = php_uname("s"). php_uname("r");
 
     $fecha = (new \DateTime())->format('Y-m-d H:i:s');
-    echo $i++;
 
-    $sesion = "INSERT INTO sesion(id_usuario,navegador,dispostivo,hora) VALUES (" . $newUserData["id_usuario"] . ", '$navegador', '$os',$fecha) ";
+    $sesion = "INSERT INTO sesion(id_usuario,navegador,dispositivo,hora) VALUES (" . $newUserData["id_usuario"] . ", '$navegador', '$os','$fecha') ";
     $send = $con->query($sesion) or die("ERROR" . mysqli_error($con));
-    echo $i++;
 
 
     $lastSession = "SELECT * FROM sesion WHERE id_usuario = " . $_SESSION["id_usuario"];
     $filaSession = $con->query($lastSession)->fetch_assoc() or die("ERROR" . mysqli_error($con));
-    echo $i++;
 
-    $_SESSION = $newUserData;
-    array_push($_SESSION, $filaSession);
-    echo $i++;
+    $_SESSION["sesion"] = $filaSession;
 
     print_r($insert);
   } else {

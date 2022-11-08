@@ -34,11 +34,6 @@
                             <i class="fas fa-lock icono"></i>
                             <input class="input-field" id="contralogin" type="password" name="contraseña" pattern="[A-Za-z-0-9]{2,16}" placeholder="Contraseña" required>
                             <div id="error"></div>
-                            <div class="form-group">
-                                <label>
-                                    <input id="check_1" name="check_1" type="checkbox" required><small> Recordar usuario</small></input>
-                                </label>
-                            </div>
                             <input type="submit" class="butt my-3" value="Iniciar sesion">
                         </form>
 
@@ -185,7 +180,6 @@
                 contraseña: $("#contralogin").val()
             },
             success: response => {
-
                 if (response != true) {
                     $("#error").html(JSON.parse(response)[0].error);
                 } else {
@@ -212,9 +206,7 @@
                 d: $("#dia").val()
             },
             success: response => {
-                console.log("OLAAAAAAAA" +  response);
                 if (response != true) {
-
                     response.forEach(dato => {
                         document.getElementById(Object.entries(dato)[0][0]).innerHTML = Object.entries(dato)[0][1];
                     });
