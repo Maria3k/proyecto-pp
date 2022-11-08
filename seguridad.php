@@ -34,18 +34,23 @@ if ($_SESSION) {
         ';
 
   if ($_POST) {
-    $query = "SELECT * FROM usuario WHERE id_usuario = " . $_SESSION["id_usuario"] . " AND contraseña = '" . $_POST["actualPass"] . "'";
-    echo $query;
+    $query = "SELECT * FROM usuario WHERE id_usuario = " . $_SESSION["id_usuario"] . " AND contraseña = '" . md5($_POST["actualPass"]) . "'";
     $datos = $con->query($query);
-
+    
     if ($datos->num_rows > 0) {
-
       if ($_POST["newPass"] == $_POST["vNewPass"]) {
+        
+        $actualizar = "UPDATE usuario SET contraseña= '" . md5($_POST["newPass"]) . "' WHERE id_usuario = " . $_SESSION["id_usuario"];
+        
+        $update = $con->query($actualizar) or die ("ERROR" . mysqli_error($con));
 
-        $actualizar = "UPDATE usuario SET contraseña= " . $_POST["newPass"] . " WHERE id_usuario = " . $_SESSION["id_usuario"];
+
+        if($update){
+          header("Location:index.php");
+        }
+
       }
     }else{
-      
     }
   }
 } else {

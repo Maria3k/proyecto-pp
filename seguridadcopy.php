@@ -35,7 +35,7 @@ if ($_SESSION) {
 
   if ($_POST) {
     $query = "SELECT * FROM usuario WHERE id_usuario = " . $_SESSION["id_usuario"] . " AND contraseña = '" . $_POST["actualPass"] . "'";
-    echo $query;
+
     $datos = $con->query($query);
 
     if ($datos->num_rows > 0) {
@@ -43,6 +43,7 @@ if ($_SESSION) {
       if ($_POST["newPass"] == $_POST["vNewPass"]) {
 
         $actualizar = "UPDATE usuario SET contraseña= " . $_POST["newPass"] . " WHERE id_usuario = " . $_SESSION["id_usuario"];
+        echo $actualizar;
       }
     } else {
     }
@@ -138,7 +139,7 @@ if ($_SESSION) {
         <div class="UltConex"><label for="">Ultima Conexion:&nbsp</label><b>17:45-PM</b></div>
       </div>
 
-      <form action="seguridad.php" method="post" class="CajaContra">
+      <form action="seguridadcopy.php" method="post" class="CajaContra">
         <div class="tituloContra">
           <label>Administrador de Contraseña</label>
         </div>
