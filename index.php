@@ -54,6 +54,7 @@ if ($_SESSION) {
   <link rel="stylesheet" href="assets/css/bootstrap.css">
   <link rel="stylesheet" href="assets/css/icons.css">
   <link rel="stylesheet" href="assets/css/especialidades.css">
+  <link rel="stylesheet" href ="assets/css/footer.css">
   <title>E.T.32 Preguntas</title>
 </head>
 
