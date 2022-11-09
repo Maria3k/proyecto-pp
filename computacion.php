@@ -80,7 +80,7 @@ if ($_SESSION) {
 </head>
 
 <body>
-  <nav>
+  <nav class="navB">
     <a href="index.php" title="Pagina Principal"><img class="img1" src="assets/img/escuela/loguito.png" alt="minilogo.png"></a>
     <?= $menu ?>
   </nav>
@@ -92,7 +92,7 @@ if ($_SESSION) {
           <button id="searchBtn" class="btn btn-primary input-group-text"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
         <div class="col faq my-5">
-          <div class="question">
+          <div id="question" class="question">
             <button class="btn btn-primary my-3" type="button" data-bs-toggle="collapse" data-bs-target="#pregunta" aria-expanded="false" aria-controls="pregunta">
               Realize su pregunta
             </button>
@@ -108,6 +108,7 @@ if ($_SESSION) {
               </div>
             </div>
             <div id="ask"></div>
+            <div id="pages"></div>
           </div>
         </div>
       </div>
@@ -163,10 +164,12 @@ if ($_SESSION) {
   </footer>
   <script src="assets/js/bootstrap.js"></script>
   <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
   <!--CAMBIAR A 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   -->
+  <script src="assets/js/especialidades.js"></script>
+
   <script>
     function menuToggle() {
       const toggleMenu = document.querySelector('.menu');
@@ -174,6 +177,7 @@ if ($_SESSION) {
     }
 
     $(document).ready(() => {
+      window.localStorage.setItem("page", 1)
       if (<?= $ajax; ?> != -1) notification();
 
       function notification() {
@@ -191,187 +195,17 @@ if ($_SESSION) {
         });
       }
 
-      function fecthAsks() {
-        $.ajax({
-          url: "asks.php",
-          type: "POST",
-          data: {
-            e: 1
-          },
-          success: response => {
-            let plantilla = '';
-            JSON.parse(response).forEach(ask => {
-              plantilla += `
-              <img src="${ask.avatar}" alt="${ask.avatarName}" title="${ask.nombre} ${ask.apellido}" width="50px" height="50px">${ask.nickname} || ${ask.fecha}
-                <h5>${ask.asunto}</h5>
-                <p>${ask.contenido}</p>
+      fecthAsks(0, 1);
 
-                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight${ask.id}" aria-controls="offcanvasRight${ask.id}"><i class="fa-solid fa-plus"></i></button><?= $ad; ?><br>
+      $(document).on("click", "#searchBtn", () => searchAsks($("#search").val(), 1));
 
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight${ask.id}" aria-labelledby="offcanvasRightLabel">
-                  <div class="offcanvas-header">
-                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                  </div>
-                  <div class="offcanvas-body" style="overflow:hidden;">
-                    <img src="${ask.avatar}" alt="${ask.avatarName}" title="${ask.nombre} ${ask.apellido}" width="50px" height="50px">
-                    <h5>${ask.asunto}</h5>
-                    <p>${ask.contenido}</p>
-                    <form id="rta-form${ask.id}">
-                      <input id="preguntaId${ask.id}" type="hidden" value="${ask.id}">
-                      <textarea id="content${ask.id}" class="form-control my-2" placeholder="Dejar un comentario" required></textarea>
-                    </form>
-                    <button class="btn btn-primary submitRta" value="${ask.id}">Enviar</button>
-                      <div id="rtasDiv${ask.id}" class="rtasDiv"></div>
-                  </div>
-                </div>
-              `
-              fecthRtas(ask.id);
-            });
-            $("#ask").html(plantilla);
-          }
-        })
-      }
+      $(document).on("click", ".page-link", (e) => fecthAsks(1, e.target.innerHTML))
 
-      fecthAsks();
-
-      function searchAsks(n) {
-        $.ajax({
-          url: "asks.php",
-          type: "POST",
-          data: {
-            e: 1,
-            clave: n
-          },
-          success: response => {
-            let plantilla = '';
-            if (JSON.parse(response).length != 0) {
-
-              JSON.parse(response).forEach(ask => {
-                plantilla += `
-                  <img src="${ask.avatar}" alt="${ask.avatarName}" title="${ask.nombre} ${ask.apellido}" width="50px" height="50px">${ask.nickname} || ${ask.fecha}
-                  <h5>${ask.asunto}</h5>
-                  <p>${ask.contenido}</p>
-
-                  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight${ask.id}" aria-controls="offcanvasRight${ask.id}">+</button><?= $ad; ?><br>
-
-                  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight${ask.id}" aria-labelledby="offcanvasRightLabel">
-                    <div class="offcanvas-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body" style="overflow:hidden;">
-                      <img src="${ask.avatar}" alt="${ask.avatarName}" title="${ask.nombre} ${ask.apellido}" width="50px" height="50px">
-                      <h5>${ask.asunto}</h5>
-                      <p>${ask.contenido}</p>
-                      <form id="rta-form${ask.id}">
-                      <input id="preguntaId${ask.id}" type="hidden" value="${ask.id}">
-                      <textarea id="content${ask.id}" class="form-control my-2" placeholder="Dejar un comentario" required></textarea>
-                      </form>
-                      <button class="btn btn-primary submitRta" value="${ask.id}">Enviar</button>
-                      <div id="rtasDiv${ask.id}" class="rtasDiv"></div>
-                    </div>
-                  </div>
-                `
-                fecthRtas(ask.id);
-              });
-            } else {
-              plantilla += `<h1>Ninguna coincidencia encontrada para: ${n}</h1>`;
-            }
-            $("#ask").html(plantilla);
-          }
-        })
-      }
-
-      $(document).on("click", "#searchBtn", () => searchAsks($("#search").val()));
-
-      function fecthRtas(id) {
-        $.ajax({
-          url: "rtas.php",
-          type: "POST",
-          data: {
-            "id": id
-          },
-          success: response => {
-            let plantilla = '';
-            JSON.parse(response).forEach(rta => {
-              plantilla += `
-              <div id="rta${rta.id}">
-                <img src="${rta.avatar}" alt="${rta.avatarName}" title="${rta.nombre} ${rta.apellido}" width="50px" height="50px">
-                ${rta.nickname} || ${rta.fecha}
-                <p>${rta.contenido}</p>
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#subrtaCollapse${rta.id}" aria-expanded="false" aria-controls="collapseExample">
-                  +
-                </button>
-                <div class="collapse" id="subrtaCollapse${rta.id}">
-                  <div id="subRtaDiv${rta.id}" class="card card-body">
-                  </div>
-                </div>
-              </div>
-              `;
-              fecthsubRtas(rta.id);
-            });
-            $("#rtasDiv" + id).html(plantilla);
-          }
-        })
-      }
-
-      function fecthsubRtas(id) {
-        $.ajax({
-          url: "subrtas.php",
-          type: "POST",
-          data: {
-            "id": id
-          },
-          success: response => {
-            let plantilla = '';
-            JSON.parse(response).forEach(subrta => {
-              plantilla += `
-              <div id="subrta${subrta.id}">
-                <img src="${subrta.avatar}" alt="${subrta.avatarName}" title="${subrta.nombre} ${subrta.apellido}" width="50px" height="50px">
-                ${subrta.nickname} || ${subrta.fecha}
-                <p>${subrta.contenido}</p>
-              </div>
-              `;
-            });
-            $("#subRtaDiv" + id).html(plantilla);
-          }
-        })
-      }
-
-      $(document).on("click", ".submitRta", () => {
-        console.log($(this).val());
-        let rtaData = {
-          e: 1,
-          pregunta: $(this).siblings("#rta-form" + $(this).val()).children("#preguntaId" + $(this).val()).val(),
-          respuesta: $(this).siblings("#rta-form" + $(this).val()).children("#content" + $(this).val()).val()
-        };
-        if ($("#content" + $(this).val()).val() == '') {
-          alert("ESTA VACIO");
-        } else {
-          if (<?= $_SESSION ? 1 : 0 ?> == 1) {
-            $.post("respuesta.php", rtaData, response => {
-              notification();
-              fecthAsks();
-              $("#rta-form").trigger("reset");
-            });
-
-          } else {
-            window.location.href = "login.php";
-          }
-        }
-      })
+      //$(document).on("click", ".submitRta", submitRta(<?= $_SESSION ? 1 : 0 ?>))
 
       $("#ask-form").submit(fromA => {
-        let postData = {
-          asunto: $("#asunto").val().trim(),
-          pregunta: $("#contenido").val().trim()
-        };
-
-        $.post("computacion.php", postData, response => {
-          fecthAsks();
-          $("#ask-form").trigger('reset');
-        });
-
         fromA.preventDefault();
+        submitAsk(1)
       })
 
       $(document).on("click", ".deleteAsk", () => {

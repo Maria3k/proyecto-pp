@@ -33524,7 +33524,7 @@ CREATE TABLE `usuario` (
   `nickname` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
   `fechaNacimiento` date NOT NULL,
-  `contraseña` varchar(50) NOT NULL,
+  `contrasenia` varchar(50) NOT NULL,
   `nAvatar` int(11) NOT NULL,
   `rol` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -33533,7 +33533,7 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido`, `nickname`, `email`, `fechaNacimiento`, `contraseña`, `nAvatar`, `rol`) VALUES
+INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido`, `nickname`, `email`, `fechaNacimiento`, `contrasenia`, `nAvatar`, `rol`) VALUES
 (1, 'Ignacio1', 'Morales1', 'Doumeq01', 'ignaciomorales1@gmail.com', '1976-11-17', '202cb962ac59075b964b07152d234b70', 2, 2),
 (2, 'Ignacio2', 'Morales2', 'Doumeq02', 'ignaciomorales2@gmail.com', '1979-03-12', '202cb962ac59075b964b07152d234b70', 6, 2),
 (3, 'Ignacio3', 'Morales3', 'Doumeq03', 'ignaciomorales3@gmail.com', '1930-08-08', '202cb962ac59075b964b07152d234b70', 8, 2),
