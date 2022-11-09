@@ -134,9 +134,9 @@ if ($_SESSION) {
     <div class="fondo">
       <div id="Caja">
         <div class="act"> <label for="">Actividad</label> </div>
-        <div class="UltSesion"> <label for="">Ultimo Inicio de Sesión:&nbsp</label><?= $usr["fechaNacimiento"] ?></div>
-        <div class="navegador"><label for="">Desde el navegador:&nbsp</label><b>Chrome</b></div>
-        <div class="UltConex"><label for="">Ultima Conexion:&nbsp</label><b>17:45-PM</b></div>
+        <div class="UltSesion"> <label for="">Ultimo Inicio de Sesión:</label><?= $usr["fechaNacimiento"] ?></div>
+        <div class="navegador"><label for="">Desde el navegador:</label>Chrome</div>
+        <div class="UltConex"><label for="">Ultima Conexion:</label>17:45-PM</div>
       </div>
 
       <form action="seguridadcopy.php" method="post" class="CajaContra">
@@ -145,15 +145,15 @@ if ($_SESSION) {
         </div>
         <div class="Password">
           <label>Contraseña actual:</label>
-          <input type="password" name="actualPass" required>
+          <div><input type="password" name="actualPass" required></div>
         </div>
         <div class="Password">
           <label>Nueva contraseña:</label>
-          <input type="password" name="newPass" required>
+          <div> <input type="password" name="newPass" required></div>
         </div>
         <div class="Password">
           <label>Confirmar contraseña:</label>
-          <input type="password" name="vNewPass" required>
+          <div><input type="password" name="vNewPass" required></div>
         </div>
         <input type="submit" class="botoncito" value="enviar">
       </form>

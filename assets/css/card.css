@@ -1,6 +1,6 @@
 #divPadre {
     float: left;
-    background-color: #ffffff;
+    background-color: #efefef;
     border-top-left-radius: 16px;
     border-bottom-left-radius: 16px;
 
@@ -10,14 +10,16 @@
 }
 
 #divHijo {
-    background-color: rgb(235, 235, 235);
-    color: #2853a1;
+    background-color: #efefef;
+    color: black;
     border-top-left-radius: 13px;
     border-bottom-left-radius: 13px;
-}
 
+    font-weight: 600;
+    font-size: 20px;
+}
 #divPadre2 {
-    background-color: rgb(235, 235, 235);
+    background-color: #ffffff9e;
     border-top-right-radius: 13px;
     border-bottom-right-radius: 13px;
     display: flex;
@@ -26,13 +28,14 @@
 }
 
 #divHijo2 {
-    background-color: #ffffff;
+    background-color: transparent;
     border-top-right-radius: 13px;
     border-bottom-right-radius: 13px;
 
-    color:white;
     text-align: center;
     font-size: large;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 .mover {
@@ -51,20 +54,20 @@
 }
 
 .dirvos{
-    width: max-content;
+    background-color: transparent;
     height: -webkit-fill-available;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    border-bottom-right-radius: 13px;
 }
 
 .directivo1 {
     display: flex;
-    color:#2853a1;
     font-size: large;
 }
 .infop{
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 20px;
     display: flex;
     flex-direction: column;
@@ -74,7 +77,8 @@
 }
 .letraa{
     margin-top: 14px;
-    color:#2853a1;
-    font-size: 21px;
+    color:#000000;
+    font-size: 18px;
+    font-weight: 500;
 }
 

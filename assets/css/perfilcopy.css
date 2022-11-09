@@ -418,7 +418,7 @@ h6 {
 }
 
 .UltSesion label {
-  padding: 10px 0px 10px 0;
+  padding: 10px 5px 10px 0;
   margin-left: 2%;
   margin-right: 0;
   font-weight: bolder;
@@ -430,7 +430,7 @@ h6 {
 }
 
 .navegador label {
-  padding: 10px 0px 10px 0;
+  padding: 10px 5px 10px 0;
   margin-left: 2%;
   margin-right: 0;
   font-weight: bolder;
@@ -441,7 +441,7 @@ h6 {
 }
 
 .UltConex label {
-  padding: 10px 0px 10px 0;
+  padding: 10px 5px 10px 0;
   margin-left: 2%;
   margin-right: 0;
   font-weight: bolder;
@@ -465,9 +465,9 @@ h6 {
 }
 
 .Password {
-  display: flex;
-  padding: 2% 5%;
-  justify-content: space-between;
+  padding: 2% 2%;
+  font-weight: bolder;
+
 }
 
 .Password b {
@@ -477,9 +477,20 @@ h6 {
 }
 
 .Password input {
-  box-decoration-break: none;
-  border-radius: 6px;
-  border: solid 1.5px #2853A1;
+  border: 0;
+  border-bottom: 1px solid #b3b3b3;
+  outline: 0;
+  font-size: 1.3rem;
+  background: transparent;
+  transition: border-color 0.2s;
+
+}
+.Password input:focus{
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #3c6dc8, #8fcdff);
+  border-image-slice: 1;
 }
 
 #hide1 {
@@ -530,11 +541,7 @@ h6 {
   margin-left: 15px;
 }
 
-.Password input {
-  box-decoration-break: none;
-  border-radius: 6px;
-  border: solid 1.5px #2853A1;
-}
+
 
 #titulob {
   background: linear-gradient(0deg, rgb(154, 203, 231) 0%, rgb(66, 115, 207) 35%, rgba(0, 212, 255, 1) 100%);
