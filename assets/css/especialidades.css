@@ -45,3 +45,12 @@ div.col.l6{
     margin-left: 15px;
 }
 
+.pagination{
+    padding-left: 45%;
+    margin-bottom: -3%;
+}
+
+.page-link{
+    color: #2853a1;
+}
+
