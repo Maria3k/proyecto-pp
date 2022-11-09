@@ -150,7 +150,8 @@ h6, .h6 {
 p {
   margin-top: 0;
   padding: 8px;
-  font-size: large;
+  font-size: 18px;
+  color: #2853a1;
 }
 
 abbr[title],

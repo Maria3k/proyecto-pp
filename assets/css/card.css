@@ -1,11 +1,12 @@
 #divPadre {
     float: left;
-    background-color: #2853a1;
+    background-color: #ffffff;
     border-top-left-radius: 16px;
     border-bottom-left-radius: 16px;
 
     font-size: 25px;
     text-align: center;
+    width: 356px;
 }
 
 #divHijo {
@@ -21,10 +22,11 @@
     border-bottom-right-radius: 13px;
     display: flex;
     flex-direction: column;
+    width: 356px;
 }
 
 #divHijo2 {
-    background-color: #2853a1;
+    background-color: #ffffff;
     border-top-right-radius: 13px;
     border-bottom-right-radius: 13px;
 
@@ -43,8 +45,8 @@
 
 .imgi {
     margin-right: 20px;
-    padding: 20px 0px 0px 21px;
-    height: 100px;
+    padding: 20px 0px 17px 21px;
+    height: 111px;
     border-radius: 100%;
 }
 
@@ -73,9 +75,6 @@
 .letraa{
     margin-top: 14px;
     color:#2853a1;
-    font-size: 15px;
+    font-size: 21px;
 }
-h5{
-    color: #2853a1;
-    font-size: 15px;
-}
+

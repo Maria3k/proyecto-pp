@@ -289,12 +289,20 @@ h6 {
 
 .botonConsulta {
   position: absolute;
-  color: #ffffff;
   border-radius: 20px;
   transition: .2s;
   text-decoration: none;
   bottom: 13px;
   right: 10px;
+
+
+  margin-top: 0;
+
+  outline: none;
+  color: #3c6dc8;
+  background: white;
+  font-size: 15px;
+
 }
 
 .botonConsulta:hover,
@@ -342,23 +350,23 @@ h6 {
   font-size: large;
   padding: 16px;
   display: flex;
-  border-left: #ffffff solid;
-  border-bottom: #ffffff solid;
+  border-left: #ffffff73 solid;
+  border-bottom: #ffffff73 solid;
 }
 
 .surname {
   font-size: large;
   padding: 16px;
   display: flex;
-  border-left: #ffffff solid;
-  border-bottom: #ffffff solid;
+  border-left: #ffffff73 solid;
+  border-bottom: #ffffff73 solid;
 }
 
 .FDN {
   font-size: large;
   padding: 16px;
   display: flex;
-  border-left: #ffffff solid;
+  border-left: #ffffff73 solid;
 }
 
 .correo {
@@ -373,7 +381,7 @@ h6 {
 .info {
   padding: 16px;
   display: flex;
-  border-bottom: #ffffff solid;
+  border-bottom: #ffffff73 solid;
   justify-content: center;
 }
 
@@ -395,7 +403,7 @@ h6 {
 }
 
 .act {
-  border-bottom: #ffffff solid;
+  border-bottom: #ffffff73 solid;
 }
 
 .act label {
@@ -405,23 +413,27 @@ h6 {
 }
 
 .UltSesion {
-  border-bottom: #ffffff solid;
+  border-bottom: #ffffff73 solid;
   font-size: large;
 }
 
 .UltSesion label {
-  padding: 10px 35% 10px 0px;
-  margin-left: 3%;
+  padding: 10px 0px 10px 0;
+  margin-left: 2%;
+  margin-right: 0;
+  font-weight: bolder;
 }
 
 .navegador {
-  border-bottom: #ffffff solid;
+  border-bottom: #ffffff73 solid;
   font-size: large;
 }
 
 .navegador label {
-  padding: 10px 40% 10px 0px;
-  margin-left: 3%;
+  padding: 10px 0px 10px 0;
+  margin-left: 2%;
+  margin-right: 0;
+  font-weight: bolder;
 }
 
 .UltConex {
@@ -429,8 +441,10 @@ h6 {
 }
 
 .UltConex label {
-  padding: 10px 45% 10px 0px;
-  margin-left: 3%;
+  padding: 10px 0px 10px 0;
+  margin-left: 2%;
+  margin-right: 0;
+  font-weight: bolder;
 }
 
 .CajaContra {
@@ -447,7 +461,7 @@ h6 {
   text-align: center;
   justify-content: center;
   padding: 13px;
-  border-bottom: #ffffff solid;
+  border-bottom: #ffffff73 solid;
 }
 
 .Password {
@@ -459,6 +473,7 @@ h6 {
 .Password b {
   padding: 0px 10% 0px 0px;
   margin-left: 3%;
+  font-weight: bolder;
 }
 
 .Password input {
@@ -484,6 +499,15 @@ h6 {
   background: white;
   margin-bottom: 10px;
   border: solid 1px;
+  font-size: 16px;
+}
+
+.nombreDato{
+  margin-right: 5px;
+}
+
+.correoelectronico .nombreDato{
+  margin-right: 0;
 }
 
 .img1 {

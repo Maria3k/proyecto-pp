@@ -129,17 +129,17 @@ if ($_SESSION) {
         <p><?= $usr["nickname"] ?></p>
       </div>
       <div class="datos">
-        <div class="name"><b>Nombre:</b> <?= $usr["nombre"] ?></div>
+        <div class="name"><b class="nombreDato">Nombre: </b> <?= $usr["nombre"] ?></div>
 
-        <div class="surname"><b>Apellido:</b> <?= $usr["apellido"] ?></div>
+        <div class="surname"><b class="nombreDato">Apellido: </b> <?= $usr["apellido"] ?></div>
 
-        <div class="FDN"><b>Fecha de Nacimiento:</b> <?= $usr["fechaNacimiento"] ?></div>
+        <div class="FDN"><b class="nombreDato">Fecha de Nacimiento: </b> <?= $usr["fechaNacimiento"] ?></div>
 
       </div> 
     </div>
     <div class="correo">
       <label class="info"> Información de Contacto </label>
-      <div class="correoelectronico"><b>Correo Electronico:</b> <?= $usr["email"] ?></div>
+      <div class="correoelectronico"><b class="nombreDato">Correo Electronico:</b> <?= $usr["email"] ?></div>
     </div>
   </div>
 

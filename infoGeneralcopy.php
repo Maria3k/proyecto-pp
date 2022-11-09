@@ -141,23 +141,23 @@ if ($_SESSION) {
         <div class="directivo1">
           <img class="imgi" src="assets/img/iconosUsu/logo2.png" alt="">
           <div class="infop">
-            <h4 class="letraa">Hola soy tino</h4>
-            <h5>Director de la institucion</h5>
+            <p class="letraa">Hola soy tino</p>
+            <p>Director de la institucion</p>
           </div>
 
         </div>
         <div class="directivo1">
           <img class="imgi"src="assets/img/iconosUsu/logo3.png" alt="">
           <div class="infop">
-            <h4 class="letraa">Hola soy tino</h4>
-            <h5>Director de la institucion</h5>
+            <p class="letraa"> Hola soy tino</p>
+            <p>Director de la institucion</p>
           </div>
         </div>
         <div class="directivo1">
           <img class="imgi" src="assets/img/iconosUsu/logo4.png" alt="">
           <div class="infop">
-            <h4 class="letraa">Hola soy tino</h4>
-            <h5>Director de la institucion</h5>
+            <p class="letraa">Hola soy tino</p>
+            <p>Director de la institucion</p>
           </div>
         </div>
       </div>
