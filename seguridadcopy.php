@@ -121,7 +121,7 @@ if ($_SESSION) {
           </a>
         </li>
         <li>
-          <a class="option" href="infoGeneral.php">
+          <a class="option" href="infoGeneralcopy.php">
             <i class="fa fa-clone icon"></i>
             <span>Info General</span>
           </a>
