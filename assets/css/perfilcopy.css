@@ -467,8 +467,9 @@ h6 {
 .Password {
   padding: 2% 2%;
   font-weight: bolder;
-
+  margin-left: 40px;
 }
+
 
 .Password b {
   padding: 0px 10% 0px 0px;
@@ -480,11 +481,16 @@ h6 {
   border: 0;
   border-bottom: 1px solid #b3b3b3;
   outline: 0;
+  margin-left: 40px;
   font-size: 1.3rem;
   background: transparent;
   transition: border-color 0.2s;
-
 }
+
+#ccon{
+  margin-left: 10px;
+}
+
 .Password input:focus{
   padding-bottom: 6px;
   font-weight: 700;

@@ -145,15 +145,15 @@ if ($_SESSION) {
         </div>
         <div class="Password">
           <label>Contraseña actual:</label>
-          <div><input type="password" name="actualPass" required></div>
+          <input type="password" name="actualPass" required>
         </div>
         <div class="Password">
           <label>Nueva contraseña:</label>
-          <div> <input type="password" name="newPass" required></div>
+          <input type="password" name="newPass" required>
         </div>
         <div class="Password">
           <label>Confirmar contraseña:</label>
-          <div><input type="password" name="vNewPass" required></div>
+          <input id="ccon" type="password" name="vNewPass" required>
         </div>
         <input type="submit" class="botoncito" value="enviar">
       </form>

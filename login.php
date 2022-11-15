@@ -10,7 +10,7 @@ if (isset($_POST["submit"])) {
       if (!empty($e)) {
         if (!empty($p)) {
           $query = "SELECT * FROM usuario WHERE email = '$e' AND contraseña = '$p'";
-          $send = $con->query($query);
+          $send = $con->query($query) or die("error" . mysqli_error($con));
           $col = $send->fetch_assoc();
 
           print_r($col);

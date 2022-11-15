@@ -327,6 +327,7 @@ th {
 
 label {
   display: inline-block;
+  flex:2;
 }
 
 button {
