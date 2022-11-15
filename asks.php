@@ -28,7 +28,7 @@ if ($_POST) {
     echo json_encode($json);
   } else {
     $sql = "SELECT pregunta.*, usuario.*, avatar.* FROM pregunta LEFT JOIN usuario ON pregunta.usuario_pregunta = usuario.id_usuario LEFT JOIN avatar ON usuario.nAvatar = avatar.id_avatar WHERE especialidad = " . $_POST["e"] . " ORDER BY `pregunta`.`id_pregunta` DESC LIMIT ".$_POST["page"].",10";
-echo $sql;
+
     $query = $con->query($sql) or die($query . mysqli_error($con));
     $rtas = array();
     while ($ask = $query->fetch_assoc()) {

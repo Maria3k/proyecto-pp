@@ -1,6 +1,6 @@
 function fecthAsks(e, page) {
     window.localStorage.setItem("page", page)
-    console.log(window.localStorage.getItem("page"));
+
     let cant = 1;
     $.ajax({
         url: "asks.php",
@@ -8,8 +8,6 @@ function fecthAsks(e, page) {
         data: { e, page: page * 10 },
         success: response => {
             let plantilla = '';
-
-            console.log(response);
 
             cant = JSON.parse(response).pages;
             JSON.parse(response).rtas.forEach(ask => {

@@ -163,6 +163,7 @@ if ($_SESSION) {
     </div>
   </footer>
   <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/notificacion.js"></script>
   <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <!--CAMBIAR A 
@@ -180,22 +181,9 @@ if ($_SESSION) {
       window.localStorage.setItem("page", 1)
       if (<?= $ajax; ?> != -1) notification();
 
-      function notification() {
-        $("#number").hide();
-        $.ajax({
-          url: "notification.php",
-          type: "POST",
-          data: {
-            id: <?= $ajax; ?>
-          },
-          success: (n) => {
-            cant = JSON.parse(n).length;
-            if (cant != 0) $("#number").html(cant).show();
-          }
-        });
-      }
+      notificacion(<?= $ajax; ?>);
 
-      fecthAsks(0, 1);
+      fecthAsks(1, 1);
 
       $(document).on("click", "#searchBtn", () => searchAsks($("#search").val(), 1));
 
@@ -213,8 +201,8 @@ if ($_SESSION) {
           id: $(this).val()
         };
         $.post('deleteAsk.php', postData, response => {
-          notification();
-          fecthAsks();
+          notificacion();
+          fecthAsks(1, 1);
         });
       })
     });
