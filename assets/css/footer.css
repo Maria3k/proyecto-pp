@@ -17,7 +17,6 @@
 .foot .grupo-1{
     width: 100%;
     max-width: 1200px;
-    height: 220px;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -27,9 +26,10 @@
 
 .foot .grupo-1 .box figure{
     width: 100%;
+    height: 100%;
     display: flex;
-    padding: 30px 20px;
     justify-content: center;
+    align-items: center;
 }
 
 .foot .grupo-1 .box figure img{
@@ -53,13 +53,13 @@
 }
 
 .foot .grupo-1 .connect a {
-    font-size: 45px;
+    font-size: 40px;
     text-decoration: none;
     color: black;
     width: 45px;
     height: 45px;
     line-height: 45px;
-    margin-right: 5px;
+    margin-right: 10px;
     text-align: center;
     padding: 15px;
 }
@@ -97,9 +97,17 @@ a.instagram i:hover{
 
 @media  screen and (max-width:800px) {
     .foot .grupo-1{
-        width: 100%;
+        width: 80%;
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 30px;
         padding: 35px 0px;
+    }
+}
+
+@media  screen and (max-width:500px) {
+    .foot .grupo-1{
+        width: 0%;
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
     }
 }
