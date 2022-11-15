@@ -64,7 +64,7 @@
   .carousel img:first-child{
     margin-left: 0px;
   }
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1200px) {
     .carousel img{
       width: calc(100% / 2);
     }
