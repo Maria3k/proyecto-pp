@@ -140,45 +140,19 @@
     </div>
 
     <div class="body">
-      <div class="slider">
-        <div class="slides">
-          <input type="radio" name="radio-btn" id="radio1">
-          <input type="radio" name="radio-btn" id="radio2">
-          <input type="radio" name="radio-btn" id="radio3">
-          <input type="radio" name="radio-btn" id="radio4">
-          <input type="radio" name="radio-btn" id="radio5">
-          <input type="radio" name="radio-btn" id="radio6">
-
-          <div class="slide first">
-            <img src="/assets/img/escuela/aaa.jpg" alt="">
-          </div>
-          <div class="slide">
-            <img src="/assets/img/escuela/entrada.jpg" alt="">
-          </div>
-          <div class="slide">
-            <img src="/assets/img/escuela/escuela.jpg" alt="">
-          </div>
-          <div class="slide">
-            <img src="/assets/img/escuela/frente.jpg" alt="">
-          </div>
-          <div class="slide">
-            <img src="/assets/img/escuela/imagenE.jpg" alt="">
-          </div>
-          <div class="slide">
-            <img src="/assets/img/escuela/imgE.jpg" alt="">
-          </div>
-
-          <div class="navigation-manual1">
-            <label for="radio1" class="manual-btn"></label>
-            <label for="radio2" class="manual-btn"></label>
-            <label for="radio3" class="manual-btn"></label>
-            <label for="radio4" class="manual-btn"></label>
-            <label for="radio5" class="manual-btn"></label>
-            <label for="radio6" class="manual-btn"></label>
-          </div>
+      <div class="wrapper">
+        <i id="left" class="fa-solid fa-angle-left"></i>
+        <div class="carousel">
+          <img src="assets/img/escuela/aaa.jpg" alt="img" draggable="false">
+          <img src="assets/img/escuela/entrada.jpg" alt="img" draggable="false">
+          <img src="assets/img/escuela/escuela.jpg" alt="img" draggable="false">
+          <img src="assets/img/escuela/frente.jpg" alt="img" draggable="false">
+          <img src="assets/img/escuela/imgE.jpg" alt="img" draggable="false">
         </div>
+        <i id="right" class="fa-solid fa-angle-right"></i>
       </div>
     </div>
+    
 
     <!--FOOTER-->
     <footer class="foot">
@@ -242,6 +216,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="assets/js/slider.js"></script>
 
     <script>
       $(".step").click(function () {
