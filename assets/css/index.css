@@ -133,9 +133,9 @@ nav{
 .action .menu{
     position: absolute;
     top: 85px;
-    right: 10px;
+    right: 65px;
     background: #2853a1;
-    width: 200px;
+    width: 170px;
     border-radius: 15px;
     transition: 0.5s;
     visibility: hidden;
@@ -145,6 +145,7 @@ nav{
 .action .menu.active{
     visibility: visible;
     opacity: 1;
+    width: 170px;
 }
 
 .action .menu::before{
@@ -152,7 +153,7 @@ nav{
     font-size: 30px;
     position: absolute;
     top: -30px;
-    right: 80px;
+    right: 25px;
     width: 20px;
     height: 20px;
     color: #2853a1;
@@ -203,6 +204,7 @@ nav{
     color: white;
     font-weight: 500;
     transition: 250ms;
+    padding-left: 12%;
 }
 
 .action .menu ul li:hover a{
@@ -236,7 +238,7 @@ h1 span{
     width: 90%;
     margin: auto;
     height: 100px;
-    margin-top: 65px;
+    margin-top: 80px;
 }
 
 #progress-bar-container ul{
