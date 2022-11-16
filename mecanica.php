@@ -106,6 +106,7 @@ if ($_SESSION) {
               </div>
             </div>
             <div id="ask"></div>
+            <div id="pages"></div>
           </div>
         </div>
       </div>
@@ -162,6 +163,7 @@ if ($_SESSION) {
   <script src="assets/js/bootstrap.js"></script>
   <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="assets/js/especialidades.js"></script>
   <script>
     function menuToggle() {
       const toggleMenu = document.querySelector('.menu');
@@ -169,192 +171,29 @@ if ($_SESSION) {
     }
 
     $(document).ready(() => {
-      var id_usr = <?= $ajax; ?>;
-      if (id_usr != -1) {
-        notification();
-      }
 
-      function notification() {
-        $("#number").hide();
-        $.ajax({
-          url: "notification.php",
-          type: "POST",
-          data: {
-            id: <?= $ajax; ?>
-          },
-          success: function(n) {
-            if (n != 0) {
-              $("#number").html(n);
-              $("#number").show();
-            }
-          }
-        });
-      }
+      window.localStorage.setItem("page", 1)
 
-      fecthAsks();
+      fecthAsks(2, 1);
 
-      function fecthAsks() {
-        $.ajax({
-          url: "asks.php",
-          type: "POST",
-          data: {
-            e: 2
-          },
-          success: function(response) {
-            let plantilla = '';
-            JSON.parse(response).forEach(ask => {
-              plantilla += `
-              <img src="${ask.avatar}" alt="${ask.avatarName}" title="${ask.nombre} ${ask.apellido}" width="50px" height="50px">${ask.nickname} || ${ask.fecha}
-                <h5>${ask.asunto}</h5>
-                <p>${ask.contenido}</p>
-                
-                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight${ask.id}" aria-controls="offcanvasRight${ask.id}"><i class="fa-solid fa-plus"></i></button><?= $ad; ?><br>
-                
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight${ask.id}" aria-labelledby="offcanvasRightLabel">
-                  <div class="offcanvas-header">
-                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                  </div>
-                  <div class="offcanvas-body" style="overflow:hidden;">
-                    <img src="${ask.avatar}" alt="${ask.avatarName}" title="${ask.nombre} ${ask.apellido}" width="50px" height="50px">
-                    <h5>${ask.asunto}</h5>
-                    <p>${ask.contenido}</p>
-                    <form id="rta-form${ask.id}">
-                    <input id="preguntaId${ask.id}" type="hidden" value="${ask.id}">
-                    <textarea id="content${ask.id}" class="form-control my-2" placeholder="Dejar un comentario" required></textarea>
-                    </form>
-                    <button id="submitRta" class="btn btn-primary submitRta" value="${ask.id}">Enviar</button>
-                    <div id="rtasDiv${ask.id}"></div>
-                  </div>
-                </div>
-              `
-              fecthRtas(ask.id);
-            });
-            $("#ask").html(plantilla);
-          }
-        })
-      }
+      $(document).on("click", "#searchBtn", () => searchAsks($("#search").val(), 2));
 
-      function searchAsks(n) {
-        $.ajax({
-          url: "asks.php",
-          type: "POST",
-          data: {
-            e: 2,
-            clave: n
-          },
-          success: function(response) {
-            let plantilla = '';
-            if (JSON.parse(response).length != 0) {
-              JSON.parse(response).forEach(ask => {
-                plantilla += `
-                <img src="${ask.avatar}" alt="${ask.avatarName}" title="${ask.nombre} ${ask.apellido}" width="50px" height="50px">${ask.nickname} || ${ask.fecha}
-                  <h5>${ask.asunto}</h5>
-                  <p>${ask.contenido}</p>
-                  
-                  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight${ask.id}" aria-controls="offcanvasRight${ask.id}">+</button><?= $ad; ?><br>
-                  
-                  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight${ask.id}" aria-labelledby="offcanvasRightLabel">
-                    <div class="offcanvas-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body" style="overflow:hidden;">
-                      <img src="${ask.avatar}" alt="${ask.avatarName}" title="${ask.nombre} ${ask.apellido}" width="50px" height="50px">
-                      <h5>${ask.asunto}</h5>
-                      <p>${ask.contenido}</p>
-                      <form id="rta-form${ask.id}">
-                      <input id="preguntaId${ask.id}" type="hidden" value="${ask.id}">
-                      <textarea id="content${ask.id}" class="form-control my-2" placeholder="Dejar un comentario" required></textarea>
-                      </form>
-                      <button id="submitRta" class="btn btn-primary submitRta" value="${ask.id}">Ola</button>
-                      <div id="rtasDiv${ask.id}"></div>
-                    </div>
-                  </div>
-                `
-                fecthRtas(ask.id);
-              });
-            } else {
-              plantilla += `
-                <h1>Ninguna coincidencia encontrada para: ${n}</h1>
-              `;
-            }
-            $("#ask").html(plantilla);
-          }
-        })
-      }
+      $(document).on("click", ".page-link", (e) => fecthAsks(2, e.target.innerHTML))
 
-      $(document).on("click", "#searchBtn", function() {
-        searchAsks($("#search").val());
-      })
+      $(document).on("click", ".submitRta", submitRta(<?= $_SESSION ? 1 : 0 ?>))
 
-      function fecthRtas(id) {
-        $.ajax({
-          url: "rtas.php",
-          type: "POST",
-          data: {
-            e: 2,
-            "id": id
-          },
-          success: function(response) {
-            console.log("hola");
-            let plantilla = '';
-            JSON.parse(response).forEach(rta => {
-              plantilla += `
-              <img src="${rta.avatar}" alt="${rta.avatarName}" title="${rta.nombre} ${rta.apellido}" width="50px" height="50px">
-              ${rta.nickname} || ${rta.fecha}
-              <p>${rta.contenido}</p>
-            `
-            });
-            $("#rtasDiv" + id).html(plantilla);
-          }
-        })
-      }
-
-      $(document).on("click", ".submitRta", function() {
-        let rtaData = {
-          e: 1,
-          pregunta: $(this).siblings("#rta-form" + $(this).val()).children("#preguntaId" + $(this).val()).val(),
-          respuesta: $(this).siblings("#rta-form" + $(this).val()).children("#content" + $(this).val()).val()
-        };
-        if ($("#content" + $(this).val()).val() == '') {
-          alert("ESTA VACIO");
-        } else {
-          $.post("respuesta.php", rtaData, function(response) {
-            notification();
-            fecthAsks();
-            $("#rta-form").trigger("reset");
-          });
-        }
-      })
-
-      /*$('#rta-form').submit(function(formR) {
-        window.location.href = "http://stackoverflow.com";
-        /*let postData = {
-          pregunta: $("#preguntaId").val(),
-          respuesta: $('#content').val()
-        };
-        console.log(postData);
-        formR.preventDefault();
-      });*/
-
-      $("#ask-form").submit(function(fromA) {
-        let postData = {
-          asunto: $("#asunto").val(),
-          pregunta: $("#contenido").val()
-        };
-        $.post("mecanica.php", postData, function(response) {
-          notification();
-          fecthAsks();
-          $("#ask-form").trigger('reset');
-        });
+      $("#ask-form").submit(fromA => {
         fromA.preventDefault();
-      });
+        submitAsk(2)
+      })
 
-      $(document).on("click", ".deleteAsk", function() {
-        $.post('deleteAsk.php', {
+      $(document).on("click", ".deleteAsk", () => {
+        postData = {
           id: $(this).val()
-        }, function(response) {
-          notification();
-          fecthAsks();
+        };
+        $.post('deleteAsk.php', postData, response => {
+          notificacion();
+          fecthAsks(2, 1);
         });
       })
     });

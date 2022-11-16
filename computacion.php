@@ -179,9 +179,6 @@ if ($_SESSION) {
 
     $(document).ready(() => {
       window.localStorage.setItem("page", 1)
-      if (<?= $ajax; ?> != -1) notification();
-
-      notificacion(<?= $ajax; ?>);
 
       fecthAsks(1, 1);
 
@@ -189,7 +186,7 @@ if ($_SESSION) {
 
       $(document).on("click", ".page-link", (e) => fecthAsks(1, e.target.innerHTML))
 
-      //$(document).on("click", ".submitRta", submitRta(<?= $_SESSION ? 1 : 0 ?>))
+      $(document).on("click", ".submitRta", submitRta(<?= $_SESSION ? 1 : 0 ?>))
 
       $("#ask-form").submit(fromA => {
         fromA.preventDefault();
