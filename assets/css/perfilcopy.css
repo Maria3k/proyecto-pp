@@ -341,6 +341,11 @@ h6 {
   font-weight: bold;
 }
 
+p {
+  padding: 8px;
+  font-size: 18px;
+}
+
 .username {
   font-size: large;
   padding: 16px;
@@ -350,23 +355,23 @@ h6 {
   font-size: large;
   padding: 16px;
   display: flex;
-  border-left: #ffffff38 solid;
-  border-bottom: #ffffff38 solid;
+  border-left: #ffffff17  solid;
+  border-bottom: #ffffff17 solid;
 }
 
 .surname {
   font-size: large;
   padding: 16px;
   display: flex;
-  border-left: #ffffff38 solid;
-  border-bottom: #ffffff38 solid;
+  border-left: #ffffff17  solid;
+  border-bottom: #ffffff17 solid;
 }
 
 .FDN {
   font-size: large;
   padding: 16px;
   display: flex;
-  border-left: #ffffff38 solid;
+  border-left: #ffffff17  solid;
 }
 
 .correo {
@@ -381,7 +386,7 @@ h6 {
 .info {
   padding: 16px;
   display: flex;
-  border-bottom: #ffffff73 solid;
+  border-bottom: #ffffff17 solid;
   justify-content: center;
 }
 
@@ -404,7 +409,7 @@ h6 {
 }
 
 .act {
-  border-bottom: #ffffff38 solid;
+  border-bottom: #ffffff17  solid;
 }
 
 .act label {
@@ -414,7 +419,7 @@ h6 {
 }
 
 .UltSesion {
-  border-bottom: #ffffff38 solid;
+  border-bottom: #ffffff17  solid;
   font-size: large;
 }
 
@@ -426,7 +431,7 @@ h6 {
 }
 
 .navegador {
-  border-bottom: #ffffff38 solid;
+  border-bottom: #ffffff17  solid;
   font-size: large;
 }
 
