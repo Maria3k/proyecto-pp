@@ -12,31 +12,24 @@ nav{
     background-color: #2853a1;
 }
 
-.btn-nav{
-    padding-top: 20px;
-    padding-right: 10px;
-    color: white;
-    text-decoration: none;
-    float: right;
-    padding-left: 10px;
-}
 
-.botonlogo{
+.img1{
     display: inline-block;
+    margin-left: 50px;
 }
 
-.botonlogo img{
-    height: 70px;
-    width: 75px;
+.img1 img{
+    height: 60px;
+    width: 65px;
 }
 
-.botonlogin{
+.icon-wrapper{
     position: absolute;
     display: inline-block;
     right: 0%;
 }
 
-.botonlogin img{
+.icon-wrapper i{
     height: 70px;
     width: 75px;   
 }
