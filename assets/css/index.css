@@ -46,7 +46,6 @@ nav{
 h1{
     color: black;
     font-weight: 700;
-    margin-top: 20px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -61,7 +60,7 @@ h1 span{
 /*LINEA DE TIEMPO*/
 .process-wrapper{
     margin: auto;
-    max-width: 1080px;
+    max-width: 1200px;
 }
 
 #progress-bar-container{
@@ -69,13 +68,13 @@ h1 span{
     width: 90%;
     margin: auto;
     height: 100px;
-    margin-top: 59px;
+    margin-top: 65px;
 }
 
 #progress-bar-container ul{
     padding: 0;
     margin: 0;
-    padding-top: 9px;
+    padding-top: 15px;
     z-index: 9999;
     position: absolute;
     width: 100%;
@@ -110,7 +109,7 @@ h1 span{
     font-weight: 700;
     transition: all ease 0.2s;
     vertical-align: bottom;
-    height: 59px;
+    height: 60px;
     position: relative;
 }
 
@@ -118,7 +117,7 @@ h1 span{
     position: absolute;
     width: 100%;
     bottom: 0;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 #progress-bar-container li.active,
@@ -129,8 +128,8 @@ h1 span{
 #progress-bar-container li::after{
     content: ""; 
     display: block;
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
     background: #2853a1;
     margin: auto;
     border: solid 7px  rgba(40, 83, 161, 1) ;
@@ -152,10 +151,10 @@ h1 span{
     width: 80%;
     margin: auto;
     background: #eee;
-    height: 5px;
+    height: 6px;
     position: absolute;
     left: 10%;
-    top: 50px;
+    top: 57px;
     z-index: 1;
     border-radius: 50px;
     transition: all ease 0.9s;
@@ -185,14 +184,14 @@ h1 span{
 }
 
 #progress-content-section .section-content h2 {
-	font-size:17px;
+	font-size:15px;
 	text-transform:uppercase;
 	color:#333;
 	letter-spacing:1px;
 }
 
 #progress-content-section .section-content p {
-	font-size:16px;
+	font-size:14px;
 	line-height:1.8em;
 	color:#777;
 }
@@ -220,3 +219,4 @@ h1 span{
 		opacity:1;
 	}
 }
+
