@@ -350,23 +350,23 @@ h6 {
   font-size: large;
   padding: 16px;
   display: flex;
-  border-left: #ffffff73 solid;
-  border-bottom: #ffffff73 solid;
+  border-left: #ffffff38 solid;
+  border-bottom: #ffffff38 solid;
 }
 
 .surname {
   font-size: large;
   padding: 16px;
   display: flex;
-  border-left: #ffffff73 solid;
-  border-bottom: #ffffff73 solid;
+  border-left: #ffffff38 solid;
+  border-bottom: #ffffff38 solid;
 }
 
 .FDN {
   font-size: large;
   padding: 16px;
   display: flex;
-  border-left: #ffffff73 solid;
+  border-left: #ffffff38 solid;
 }
 
 .correo {
@@ -400,10 +400,11 @@ h6 {
   background-color: #e9e6e6b3;;
   border-radius: 10px;
   color: #3260B4;
+  width: 540px;
 }
 
 .act {
-  border-bottom: #ffffff73 solid;
+  border-bottom: #ffffff38 solid;
 }
 
 .act label {
@@ -413,7 +414,7 @@ h6 {
 }
 
 .UltSesion {
-  border-bottom: #ffffff73 solid;
+  border-bottom: #ffffff38 solid;
   font-size: large;
 }
 
@@ -425,7 +426,7 @@ h6 {
 }
 
 .navegador {
-  border-bottom: #ffffff73 solid;
+  border-bottom: #ffffff38 solid;
   font-size: large;
 }
 
@@ -455,13 +456,14 @@ h6 {
   margin-top: 10px;
   color: #3260B4;
   font-size: large;
+  width: 540px;
 }
 
 .tituloContra {
   text-align: center;
   justify-content: center;
   padding: 13px;
-  border-bottom: #ffffff73 solid;
+  border-bottom: #ffffff38 solid;
 }
 
 .Password {
@@ -513,7 +515,7 @@ h6 {
   border-radius: 30px;
   color: #3c6dc8;
   margin-right: 40px;
-  background: white;
+  background: #ffffff7a;
   margin-bottom: 10px;
   border: solid 1px;
   font-size: 16px;
@@ -539,7 +541,7 @@ h6 {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-36%,-50%);
   width: -webkit-fill-available;
 }
 
@@ -558,4 +560,11 @@ h6 {
   padding: 20px;
   transform: translateX(-50%);
   font-size: 30px;
+}
+.f{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: -webkit-fill-available;
 }
