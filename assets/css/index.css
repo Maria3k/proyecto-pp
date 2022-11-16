@@ -13,32 +13,41 @@ nav{
 }
 
 .btn-nav{
-    padding-top: 20px;
-    padding-right: 10px;
+    padding-top: 25px;
+    padding-right: 70px;
     color: white;
     text-decoration: none;
     float: right;
-    padding-left: 10px;
+    transition: 250ms;
+
 }
 
-.botonlogo{
+.btn-nav:hover{
+    color: black;
+}
+
+.img1{
     display: inline-block;
+    margin-left: 50px;
+    padding-top: 5px;
 }
 
-.botonlogo img{
+.img1 img{
     height: 70px;
     width: 75px;
 }
 
-.botonlogin{
+.icon-wrapper{
     position: absolute;
     display: inline-block;
     right: 0%;
+    padding: 13px;
 }
 
-.botonlogin img{
-    height: 70px;
-    width: 75px;   
+.icon-wrapper img{
+    justify-content: center;
+    height: 45px;
+    width: 40px;   
 }
 
 /*LINEA DE TIEMPO*/
