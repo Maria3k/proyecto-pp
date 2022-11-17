@@ -3,8 +3,6 @@ include("conexion.php");
 session_start();
 
 $sbt = $menu = $ad = '';
-$ajax = '-1';
-
 
 if ($_SESSION) {
   $_SESSION = $con->query("SELECT * FROM usuario WHERE id_usuario = " . $_SESSION["id_usuario"])->fetch_assoc();
@@ -31,10 +29,6 @@ if ($_SESSION) {
         </ul>
       </div>
     </div>
-    <div class="icon-wrapper" data-numbrer="1">
-      <i class="bi bi-bell-fill" id="bell-icon"></i>
-      <div id="number"></div>
-    </div>
   ';
   if ($_POST) {
     if (trim($_POST["asunto"]) && trim($_POST["pregunta"])) {
@@ -49,8 +43,6 @@ if ($_SESSION) {
     header("Location:login.php");
   }
 }
-
-
 ?>
 
 <!DOCTYPE html>

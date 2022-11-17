@@ -3,8 +3,6 @@ include("conexion.php");
 session_start();
 
 $sbt = $menu = $ad = '';
-$ajax = '-1';
-
 
 if ($_SESSION) {
   $_SESSION = $con->query("SELECT * FROM usuario WHERE id_usuario = " . $_SESSION["id_usuario"])->fetch_assoc();
@@ -31,10 +29,6 @@ if ($_SESSION) {
           <a href="logout.php"><li><i class="fa-solid fa-arrow-right-from-bracket"></i>Cerrar Sesion</li></a>
         </ul>
       </div>
-    </div>
-    <div class="icon-wrapper" data-numbrer="1">
-      <i class="bi bi-bell-fill" id="bell-icon"></i>
-      <div id="number"></div>
     </div>
   ';
 } else {
@@ -151,39 +145,10 @@ if ($_SESSION) {
   <script src="https://kit.fontawesome.com/b3b892b65b.js"></script>
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script>
-    function menuToggle() {
+    const menuToggle = () => {
       const toggleMenu = document.querySelector('.menu');
       toggleMenu.classList.toggle('active');
     }
-    $(document).ready(() => {
-      var id_usr = <?= $ajax; ?>;
-      if (id_usr != -1) {
-        notification();
-      }
-
-      function notification() {
-        $("#number").hide();
-        $.ajax({
-          url: "notification.php",
-          type: "POST",
-          data: {
-            id: <?= $ajax; ?>
-          },
-          success: function(n) {
-
-            console.log(n);
-
-            if (n != 0) {
-              console.log("Funca3");
-              $("#number").html(n.length);
-              $("#number").show();
-            }
-          }
-        });
-      }
-
-
-    });
   </script>
 </body>
 

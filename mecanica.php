@@ -3,14 +3,11 @@ include("conexion.php");
 session_start();
 
 $sbt = $menu = $ad = '';
-$ajax = '-1';
-
 
 if ($_SESSION) {
   $_SESSION = $con->query("SELECT * FROM usuario WHERE id_usuario = " . $_SESSION["id_usuario"])->fetch_assoc();
 
   $nAvatar = $_SESSION["nAvatar"];
-  $ajax = $_SESSION["id_usuario"];
 
   $send = $con->query("SELECT * FROM avatar WHERE id_avatar = $nAvatar");
   $col = $send->fetch_assoc();
@@ -31,10 +28,6 @@ if ($_SESSION) {
         </ul>
       </div>
     </div>
-    <div class="icon-wrapper" data-numbrer="1">
-      <i class="bi bi-bell-fill" id="bell-icon"></i>
-      <div id="number"></div>
-    </div>
   ';
   if ($_POST) {
     $query = $con->query("INSERT INTO pregunta(usuario_pregunta, asunto, contenido, fechaPreguntada, respondida, especialidad) VALUES (" . $_SESSION["id_usuario"] . ",'" . $_POST["asunto"] . "','" . $_POST["pregunta"] . "','" . date('Y-m-d') . "',0,2)") or die("Error en el insert --->" . $query . mysqli_error($con));
@@ -47,8 +40,6 @@ if ($_SESSION) {
     header("Location:login.php");
   }
 }
-
-
 ?>
 
 <!DOCTYPE html>
