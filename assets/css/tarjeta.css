@@ -8,49 +8,40 @@ h5{
 }
 
 .tarjeta{
-    position: relative;
-    margin: 30px;
-    width: 600px;
-    height: 300px;
     box-shadow: 0px 3px 6px -3px rgb(105, 105, 105);
-    margin-left: 31%;
+    margin: 0 15%;
 }
 
 #botonnn{
-    position: absolute;
-    bottom: 5%;
-    right: 5%;
     background-image: linear-gradient(to right, rgba(40, 83, 161, 1) 35%, rgba(87, 147, 255, 1) 100%);   
+    border-radius: 30px;
+    width: auto;
 }
 
 .icon{
-    margin-left: 20px;
     border-radius: 50%;
     width: 60px;
     height: 60px;
 }
 
-.text{
-    display: inline-block;
-    margin-left: 1px;
+.user{
+    display: flex;
+}
+
+.nombre{
+    margin: 11px 0 0 5px;
 }
 
 .text2{
-    display: block;
-    margin-left: 86px;
-    margin-top: -25px ; 
     color: rgb(151, 148, 148);
     font-size: 14px;
+    margin-top: -9px;
 }
 
 .text3{
     display: inline-block;
     margin-left: 10px;
     margin-bottom: 60px;
-}
-
-.content{
-    margin: 25px;
 }
 
 #offcanvasRightLabel{

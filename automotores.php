@@ -78,30 +78,51 @@ if ($_SESSION) {
   </div>
 
   <div class="tarjeta">
-    <h5>Tengo una duda de Programacion</h5>
-    <img src="assets/img/iconosUsu/logo1.png" alt="" class="icon">
-    <div class="text">
-      <h6>Nombre de usuario</h6>
-    </div>
-    <div class="text2">
-      <p>Fecha de la pregunta</p>
-    </div>
-    <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aliquam quis numquam at hic architecto odio dolor laborum corporis sunt. Dignissimos reprehenderit officiis cum sequi eveniet, perferendis quos voluptatum earum?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quidem autem is</p>
-    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="border-radius: 30px" id="botonnn">Responder</button>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h5>Tengo una duda de Programacion</h5>
+        </div>
+      </div>
 
+      <div class="row">
+        <div class="col">
+          <div class="user">
+            <img src="assets/img/iconosUsu/logo1.png" alt="" class="icon">
+            <div class="nombre">
+              <h6>Nombre de usuario</h6>
+              <div class="text2"><p>Fecha de la pregunta</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="row">
+          <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aliquam quis numquam at hic architecto odio dolor laborum corporis sunt. Dignissimos reprehenderit officiis cum sequi eveniet, perferendis quos voluptatum earum?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quidem autem is</p>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="row justify-content-end">
+          <button class="btn btn-primary m-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" id="botonnn">Responder</button>
+        </div>
+      </div>
+
+    </div>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasRightLabel">Comentarios</h5>
       </div>
-      <div class="offcanvas-body">
+      <div class="offcanvas-body mx-2">
         <h5>Tengo una duda de programacion</h5>
-        <img src="assets/img/iconosUsu/logo1.png" alt="" class="icon">
-        <div class="text">
-          <h6>Nombre de usuario</h6>
-        </div>
-        <div class="text2">
-          <p>Fecha de la pregunta</p>
-        </div>
+        <div class="user">
+            <img src="assets/img/iconosUsu/logo1.png" alt="" class="icon">
+            <div class="nombre">
+              <h6>Nombre de usuario</h6>
+              <div class="text2"><p>Fecha de la pregunta</p></div>
+            </div>
+          </div>
         <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aliquam quis numquam at hic architecto odio dolor laborum corporis sunt. Dignissimos reprehenderit officiis cum sequi eveniet, perferendis quos voluptatum earum?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quidem autem is</p>
         <div class="newRta">
           <img src="assets/img/iconosUsu/logo2.png" alt="" class="iconSecun">
@@ -109,12 +130,12 @@ if ($_SESSION) {
             <button id="enviarr1">Enviar</button>
         </div>
         <div class="rta1">
-          <img src="assets/img/iconosUsu/logo1.png" alt="" class="icon">
-          <div class="text">
-            <h6>Nombre de usuario</h6>
-          </div>
-          <div class="text2">
-            <p>Fecha de la pregunta</p>
+          <div class="user">
+            <img src="assets/img/iconosUsu/logo1.png" alt="" class="icon">
+            <div class="nombre">
+              <h6>Nombre de usuario</h6>
+              <div class="text2"><p>Fecha de la pregunta</p></div>
+            </div>
           </div>
           <p id="rtaDerta">No se jajaj chupala</p>
           <a class="rta3" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
