@@ -149,7 +149,6 @@ h6, .h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 1rem;
 }
 
 abbr[title],
@@ -326,6 +325,7 @@ th {
 
 label {
   display: inline-block;
+  flex:2;
 }
 
 button {

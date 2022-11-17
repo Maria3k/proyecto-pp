@@ -259,6 +259,13 @@ if ($_SESSION) {
     <script src="assets/js/slider.js"></script>
 
     <script>
+      function menuToggle(){
+        const toggleMenu = document.querySelector('.menu');
+        toggleMenu.classList.toggle('active')
+      }
+    </script>
+    
+    <script>
       $(".step").click(function () {
         $(this).addClass("active").prevAll().addClass("active");
         $(this).nextAll().removeClass("active");
