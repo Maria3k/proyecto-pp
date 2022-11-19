@@ -57,6 +57,7 @@
   .carousel img{
     height: 340px;
     object-fit: cover;
+    -webkit-user-select: none;
     user-select: none;
     margin-left: 14px;
     width: calc(100% / 3);

@@ -153,7 +153,7 @@
         <i id="right" class="fa-solid fa-angle-right"></i>
       </div>
     </div>
-    
+
 
     <!--FOOTER-->
     <footer class="foot">
@@ -218,38 +218,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="assets/js/slider.js"></script>
-
-    <script>
-      $(".step").click(function () {
-        $(this).addClass("active").prevAll().addClass("active");
-        $(this).nextAll().removeClass("active");
-      });
-
-      $(".step01").click(function () {
-        $("#line-progress").css("width", "3%");
-        $(".factory").addClass("active").siblings().removeClass("active");
-      });
-
-      $(".step02").click(function () {
-        $("#line-progress").css("width", "25%");
-        $(".act").addClass("active").siblings().removeClass("active");
-      });
-
-      $(".step03").click(function () {
-        $("#line-progress").css("width", "50%");
-        $(".municipal").addClass("active").siblings().removeClass("active");
-      });
-
-      $(".step04").click(function () {
-        $("#line-progress").css("width", "75%");
-        $(".technique").addClass("active").siblings().removeClass("active");
-      });
-
-      $(".step05").click(function () {
-        $("#line-progress").css("width", "100%");
-        $(".motto").addClass("active").siblings().removeClass("active");
-      });
-    </script>
 
 </body>
 
