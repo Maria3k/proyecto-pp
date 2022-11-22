@@ -67,7 +67,6 @@ if ($_SESSION) {
   </nav>
   <div class="container">
     <h1>HISTORIA DE LA <span>ET32</span></h1>
-    <br>
     <div class="process-wrapper">
       <div id="progress-bar-container">
         <ul>
