@@ -1,0 +1,143 @@
+#Caja {
+    border: #F4F4F4;
+    background-color: #e9e6e6b3;
+    border-radius: 10px;
+    color: #3260B4;
+    width: 540px;
+}
+
+.act {
+    border-bottom: #ffffff17 solid;
+    height: 50px;
+}
+
+.act p {
+    font-size: large;
+}
+
+.UltSesion {
+    border-bottom: #ffffff17 solid;
+    font-size: large;
+}
+
+.UltSesion p {
+    padding: 10px 5px 10px 0;
+    margin-left: 2%;
+    margin-right: 0;
+    font-weight: bolder;
+}
+
+.navegador {
+    border-bottom: #ffffff17 solid;
+    font-size: large;
+}
+
+.navegador p {
+    padding: 10px 5px 10px 0;
+    margin-left: 2%;
+    margin-right: 0;
+    font-weight: bolder;
+}
+
+.UltConex {
+    font-size: large;
+}
+
+.UltConex p {
+    padding: 10px 5px 10px 0;
+    margin-left: 2%;
+    margin-right: 0;
+    font-weight: bolder;
+}
+
+.CajaContra {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #e9e6e6b3;
+    margin-top: 10px;
+    color: #3260B4;
+    font-size: large;
+    width: 540px;
+}
+
+.tituloContra {
+    text-align: center;
+    justify-content: center;
+    padding: 13px;
+    border-bottom: #ffffff38 solid;
+}
+
+.Password {
+    padding: 2% 2%;
+    font-weight: bolder;
+    margin-left: 40px;
+}
+
+
+.Password b {
+    padding: 0px 10% 0px 0px;
+    margin-left: 3%;
+    font-weight: bolder;
+}
+
+.Password input {
+    border: 0;
+    border-bottom: 1px solid #b3b3b3;
+    outline: 0;
+    margin-left: 40px;
+    font-size: 1.3rem;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+#ccon {
+    margin-left: 10px;
+}
+
+.Password input:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #3c6dc8, #8fcdff);
+    border-image-slice: 1;
+}
+
+#hide1 {
+    display: none;
+}
+
+.botoncito {
+    width: -moz-fit-content;
+    width: fit-content;
+    align-self: flex-end;
+    padding: 4px 30px;
+    /* background: linear-gradient(to right, #2853a1 35%, rgba(87,147,255,1) 100%); */
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    color: #3c6dc8;
+    margin-right: 40px;
+    background: #ffffff7a;
+    margin-bottom: 10px;
+    border: solid 1px;
+    font-size: 16px;
+}
+
+.fondo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-36%, -50%);
+    width: -webkit-fill-available;
+}
+
+.dato {
+    display: flex;
+    align-items: baseline;
+}
+
+.dato {
+    display: flex;
+    align-items: baseline;
+}

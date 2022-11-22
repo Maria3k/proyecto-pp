@@ -1,0 +1,40 @@
+nav {
+    background-color: #2853a1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btns {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.img1{
+    cursor: pointer;
+    transition: .5s;
+}
+
+.img1:hover{
+    filter: invert(100%);
+}
+
+
+.btn-nav {
+    padding-top: 20px;
+    padding-right: 10px;
+    color: white;
+    text-decoration: none;
+    transition: 250ms;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.btn-nav:hover {
+    color: black;
+}
+
+.transparent{
+    background-color: transparent;
+    justify-content: space-between;
+}

@@ -1,0 +1,67 @@
+i {
+    margin-right: 10px;
+}
+
+h2 {
+    margin: 0;
+}
+
+h6 {
+    margin: 0;
+    color: #777;
+}
+
+#accordian {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.main-navbar {
+    position: relative;
+}
+
+#accordian li {
+    list-style-type: none;
+}
+
+#accordian ul li a {
+    color: rgba(255, 255, 255, .5);
+    text-decoration: none;
+    font-size: 35px;
+    line-height: 45px;
+    padding: 17px 58px;
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    flex-direction: row-reverse;
+}
+
+#accordian ul li svg {
+    position: relative;
+    top: 4px;
+    font-size: 32px;
+}
+
+.option:hover {
+    color: white !important;
+}
+
+.option span {
+    opacity: 0;
+    transition-duration: 250ms;
+}
+
+.option:hover>span {
+    opacity: 1;
+}
+
+.activeO a {
+    color: white !important;
+    pointer-events: none;
+}
+
+.activeO a span {
+    opacity: 1;
+}

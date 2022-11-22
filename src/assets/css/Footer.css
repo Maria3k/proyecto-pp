@@ -1,0 +1,115 @@
+.foot {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(87, 87, 87);
+}
+
+.foot .grupo-1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 15px 0px;
+}
+
+.foot .grupo-1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foot .grupo-1 .box figure img {
+    width: 100px;
+}
+
+.foot .grupo-1 .box h5 {
+    color: #f3f3f3;
+    margin-bottom: 15px;
+    font-size: 17px;
+    text-align: center;
+    margin: 13px;
+}
+
+.foot .grupo-1 .box ul li {
+    color: #f3f3f3;
+    margin-bottom: 8px;
+    font-size: 13px;
+    text-align: center;
+    list-style: none;
+}
+
+.foot .grupo-1 .connect a {
+    font-size: 40px;
+    text-decoration: none;
+    color: black;
+}
+
+.connect {
+    display: flex;
+    justify-content: space-evenly;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.foot .grupo-1 .connect a svg {
+    margin-top: 20px;
+    margin-left: 20px;
+    transition: 250ms;
+    text-align: center;
+}
+
+a.facebook svg:hover {
+    color: #f3f3f3;
+    /*COLOR ICONO FACEBOOK*/
+}
+
+a.github svg:hover {
+    color: #f3f3f3;
+    /*COLOR ICONO GITHUB*/
+}
+
+a.youtube svg:hover {
+    color: #f3f3f3;
+    /*COLOR ICONO YOUTUBE*/
+}
+
+a.instagram svg:hover {
+    color: #f3f3f3;
+    /*COLOR ICONO INSTAGRAM*/
+}
+
+.foot .grupo-2 {
+    background-color: #777;
+    padding: 15px 10px;
+    text-align: center;
+    color: #f3f3f3;
+}
+
+.foot .grupo-2 small {
+    font-size: 12px;
+}
+
+@media screen and (max-width:800px) {
+    .foot .grupo-1 {
+        width: 80%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .foot .grupo-1 {
+        width: 0%;
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+    }
+}

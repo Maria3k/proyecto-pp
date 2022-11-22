@@ -1,0 +1,74 @@
+.carta-contenedor {
+    background: #ffffff;
+    border-radius: 10px;
+    color: #3260B4;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 20;
+    transform: translate(-50%, -50%);
+    width: -webkit-fill-available;
+}
+
+#titulob {
+    background: linear-gradient(0deg, rgb(154, 203, 231) 0%, rgb(66, 115, 207) 35%, rgba(0, 212, 255, 1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 30px;
+}
+
+.label {
+    display: flex;
+    justify-content: center;
+}
+
+.lorem {
+    font-size: large;
+    margin: 0px 30px 130px 30px;
+}
+
+.lorem ul {
+    list-style: none;
+}
+
+/*Curva*/
+
+.wave svg {
+    position: absolute;
+    background-size: cover;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    bottom: 0;
+}
+
+/*Boton Consulta*/
+
+.botonConsulta {
+    position: absolute;
+    border-radius: 20px;
+    transition: .2s;
+    text-decoration: none;
+    bottom: 13px;
+    right: 10px;
+
+
+    margin-top: 0;
+
+    outline: none;
+    color: #3c6dc8;
+    background: white;
+    font-size: 15px;
+
+}
+
+.botonConsulta p {
+    position: relative;
+    top: 5px;
+}
+
+.botonConsulta:hover,
+.botonConsulta:active {
+    color: rgb(66, 115, 207);
+
+}
