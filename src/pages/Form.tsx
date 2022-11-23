@@ -1,20 +1,19 @@
 import { Link, useLocation } from "wouter";
 import '../assets/css/Form.css'
-import { useAvatar } from '../hooks/useAvatar';
+import { useForm } from '../hooks/useForm';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencil, faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons"
-import { Option } from "../interfaces/OptionsForm.inteface";
+import { Option } from '../interfaces/OptionsForm.inteface';
 import { ErrorLogin } from '../components/ErrorLogin';
 import { useState } from 'react';
-import $ from 'jquery'
 
 export const Form = () => {
 
-  const { avatares, avatarSeleccionado, login, register, mouthSelect, yearsSelect, daySelect } = useAvatar()
+  const { avatares, avatarSeleccionado, login, register, mouthSelect, yearsSelect, daySelect } = useForm()
   const [errorLogin, setErrorLogin] = useState<JSX.Element>()
   const [loading, setLoading] = useState<JSX.Element>()
+  const [loadingRegister, setLoadingRegister] = useState<JSX.Element>()
   const [location, setLocation] = useLocation();
-
 
   return (
     <div className="fondo-login">
@@ -49,8 +48,8 @@ export const Form = () => {
 
                       const form = new FormData();
 
-                      form.append("email", $('#emailogin').val() as string);
-                      form.append("contraseña", $('#contralogin').val() as string);
+                      form.append("email", (document.getElementById('emailogin') as HTMLInputElement).value);
+                      form.append("contraseña", (document.getElementById('contralogin') as HTMLInputElement).value);
 
                       const options: Option = {
                         method: 'POST',
@@ -58,14 +57,14 @@ export const Form = () => {
 
                       options.body = form;
 
-                      fetch('http://localhost:800/react-pp/src/apis/login.php', options)
+                      fetch('http://localhost:800/proyecto-pp/src/apis/login.php', options)
                         .then(response => response.json())
                         .then((response) => {
 
-                          if(response.error){
+                          if (response.error) {
                             setLoading(<></>)
                             setErrorLogin(<ErrorLogin msg={response.error} />)
-                          }else{
+                          } else {
                             localStorage.setItem('user', JSON.stringify(response));
                             setLocation("/")
                           }
@@ -89,7 +88,55 @@ export const Form = () => {
                   <input type="submit" className="butt my-3" value="Iniciar sesion" />
                 </form>
 
-                <form id="register" className="input-group">
+                <form
+                  id="register"
+                  className="input-group"
+                  onSubmit={
+                    e => {
+                      e.preventDefault();
+
+                      setLoadingRegister(
+                        <div className="loading">
+                          <div className="spinner-border text-primary" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                          </div>
+                        </div>
+                      )
+
+                      const form = new FormData();
+                      form.append("nombre", (document.getElementById('nombre') as HTMLInputElement).value);
+                      form.append("apellido", (document.getElementById('apellido') as HTMLInputElement).value);
+                      form.append("nickname", (document.getElementById('nickname') as HTMLInputElement).value);
+                      form.append("email", (document.getElementById('email') as HTMLInputElement).value);
+                      form.append("d", (document.getElementById('dia') as HTMLInputElement).value);
+                      form.append("m", (document.getElementById('mes') as HTMLInputElement).value);
+                      form.append("a", (document.getElementById('año') as HTMLInputElement).value);
+                      form.append("contraseña", (document.getElementById('contraseña') as HTMLInputElement).value);
+                      form.append("contraconfi", (document.getElementById('contraconfi') as HTMLInputElement).value);
+                      form.append("imgInput", (document.getElementById('imgInput') as HTMLInputElement).value);
+
+                      const options: Option = {
+                        method: 'POST',
+                      };
+
+                      options.body = form;
+
+                      fetch('http://localhost:800/proyecto-pp/src/apis/register.php', options)
+                        .then(response => response.json())
+                        .then(response => {
+                          if (response.error) {
+                            setLoading(<></>)
+                            setErrorLogin(<ErrorLogin msg={response.error} />)
+                          } else {
+                            localStorage.setItem('user', JSON.stringify(response));
+                            setLocation("/")
+                          }
+                        })
+                        .catch(err => console.error(err));
+
+                    }
+                  }
+                >
                   <div className="container">
                     <div className="row">
                       <div id="colImg" className="col text-center">
@@ -134,6 +181,7 @@ export const Form = () => {
                           {yearsSelect}
                         </div>
                       </div>
+                      {loadingRegister}
                       <input className="submit-btn butt" type="submit" value="Registrarse" />
                     </div>
                   </div>

@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useAsk } from '../hooks/useAsk';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
-import { AskResult, AskResponse } from '../interfaces/Ask.inteface';
 import { Option } from '../interfaces/OptionsForm.inteface';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -26,15 +25,12 @@ export const Especialidad = ({ especialidad }: EspecialidadProps) => {
     const lastAsk = useLastAsk();
 
 
-
-
-
     return (
         <>
             <Navbar />
             <div id="barra">
                 <input
-                    className="input-field"
+                    className="input-field barra"
                     type="text"
                     id="inputo"
                     placeholder="Busqueda de preguntas"
@@ -87,7 +83,7 @@ export const Especialidad = ({ especialidad }: EspecialidadProps) => {
 
                                     options.body = form;
 
-                                    fetch('http://localhost:800/react-pp/src/apis/submitAsk.php', options)
+                                    fetch('http://localhost:800/proyecto-pp/src/apis/submitAsk.php', options)
                                         .then(response => response.json())
                                         .then(response => {
                                             if (response) {

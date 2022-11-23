@@ -33,21 +33,17 @@ if ($_POST) {
 
   if (count($json) == 0) {
     $i = 0;
-    $query = "INSERT INTO usuario(nombre,apellido,nickname,email,fechaNacimiento,contraseña,nAvatar,rol)
-    VALUES('$nombre','$apellido','$nickname','$email','$fechaNacimiento_sql','$contraseña','$avatar',1)";
+    $query = "INSERT INTO usuario
+    VALUES(" . ($con->query("SELECT `id_usuario` FROM `usuario` ORDER BY `id_usuario` DESC;")->fetch_assoc()["id_usuario"] + 1) . ",'$nombre','$apellido','$nickname','$email','$fechaNacimiento_sql','$contraseña','$avatar',1)";
     $insert = $con->query($query) or die("0");
 
-    session_start();
-    
-    $newUser = "SELECT * FROM usuario WHERE email ='$email' and contraseña='$contraseña'";
-       
+    $newUser = "SELECT `id_usuario`,`nombre`,`apellido`,`nickname`,`email`,`fechaNacimiento`,`contraseña`, `avatar`.`id_avatar`, `avatar`.`nombreArchivo`, `avatar`.`rutaArchivo` FROM `usuario` INNER JOIN `avatar` ON `usuario`.`nAvatar` = `avatar`.`id_avatar` WHERE email ='$email' and contraseña='$contraseña'";
+
     $newUserData = $con->query($newUser)->fetch_assoc() or die("ERROR" . mysqli_error($con));
-    $_SESSION = $newUserData;
 
     $navegador = "";
     $os = "";
     $fecha = "";
-
 
     if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE)
       $navegador = 'Internet explorer';
@@ -66,22 +62,18 @@ if ($_POST) {
     else
       $navegador = 'Something else';
 
-    $os = php_uname("s"). php_uname("r");
+    $os = php_uname("s") . php_uname("r");
 
-    $fecha = (new \DateTime())->format('Y-m-d H:i:s');
-
-    $sesion = "INSERT INTO sesion(id_usuario,navegador,dispositivo,hora) VALUES (" . $newUserData["id_usuario"] . ", '$navegador', '$os','$fecha') ";
+    $sesion = "INSERT INTO sesion VALUES (". ($con->query("SELECT `id_sesion` FROM `sesion` ORDER BY `id_sesion` DESC")->fetch_assoc()["id_sesion"] + 1) .", " . $newUserData["id_usuario"] . ", '$navegador', '$os',NOW()) ";
     $send = $con->query($sesion) or die("ERROR" . mysqli_error($con));
 
-
-    $lastSession = "SELECT * FROM sesion WHERE id_usuario = " . $_SESSION["id_usuario"];
+    $lastSession = "SELECT * FROM sesion WHERE usuario = " . $newUserData["id_usuario"];
     $filaSession = $con->query($lastSession)->fetch_assoc() or die("ERROR" . mysqli_error($con));
 
-    $_SESSION["sesion"] = $filaSession;
+    $newUserData["sesion"] = $filaSession;
 
-    print_r($insert);
+    echo json_encode($newUserData, JSON_UNESCAPED_SLASHES);
   } else {
-
-    echo json_encode($json);
+    echo json_encode($json, JSON_UNESCAPED_UNICODE);
   }
 }

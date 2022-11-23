@@ -1,23 +1,35 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Ask } from '../components/Ask';
 import { AskResponse, AskResult } from '../interfaces/Ask.inteface';
 import { Option } from '../interfaces/OptionsForm.inteface';
 
 export const useAsk = (especialidad: number) => {
 
-    const [ask, setAsk] = useState<JSX.Element>(
-        <>
+    const page = useRef(1);
+
+    const [ask, setAsk] = useState<JSX.Element>()
+
+
+
+    useEffect(() => {
+        askLoader()
+    }, [])
+
+
+    const askLoader = () => {
+
+
+        setAsk(
             <div className="loading text-center">
                 <div className="spinner-border text-primary" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </div>
             </div>
-        </>
-    )
+        )
 
-    useEffect(() => {
         const form = new FormData();
         form.append("e", especialidad.toString());
+        form.append("page", page.current.toString());
 
         const options: Option = {
             method: 'POST',
@@ -25,7 +37,7 @@ export const useAsk = (especialidad: number) => {
 
         options.body = form;
 
-        fetch('http://localhost:800/react-pp/src/apis/ask.php', options)
+        fetch('http://localhost:800/proyecto-pp/src/apis/ask.php', options)
             .then(response => response.json())
             .then((response: AskResponse) => {
                 setAsk(
@@ -50,27 +62,72 @@ export const useAsk = (especialidad: number) => {
                             (response.pages >= 1)
                                 ?
                                 < ul className="pagination justify-content-center">
-                                    <li className="page-item">
-                                        <a className="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                        </a>
-                                    </li>
                                     {
-                                        [...Array(response.pages)].map((a, i) =>
-                                            <li className="page-item" key={i + 1}>
+                                        page.current != 1
+                                            ? <li
+                                                className="page-item"
+                                                onClick={
+                                                    () => {
+                                                        page.current--
+                                                        askLoader()
+                                                    }
+                                                }
+                                            >
                                                 <a
                                                     className="page-link"
-                                                    href="#"
+
+                                                    aria-label="Previous"
+                                                    href={`#${page.current}`}
+                                                >
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            : null
+                                    }
+                                    {
+                                        [...Array(response.pages)].map((a, i) =>
+                                            <li
+                                                className="page-item"
+                                                key={i + 1}
+                                                onClick={
+                                                    () => {
+                                                        page.current = i + 1
+                                                        askLoader()
+                                                    }
+                                                }
+                                            >
+                                                <a
+                                                    className="page-link"
+
+                                                    href={`#${page.current}`}
                                                 >{i + 1}</a>
                                             </li>
                                         )
                                     }
 
-                                    <li className="page-item">
-                                        <a className="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                        </a>
-                                    </li>
+                                    {
+                                        page.current != response.pages
+                                            ?
+                                            <li
+                                                className="page-item"
+                                                onClick={
+                                                    () => {
+                                                        page.current++
+                                                        askLoader()
+                                                    }
+                                                }
+                                            >
+                                                <a
+                                                    className="page-link"
+
+                                                    aria-label="Next"
+                                                    href={`#${page.current}`}
+                                                >
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                            : null
+                                    }
                                 </ul >
                                 : null
 
@@ -80,8 +137,7 @@ export const useAsk = (especialidad: number) => {
 
             })
             .catch(err => console.error(err));
-
-    }, [especialidad])
+    }
 
 
     const search = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -103,12 +159,12 @@ export const useAsk = (especialidad: number) => {
 
         options.body = form;
 
-        fetch('http://localhost:800/react-pp/src/apis/ask.php', options)
+        fetch('http://localhost:800/proyecto-pp/src/apis/ask.php', options)
             .then(response => response.json())
             .then((response: AskResponse) => {
                 setAsk(
-                    response.results 
-                    ?
+                    response.results
+                        ?
                         <>
                             {
                                 response.results.map(
@@ -130,27 +186,64 @@ export const useAsk = (especialidad: number) => {
                                 (response.pages >= 1)
                                     ?
                                     < ul className="pagination justify-content-center">
-                                        <li className="page-item">
-                                            <a className="page-link" href="#" aria-label="Previous">
-                                                <span aria-hidden="true">&laquo;</span>
-                                            </a>
-                                        </li>
+                                        {
+                                            page.current == 1
+                                                ? <li className="page-item">
+                                                    <a
+                                                        className="page-link"
+                                                        onClick={
+                                                            () => {
+                                                                page.current--
+                                                                console.log(page.current);
+                                                            }
+                                                        }
+                                                        aria-label="Previous"
+                                                        href='#'
+                                                    >
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                    </a>
+                                                </li>
+                                                : null
+                                        }
                                         {
                                             [...Array(response.pages)].map((a, i) =>
                                                 <li className="page-item" key={i + 1}>
                                                     <a
                                                         className="page-link"
-                                                        href="#"
+                                                        onClick={
+                                                            () => {
+                                                                page.current = i + 1
+                                                                console.log(page.current);
+
+                                                            }
+                                                        }
+                                                        href='#'
                                                     >{i + 1}</a>
                                                 </li>
                                             )
                                         }
 
-                                        <li className="page-item">
-                                            <a className="page-link" href="#" aria-label="Next">
-                                                <span aria-hidden="true">&raquo;</span>
-                                            </a>
-                                        </li>
+                                        {
+                                            page.current != response.pages
+                                                ?
+                                                <li className="page-item">
+                                                    <a
+                                                        className="page-link"
+                                                        onClick={
+                                                            () => {
+                                                                page.current++
+                                                                console.log(page.current);
+
+                                                            }
+                                                        }
+                                                        aria-label="Next"
+                                                        href='#'
+                                                    >
+                                                        <span aria-hidden="true">&raquo;</span>
+                                                    </a>
+                                                </li>
+                                                : null
+                                        }
                                     </ul >
                                     : null
 
@@ -160,7 +253,7 @@ export const useAsk = (especialidad: number) => {
                         <div className="text-center">
                             No se ha encontrado nada relacionado a <b>{e.target.value}</b>
                         </div>
-                    
+
                 )
             })
             .catch(err => console.error(err));

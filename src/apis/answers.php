@@ -13,7 +13,7 @@ $sql = "
 	    INNER JOIN `usuario`ON `respuesta`.`usuario_respuesta` = `usuario`.`id_usuario`)
         INNER JOIN `avatar`ON `usuario`.`nAvatar` = `avatar`.`id_avatar`
     WHERE `respuesta`.`pregunta` = " . $_POST["ask"] . "  
-    ORDER BY `respuesta`.`id_respuesta` ASC
+    ORDER BY `respuesta`.`fechaRespondida` DESC
 ";
 
 $query = $con->query($sql) or die(mysqli_error($con));

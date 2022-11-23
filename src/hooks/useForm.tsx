@@ -7,7 +7,7 @@ interface Avatar {
     rutaArchivo: string;
 }
 
-export const useAvatar = () => {
+export const useForm = () => {
 
     const [avatares, setAvatares] = useState(<></>)
     const [avatarSeleccionado, setAvatarSeleccionado] = useState(require('../assets/img/iconosUsu/logo1.png'))
@@ -54,7 +54,7 @@ export const useAvatar = () => {
         </select>
 
     useEffect(() => {
-        fetch("http://localhost:800/react-pp/src/apis/avatar.php", {
+        fetch("http://localhost:800/proyecto-pp/src/apis/avatar.php", {
             method: 'GET'
         })
             .then(r => r.json())
@@ -105,8 +105,8 @@ export const useAvatar = () => {
     }
 
     const select = (n: number, path: NodeRequire) => {
-        setAvatarSeleccionado(path)
-        $('#imgInput').val(n)
+        setAvatarSeleccionado(path);
+        (document.getElementById('imgInput') as HTMLInputElement).value = n.toString()
     }
 
     return {

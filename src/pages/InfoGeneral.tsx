@@ -23,7 +23,7 @@ export const InfoGeneral = () => {
   return (
     <div className="fondo-perfil">
       <Navbar transparent light />
-      <Acordian active='InfoPersonal' />
+      <Acordian active='InfoGeneral' />
       <div className="info-general">
         <div id="divPadre">
           <div id="divHijo">

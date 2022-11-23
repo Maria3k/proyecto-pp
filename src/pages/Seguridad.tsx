@@ -21,7 +21,7 @@ export const Seguridad = () => {
   return (
     <div className="fondo-perfil">
       <Navbar transparent light />
-      <Acordian active='InfoPersonal' />
+      <Acordian active='Seguridad' />
       <div className="fondo">
         <div id="Caja">
           <div className="act text-center"> <p>Actividad</p> </div>

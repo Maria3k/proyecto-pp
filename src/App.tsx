@@ -23,6 +23,20 @@ export const App = () => {
         path='/form'
       />
 
+
+      {/*-------------------------------------------------------------------------------------------------------------
+        
+        MALDITO ROUTE QUE ME ROMPE LA PAGINA >:(
+  
+          Opcion N° 1: Puede ser que no lo esté usando bien ya que no esta muy bien documentado como usar wouter con typescript
+          Opcion N° 2: Algun componente me esta cagando
+          Opcion N° 3: Algo me quiere cagar el trabajo y no hacerlo en React XD  
+  
+        */
+
+
+      }
+
       <Route
         path='/computacion'
         component={() => <Especialidad especialidad={1} />}
@@ -37,6 +51,8 @@ export const App = () => {
         path='/automotores'
         component={() => <Especialidad especialidad={3} />}
       />
+
+      {/*-------------------------------------------------------------------------------------------------------------*/}
 
       <Route
         path='/perfil'

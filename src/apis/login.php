@@ -39,15 +39,13 @@ if (isset($_POST)) {
 
     $os = php_uname("s") . php_uname("r");
 
-    $fecha = (new \DateTime())->format('Y-m-d H:i:s');
-
     $lastSession = "SELECT * FROM sesion WHERE usuario = " . $datos["id_usuario"];
     $filaSession = $con->query($lastSession)->fetch_assoc();
 
     $datos["sesion"] = $filaSession;
 
 
-    $query = "UPDATE sesion SET navegador='$navegador',dispositivo='$os',hora='$fecha' WHERE usuario = " . $datos["id_usuario"];
+    $query = "UPDATE sesion SET navegador='$navegador',dispositivo='$os',hora= NOW() WHERE usuario = " . $datos["id_usuario"];
     $con->query($query);
 
     echo json_encode($datos, JSON_UNESCAPED_UNICODE);

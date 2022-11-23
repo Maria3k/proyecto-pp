@@ -2,8 +2,9 @@ import { faAddressBook, faTachometer, faLock, faClone } from '@fortawesome/free-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../assets/css/Acordian.css'
 import { Link } from 'wouter';
+import { useEffect } from 'react';
 
-interface AcordianProps{
+interface AcordianProps {
     active: 'Inicio' |
     'InfoPersonal' |
     'Seguridad' |
@@ -12,26 +13,27 @@ interface AcordianProps{
 
 export const Acordian = ({ active }: AcordianProps) => {
 
-    $(`#${active}`).addClass('activeO')
+    useEffect(() => (document.getElementById(active) as HTMLElement).classList.add('activeO'), [active])
+
 
     return (
         <div id="accordian">
             <ul className="show-dropdown">
                 <li id='Inicio'>
                     <Link to='/perfil' className="option">
-                        <FontAwesomeIcon icon={faTachometer} className='icon' />
+                        <FontAwesomeIcon icon={faTachometer} />
                         <span className='mx-3'>Inicio</span>
                     </Link>
                 </li>
                 <li id='InfoPersonal'>
                     <Link to='/perfil/infoPersonal' className="option">
-                        <FontAwesomeIcon icon={faAddressBook} className='icon' />
+                        <FontAwesomeIcon icon={faAddressBook} />
                         <span className='mx-3'>Info Personal</span>
                     </Link>
                 </li>
                 <li id='Seguridad' >
                     <Link to='/perfil/seguridad' className="option">
-                        <FontAwesomeIcon icon={faLock} className='icon' />
+                        <FontAwesomeIcon icon={faLock} />
                         <span className='mx-3'>Seguridad</span>
                     </Link>
                 </li>
