@@ -308,49 +308,6 @@
     filter: invert(100%);
 }
 
- /* para los label */
- label .htmlFor {
-    position: absolute;
-    padding: 10px;
-    -webkit-transition: top .2s ease-in-out,  font-size .2s ease-in-out;
-    transition: top .2s ease-in-out,  font-size .2s ease-in-out;
-    margin-left: 56px;
-    margin-top: 9px;
-    color:rgb(40, 83, 161);
-  }
-  .labelR label .htmlFor {
-    position: absolute;
-    padding: 10px;
-    -webkit-transition: top .2s ease-in-out,  font-size .2s ease-in-out;
-    transition: top .2s ease-in-out,  font-size .2s ease-in-out;
-    margin-top: 9px;
-    color:rgb(40, 83, 161);
-    margin-left: 1px;
-  }
-   
-  .active {
-    top: -25px;
-  }
-   
-  input[type=text]:focus {
-    outline: none;
-  }
-   
-  div.main div {
-    position: relative;
-  }
-  .i{
-      display: flex;
-  }
-  input[type=text] {
-    width: 91%;
-    padding: 10px;
-  }
-   
-  input[type=text]:focus {
-    outline: none;
-  }
-
 @media (max-width: 767px) {
     .container {
         margin-top: 10rem !important;

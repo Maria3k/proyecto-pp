@@ -74,24 +74,15 @@ export const Form = () => {
                     }
                   }
                 >
-                  <div className="main">
-                    <>
-                      <FontAwesomeIcon className="icono" icon={faEnvelope} color={"#2853a1"} />
-
-                      <label htmlFor="Correo Electronico">Correo Electronico</label>
-                      <input className="input-field" id="emailogin" type="email" name="email" pattern="[a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?" placeholder="Correo" required />
-
-                    </>
-                    <>
-                      <FontAwesomeIcon className="icono" icon={faLock} color={"#2853a1"} />
-                      
-                      <label htmlFor="Contraseña">Contraseña</label>
-
-                      <input className="input-field" id="contralogin" type="password" name="contraseña" pattern="[A-Za-z-0-9]{2,16}" placeholder="Contraseña" required />
-
-                    </>
+                  <div className="input-login">
+                    <FontAwesomeIcon className="icono" icon={faEnvelope} color={"#2853a1"} />
+                    <input className="input-field" id="emailogin" type="email" name="email" pattern="[a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?" placeholder="Correo" required />
                   </div>
 
+                  <div className="input-login">
+                    <FontAwesomeIcon className="icono" icon={faLock} color={"#2853a1"} />
+                    <input className="input-field" id="contralogin" type="password" name="contraseña" pattern="[A-Za-z-0-9]{2,16}" placeholder="Contraseña" required />
+                  </div>
                   {loading}
                   {errorLogin}
                   <input type="submit" className="butt my-3" value="Iniciar sesion" />
