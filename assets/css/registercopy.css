@@ -36,6 +36,7 @@
     border-bottom: solid 1px #999;
     outline: none;
     background: transparent;
+    pointer-events: none;
 }
 .input-fiel{
     width: 101%;
@@ -136,7 +137,7 @@
 
 #register{
   right: -380px;
-  margin-top: -35px;
+  margin-top: 55px;
 }
 
 .chikitiko{
