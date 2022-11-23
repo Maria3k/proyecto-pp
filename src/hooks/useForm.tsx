@@ -54,7 +54,7 @@ export const useForm = () => {
         </select>
 
     useEffect(() => {
-        fetch("http://localhost:800/proyecto-pp/src/apis/avatar.php", {
+        fetch("http://localhost/proyecto-pp/src/apis/avatar.php", {
             method: 'GET'
         })
             .then(r => r.json())

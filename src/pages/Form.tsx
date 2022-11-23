@@ -57,7 +57,7 @@ export const Form = () => {
 
                       options.body = form;
 
-                      fetch('http://localhost:800/proyecto-pp/src/apis/login.php', options)
+                      fetch('http://localhost/proyecto-pp/src/apis/login.php', options)
                         .then(response => response.json())
                         .then((response) => {
 
@@ -121,7 +121,7 @@ export const Form = () => {
 
                       options.body = form;
 
-                      fetch('http://localhost:800/proyecto-pp/src/apis/register.php', options)
+                      fetch('http://localhost/proyecto-pp/src/apis/register.php', options)
                         .then(response => response.json())
                         .then(response => {
                           if (response.error) {

@@ -53,7 +53,7 @@ export const Perfil = () => {
                 </div>
 
                 <div className="consulta">
-                    <a href="#" className="botonConsulta px-2">
+                    <a href="http://localhost/proyecto-pp/src/pages/consulta.php" className="botonConsulta px-2" target={'_blank'}>
                         <p>
                             Realizar Consulta
                         </p>

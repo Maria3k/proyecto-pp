@@ -34,7 +34,7 @@ export const Offcanva = ({ id, ariaLabelledby, ask }: OffCanvaProps) => {
 
         options.body = form;
 
-        fetch('http://localhost:800/proyecto-pp/src/apis/answers.php', options)
+        fetch('http://localhost/proyecto-pp/src/apis/answers.php', options)
             .then(response => response.json())
             .then((response) => {
                 setAnswer(
@@ -96,7 +96,7 @@ export const Offcanva = ({ id, ariaLabelledby, ask }: OffCanvaProps) => {
 
                             options.body = form;
 
-                            fetch('http://localhost:800/proyecto-pp/src/apis/submitAnswer.php', options)
+                            fetch('http://localhost/proyecto-pp/src/apis/submitAnswer.php', options)
                                 .then(response => response.json())
                                 .then(response => {
                                     setAnswer(

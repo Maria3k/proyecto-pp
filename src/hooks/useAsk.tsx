@@ -37,7 +37,7 @@ export const useAsk = (especialidad: number) => {
 
         options.body = form;
 
-        fetch('http://localhost:800/proyecto-pp/src/apis/ask.php', options)
+        fetch('http://localhost/proyecto-pp/src/apis/ask.php', options)
             .then(response => response.json())
             .then((response: AskResponse) => {
                 setAsk(
@@ -159,7 +159,7 @@ export const useAsk = (especialidad: number) => {
 
         options.body = form;
 
-        fetch('http://localhost:800/proyecto-pp/src/apis/ask.php', options)
+        fetch('http://localhost/proyecto-pp/src/apis/ask.php', options)
             .then(response => response.json())
             .then((response: AskResponse) => {
                 setAsk(
