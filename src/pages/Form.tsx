@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 export const Form = () => {
 
-  const { avatares, avatarSeleccionado, login, register, mouthSelect, yearsSelect, daySelect } = useForm()
+  const { avatares, avatarSeleccionado, login, register, avatarIdSelected, mouthSelect, yearsSelect, daySelect } = useForm()
   const [errorLogin, setErrorLogin] = useState<JSX.Element>()
   const [loading, setLoading] = useState<JSX.Element>()
   const [loadingRegister, setLoadingRegister] = useState<JSX.Element>()
@@ -140,7 +140,7 @@ export const Form = () => {
                   <div className="container">
                     <div className="row">
                       <div id="colImg" className="col text-center">
-                        <input id="imgInput" name="imgInput" type="hidden" value="1" />
+                        <input id="imgInput" name="imgInput" type="hidden" value={avatarIdSelected} />
                         <img id="imgSeleccionada" className="img-fluid" src={avatarSeleccionado} width="75px" height="75px" alt="imagen.png" />
                         <a id="lapiz" data-bs-toggle="collapse" href="#imagenes" role="button" aria-expanded="false" aria-controls="imagenes" title="seleccionar imagen">
                           <FontAwesomeIcon icon={faPencil} />

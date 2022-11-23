@@ -12,6 +12,8 @@ export const useForm = () => {
     const [avatares, setAvatares] = useState(<></>)
     const [avatarSeleccionado, setAvatarSeleccionado] = useState(require('../assets/img/iconosUsu/logo1.png'))
 
+    const [avatarIdSelected, setAvatarIdSelected] = useState(1);
+
     const daySelect =
         <select className="form-select" name="d" title="Fecha de nacimiento" id="dia" required>
             <option defaultValue=''>Dia</option>
@@ -106,7 +108,7 @@ export const useForm = () => {
 
     const select = (n: number, path: NodeRequire) => {
         setAvatarSeleccionado(path);
-        (document.getElementById('imgInput') as HTMLInputElement).value = n.toString()
+        setAvatarIdSelected(n);
     }
 
     return {
@@ -116,6 +118,7 @@ export const useForm = () => {
         register,
         daySelect,
         mouthSelect,
-        yearsSelect
+        yearsSelect,
+        avatarIdSelected,
     }
 }
