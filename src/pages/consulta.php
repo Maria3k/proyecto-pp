@@ -143,7 +143,7 @@ p{
               <p>Enviar</p>
           </button>
 
-          <input type="hidden" name="_next" value="http://localhost/Proyecto-PP/form.php">
+          <input type="hidden" name="_next" value="http://localhost:3000">
           <input type="hidden" name="_captcha" value="false">
         </form>
       </div>
